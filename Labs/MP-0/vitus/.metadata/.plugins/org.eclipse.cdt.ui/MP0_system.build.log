@@ -1,0 +1,10 @@
+17:59:55 **** Build of configuration Debug for project MP0_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 57549 X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/MP0_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_system/Debug/system.bif
+sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/MP0_wrapper.xpfm --sys_config MP0_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf,ps7_cortexa9_0
+creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+
+18:00:01 Build Finished (took 5s.707ms)
+

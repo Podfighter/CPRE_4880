@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<wave_config>
+	<wave_state>
+	</wave_state>
+	<db_ref_list>
+		<db_ref path="X:/cpre488/Labs/MP-0/MP-0/MP-0.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1" type="auto">
+			<top_modules>
+				<top_module name="top">
+				</top_module>
+			</top_modules>
+		</db_ref>
+	</db_ref_list>
+	<WVObjectSize size="1">
+	</WVObjectSize>
+	<wvobject fp_name="MP0_i/system_ila_0/U0/SLOT_1_GPIO_tri_o_1" type="array" db_ref_id="1">
+		<obj_property name="ElementShortName">MP0_i/system_ila_0/U0/SLOT_1_GPIO_tri_o_1[7:0]</obj_property>
+		<obj_property name="ObjectShortName">SLOT_1_GPIO_tri_o_1[7:0]</obj_property>
+		<obj_property name="DisplayName">FullPathName</obj_property>
+		<obj_property name="Radix">HEXRADIX</obj_property>
+	</wvobject>
+</wave_config>
+
