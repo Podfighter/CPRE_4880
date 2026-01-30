@@ -49,23 +49,84 @@
 //XPAR_AXI_GPIO_1_BASEADDR
 //XPAR_AXI_GPIO_2_BASEADDR
 
+
+
 #include <stdio.h>
+#include "xgpio.h"
 #include "platform.h"
 #include "xparameters.h"
 #include "gpio_header.h"
 #include "xil_printf.h"
 
+#define LED_CHANNEL 1
+
+XGpio GpioOutput; /* The driver instance for GPIO Device configured as O/P */
+XGpio GpioInput;  /* The driver instance for GPIO Device configured as I/P */
+
+int GpioWrite(u16 DeviceId, u32 GpioWidth, u8 Data)
+{
+	u32 LedBit;
+	u32 LedLoop;
+	int Status;
+
+	/*
+	 * Initialize the GPIO driver so that it's ready to use,
+	 * specify the device ID that is generated in xparameters.h
+	 */
+	 Status = XGpio_Initialize(&GpioOutput, DeviceId);
+	 if (Status != XST_SUCCESS)  {
+		  return XST_FAILURE;
+	 }
+
+	 /* Set the direction for all signals to be outputs */
+	 XGpio_SetDataDirection(&GpioOutput, LED_CHANNEL, 0x0);
+
+	 /* Set the GPIO outputs to low */
+	 XGpio_DiscreteWrite(&GpioOutput, LED_CHANNEL, Data);
+	 return 0;
+}
+
+void GpioRead(u16 DeviceId, u8 *DataRead)
+{
+	 int Status;
+
+	 /*
+	  * Initialize the GPIO driver so that it's ready to use,
+	  * specify the device ID that is generated in xparameters.h
+	  */
+	 Status = XGpio_Initialize(&GpioInput, DeviceId);
+	 if (Status != XST_SUCCESS) {
+		  return XST_FAILURE;
+	 }
+
+	 /* Set the direction for all signals to be inputs */
+	 XGpio_SetDataDirection(&GpioInput, LED_CHANNEL, 0xFFFFFFFF);
+
+	 /* Read the state of the data so that it can be  verified */
+	 *DataRead = XGpio_DiscreteRead(&GpioInput, LED_CHANNEL);
+
+}
 
 int main()
 {
     init_platform();
 
-    u32 DataRead;
+    u8 DataRead1;
+    u8 DataRead2;
+    u8 DataReadFinal;
+    u32 DataWidth = 8;
+
     while(1){
-    	//u32 statusSwitches = GpioInputExample(XPAR_AXI_GPIO_0_DEVICE_ID,&DataRead);
+    	GpioRead(XPAR_AXI_GPIO_1_DEVICE_ID,&DataRead1);
+    	GpioRead(XPAR_AXI_GPIO_2_DEVICE_ID,&DataRead2);
+    	DataReadFinal = DataRead1 | DataRead2;
+    	GpioWrite(XPAR_AXI_GPIO_0_DEVICE_ID, DataWidth, DataReadFinal);
+
+    	/*
     	u32 status = GpioOutputExample(XPAR_AXI_GPIO_0_DEVICE_ID,8);
     	usleep(1000000);
     	print("Blink blink\n\r");
+    */
     }
 
     //GpioOutputExample(,);
@@ -75,3 +136,5 @@ int main()
     cleanup_platform();
     return 0;
 }
+
+

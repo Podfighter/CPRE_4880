@@ -10446,3 +10446,1212 @@ java.lang.Error
 	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
 	at org.eclipse.tcf.EventQueue.run(EventQueue.java:96)
 	at java.base/java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.core.resources 4 1 2026-01-29 18:38:41.255
+!MESSAGE Problems occurred refreshing resources
+!SUBENTRY 1 org.eclipse.core.resources 4 1 2026-01-29 18:38:41.255
+!MESSAGE Problem finding next change, code: 995
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.009
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.021
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.021
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.021
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:47:13.037
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.037
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:47:13.037
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-17: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.446
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.462
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.462
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.462
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:48:12.462
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.477
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:12.477
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-25: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.133
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.137
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.137
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.153
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:48:36.153
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.153
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:48:36.153
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-24: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.288
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.288
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.304
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.304
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:49:15.304
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.304
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:49:15.304
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-23: Build Project
+
+!ENTRY org.eclipse.tcf 4 0 2026-01-29 18:49:37.590
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1182)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:96)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.tcf 4 0 2026-01-29 18:49:37.606
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1182)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:96)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.542
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.556
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.558
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.560
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:50:52.560
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.560
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:50:52.560
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.644
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.660
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.660
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.660
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:52:39.676
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.676
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:52:39.676
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-21: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.272
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.288
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.288
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.288
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:53:20.288
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.288
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:20.304
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-22: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.619
+!MESSAGE XSCT Command: [disconnect tcfchan#5], Thread: Thread-828
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.626
+!MESSAGE XSCT command with result: [disconnect tcfchan#5], Result: [null, ]. Thread: Thread-828
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.674
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.674
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#6]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.674
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.689
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.689
+!MESSAGE XSCT Command: [version -server], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.689
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.689
+!MESSAGE XSCT Command: [version], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.705
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.705
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.713
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.713
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.721
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.721
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.721
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.721
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.736
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.736
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.736
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.752
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.752
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.752
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.768
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.768
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.775
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.775
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.784
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.784
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.784
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.784
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.800
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.800
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.800
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.816
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.816
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.816
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.832
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.832
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.832
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.832
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.911
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:36.927
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.934
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.934
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.950
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.950
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.950
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.965
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.981
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:39.981
+!MESSAGE XSCT Command: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:42.328
+!MESSAGE XSCT command with result: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:42.344
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:42.344
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:42.344
+!MESSAGE XSCT Command: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.441
+!MESSAGE XSCT command with result: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, MP0_wrapper_2]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.441
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.441
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.441
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.457
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.457
+!MESSAGE XSCT Command: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.473
+!MESSAGE XSCT command with result: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.473
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.645
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.645
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.661
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.661
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.661
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.661
+!MESSAGE XSCT Command: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.791
+!MESSAGE XSCT command with result: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.791
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.823
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.887
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.887
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.887
+!MESSAGE XSCT Command: [con], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:53:44.902
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.292
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.303
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.303
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.303
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:56:15.316
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.319
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:15.319
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-23: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:20.954
+!MESSAGE XSCT Command: [disconnect tcfchan#6], Thread: Thread-931
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:20.960
+!MESSAGE XSCT command with result: [disconnect tcfchan#6], Result: [null, ]. Thread: Thread-931
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:20.991
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:20.991
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#7]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:20.991
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.007
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.007
+!MESSAGE XSCT Command: [version -server], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.007
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.007
+!MESSAGE XSCT Command: [version], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.007
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.023
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.023
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.023
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.039
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.039
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.039
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.039
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.055
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.055
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.055
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.070
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.070
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.070
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.086
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.086
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.095
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.102
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.102
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.102
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.118
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.118
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.125
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.125
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.134
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.134
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.134
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.149
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.149
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.149
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.165
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.165
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.228
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:21.244
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.251
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.251
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.266
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.266
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.266
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.266
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.298
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:24.298
+!MESSAGE XSCT Command: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:26.641
+!MESSAGE XSCT command with result: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:26.659
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:26.667
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:26.672
+!MESSAGE XSCT Command: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.819
+!MESSAGE XSCT command with result: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, MP0_wrapper_3]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.835
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.835
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.835
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.844
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.844
+!MESSAGE XSCT Command: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.866
+!MESSAGE XSCT command with result: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:28.866
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.038
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.040
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.042
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.042
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.054
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.054
+!MESSAGE XSCT Command: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.158
+!MESSAGE XSCT command with result: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.158
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.176
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.238
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.249
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.251
+!MESSAGE XSCT Command: [con], Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:29.271
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-22: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.807
+!MESSAGE XSCT Command: [disconnect tcfchan#7], Thread: Thread-981
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.813
+!MESSAGE XSCT command with result: [disconnect tcfchan#7], Result: [null, ]. Thread: Thread-981
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.822
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.829
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#8]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.829
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.845
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.845
+!MESSAGE XSCT Command: [version -server], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.845
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.845
+!MESSAGE XSCT Command: [version], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.845
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.861
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.863
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.863
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.876
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.876
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.876
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.876
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.892
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.892
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.908
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.908
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.908
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.908
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.924
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.924
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.940
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.940
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.940
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.940
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.955
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.955
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.955
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.955
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.971
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.971
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.987
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.987
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.987
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:35.987
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:36.003
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:36.003
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:36.077
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:36.082
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.092
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.092
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.107
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.107
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.107
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.107
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.123
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:39.123
+!MESSAGE XSCT Command: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:41.466
+!MESSAGE XSCT command with result: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:41.482
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:41.489
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:41.489
+!MESSAGE XSCT Command: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.442
+!MESSAGE XSCT command with result: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, MP0_wrapper_4]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.442
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.442
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.442
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.457
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.457
+!MESSAGE XSCT Command: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.473
+!MESSAGE XSCT command with result: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.473
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.694
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.694
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.710
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.710
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.716
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.716
+!MESSAGE XSCT Command: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.845
+!MESSAGE XSCT command with result: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.845
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.859
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.922
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.922
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.922
+!MESSAGE XSCT Command: [con], Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:56:43.954
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-27: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.291
+!MESSAGE XSCT Command: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.304
+!MESSAGE XSCT command with result: [ ::hsi::utils::set_current_hw_sw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss ], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.304
+!MESSAGE XSCT Command: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.304
+!MESSAGE XSCT command with result: [::hsi::utils::get_hw_sw_details -json X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, {"procname": "ps7_cortexa9_0",
+"osname": "standalone",
+"osver": "7.2",
+}]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 1 0 2026-01-29 18:57:26.318
+!MESSAGE Generating MD5 hash for file: X:\cpre488\Labs\MP-0\vitus\MP0_wrapper\export\MP0_wrapper\sw\MP0_wrapper\domain_ps7_cortexa9_0\system.mss ...
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.318
+!MESSAGE XSCT Command: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:26.325
+!MESSAGE XSCT command with result: [::hsi::utils::closesw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/sw/MP0_wrapper/domain_ps7_cortexa9_0/system.mss], Result: [null, ]. Thread: Worker-5: Build Project
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.070
+!MESSAGE XSCT Command: [disconnect tcfchan#8], Thread: Thread-1042
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.077
+!MESSAGE XSCT command with result: [disconnect tcfchan#8], Result: [null, ]. Thread: Thread-1042
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.124
+!MESSAGE XSCT Command: [connect -url tcp:127.0.0.1:3121], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.124
+!MESSAGE XSCT command with result: [connect -url tcp:127.0.0.1:3121], Result: [null, tcfchan#9]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.124
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.140
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.140
+!MESSAGE XSCT Command: [version -server], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.140
+!MESSAGE XSCT command with result: [version -server], Result: [null, 2020.1]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.140
+!MESSAGE XSCT Command: [version], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.140
+!MESSAGE XSCT command with result: [version], Result: [null, xsct 2020.1
+SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.155
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.155
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.155
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.171
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.171
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.178
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.178
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.189
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.189
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.189
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.189
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.206
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.206
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.206
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.218
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.218
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.218
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.218
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.234
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.243
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.243
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.249
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.249
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.249
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.249
+!MESSAGE XSCT Command: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.265
+!MESSAGE XSCT command with result: [jtag targets -set -filter {name =~ "Digilent Zed 210248492833" && level == 0}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.265
+!MESSAGE XSCT Command: [jtag frequency], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.265
+!MESSAGE XSCT command with result: [jtag frequency], Result: [null, 15000000]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.265
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.286
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.286
+!MESSAGE XSCT Command: [rst -system], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.355
+!MESSAGE XSCT command with result: [rst -system], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:44.359
+!MESSAGE XSCT Command: [after 3000], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.363
+!MESSAGE XSCT command with result: [after 3000], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.363
+!MESSAGE XSCT Command: [jtag targets -filter {level == 0}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.379
+!MESSAGE XSCT command with result: [jtag targets -filter {level == 0}], Result: [null,   1* Digilent Zed 210248492833]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.379
+!MESSAGE XSCT Command: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.387
+!MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==1}], Result: [null,      2  arm_dap (idcode 4ba00477 irlen 4)
+     3  xc7z020 (idcode 23727093 irlen 6 fpga)]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.387
+!MESSAGE XSCT Command: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.395
+!MESSAGE XSCT command with result: [targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:47.411
+!MESSAGE XSCT Command: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:49.772
+!MESSAGE XSCT command with result: [fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit], Result: [null, ]. Thread: ModalContext
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:49.789
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:49.789
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:49.789
+!MESSAGE XSCT Command: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.726
+!MESSAGE XSCT command with result: [loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs], Result: [null, MP0_wrapper_5]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.726
+!MESSAGE XSCT Command: [configparams force-mem-access 1], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.726
+!MESSAGE XSCT command with result: [configparams force-mem-access 1], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.726
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~"APU*"}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.742
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~"APU*"}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.742
+!MESSAGE XSCT Command: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.758
+!MESSAGE XSCT command with result: [source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.774
+!MESSAGE XSCT Command: [ps7_init], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.915
+!MESSAGE XSCT command with result: [ps7_init], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.931
+!MESSAGE XSCT Command: [ps7_post_config], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.931
+!MESSAGE XSCT command with result: [ps7_post_config], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.931
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.931
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:51.947
+!MESSAGE XSCT Command: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.065
+!MESSAGE XSCT command with result: [dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.065
+!MESSAGE XSCT Command: [configparams force-mem-access 0], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.096
+!MESSAGE XSCT command with result: [configparams force-mem-access 0], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.161
+!MESSAGE XSCT Command: [targets -set -nocase -filter {name =~ "*A9*#0"}], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.161
+!MESSAGE XSCT command with result: [targets -set -nocase -filter {name =~ "*A9*#0"}], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.161
+!MESSAGE XSCT Command: [con], Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-01-29 18:57:52.175
+!MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-21: Launching SystemDebugger_MP0_system
+
+!ENTRY org.eclipse.tcf 4 0 2026-01-29 18:58:40.710
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1182)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:96)
+	at java.base/java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.tcf 4 0 2026-01-29 18:58:40.712
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1182)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:96)
+	at java.base/java.lang.Thread.run(Unknown Source)

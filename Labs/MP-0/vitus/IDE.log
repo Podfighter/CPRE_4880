@@ -271,3 +271,196 @@ con
 ----------------End of Script----------------
 
 18:30:40 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\systemdebugger_mp0_system_standalone.tcl'
+18:47:13 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:48:12 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:48:36 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:49:15 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:50:52 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:52:39 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:53:20 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:53:36 INFO  : Disconnected from the channel tcfchan#5.
+18:53:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:53:36 INFO  : Jtag cable 'Digilent Zed 210248492833' is selected.
+18:53:36 INFO  : 'jtag frequency' command is executed.
+18:53:36 INFO  : Context for 'APU' is selected.
+18:53:36 INFO  : System reset is completed.
+18:53:39 INFO  : 'after 3000' command is executed.
+18:53:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}' command is executed.
+18:53:42 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit"
+18:53:42 INFO  : Context for 'APU' is selected.
+18:53:44 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa'.
+18:53:44 INFO  : 'configparams force-mem-access 1' command is executed.
+18:53:44 INFO  : Context for 'APU' is selected.
+18:53:44 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl' is done.
+18:53:44 INFO  : 'ps7_init' command is executed.
+18:53:44 INFO  : 'ps7_post_config' command is executed.
+18:53:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:44 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:53:44 INFO  : 'configparams force-mem-access 0' command is executed.
+18:53:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:53:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:53:44 INFO  : 'con' command is executed.
+18:53:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:53:44 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\systemdebugger_mp0_system_standalone.tcl'
+18:56:15 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:56:20 INFO  : Disconnected from the channel tcfchan#6.
+18:56:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:21 INFO  : Jtag cable 'Digilent Zed 210248492833' is selected.
+18:56:21 INFO  : 'jtag frequency' command is executed.
+18:56:21 INFO  : Context for 'APU' is selected.
+18:56:21 INFO  : System reset is completed.
+18:56:24 INFO  : 'after 3000' command is executed.
+18:56:24 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}' command is executed.
+18:56:26 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit"
+18:56:26 INFO  : Context for 'APU' is selected.
+18:56:28 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa'.
+18:56:28 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:28 INFO  : Context for 'APU' is selected.
+18:56:28 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl' is done.
+18:56:29 INFO  : 'ps7_init' command is executed.
+18:56:29 INFO  : 'ps7_post_config' command is executed.
+18:56:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:29 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:29 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:29 INFO  : 'con' command is executed.
+18:56:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:56:29 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\systemdebugger_mp0_system_standalone.tcl'
+18:56:35 INFO  : Disconnected from the channel tcfchan#7.
+18:56:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:56:35 INFO  : Jtag cable 'Digilent Zed 210248492833' is selected.
+18:56:35 INFO  : 'jtag frequency' command is executed.
+18:56:36 INFO  : Context for 'APU' is selected.
+18:56:36 INFO  : System reset is completed.
+18:56:39 INFO  : 'after 3000' command is executed.
+18:56:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}' command is executed.
+18:56:41 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit"
+18:56:41 INFO  : Context for 'APU' is selected.
+18:56:43 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa'.
+18:56:43 INFO  : 'configparams force-mem-access 1' command is executed.
+18:56:43 INFO  : Context for 'APU' is selected.
+18:56:43 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl' is done.
+18:56:43 INFO  : 'ps7_init' command is executed.
+18:56:43 INFO  : 'ps7_post_config' command is executed.
+18:56:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:43 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:56:43 INFO  : 'configparams force-mem-access 0' command is executed.
+18:56:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:56:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:56:43 INFO  : 'con' command is executed.
+18:56:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:56:43 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\systemdebugger_mp0_system_standalone.tcl'
+18:57:26 INFO  : Checking for BSP changes to sync application flags for project 'MP0'...
+18:57:44 INFO  : Disconnected from the channel tcfchan#8.
+18:57:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+18:57:44 INFO  : Jtag cable 'Digilent Zed 210248492833' is selected.
+18:57:44 INFO  : 'jtag frequency' command is executed.
+18:57:44 INFO  : Context for 'APU' is selected.
+18:57:44 INFO  : System reset is completed.
+18:57:47 INFO  : 'after 3000' command is executed.
+18:57:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}' command is executed.
+18:57:49 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit"
+18:57:49 INFO  : Context for 'APU' is selected.
+18:57:51 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa'.
+18:57:51 INFO  : 'configparams force-mem-access 1' command is executed.
+18:57:51 INFO  : Context for 'APU' is selected.
+18:57:51 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl' is done.
+18:57:51 INFO  : 'ps7_init' command is executed.
+18:57:51 INFO  : 'ps7_post_config' command is executed.
+18:57:51 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:52 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf' is downloaded to processor 'ps7_cortexa9_0'.
+18:57:52 INFO  : 'configparams force-mem-access 0' command is executed.
+18:57:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248492833" && level==0 && jtag_device_ctx=="jsn-Zed-210248492833-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/MP0/_ide/bitstream/MP0_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/hw/MP0_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/MP0/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/MP0/Debug/MP0.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+18:57:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+18:57:52 INFO  : 'con' command is executed.
+18:57:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+18:57:52 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\systemdebugger_mp0_system_standalone.tcl'
