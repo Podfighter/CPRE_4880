@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sat Jan 31 17:52:12 2026
+# Process ID: 23404
+# Current directory: X:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.runs/design_1_auto_pc_1_synth_1
+# Command line: vivado.exe -log design_1_auto_pc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_auto_pc_1.tcl
+# Log file: X:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.runs/design_1_auto_pc_1_synth_1/design_1_auto_pc_1.vds
+# Journal file: X:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.runs/design_1_auto_pc_1_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_auto_pc_1.tcl -notrace

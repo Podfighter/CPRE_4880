@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="X:\cpre488\Labs\MP-0\MP-0" key="scw_hwspec"/>
+	<item value="X:\cpre488\Labs\MP-0\vitus\MP0_Round3\_ide\bitstream" key="sdx_program_fpga_view_bit_bmm_browse_key"/>
+	<item value="X:\cpre488\Labs\MP-0\MP-0" key="scw_hwspec_file_selection"/>
+	<item value="X:\cpre488\Labs\MP-0\MP0_round2" key="scw_hwspec"/>
 </section>

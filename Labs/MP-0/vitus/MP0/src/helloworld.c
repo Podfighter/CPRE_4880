@@ -58,6 +58,7 @@
 #include "gpio_header.h"
 #include "xil_printf.h"
 
+
 #define LED_CHANNEL 1
 
 XGpio GpioOutput; /* The driver instance for GPIO Device configured as O/P */
@@ -106,6 +107,7 @@ void GpioRead(u16 DeviceId, u8 *DataRead)
 	 *DataRead = XGpio_DiscreteRead(&GpioInput, LED_CHANNEL);
 
 }
+/*
 
 int main()
 {
@@ -122,11 +124,11 @@ int main()
     	DataReadFinal = DataRead1 | DataRead2;
     	GpioWrite(XPAR_AXI_GPIO_0_DEVICE_ID, DataWidth, DataReadFinal);
 
-    	/*
-    	u32 status = GpioOutputExample(XPAR_AXI_GPIO_0_DEVICE_ID,8);
-    	usleep(1000000);
-    	print("Blink blink\n\r");
-    */
+
+    	//u32 status = GpioOutputExample(XPAR_AXI_GPIO_0_DEVICE_ID,8);
+    	//usleep(1000000);
+    	//print("Blink blink\n\r");
+
     }
 
     //GpioOutputExample(,);
@@ -136,5 +138,5 @@ int main()
     cleanup_platform();
     return 0;
 }
-
+*/
 

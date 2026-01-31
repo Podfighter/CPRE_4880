@@ -28,7 +28,31 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_rst_ps7_0_1
 # IP: bd/MP0/ip/MP0_system_ila_0_0/MP0_system_ila_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_system_ila_0_0 || ORIG_REF_NAME==MP0_system_ila_0_0} -quiet] -quiet
 
+# IP: bd/MP0/ip/MP0_axi_vdma_0_0/MP0_axi_vdma_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_axi_vdma_0_0 || ORIG_REF_NAME==MP0_axi_vdma_0_0} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_v_tc_0_0/MP0_v_tc_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_v_tc_0_0 || ORIG_REF_NAME==MP0_v_tc_0_0} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_v_axi4s_vid_out_0_0/MP0_v_axi4s_vid_out_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_v_axi4s_vid_out_0_0 || ORIG_REF_NAME==MP0_v_axi4s_vid_out_0_0} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_xlconstant_0_0/MP0_xlconstant_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_xlconstant_0_0 || ORIG_REF_NAME==MP0_xlconstant_0_0} -quiet] -quiet
+
 # IP: bd/MP0/ip/MP0_auto_pc_0/MP0_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_auto_pc_0 || ORIG_REF_NAME==MP0_auto_pc_0} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_xbar_1/MP0_xbar_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_xbar_1 || ORIG_REF_NAME==MP0_xbar_1} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_auto_pc_1/MP0_auto_pc_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_auto_pc_1 || ORIG_REF_NAME==MP0_auto_pc_1} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_axi_mem_intercon_0/MP0_axi_mem_intercon_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_axi_mem_intercon_0 || ORIG_REF_NAME==MP0_axi_mem_intercon_0} -quiet] -quiet
+
+# IP: bd/MP0/ip/MP0_system_ila_1_0/MP0_system_ila_1_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==MP0_system_ila_1_0 || ORIG_REF_NAME==MP0_system_ila_1_0} -quiet] -quiet
 
 # XDC: bd/MP0/MP0_ooc.xdc

@@ -1,8 +1,9 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP_0-Default,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_MP0_system
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP_0-Default,org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_MP0_system,org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP0_Round3-Default
 eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP0_Round3-Default/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP_0-Default/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Debugger_MP_0-Default/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:SystemDebugger_MP0_system/activeLaunchMode=run

@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1769727900">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1769898589">
   <File Type="PA-TCL" Name="MP0_wrapper.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="MP0_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MP0_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="MP0_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="MP0_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="MP0_wrapper_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="MP0_wrapper.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="MP0_wrapper_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="MP0_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/MP0/MP0.bd">
@@ -43,15 +40,19 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="MP0_axi_gpio_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="MP0_processing_system7_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_axi_gpio_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_v_axi4s_vid_out_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MP0_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MP0_axi_gpio_0_2"/>
   <BlockFileSet Type="BlockSrcs" Name="MP0_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="MP0_rst_ps7_0_100M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_axi_vdma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_v_tc_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_auto_pc_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="MP0_system_ila_1_0"/>
 </GenRun>

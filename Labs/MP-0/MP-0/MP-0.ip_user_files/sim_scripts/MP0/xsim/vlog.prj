@@ -1,7 +1,6 @@
-verilog xil_defaultlib --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/ec67/hdl" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/6b56/hdl" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/1b7e/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/122e/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/b205/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/c968/hdl/verilog" \
+verilog xil_defaultlib --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/ec67/hdl" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/6b56/hdl" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/1b7e/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/122e/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/b205/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/c968/hdl/verilog" --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshared/7af1/hdl" \
 "../../../bd/MP0/ip/MP0_processing_system7_0_1/sim/MP0_processing_system7_0_1.v" \
 "../../../bd/MP0/ip/MP0_xbar_0/sim/MP0_xbar_0.v" \
-"../../../bd/MP0/ip/MP0_auto_pc_0/sim/MP0_auto_pc_0.v" \
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_1/bd_9b5a_g_inst_0_gigantic_mux.v" \
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_1/sim/bd_9b5a_g_inst_0.v" \
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_2/sim/bd_9b5a_slot_0_aw_0.v" \
@@ -9,6 +8,11 @@ verilog xil_defaultlib --include "../../../../MP-0.srcs/sources_1/bd/MP0/ipshare
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_4/sim/bd_9b5a_slot_0_b_0.v" \
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_5/sim/bd_9b5a_slot_0_ar_0.v" \
 "../../../bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_6/sim/bd_9b5a_slot_0_r_0.v" \
+"../../../bd/MP0/ip/MP0_v_axi4s_vid_out_0_0/sim/MP0_v_axi4s_vid_out_0_0.v" \
+"../../../bd/MP0/ip/MP0_xlconstant_0_0/sim/MP0_xlconstant_0_0.v" \
+"../../../bd/MP0/ip/MP0_auto_pc_0/sim/MP0_auto_pc_0.v" \
+"../../../bd/MP0/ip/MP0_xbar_1/sim/MP0_xbar_1.v" \
+"../../../bd/MP0/ip/MP0_auto_pc_1/sim/MP0_auto_pc_1.v" \
 
 verilog xil_defaultlib "glbl.v"
 

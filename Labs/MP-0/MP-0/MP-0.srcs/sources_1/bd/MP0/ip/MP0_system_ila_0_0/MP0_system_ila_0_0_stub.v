@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Jan 29 17:02:04 2026
+// Date        : Sat Jan 31 16:19:31 2026
 // Host        : CO2041-08 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top MP0_system_ila_0_0 -prefix
 //               MP0_system_ila_0_0_ MP0_system_ila_0_0_stub.v
@@ -14,14 +14,19 @@
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* x_core_info = "bd_9b5a,Vivado 2020.1" *)
-module MP0_system_ila_0_0(clk, SLOT_0_AXI_awaddr, SLOT_0_AXI_awprot, 
-  SLOT_0_AXI_awvalid, SLOT_0_AXI_awready, SLOT_0_AXI_wdata, SLOT_0_AXI_wstrb, 
-  SLOT_0_AXI_wvalid, SLOT_0_AXI_wready, SLOT_0_AXI_bresp, SLOT_0_AXI_bvalid, 
-  SLOT_0_AXI_bready, SLOT_0_AXI_araddr, SLOT_0_AXI_arprot, SLOT_0_AXI_arvalid, 
-  SLOT_0_AXI_arready, SLOT_0_AXI_rdata, SLOT_0_AXI_rresp, SLOT_0_AXI_rvalid, 
-  SLOT_0_AXI_rready, SLOT_1_GPIO_tri_o, resetn)
-/* synthesis syn_black_box black_box_pad_pin="clk,SLOT_0_AXI_awaddr[8:0],SLOT_0_AXI_awprot[2:0],SLOT_0_AXI_awvalid,SLOT_0_AXI_awready,SLOT_0_AXI_wdata[31:0],SLOT_0_AXI_wstrb[3:0],SLOT_0_AXI_wvalid,SLOT_0_AXI_wready,SLOT_0_AXI_bresp[1:0],SLOT_0_AXI_bvalid,SLOT_0_AXI_bready,SLOT_0_AXI_araddr[8:0],SLOT_0_AXI_arprot[2:0],SLOT_0_AXI_arvalid,SLOT_0_AXI_arready,SLOT_0_AXI_rdata[31:0],SLOT_0_AXI_rresp[1:0],SLOT_0_AXI_rvalid,SLOT_0_AXI_rready,SLOT_1_GPIO_tri_o[7:0],resetn" */;
+module MP0_system_ila_0_0(clk, probe0, SLOT_0_AXI_awaddr, 
+  SLOT_0_AXI_awprot, SLOT_0_AXI_awvalid, SLOT_0_AXI_awready, SLOT_0_AXI_wdata, 
+  SLOT_0_AXI_wstrb, SLOT_0_AXI_wvalid, SLOT_0_AXI_wready, SLOT_0_AXI_bresp, 
+  SLOT_0_AXI_bvalid, SLOT_0_AXI_bready, SLOT_0_AXI_araddr, SLOT_0_AXI_arprot, 
+  SLOT_0_AXI_arvalid, SLOT_0_AXI_arready, SLOT_0_AXI_rdata, SLOT_0_AXI_rresp, 
+  SLOT_0_AXI_rvalid, SLOT_0_AXI_rready, SLOT_1_GPIO_tri_o, 
+  SLOT_2_VIDEO_TIMING_active_video, SLOT_2_VIDEO_TIMING_hblank, 
+  SLOT_2_VIDEO_TIMING_vblank, SLOT_2_VIDEO_TIMING_hsync, SLOT_2_VIDEO_TIMING_vsync, 
+  SLOT_3_AXIS_tdata, SLOT_3_AXIS_tkeep, SLOT_3_AXIS_tlast, SLOT_3_AXIS_tuser, 
+  SLOT_3_AXIS_tvalid, SLOT_3_AXIS_tready, resetn)
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],SLOT_0_AXI_awaddr[8:0],SLOT_0_AXI_awprot[2:0],SLOT_0_AXI_awvalid,SLOT_0_AXI_awready,SLOT_0_AXI_wdata[31:0],SLOT_0_AXI_wstrb[3:0],SLOT_0_AXI_wvalid,SLOT_0_AXI_wready,SLOT_0_AXI_bresp[1:0],SLOT_0_AXI_bvalid,SLOT_0_AXI_bready,SLOT_0_AXI_araddr[8:0],SLOT_0_AXI_arprot[2:0],SLOT_0_AXI_arvalid,SLOT_0_AXI_arready,SLOT_0_AXI_rdata[31:0],SLOT_0_AXI_rresp[1:0],SLOT_0_AXI_rvalid,SLOT_0_AXI_rready,SLOT_1_GPIO_tri_o[7:0],SLOT_2_VIDEO_TIMING_active_video,SLOT_2_VIDEO_TIMING_hblank,SLOT_2_VIDEO_TIMING_vblank,SLOT_2_VIDEO_TIMING_hsync,SLOT_2_VIDEO_TIMING_vsync,SLOT_3_AXIS_tdata[31:0],SLOT_3_AXIS_tkeep[3:0],SLOT_3_AXIS_tlast,SLOT_3_AXIS_tuser[0:0],SLOT_3_AXIS_tvalid,SLOT_3_AXIS_tready,resetn" */;
   input clk;
+  input [0:0]probe0;
   input [8:0]SLOT_0_AXI_awaddr;
   input [2:0]SLOT_0_AXI_awprot;
   input SLOT_0_AXI_awvalid;
@@ -42,5 +47,16 @@ module MP0_system_ila_0_0(clk, SLOT_0_AXI_awaddr, SLOT_0_AXI_awprot,
   input SLOT_0_AXI_rvalid;
   input SLOT_0_AXI_rready;
   input [7:0]SLOT_1_GPIO_tri_o;
+  input SLOT_2_VIDEO_TIMING_active_video;
+  input SLOT_2_VIDEO_TIMING_hblank;
+  input SLOT_2_VIDEO_TIMING_vblank;
+  input SLOT_2_VIDEO_TIMING_hsync;
+  input SLOT_2_VIDEO_TIMING_vsync;
+  input [31:0]SLOT_3_AXIS_tdata;
+  input [3:0]SLOT_3_AXIS_tkeep;
+  input SLOT_3_AXIS_tlast;
+  input [0:0]SLOT_3_AXIS_tuser;
+  input SLOT_3_AXIS_tvalid;
+  input SLOT_3_AXIS_tready;
   input resetn;
 endmodule

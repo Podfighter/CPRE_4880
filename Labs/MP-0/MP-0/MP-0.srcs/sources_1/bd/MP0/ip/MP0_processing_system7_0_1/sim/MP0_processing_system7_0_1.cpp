@@ -61,7 +61,7 @@
 
 
 #ifdef XILINX_SIMULATOR
-MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
+MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), S_AXI_HP3_ARREADY("S_AXI_HP3_ARREADY"), S_AXI_HP3_AWREADY("S_AXI_HP3_AWREADY"), S_AXI_HP3_BVALID("S_AXI_HP3_BVALID"), S_AXI_HP3_RLAST("S_AXI_HP3_RLAST"), S_AXI_HP3_RVALID("S_AXI_HP3_RVALID"), S_AXI_HP3_WREADY("S_AXI_HP3_WREADY"), S_AXI_HP3_BRESP("S_AXI_HP3_BRESP"), S_AXI_HP3_RRESP("S_AXI_HP3_RRESP"), S_AXI_HP3_BID("S_AXI_HP3_BID"), S_AXI_HP3_RID("S_AXI_HP3_RID"), S_AXI_HP3_RDATA("S_AXI_HP3_RDATA"), S_AXI_HP3_RCOUNT("S_AXI_HP3_RCOUNT"), S_AXI_HP3_WCOUNT("S_AXI_HP3_WCOUNT"), S_AXI_HP3_RACOUNT("S_AXI_HP3_RACOUNT"), S_AXI_HP3_WACOUNT("S_AXI_HP3_WACOUNT"), S_AXI_HP3_ACLK("S_AXI_HP3_ACLK"), S_AXI_HP3_ARVALID("S_AXI_HP3_ARVALID"), S_AXI_HP3_AWVALID("S_AXI_HP3_AWVALID"), S_AXI_HP3_BREADY("S_AXI_HP3_BREADY"), S_AXI_HP3_RDISSUECAP1_EN("S_AXI_HP3_RDISSUECAP1_EN"), S_AXI_HP3_RREADY("S_AXI_HP3_RREADY"), S_AXI_HP3_WLAST("S_AXI_HP3_WLAST"), S_AXI_HP3_WRISSUECAP1_EN("S_AXI_HP3_WRISSUECAP1_EN"), S_AXI_HP3_WVALID("S_AXI_HP3_WVALID"), S_AXI_HP3_ARBURST("S_AXI_HP3_ARBURST"), S_AXI_HP3_ARLOCK("S_AXI_HP3_ARLOCK"), S_AXI_HP3_ARSIZE("S_AXI_HP3_ARSIZE"), S_AXI_HP3_AWBURST("S_AXI_HP3_AWBURST"), S_AXI_HP3_AWLOCK("S_AXI_HP3_AWLOCK"), S_AXI_HP3_AWSIZE("S_AXI_HP3_AWSIZE"), S_AXI_HP3_ARPROT("S_AXI_HP3_ARPROT"), S_AXI_HP3_AWPROT("S_AXI_HP3_AWPROT"), S_AXI_HP3_ARADDR("S_AXI_HP3_ARADDR"), S_AXI_HP3_AWADDR("S_AXI_HP3_AWADDR"), S_AXI_HP3_ARCACHE("S_AXI_HP3_ARCACHE"), S_AXI_HP3_ARLEN("S_AXI_HP3_ARLEN"), S_AXI_HP3_ARQOS("S_AXI_HP3_ARQOS"), S_AXI_HP3_AWCACHE("S_AXI_HP3_AWCACHE"), S_AXI_HP3_AWLEN("S_AXI_HP3_AWLEN"), S_AXI_HP3_AWQOS("S_AXI_HP3_AWQOS"), S_AXI_HP3_ARID("S_AXI_HP3_ARID"), S_AXI_HP3_AWID("S_AXI_HP3_AWID"), S_AXI_HP3_WID("S_AXI_HP3_WID"), S_AXI_HP3_WDATA("S_AXI_HP3_WDATA"), S_AXI_HP3_WSTRB("S_AXI_HP3_WSTRB"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
 {
 
   // initialize pins
@@ -72,6 +72,13 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_impl->USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT);
   mp_impl->USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT);
   mp_impl->M_AXI_GP0_ACLK(M_AXI_GP0_ACLK);
+  mp_impl->S_AXI_HP3_RCOUNT(S_AXI_HP3_RCOUNT);
+  mp_impl->S_AXI_HP3_WCOUNT(S_AXI_HP3_WCOUNT);
+  mp_impl->S_AXI_HP3_RACOUNT(S_AXI_HP3_RACOUNT);
+  mp_impl->S_AXI_HP3_WACOUNT(S_AXI_HP3_WACOUNT);
+  mp_impl->S_AXI_HP3_ACLK(S_AXI_HP3_ACLK);
+  mp_impl->S_AXI_HP3_RDISSUECAP1_EN(S_AXI_HP3_RDISSUECAP1_EN);
+  mp_impl->S_AXI_HP3_WRISSUECAP1_EN(S_AXI_HP3_WRISSUECAP1_EN);
   mp_impl->FCLK_CLK0(FCLK_CLK0);
   mp_impl->FCLK_RESET0_N(FCLK_RESET0_N);
   mp_impl->MIO(MIO);
@@ -102,6 +109,11 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_M_AXI_GP0_AWLOCK_converter = NULL;
   mp_M_AXI_GP0_ARLEN_converter = NULL;
   mp_M_AXI_GP0_AWLEN_converter = NULL;
+  mp_S_AXI_HP3_transactor = NULL;
+  mp_S_AXI_HP3_ARLOCK_converter = NULL;
+  mp_S_AXI_HP3_AWLOCK_converter = NULL;
+  mp_S_AXI_HP3_ARLEN_converter = NULL;
+  mp_S_AXI_HP3_AWLEN_converter = NULL;
 
   // initialize socket stubs
 
@@ -211,6 +223,110 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
     mp_impl->M_AXI_GP0_rd_socket->bind(*(mp_M_AXI_GP0_transactor->rd_socket));
     mp_impl->M_AXI_GP0_wr_socket->bind(*(mp_M_AXI_GP0_transactor->wr_socket));
+  }
+
+  // configure 'S_AXI_HP3' transactor
+
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MP0_processing_system7_0_1", "S_AXI_HP3_TLM_MODE") != 1)
+  {
+    // Instantiate Socket Stubs
+
+  // 'S_AXI_HP3' transactor parameters
+    xsc::common_cpp::properties S_AXI_HP3_transactor_param_props;
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("DATA_WIDTH", "64");
+    S_AXI_HP3_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_HP3_transactor_param_props.addLong("ID_WIDTH", "6");
+    S_AXI_HP3_transactor_param_props.addLong("ADDR_WIDTH", "32");
+    S_AXI_HP3_transactor_param_props.addLong("AWUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("ARUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("BUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BURST", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_LOCK", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_PROT", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_CACHE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_QOS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_REGION", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_WSTRB", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    S_AXI_HP3_transactor_param_props.addLong("MAX_BURST_LENGTH", "16");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_SIZE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RESET", "0");
+    S_AXI_HP3_transactor_param_props.addFloat("PHASE", "0.000");
+    S_AXI_HP3_transactor_param_props.addString("PROTOCOL", "AXI3");
+    S_AXI_HP3_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
+    S_AXI_HP3_transactor_param_props.addString("CLK_DOMAIN", "MP0_processing_system7_0_1_FCLK_CLK0");
+
+    mp_S_AXI_HP3_transactor = new xtlm::xaximm_pin2xtlm_t<64,32,6,1,1,1,1,1>("S_AXI_HP3_transactor", S_AXI_HP3_transactor_param_props);
+
+    // S_AXI_HP3' transactor ports
+
+    mp_S_AXI_HP3_transactor->ARREADY(S_AXI_HP3_ARREADY);
+    mp_S_AXI_HP3_transactor->AWREADY(S_AXI_HP3_AWREADY);
+    mp_S_AXI_HP3_transactor->BVALID(S_AXI_HP3_BVALID);
+    mp_S_AXI_HP3_transactor->RLAST(S_AXI_HP3_RLAST);
+    mp_S_AXI_HP3_transactor->RVALID(S_AXI_HP3_RVALID);
+    mp_S_AXI_HP3_transactor->WREADY(S_AXI_HP3_WREADY);
+    mp_S_AXI_HP3_transactor->BRESP(S_AXI_HP3_BRESP);
+    mp_S_AXI_HP3_transactor->RRESP(S_AXI_HP3_RRESP);
+    mp_S_AXI_HP3_transactor->BID(S_AXI_HP3_BID);
+    mp_S_AXI_HP3_transactor->RID(S_AXI_HP3_RID);
+    mp_S_AXI_HP3_transactor->RDATA(S_AXI_HP3_RDATA);
+    mp_S_AXI_HP3_transactor->ARVALID(S_AXI_HP3_ARVALID);
+    mp_S_AXI_HP3_transactor->AWVALID(S_AXI_HP3_AWVALID);
+    mp_S_AXI_HP3_transactor->BREADY(S_AXI_HP3_BREADY);
+    mp_S_AXI_HP3_transactor->RREADY(S_AXI_HP3_RREADY);
+    mp_S_AXI_HP3_transactor->WLAST(S_AXI_HP3_WLAST);
+    mp_S_AXI_HP3_transactor->WVALID(S_AXI_HP3_WVALID);
+    mp_S_AXI_HP3_transactor->ARBURST(S_AXI_HP3_ARBURST);
+    mp_S_AXI_HP3_ARLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_ARLOCK_converter");
+    mp_S_AXI_HP3_ARLOCK_converter->vector_in(S_AXI_HP3_ARLOCK);
+    mp_S_AXI_HP3_ARLOCK_converter->scalar_out(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLOCK(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARSIZE(S_AXI_HP3_ARSIZE);
+    mp_S_AXI_HP3_transactor->AWBURST(S_AXI_HP3_AWBURST);
+    mp_S_AXI_HP3_AWLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_AWLOCK_converter");
+    mp_S_AXI_HP3_AWLOCK_converter->vector_in(S_AXI_HP3_AWLOCK);
+    mp_S_AXI_HP3_AWLOCK_converter->scalar_out(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLOCK(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWSIZE(S_AXI_HP3_AWSIZE);
+    mp_S_AXI_HP3_transactor->ARPROT(S_AXI_HP3_ARPROT);
+    mp_S_AXI_HP3_transactor->AWPROT(S_AXI_HP3_AWPROT);
+    mp_S_AXI_HP3_transactor->ARADDR(S_AXI_HP3_ARADDR);
+    mp_S_AXI_HP3_transactor->AWADDR(S_AXI_HP3_AWADDR);
+    mp_S_AXI_HP3_transactor->ARCACHE(S_AXI_HP3_ARCACHE);
+    mp_S_AXI_HP3_ARLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_ARLEN_converter");
+    mp_S_AXI_HP3_ARLEN_converter->vector_in(S_AXI_HP3_ARLEN);
+    mp_S_AXI_HP3_ARLEN_converter->vector_out(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLEN(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARQOS(S_AXI_HP3_ARQOS);
+    mp_S_AXI_HP3_transactor->AWCACHE(S_AXI_HP3_AWCACHE);
+    mp_S_AXI_HP3_AWLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_AWLEN_converter");
+    mp_S_AXI_HP3_AWLEN_converter->vector_in(S_AXI_HP3_AWLEN);
+    mp_S_AXI_HP3_AWLEN_converter->vector_out(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLEN(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWQOS(S_AXI_HP3_AWQOS);
+    mp_S_AXI_HP3_transactor->ARID(S_AXI_HP3_ARID);
+    mp_S_AXI_HP3_transactor->AWID(S_AXI_HP3_AWID);
+    mp_S_AXI_HP3_transactor->WDATA(S_AXI_HP3_WDATA);
+    mp_S_AXI_HP3_transactor->WSTRB(S_AXI_HP3_WSTRB);
+    mp_S_AXI_HP3_transactor->CLK(S_AXI_HP3_ACLK);
+    m_S_AXI_HP3_transactor_rst_signal.write(1);
+    mp_S_AXI_HP3_transactor->RST(m_S_AXI_HP3_transactor_rst_signal);
+
+    // S_AXI_HP3' transactor sockets
+
+    mp_impl->S_AXI_HP3_rd_socket->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_impl->S_AXI_HP3_wr_socket->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
   }
 
 }
@@ -221,7 +337,7 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
 
 #ifdef XM_SYSTEMC
-MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
+MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), S_AXI_HP3_ARREADY("S_AXI_HP3_ARREADY"), S_AXI_HP3_AWREADY("S_AXI_HP3_AWREADY"), S_AXI_HP3_BVALID("S_AXI_HP3_BVALID"), S_AXI_HP3_RLAST("S_AXI_HP3_RLAST"), S_AXI_HP3_RVALID("S_AXI_HP3_RVALID"), S_AXI_HP3_WREADY("S_AXI_HP3_WREADY"), S_AXI_HP3_BRESP("S_AXI_HP3_BRESP"), S_AXI_HP3_RRESP("S_AXI_HP3_RRESP"), S_AXI_HP3_BID("S_AXI_HP3_BID"), S_AXI_HP3_RID("S_AXI_HP3_RID"), S_AXI_HP3_RDATA("S_AXI_HP3_RDATA"), S_AXI_HP3_RCOUNT("S_AXI_HP3_RCOUNT"), S_AXI_HP3_WCOUNT("S_AXI_HP3_WCOUNT"), S_AXI_HP3_RACOUNT("S_AXI_HP3_RACOUNT"), S_AXI_HP3_WACOUNT("S_AXI_HP3_WACOUNT"), S_AXI_HP3_ACLK("S_AXI_HP3_ACLK"), S_AXI_HP3_ARVALID("S_AXI_HP3_ARVALID"), S_AXI_HP3_AWVALID("S_AXI_HP3_AWVALID"), S_AXI_HP3_BREADY("S_AXI_HP3_BREADY"), S_AXI_HP3_RDISSUECAP1_EN("S_AXI_HP3_RDISSUECAP1_EN"), S_AXI_HP3_RREADY("S_AXI_HP3_RREADY"), S_AXI_HP3_WLAST("S_AXI_HP3_WLAST"), S_AXI_HP3_WRISSUECAP1_EN("S_AXI_HP3_WRISSUECAP1_EN"), S_AXI_HP3_WVALID("S_AXI_HP3_WVALID"), S_AXI_HP3_ARBURST("S_AXI_HP3_ARBURST"), S_AXI_HP3_ARLOCK("S_AXI_HP3_ARLOCK"), S_AXI_HP3_ARSIZE("S_AXI_HP3_ARSIZE"), S_AXI_HP3_AWBURST("S_AXI_HP3_AWBURST"), S_AXI_HP3_AWLOCK("S_AXI_HP3_AWLOCK"), S_AXI_HP3_AWSIZE("S_AXI_HP3_AWSIZE"), S_AXI_HP3_ARPROT("S_AXI_HP3_ARPROT"), S_AXI_HP3_AWPROT("S_AXI_HP3_AWPROT"), S_AXI_HP3_ARADDR("S_AXI_HP3_ARADDR"), S_AXI_HP3_AWADDR("S_AXI_HP3_AWADDR"), S_AXI_HP3_ARCACHE("S_AXI_HP3_ARCACHE"), S_AXI_HP3_ARLEN("S_AXI_HP3_ARLEN"), S_AXI_HP3_ARQOS("S_AXI_HP3_ARQOS"), S_AXI_HP3_AWCACHE("S_AXI_HP3_AWCACHE"), S_AXI_HP3_AWLEN("S_AXI_HP3_AWLEN"), S_AXI_HP3_AWQOS("S_AXI_HP3_AWQOS"), S_AXI_HP3_ARID("S_AXI_HP3_ARID"), S_AXI_HP3_AWID("S_AXI_HP3_AWID"), S_AXI_HP3_WID("S_AXI_HP3_WID"), S_AXI_HP3_WDATA("S_AXI_HP3_WDATA"), S_AXI_HP3_WSTRB("S_AXI_HP3_WSTRB"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
 {
 
   // initialize pins
@@ -232,6 +348,13 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_impl->USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT);
   mp_impl->USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT);
   mp_impl->M_AXI_GP0_ACLK(M_AXI_GP0_ACLK);
+  mp_impl->S_AXI_HP3_RCOUNT(S_AXI_HP3_RCOUNT);
+  mp_impl->S_AXI_HP3_WCOUNT(S_AXI_HP3_WCOUNT);
+  mp_impl->S_AXI_HP3_RACOUNT(S_AXI_HP3_RACOUNT);
+  mp_impl->S_AXI_HP3_WACOUNT(S_AXI_HP3_WACOUNT);
+  mp_impl->S_AXI_HP3_ACLK(S_AXI_HP3_ACLK);
+  mp_impl->S_AXI_HP3_RDISSUECAP1_EN(S_AXI_HP3_RDISSUECAP1_EN);
+  mp_impl->S_AXI_HP3_WRISSUECAP1_EN(S_AXI_HP3_WRISSUECAP1_EN);
   mp_impl->FCLK_CLK0(FCLK_CLK0);
   mp_impl->FCLK_RESET0_N(FCLK_RESET0_N);
   mp_impl->MIO(MIO);
@@ -262,6 +385,11 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_M_AXI_GP0_AWLOCK_converter = NULL;
   mp_M_AXI_GP0_ARLEN_converter = NULL;
   mp_M_AXI_GP0_AWLEN_converter = NULL;
+  mp_S_AXI_HP3_transactor = NULL;
+  mp_S_AXI_HP3_ARLOCK_converter = NULL;
+  mp_S_AXI_HP3_AWLOCK_converter = NULL;
+  mp_S_AXI_HP3_ARLEN_converter = NULL;
+  mp_S_AXI_HP3_AWLEN_converter = NULL;
 
   // initialize socket stubs
 
@@ -371,6 +499,110 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
     mp_impl->M_AXI_GP0_rd_socket->bind(*(mp_M_AXI_GP0_transactor->rd_socket));
     mp_impl->M_AXI_GP0_wr_socket->bind(*(mp_M_AXI_GP0_transactor->wr_socket));
+  }
+
+  // configure 'S_AXI_HP3' transactor
+
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MP0_processing_system7_0_1", "S_AXI_HP3_TLM_MODE") != 1)
+  {
+    // Instantiate Socket Stubs
+
+  // 'S_AXI_HP3' transactor parameters
+    xsc::common_cpp::properties S_AXI_HP3_transactor_param_props;
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("DATA_WIDTH", "64");
+    S_AXI_HP3_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_HP3_transactor_param_props.addLong("ID_WIDTH", "6");
+    S_AXI_HP3_transactor_param_props.addLong("ADDR_WIDTH", "32");
+    S_AXI_HP3_transactor_param_props.addLong("AWUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("ARUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("BUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BURST", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_LOCK", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_PROT", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_CACHE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_QOS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_REGION", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_WSTRB", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    S_AXI_HP3_transactor_param_props.addLong("MAX_BURST_LENGTH", "16");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_SIZE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RESET", "0");
+    S_AXI_HP3_transactor_param_props.addFloat("PHASE", "0.000");
+    S_AXI_HP3_transactor_param_props.addString("PROTOCOL", "AXI3");
+    S_AXI_HP3_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
+    S_AXI_HP3_transactor_param_props.addString("CLK_DOMAIN", "MP0_processing_system7_0_1_FCLK_CLK0");
+
+    mp_S_AXI_HP3_transactor = new xtlm::xaximm_pin2xtlm_t<64,32,6,1,1,1,1,1>("S_AXI_HP3_transactor", S_AXI_HP3_transactor_param_props);
+
+    // S_AXI_HP3' transactor ports
+
+    mp_S_AXI_HP3_transactor->ARREADY(S_AXI_HP3_ARREADY);
+    mp_S_AXI_HP3_transactor->AWREADY(S_AXI_HP3_AWREADY);
+    mp_S_AXI_HP3_transactor->BVALID(S_AXI_HP3_BVALID);
+    mp_S_AXI_HP3_transactor->RLAST(S_AXI_HP3_RLAST);
+    mp_S_AXI_HP3_transactor->RVALID(S_AXI_HP3_RVALID);
+    mp_S_AXI_HP3_transactor->WREADY(S_AXI_HP3_WREADY);
+    mp_S_AXI_HP3_transactor->BRESP(S_AXI_HP3_BRESP);
+    mp_S_AXI_HP3_transactor->RRESP(S_AXI_HP3_RRESP);
+    mp_S_AXI_HP3_transactor->BID(S_AXI_HP3_BID);
+    mp_S_AXI_HP3_transactor->RID(S_AXI_HP3_RID);
+    mp_S_AXI_HP3_transactor->RDATA(S_AXI_HP3_RDATA);
+    mp_S_AXI_HP3_transactor->ARVALID(S_AXI_HP3_ARVALID);
+    mp_S_AXI_HP3_transactor->AWVALID(S_AXI_HP3_AWVALID);
+    mp_S_AXI_HP3_transactor->BREADY(S_AXI_HP3_BREADY);
+    mp_S_AXI_HP3_transactor->RREADY(S_AXI_HP3_RREADY);
+    mp_S_AXI_HP3_transactor->WLAST(S_AXI_HP3_WLAST);
+    mp_S_AXI_HP3_transactor->WVALID(S_AXI_HP3_WVALID);
+    mp_S_AXI_HP3_transactor->ARBURST(S_AXI_HP3_ARBURST);
+    mp_S_AXI_HP3_ARLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_ARLOCK_converter");
+    mp_S_AXI_HP3_ARLOCK_converter->vector_in(S_AXI_HP3_ARLOCK);
+    mp_S_AXI_HP3_ARLOCK_converter->scalar_out(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLOCK(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARSIZE(S_AXI_HP3_ARSIZE);
+    mp_S_AXI_HP3_transactor->AWBURST(S_AXI_HP3_AWBURST);
+    mp_S_AXI_HP3_AWLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_AWLOCK_converter");
+    mp_S_AXI_HP3_AWLOCK_converter->vector_in(S_AXI_HP3_AWLOCK);
+    mp_S_AXI_HP3_AWLOCK_converter->scalar_out(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLOCK(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWSIZE(S_AXI_HP3_AWSIZE);
+    mp_S_AXI_HP3_transactor->ARPROT(S_AXI_HP3_ARPROT);
+    mp_S_AXI_HP3_transactor->AWPROT(S_AXI_HP3_AWPROT);
+    mp_S_AXI_HP3_transactor->ARADDR(S_AXI_HP3_ARADDR);
+    mp_S_AXI_HP3_transactor->AWADDR(S_AXI_HP3_AWADDR);
+    mp_S_AXI_HP3_transactor->ARCACHE(S_AXI_HP3_ARCACHE);
+    mp_S_AXI_HP3_ARLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_ARLEN_converter");
+    mp_S_AXI_HP3_ARLEN_converter->vector_in(S_AXI_HP3_ARLEN);
+    mp_S_AXI_HP3_ARLEN_converter->vector_out(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLEN(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARQOS(S_AXI_HP3_ARQOS);
+    mp_S_AXI_HP3_transactor->AWCACHE(S_AXI_HP3_AWCACHE);
+    mp_S_AXI_HP3_AWLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_AWLEN_converter");
+    mp_S_AXI_HP3_AWLEN_converter->vector_in(S_AXI_HP3_AWLEN);
+    mp_S_AXI_HP3_AWLEN_converter->vector_out(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLEN(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWQOS(S_AXI_HP3_AWQOS);
+    mp_S_AXI_HP3_transactor->ARID(S_AXI_HP3_ARID);
+    mp_S_AXI_HP3_transactor->AWID(S_AXI_HP3_AWID);
+    mp_S_AXI_HP3_transactor->WDATA(S_AXI_HP3_WDATA);
+    mp_S_AXI_HP3_transactor->WSTRB(S_AXI_HP3_WSTRB);
+    mp_S_AXI_HP3_transactor->CLK(S_AXI_HP3_ACLK);
+    m_S_AXI_HP3_transactor_rst_signal.write(1);
+    mp_S_AXI_HP3_transactor->RST(m_S_AXI_HP3_transactor_rst_signal);
+
+    // S_AXI_HP3' transactor sockets
+
+    mp_impl->S_AXI_HP3_rd_socket->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_impl->S_AXI_HP3_wr_socket->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
   }
 
 }
@@ -381,7 +613,7 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
 
 #ifdef RIVIERA
-MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
+MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm), TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), S_AXI_HP3_ARREADY("S_AXI_HP3_ARREADY"), S_AXI_HP3_AWREADY("S_AXI_HP3_AWREADY"), S_AXI_HP3_BVALID("S_AXI_HP3_BVALID"), S_AXI_HP3_RLAST("S_AXI_HP3_RLAST"), S_AXI_HP3_RVALID("S_AXI_HP3_RVALID"), S_AXI_HP3_WREADY("S_AXI_HP3_WREADY"), S_AXI_HP3_BRESP("S_AXI_HP3_BRESP"), S_AXI_HP3_RRESP("S_AXI_HP3_RRESP"), S_AXI_HP3_BID("S_AXI_HP3_BID"), S_AXI_HP3_RID("S_AXI_HP3_RID"), S_AXI_HP3_RDATA("S_AXI_HP3_RDATA"), S_AXI_HP3_RCOUNT("S_AXI_HP3_RCOUNT"), S_AXI_HP3_WCOUNT("S_AXI_HP3_WCOUNT"), S_AXI_HP3_RACOUNT("S_AXI_HP3_RACOUNT"), S_AXI_HP3_WACOUNT("S_AXI_HP3_WACOUNT"), S_AXI_HP3_ACLK("S_AXI_HP3_ACLK"), S_AXI_HP3_ARVALID("S_AXI_HP3_ARVALID"), S_AXI_HP3_AWVALID("S_AXI_HP3_AWVALID"), S_AXI_HP3_BREADY("S_AXI_HP3_BREADY"), S_AXI_HP3_RDISSUECAP1_EN("S_AXI_HP3_RDISSUECAP1_EN"), S_AXI_HP3_RREADY("S_AXI_HP3_RREADY"), S_AXI_HP3_WLAST("S_AXI_HP3_WLAST"), S_AXI_HP3_WRISSUECAP1_EN("S_AXI_HP3_WRISSUECAP1_EN"), S_AXI_HP3_WVALID("S_AXI_HP3_WVALID"), S_AXI_HP3_ARBURST("S_AXI_HP3_ARBURST"), S_AXI_HP3_ARLOCK("S_AXI_HP3_ARLOCK"), S_AXI_HP3_ARSIZE("S_AXI_HP3_ARSIZE"), S_AXI_HP3_AWBURST("S_AXI_HP3_AWBURST"), S_AXI_HP3_AWLOCK("S_AXI_HP3_AWLOCK"), S_AXI_HP3_AWSIZE("S_AXI_HP3_AWSIZE"), S_AXI_HP3_ARPROT("S_AXI_HP3_ARPROT"), S_AXI_HP3_AWPROT("S_AXI_HP3_AWPROT"), S_AXI_HP3_ARADDR("S_AXI_HP3_ARADDR"), S_AXI_HP3_AWADDR("S_AXI_HP3_AWADDR"), S_AXI_HP3_ARCACHE("S_AXI_HP3_ARCACHE"), S_AXI_HP3_ARLEN("S_AXI_HP3_ARLEN"), S_AXI_HP3_ARQOS("S_AXI_HP3_ARQOS"), S_AXI_HP3_AWCACHE("S_AXI_HP3_AWCACHE"), S_AXI_HP3_AWLEN("S_AXI_HP3_AWLEN"), S_AXI_HP3_AWQOS("S_AXI_HP3_AWQOS"), S_AXI_HP3_ARID("S_AXI_HP3_ARID"), S_AXI_HP3_AWID("S_AXI_HP3_AWID"), S_AXI_HP3_WID("S_AXI_HP3_WID"), S_AXI_HP3_WDATA("S_AXI_HP3_WDATA"), S_AXI_HP3_WSTRB("S_AXI_HP3_WSTRB"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
 {
 
   // initialize pins
@@ -392,6 +624,13 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_impl->USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT);
   mp_impl->USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT);
   mp_impl->M_AXI_GP0_ACLK(M_AXI_GP0_ACLK);
+  mp_impl->S_AXI_HP3_RCOUNT(S_AXI_HP3_RCOUNT);
+  mp_impl->S_AXI_HP3_WCOUNT(S_AXI_HP3_WCOUNT);
+  mp_impl->S_AXI_HP3_RACOUNT(S_AXI_HP3_RACOUNT);
+  mp_impl->S_AXI_HP3_WACOUNT(S_AXI_HP3_WACOUNT);
+  mp_impl->S_AXI_HP3_ACLK(S_AXI_HP3_ACLK);
+  mp_impl->S_AXI_HP3_RDISSUECAP1_EN(S_AXI_HP3_RDISSUECAP1_EN);
+  mp_impl->S_AXI_HP3_WRISSUECAP1_EN(S_AXI_HP3_WRISSUECAP1_EN);
   mp_impl->FCLK_CLK0(FCLK_CLK0);
   mp_impl->FCLK_RESET0_N(FCLK_RESET0_N);
   mp_impl->MIO(MIO);
@@ -422,6 +661,11 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_M_AXI_GP0_AWLOCK_converter = NULL;
   mp_M_AXI_GP0_ARLEN_converter = NULL;
   mp_M_AXI_GP0_AWLEN_converter = NULL;
+  mp_S_AXI_HP3_transactor = NULL;
+  mp_S_AXI_HP3_ARLOCK_converter = NULL;
+  mp_S_AXI_HP3_AWLOCK_converter = NULL;
+  mp_S_AXI_HP3_ARLEN_converter = NULL;
+  mp_S_AXI_HP3_AWLEN_converter = NULL;
 
   // initialize socket stubs
 
@@ -533,6 +777,110 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
     mp_impl->M_AXI_GP0_wr_socket->bind(*(mp_M_AXI_GP0_transactor->wr_socket));
   }
 
+  // configure 'S_AXI_HP3' transactor
+
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MP0_processing_system7_0_1", "S_AXI_HP3_TLM_MODE") != 1)
+  {
+    // Instantiate Socket Stubs
+
+  // 'S_AXI_HP3' transactor parameters
+    xsc::common_cpp::properties S_AXI_HP3_transactor_param_props;
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("DATA_WIDTH", "64");
+    S_AXI_HP3_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_HP3_transactor_param_props.addLong("ID_WIDTH", "6");
+    S_AXI_HP3_transactor_param_props.addLong("ADDR_WIDTH", "32");
+    S_AXI_HP3_transactor_param_props.addLong("AWUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("ARUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("BUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BURST", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_LOCK", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_PROT", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_CACHE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_QOS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_REGION", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_WSTRB", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    S_AXI_HP3_transactor_param_props.addLong("MAX_BURST_LENGTH", "16");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_SIZE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RESET", "0");
+    S_AXI_HP3_transactor_param_props.addFloat("PHASE", "0.000");
+    S_AXI_HP3_transactor_param_props.addString("PROTOCOL", "AXI3");
+    S_AXI_HP3_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
+    S_AXI_HP3_transactor_param_props.addString("CLK_DOMAIN", "MP0_processing_system7_0_1_FCLK_CLK0");
+
+    mp_S_AXI_HP3_transactor = new xtlm::xaximm_pin2xtlm_t<64,32,6,1,1,1,1,1>("S_AXI_HP3_transactor", S_AXI_HP3_transactor_param_props);
+
+    // S_AXI_HP3' transactor ports
+
+    mp_S_AXI_HP3_transactor->ARREADY(S_AXI_HP3_ARREADY);
+    mp_S_AXI_HP3_transactor->AWREADY(S_AXI_HP3_AWREADY);
+    mp_S_AXI_HP3_transactor->BVALID(S_AXI_HP3_BVALID);
+    mp_S_AXI_HP3_transactor->RLAST(S_AXI_HP3_RLAST);
+    mp_S_AXI_HP3_transactor->RVALID(S_AXI_HP3_RVALID);
+    mp_S_AXI_HP3_transactor->WREADY(S_AXI_HP3_WREADY);
+    mp_S_AXI_HP3_transactor->BRESP(S_AXI_HP3_BRESP);
+    mp_S_AXI_HP3_transactor->RRESP(S_AXI_HP3_RRESP);
+    mp_S_AXI_HP3_transactor->BID(S_AXI_HP3_BID);
+    mp_S_AXI_HP3_transactor->RID(S_AXI_HP3_RID);
+    mp_S_AXI_HP3_transactor->RDATA(S_AXI_HP3_RDATA);
+    mp_S_AXI_HP3_transactor->ARVALID(S_AXI_HP3_ARVALID);
+    mp_S_AXI_HP3_transactor->AWVALID(S_AXI_HP3_AWVALID);
+    mp_S_AXI_HP3_transactor->BREADY(S_AXI_HP3_BREADY);
+    mp_S_AXI_HP3_transactor->RREADY(S_AXI_HP3_RREADY);
+    mp_S_AXI_HP3_transactor->WLAST(S_AXI_HP3_WLAST);
+    mp_S_AXI_HP3_transactor->WVALID(S_AXI_HP3_WVALID);
+    mp_S_AXI_HP3_transactor->ARBURST(S_AXI_HP3_ARBURST);
+    mp_S_AXI_HP3_ARLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_ARLOCK_converter");
+    mp_S_AXI_HP3_ARLOCK_converter->vector_in(S_AXI_HP3_ARLOCK);
+    mp_S_AXI_HP3_ARLOCK_converter->scalar_out(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLOCK(m_S_AXI_HP3_ARLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->ARSIZE(S_AXI_HP3_ARSIZE);
+    mp_S_AXI_HP3_transactor->AWBURST(S_AXI_HP3_AWBURST);
+    mp_S_AXI_HP3_AWLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_AWLOCK_converter");
+    mp_S_AXI_HP3_AWLOCK_converter->vector_in(S_AXI_HP3_AWLOCK);
+    mp_S_AXI_HP3_AWLOCK_converter->scalar_out(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLOCK(m_S_AXI_HP3_AWLOCK_converter_signal);
+    mp_S_AXI_HP3_transactor->AWSIZE(S_AXI_HP3_AWSIZE);
+    mp_S_AXI_HP3_transactor->ARPROT(S_AXI_HP3_ARPROT);
+    mp_S_AXI_HP3_transactor->AWPROT(S_AXI_HP3_AWPROT);
+    mp_S_AXI_HP3_transactor->ARADDR(S_AXI_HP3_ARADDR);
+    mp_S_AXI_HP3_transactor->AWADDR(S_AXI_HP3_AWADDR);
+    mp_S_AXI_HP3_transactor->ARCACHE(S_AXI_HP3_ARCACHE);
+    mp_S_AXI_HP3_ARLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_ARLEN_converter");
+    mp_S_AXI_HP3_ARLEN_converter->vector_in(S_AXI_HP3_ARLEN);
+    mp_S_AXI_HP3_ARLEN_converter->vector_out(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARLEN(m_S_AXI_HP3_ARLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->ARQOS(S_AXI_HP3_ARQOS);
+    mp_S_AXI_HP3_transactor->AWCACHE(S_AXI_HP3_AWCACHE);
+    mp_S_AXI_HP3_AWLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_AWLEN_converter");
+    mp_S_AXI_HP3_AWLEN_converter->vector_in(S_AXI_HP3_AWLEN);
+    mp_S_AXI_HP3_AWLEN_converter->vector_out(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWLEN(m_S_AXI_HP3_AWLEN_converter_signal);
+    mp_S_AXI_HP3_transactor->AWQOS(S_AXI_HP3_AWQOS);
+    mp_S_AXI_HP3_transactor->ARID(S_AXI_HP3_ARID);
+    mp_S_AXI_HP3_transactor->AWID(S_AXI_HP3_AWID);
+    mp_S_AXI_HP3_transactor->WDATA(S_AXI_HP3_WDATA);
+    mp_S_AXI_HP3_transactor->WSTRB(S_AXI_HP3_WSTRB);
+    mp_S_AXI_HP3_transactor->CLK(S_AXI_HP3_ACLK);
+    m_S_AXI_HP3_transactor_rst_signal.write(1);
+    mp_S_AXI_HP3_transactor->RST(m_S_AXI_HP3_transactor_rst_signal);
+
+    // S_AXI_HP3' transactor sockets
+
+    mp_impl->S_AXI_HP3_rd_socket->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_impl->S_AXI_HP3_wr_socket->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
+  }
+
 }
 
 #endif // RIVIERA
@@ -541,7 +889,7 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
 
 #ifdef VCSSYSTEMC
-MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm),  TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
+MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm),  TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), S_AXI_HP3_ARREADY("S_AXI_HP3_ARREADY"), S_AXI_HP3_AWREADY("S_AXI_HP3_AWREADY"), S_AXI_HP3_BVALID("S_AXI_HP3_BVALID"), S_AXI_HP3_RLAST("S_AXI_HP3_RLAST"), S_AXI_HP3_RVALID("S_AXI_HP3_RVALID"), S_AXI_HP3_WREADY("S_AXI_HP3_WREADY"), S_AXI_HP3_BRESP("S_AXI_HP3_BRESP"), S_AXI_HP3_RRESP("S_AXI_HP3_RRESP"), S_AXI_HP3_BID("S_AXI_HP3_BID"), S_AXI_HP3_RID("S_AXI_HP3_RID"), S_AXI_HP3_RDATA("S_AXI_HP3_RDATA"), S_AXI_HP3_RCOUNT("S_AXI_HP3_RCOUNT"), S_AXI_HP3_WCOUNT("S_AXI_HP3_WCOUNT"), S_AXI_HP3_RACOUNT("S_AXI_HP3_RACOUNT"), S_AXI_HP3_WACOUNT("S_AXI_HP3_WACOUNT"), S_AXI_HP3_ACLK("S_AXI_HP3_ACLK"), S_AXI_HP3_ARVALID("S_AXI_HP3_ARVALID"), S_AXI_HP3_AWVALID("S_AXI_HP3_AWVALID"), S_AXI_HP3_BREADY("S_AXI_HP3_BREADY"), S_AXI_HP3_RDISSUECAP1_EN("S_AXI_HP3_RDISSUECAP1_EN"), S_AXI_HP3_RREADY("S_AXI_HP3_RREADY"), S_AXI_HP3_WLAST("S_AXI_HP3_WLAST"), S_AXI_HP3_WRISSUECAP1_EN("S_AXI_HP3_WRISSUECAP1_EN"), S_AXI_HP3_WVALID("S_AXI_HP3_WVALID"), S_AXI_HP3_ARBURST("S_AXI_HP3_ARBURST"), S_AXI_HP3_ARLOCK("S_AXI_HP3_ARLOCK"), S_AXI_HP3_ARSIZE("S_AXI_HP3_ARSIZE"), S_AXI_HP3_AWBURST("S_AXI_HP3_AWBURST"), S_AXI_HP3_AWLOCK("S_AXI_HP3_AWLOCK"), S_AXI_HP3_AWSIZE("S_AXI_HP3_AWSIZE"), S_AXI_HP3_ARPROT("S_AXI_HP3_ARPROT"), S_AXI_HP3_AWPROT("S_AXI_HP3_AWPROT"), S_AXI_HP3_ARADDR("S_AXI_HP3_ARADDR"), S_AXI_HP3_AWADDR("S_AXI_HP3_AWADDR"), S_AXI_HP3_ARCACHE("S_AXI_HP3_ARCACHE"), S_AXI_HP3_ARLEN("S_AXI_HP3_ARLEN"), S_AXI_HP3_ARQOS("S_AXI_HP3_ARQOS"), S_AXI_HP3_AWCACHE("S_AXI_HP3_AWCACHE"), S_AXI_HP3_AWLEN("S_AXI_HP3_AWLEN"), S_AXI_HP3_AWQOS("S_AXI_HP3_AWQOS"), S_AXI_HP3_ARID("S_AXI_HP3_ARID"), S_AXI_HP3_AWID("S_AXI_HP3_AWID"), S_AXI_HP3_WID("S_AXI_HP3_WID"), S_AXI_HP3_WDATA("S_AXI_HP3_WDATA"), S_AXI_HP3_WSTRB("S_AXI_HP3_WSTRB"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
 {
   // initialize pins
   mp_impl->TTC0_WAVE0_OUT(TTC0_WAVE0_OUT);
@@ -551,6 +899,13 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_impl->USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT);
   mp_impl->USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT);
   mp_impl->M_AXI_GP0_ACLK(M_AXI_GP0_ACLK);
+  mp_impl->S_AXI_HP3_RCOUNT(S_AXI_HP3_RCOUNT);
+  mp_impl->S_AXI_HP3_WCOUNT(S_AXI_HP3_WCOUNT);
+  mp_impl->S_AXI_HP3_RACOUNT(S_AXI_HP3_RACOUNT);
+  mp_impl->S_AXI_HP3_WACOUNT(S_AXI_HP3_WACOUNT);
+  mp_impl->S_AXI_HP3_ACLK(S_AXI_HP3_ACLK);
+  mp_impl->S_AXI_HP3_RDISSUECAP1_EN(S_AXI_HP3_RDISSUECAP1_EN);
+  mp_impl->S_AXI_HP3_WRISSUECAP1_EN(S_AXI_HP3_WRISSUECAP1_EN);
   mp_impl->FCLK_CLK0(FCLK_CLK0);
   mp_impl->FCLK_RESET0_N(FCLK_RESET0_N);
   mp_impl->MIO(MIO);
@@ -581,6 +936,11 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_M_AXI_GP0_AWLOCK_converter = NULL;
   mp_M_AXI_GP0_ARLEN_converter = NULL;
   mp_M_AXI_GP0_AWLEN_converter = NULL;
+  mp_S_AXI_HP3_transactor = NULL;
+  mp_S_AXI_HP3_ARLOCK_converter = NULL;
+  mp_S_AXI_HP3_AWLOCK_converter = NULL;
+  mp_S_AXI_HP3_ARLEN_converter = NULL;
+  mp_S_AXI_HP3_AWLEN_converter = NULL;
   // Instantiate Socket Stubs
 
   // configure M_AXI_GP0_transactor
@@ -672,10 +1032,101 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   m_M_AXI_GP0_transactor_rst_signal.write(1);
   mp_M_AXI_GP0_transactor->RST(m_M_AXI_GP0_transactor_rst_signal);
 
+  // configure S_AXI_HP3_transactor
+    xsc::common_cpp::properties S_AXI_HP3_transactor_param_props;
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("DATA_WIDTH", "64");
+    S_AXI_HP3_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_HP3_transactor_param_props.addLong("ID_WIDTH", "6");
+    S_AXI_HP3_transactor_param_props.addLong("ADDR_WIDTH", "32");
+    S_AXI_HP3_transactor_param_props.addLong("AWUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("ARUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("BUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BURST", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_LOCK", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_PROT", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_CACHE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_QOS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_REGION", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_WSTRB", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    S_AXI_HP3_transactor_param_props.addLong("MAX_BURST_LENGTH", "16");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_SIZE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RESET", "0");
+    S_AXI_HP3_transactor_param_props.addFloat("PHASE", "0.000");
+    S_AXI_HP3_transactor_param_props.addString("PROTOCOL", "AXI3");
+    S_AXI_HP3_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
+    S_AXI_HP3_transactor_param_props.addString("CLK_DOMAIN", "MP0_processing_system7_0_1_FCLK_CLK0");
+
+    mp_S_AXI_HP3_transactor = new xtlm::xaximm_pin2xtlm_t<64,32,6,1,1,1,1,1>("S_AXI_HP3_transactor", S_AXI_HP3_transactor_param_props);
+  mp_S_AXI_HP3_transactor->ARREADY(S_AXI_HP3_ARREADY);
+  mp_S_AXI_HP3_transactor->AWREADY(S_AXI_HP3_AWREADY);
+  mp_S_AXI_HP3_transactor->BVALID(S_AXI_HP3_BVALID);
+  mp_S_AXI_HP3_transactor->RLAST(S_AXI_HP3_RLAST);
+  mp_S_AXI_HP3_transactor->RVALID(S_AXI_HP3_RVALID);
+  mp_S_AXI_HP3_transactor->WREADY(S_AXI_HP3_WREADY);
+  mp_S_AXI_HP3_transactor->BRESP(S_AXI_HP3_BRESP);
+  mp_S_AXI_HP3_transactor->RRESP(S_AXI_HP3_RRESP);
+  mp_S_AXI_HP3_transactor->BID(S_AXI_HP3_BID);
+  mp_S_AXI_HP3_transactor->RID(S_AXI_HP3_RID);
+  mp_S_AXI_HP3_transactor->RDATA(S_AXI_HP3_RDATA);
+  mp_S_AXI_HP3_transactor->ARVALID(S_AXI_HP3_ARVALID);
+  mp_S_AXI_HP3_transactor->AWVALID(S_AXI_HP3_AWVALID);
+  mp_S_AXI_HP3_transactor->BREADY(S_AXI_HP3_BREADY);
+  mp_S_AXI_HP3_transactor->RREADY(S_AXI_HP3_RREADY);
+  mp_S_AXI_HP3_transactor->WLAST(S_AXI_HP3_WLAST);
+  mp_S_AXI_HP3_transactor->WVALID(S_AXI_HP3_WVALID);
+  mp_S_AXI_HP3_transactor->ARBURST(S_AXI_HP3_ARBURST);
+  mp_S_AXI_HP3_ARLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_ARLOCK_converter");
+  mp_S_AXI_HP3_ARLOCK_converter->vector_in(S_AXI_HP3_ARLOCK);
+  mp_S_AXI_HP3_ARLOCK_converter->scalar_out(m_S_AXI_HP3_ARLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->ARLOCK(m_S_AXI_HP3_ARLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->ARSIZE(S_AXI_HP3_ARSIZE);
+  mp_S_AXI_HP3_transactor->AWBURST(S_AXI_HP3_AWBURST);
+  mp_S_AXI_HP3_AWLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_AWLOCK_converter");
+  mp_S_AXI_HP3_AWLOCK_converter->vector_in(S_AXI_HP3_AWLOCK);
+  mp_S_AXI_HP3_AWLOCK_converter->scalar_out(m_S_AXI_HP3_AWLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->AWLOCK(m_S_AXI_HP3_AWLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->AWSIZE(S_AXI_HP3_AWSIZE);
+  mp_S_AXI_HP3_transactor->ARPROT(S_AXI_HP3_ARPROT);
+  mp_S_AXI_HP3_transactor->AWPROT(S_AXI_HP3_AWPROT);
+  mp_S_AXI_HP3_transactor->ARADDR(S_AXI_HP3_ARADDR);
+  mp_S_AXI_HP3_transactor->AWADDR(S_AXI_HP3_AWADDR);
+  mp_S_AXI_HP3_transactor->ARCACHE(S_AXI_HP3_ARCACHE);
+  mp_S_AXI_HP3_ARLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_ARLEN_converter");
+  mp_S_AXI_HP3_ARLEN_converter->vector_in(S_AXI_HP3_ARLEN);
+  mp_S_AXI_HP3_ARLEN_converter->vector_out(m_S_AXI_HP3_ARLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->ARLEN(m_S_AXI_HP3_ARLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->ARQOS(S_AXI_HP3_ARQOS);
+  mp_S_AXI_HP3_transactor->AWCACHE(S_AXI_HP3_AWCACHE);
+  mp_S_AXI_HP3_AWLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_AWLEN_converter");
+  mp_S_AXI_HP3_AWLEN_converter->vector_in(S_AXI_HP3_AWLEN);
+  mp_S_AXI_HP3_AWLEN_converter->vector_out(m_S_AXI_HP3_AWLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->AWLEN(m_S_AXI_HP3_AWLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->AWQOS(S_AXI_HP3_AWQOS);
+  mp_S_AXI_HP3_transactor->ARID(S_AXI_HP3_ARID);
+  mp_S_AXI_HP3_transactor->AWID(S_AXI_HP3_AWID);
+  mp_S_AXI_HP3_transactor->WDATA(S_AXI_HP3_WDATA);
+  mp_S_AXI_HP3_transactor->WSTRB(S_AXI_HP3_WSTRB);
+  mp_S_AXI_HP3_transactor->CLK(S_AXI_HP3_ACLK);
+  m_S_AXI_HP3_transactor_rst_signal.write(1);
+  mp_S_AXI_HP3_transactor->RST(m_S_AXI_HP3_transactor_rst_signal);
+
 
   // initialize transactors stubs
   M_AXI_GP0_transactor_initiator_wr_socket_stub = nullptr;
   M_AXI_GP0_transactor_initiator_rd_socket_stub = nullptr;
+  S_AXI_HP3_transactor_target_wr_socket_stub = nullptr;
+  S_AXI_HP3_transactor_target_rd_socket_stub = nullptr;
 
 }
 
@@ -694,6 +1145,21 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
     M_AXI_GP0_transactor_initiator_rd_socket_stub = new xtlm::xtlm_aximm_initiator_stub("rd_socket",0);
     M_AXI_GP0_transactor_initiator_rd_socket_stub->bind(*(mp_M_AXI_GP0_transactor->rd_socket));
     mp_M_AXI_GP0_transactor->disable_transactor();
+  }
+
+  // configure 'S_AXI_HP3' transactor
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MP0_processing_system7_0_1", "S_AXI_HP3_TLM_MODE") != 1)
+  {
+    mp_impl->S_AXI_HP3_rd_socket->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_impl->S_AXI_HP3_wr_socket->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
+  }
+  else
+  {
+    S_AXI_HP3_transactor_target_wr_socket_stub = new xtlm::xtlm_aximm_target_stub("wr_socket",0);
+    S_AXI_HP3_transactor_target_wr_socket_stub->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
+    S_AXI_HP3_transactor_target_rd_socket_stub = new xtlm::xtlm_aximm_target_stub("rd_socket",0);
+    S_AXI_HP3_transactor_target_rd_socket_stub->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_S_AXI_HP3_transactor->disable_transactor();
   }
 
 }
@@ -704,7 +1170,7 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
 
 
 #ifdef MTI_SYSTEMC
-MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm),  TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
+MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_name& nm) : MP0_processing_system7_0_1_sc(nm),  TTC0_WAVE0_OUT("TTC0_WAVE0_OUT"), TTC0_WAVE1_OUT("TTC0_WAVE1_OUT"), TTC0_WAVE2_OUT("TTC0_WAVE2_OUT"), USB0_PORT_INDCTL("USB0_PORT_INDCTL"), USB0_VBUS_PWRSELECT("USB0_VBUS_PWRSELECT"), USB0_VBUS_PWRFAULT("USB0_VBUS_PWRFAULT"), M_AXI_GP0_ARVALID("M_AXI_GP0_ARVALID"), M_AXI_GP0_AWVALID("M_AXI_GP0_AWVALID"), M_AXI_GP0_BREADY("M_AXI_GP0_BREADY"), M_AXI_GP0_RREADY("M_AXI_GP0_RREADY"), M_AXI_GP0_WLAST("M_AXI_GP0_WLAST"), M_AXI_GP0_WVALID("M_AXI_GP0_WVALID"), M_AXI_GP0_ARID("M_AXI_GP0_ARID"), M_AXI_GP0_AWID("M_AXI_GP0_AWID"), M_AXI_GP0_WID("M_AXI_GP0_WID"), M_AXI_GP0_ARBURST("M_AXI_GP0_ARBURST"), M_AXI_GP0_ARLOCK("M_AXI_GP0_ARLOCK"), M_AXI_GP0_ARSIZE("M_AXI_GP0_ARSIZE"), M_AXI_GP0_AWBURST("M_AXI_GP0_AWBURST"), M_AXI_GP0_AWLOCK("M_AXI_GP0_AWLOCK"), M_AXI_GP0_AWSIZE("M_AXI_GP0_AWSIZE"), M_AXI_GP0_ARPROT("M_AXI_GP0_ARPROT"), M_AXI_GP0_AWPROT("M_AXI_GP0_AWPROT"), M_AXI_GP0_ARADDR("M_AXI_GP0_ARADDR"), M_AXI_GP0_AWADDR("M_AXI_GP0_AWADDR"), M_AXI_GP0_WDATA("M_AXI_GP0_WDATA"), M_AXI_GP0_ARCACHE("M_AXI_GP0_ARCACHE"), M_AXI_GP0_ARLEN("M_AXI_GP0_ARLEN"), M_AXI_GP0_ARQOS("M_AXI_GP0_ARQOS"), M_AXI_GP0_AWCACHE("M_AXI_GP0_AWCACHE"), M_AXI_GP0_AWLEN("M_AXI_GP0_AWLEN"), M_AXI_GP0_AWQOS("M_AXI_GP0_AWQOS"), M_AXI_GP0_WSTRB("M_AXI_GP0_WSTRB"), M_AXI_GP0_ACLK("M_AXI_GP0_ACLK"), M_AXI_GP0_ARREADY("M_AXI_GP0_ARREADY"), M_AXI_GP0_AWREADY("M_AXI_GP0_AWREADY"), M_AXI_GP0_BVALID("M_AXI_GP0_BVALID"), M_AXI_GP0_RLAST("M_AXI_GP0_RLAST"), M_AXI_GP0_RVALID("M_AXI_GP0_RVALID"), M_AXI_GP0_WREADY("M_AXI_GP0_WREADY"), M_AXI_GP0_BID("M_AXI_GP0_BID"), M_AXI_GP0_RID("M_AXI_GP0_RID"), M_AXI_GP0_BRESP("M_AXI_GP0_BRESP"), M_AXI_GP0_RRESP("M_AXI_GP0_RRESP"), M_AXI_GP0_RDATA("M_AXI_GP0_RDATA"), S_AXI_HP3_ARREADY("S_AXI_HP3_ARREADY"), S_AXI_HP3_AWREADY("S_AXI_HP3_AWREADY"), S_AXI_HP3_BVALID("S_AXI_HP3_BVALID"), S_AXI_HP3_RLAST("S_AXI_HP3_RLAST"), S_AXI_HP3_RVALID("S_AXI_HP3_RVALID"), S_AXI_HP3_WREADY("S_AXI_HP3_WREADY"), S_AXI_HP3_BRESP("S_AXI_HP3_BRESP"), S_AXI_HP3_RRESP("S_AXI_HP3_RRESP"), S_AXI_HP3_BID("S_AXI_HP3_BID"), S_AXI_HP3_RID("S_AXI_HP3_RID"), S_AXI_HP3_RDATA("S_AXI_HP3_RDATA"), S_AXI_HP3_RCOUNT("S_AXI_HP3_RCOUNT"), S_AXI_HP3_WCOUNT("S_AXI_HP3_WCOUNT"), S_AXI_HP3_RACOUNT("S_AXI_HP3_RACOUNT"), S_AXI_HP3_WACOUNT("S_AXI_HP3_WACOUNT"), S_AXI_HP3_ACLK("S_AXI_HP3_ACLK"), S_AXI_HP3_ARVALID("S_AXI_HP3_ARVALID"), S_AXI_HP3_AWVALID("S_AXI_HP3_AWVALID"), S_AXI_HP3_BREADY("S_AXI_HP3_BREADY"), S_AXI_HP3_RDISSUECAP1_EN("S_AXI_HP3_RDISSUECAP1_EN"), S_AXI_HP3_RREADY("S_AXI_HP3_RREADY"), S_AXI_HP3_WLAST("S_AXI_HP3_WLAST"), S_AXI_HP3_WRISSUECAP1_EN("S_AXI_HP3_WRISSUECAP1_EN"), S_AXI_HP3_WVALID("S_AXI_HP3_WVALID"), S_AXI_HP3_ARBURST("S_AXI_HP3_ARBURST"), S_AXI_HP3_ARLOCK("S_AXI_HP3_ARLOCK"), S_AXI_HP3_ARSIZE("S_AXI_HP3_ARSIZE"), S_AXI_HP3_AWBURST("S_AXI_HP3_AWBURST"), S_AXI_HP3_AWLOCK("S_AXI_HP3_AWLOCK"), S_AXI_HP3_AWSIZE("S_AXI_HP3_AWSIZE"), S_AXI_HP3_ARPROT("S_AXI_HP3_ARPROT"), S_AXI_HP3_AWPROT("S_AXI_HP3_AWPROT"), S_AXI_HP3_ARADDR("S_AXI_HP3_ARADDR"), S_AXI_HP3_AWADDR("S_AXI_HP3_AWADDR"), S_AXI_HP3_ARCACHE("S_AXI_HP3_ARCACHE"), S_AXI_HP3_ARLEN("S_AXI_HP3_ARLEN"), S_AXI_HP3_ARQOS("S_AXI_HP3_ARQOS"), S_AXI_HP3_AWCACHE("S_AXI_HP3_AWCACHE"), S_AXI_HP3_AWLEN("S_AXI_HP3_AWLEN"), S_AXI_HP3_AWQOS("S_AXI_HP3_AWQOS"), S_AXI_HP3_ARID("S_AXI_HP3_ARID"), S_AXI_HP3_AWID("S_AXI_HP3_AWID"), S_AXI_HP3_WID("S_AXI_HP3_WID"), S_AXI_HP3_WDATA("S_AXI_HP3_WDATA"), S_AXI_HP3_WSTRB("S_AXI_HP3_WSTRB"), FCLK_CLK0("FCLK_CLK0"), FCLK_RESET0_N("FCLK_RESET0_N"), MIO("MIO"), DDR_CAS_n("DDR_CAS_n"), DDR_CKE("DDR_CKE"), DDR_Clk_n("DDR_Clk_n"), DDR_Clk("DDR_Clk"), DDR_CS_n("DDR_CS_n"), DDR_DRSTB("DDR_DRSTB"), DDR_ODT("DDR_ODT"), DDR_RAS_n("DDR_RAS_n"), DDR_WEB("DDR_WEB"), DDR_BankAddr("DDR_BankAddr"), DDR_Addr("DDR_Addr"), DDR_VRN("DDR_VRN"), DDR_VRP("DDR_VRP"), DDR_DM("DDR_DM"), DDR_DQ("DDR_DQ"), DDR_DQS_n("DDR_DQS_n"), DDR_DQS("DDR_DQS"), PS_SRSTB("PS_SRSTB"), PS_CLK("PS_CLK"), PS_PORB("PS_PORB")
 {
   // initialize pins
   mp_impl->TTC0_WAVE0_OUT(TTC0_WAVE0_OUT);
@@ -714,6 +1180,13 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_impl->USB0_VBUS_PWRSELECT(USB0_VBUS_PWRSELECT);
   mp_impl->USB0_VBUS_PWRFAULT(USB0_VBUS_PWRFAULT);
   mp_impl->M_AXI_GP0_ACLK(M_AXI_GP0_ACLK);
+  mp_impl->S_AXI_HP3_RCOUNT(S_AXI_HP3_RCOUNT);
+  mp_impl->S_AXI_HP3_WCOUNT(S_AXI_HP3_WCOUNT);
+  mp_impl->S_AXI_HP3_RACOUNT(S_AXI_HP3_RACOUNT);
+  mp_impl->S_AXI_HP3_WACOUNT(S_AXI_HP3_WACOUNT);
+  mp_impl->S_AXI_HP3_ACLK(S_AXI_HP3_ACLK);
+  mp_impl->S_AXI_HP3_RDISSUECAP1_EN(S_AXI_HP3_RDISSUECAP1_EN);
+  mp_impl->S_AXI_HP3_WRISSUECAP1_EN(S_AXI_HP3_WRISSUECAP1_EN);
   mp_impl->FCLK_CLK0(FCLK_CLK0);
   mp_impl->FCLK_RESET0_N(FCLK_RESET0_N);
   mp_impl->MIO(MIO);
@@ -744,6 +1217,11 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   mp_M_AXI_GP0_AWLOCK_converter = NULL;
   mp_M_AXI_GP0_ARLEN_converter = NULL;
   mp_M_AXI_GP0_AWLEN_converter = NULL;
+  mp_S_AXI_HP3_transactor = NULL;
+  mp_S_AXI_HP3_ARLOCK_converter = NULL;
+  mp_S_AXI_HP3_AWLOCK_converter = NULL;
+  mp_S_AXI_HP3_ARLEN_converter = NULL;
+  mp_S_AXI_HP3_AWLEN_converter = NULL;
   // Instantiate Socket Stubs
 
   // configure M_AXI_GP0_transactor
@@ -835,10 +1313,101 @@ MP0_processing_system7_0_1::MP0_processing_system7_0_1(const sc_core::sc_module_
   m_M_AXI_GP0_transactor_rst_signal.write(1);
   mp_M_AXI_GP0_transactor->RST(m_M_AXI_GP0_transactor_rst_signal);
 
+  // configure S_AXI_HP3_transactor
+    xsc::common_cpp::properties S_AXI_HP3_transactor_param_props;
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_OUTSTANDING", "8");
+    S_AXI_HP3_transactor_param_props.addLong("DATA_WIDTH", "64");
+    S_AXI_HP3_transactor_param_props.addLong("FREQ_HZ", "100000000");
+    S_AXI_HP3_transactor_param_props.addLong("ID_WIDTH", "6");
+    S_AXI_HP3_transactor_param_props.addLong("ADDR_WIDTH", "32");
+    S_AXI_HP3_transactor_param_props.addLong("AWUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("ARUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("BUSER_WIDTH", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BURST", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_LOCK", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_PROT", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_CACHE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_QOS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_REGION", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_WSTRB", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_BRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RRESP", "1");
+    S_AXI_HP3_transactor_param_props.addLong("SUPPORTS_NARROW_BURST", "0");
+    S_AXI_HP3_transactor_param_props.addLong("MAX_BURST_LENGTH", "16");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_READ_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("NUM_WRITE_THREADS", "1");
+    S_AXI_HP3_transactor_param_props.addLong("RUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("WUSER_BITS_PER_BYTE", "0");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_SIZE", "1");
+    S_AXI_HP3_transactor_param_props.addLong("HAS_RESET", "0");
+    S_AXI_HP3_transactor_param_props.addFloat("PHASE", "0.000");
+    S_AXI_HP3_transactor_param_props.addString("PROTOCOL", "AXI3");
+    S_AXI_HP3_transactor_param_props.addString("READ_WRITE_MODE", "READ_WRITE");
+    S_AXI_HP3_transactor_param_props.addString("CLK_DOMAIN", "MP0_processing_system7_0_1_FCLK_CLK0");
+
+    mp_S_AXI_HP3_transactor = new xtlm::xaximm_pin2xtlm_t<64,32,6,1,1,1,1,1>("S_AXI_HP3_transactor", S_AXI_HP3_transactor_param_props);
+  mp_S_AXI_HP3_transactor->ARREADY(S_AXI_HP3_ARREADY);
+  mp_S_AXI_HP3_transactor->AWREADY(S_AXI_HP3_AWREADY);
+  mp_S_AXI_HP3_transactor->BVALID(S_AXI_HP3_BVALID);
+  mp_S_AXI_HP3_transactor->RLAST(S_AXI_HP3_RLAST);
+  mp_S_AXI_HP3_transactor->RVALID(S_AXI_HP3_RVALID);
+  mp_S_AXI_HP3_transactor->WREADY(S_AXI_HP3_WREADY);
+  mp_S_AXI_HP3_transactor->BRESP(S_AXI_HP3_BRESP);
+  mp_S_AXI_HP3_transactor->RRESP(S_AXI_HP3_RRESP);
+  mp_S_AXI_HP3_transactor->BID(S_AXI_HP3_BID);
+  mp_S_AXI_HP3_transactor->RID(S_AXI_HP3_RID);
+  mp_S_AXI_HP3_transactor->RDATA(S_AXI_HP3_RDATA);
+  mp_S_AXI_HP3_transactor->ARVALID(S_AXI_HP3_ARVALID);
+  mp_S_AXI_HP3_transactor->AWVALID(S_AXI_HP3_AWVALID);
+  mp_S_AXI_HP3_transactor->BREADY(S_AXI_HP3_BREADY);
+  mp_S_AXI_HP3_transactor->RREADY(S_AXI_HP3_RREADY);
+  mp_S_AXI_HP3_transactor->WLAST(S_AXI_HP3_WLAST);
+  mp_S_AXI_HP3_transactor->WVALID(S_AXI_HP3_WVALID);
+  mp_S_AXI_HP3_transactor->ARBURST(S_AXI_HP3_ARBURST);
+  mp_S_AXI_HP3_ARLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_ARLOCK_converter");
+  mp_S_AXI_HP3_ARLOCK_converter->vector_in(S_AXI_HP3_ARLOCK);
+  mp_S_AXI_HP3_ARLOCK_converter->scalar_out(m_S_AXI_HP3_ARLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->ARLOCK(m_S_AXI_HP3_ARLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->ARSIZE(S_AXI_HP3_ARSIZE);
+  mp_S_AXI_HP3_transactor->AWBURST(S_AXI_HP3_AWBURST);
+  mp_S_AXI_HP3_AWLOCK_converter = new xsc::common::vectorN2scalar_converter<2>("S_AXI_HP3_AWLOCK_converter");
+  mp_S_AXI_HP3_AWLOCK_converter->vector_in(S_AXI_HP3_AWLOCK);
+  mp_S_AXI_HP3_AWLOCK_converter->scalar_out(m_S_AXI_HP3_AWLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->AWLOCK(m_S_AXI_HP3_AWLOCK_converter_signal);
+  mp_S_AXI_HP3_transactor->AWSIZE(S_AXI_HP3_AWSIZE);
+  mp_S_AXI_HP3_transactor->ARPROT(S_AXI_HP3_ARPROT);
+  mp_S_AXI_HP3_transactor->AWPROT(S_AXI_HP3_AWPROT);
+  mp_S_AXI_HP3_transactor->ARADDR(S_AXI_HP3_ARADDR);
+  mp_S_AXI_HP3_transactor->AWADDR(S_AXI_HP3_AWADDR);
+  mp_S_AXI_HP3_transactor->ARCACHE(S_AXI_HP3_ARCACHE);
+  mp_S_AXI_HP3_ARLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_ARLEN_converter");
+  mp_S_AXI_HP3_ARLEN_converter->vector_in(S_AXI_HP3_ARLEN);
+  mp_S_AXI_HP3_ARLEN_converter->vector_out(m_S_AXI_HP3_ARLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->ARLEN(m_S_AXI_HP3_ARLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->ARQOS(S_AXI_HP3_ARQOS);
+  mp_S_AXI_HP3_transactor->AWCACHE(S_AXI_HP3_AWCACHE);
+  mp_S_AXI_HP3_AWLEN_converter = new xsc::common::vector2vector_converter<4,8>("S_AXI_HP3_AWLEN_converter");
+  mp_S_AXI_HP3_AWLEN_converter->vector_in(S_AXI_HP3_AWLEN);
+  mp_S_AXI_HP3_AWLEN_converter->vector_out(m_S_AXI_HP3_AWLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->AWLEN(m_S_AXI_HP3_AWLEN_converter_signal);
+  mp_S_AXI_HP3_transactor->AWQOS(S_AXI_HP3_AWQOS);
+  mp_S_AXI_HP3_transactor->ARID(S_AXI_HP3_ARID);
+  mp_S_AXI_HP3_transactor->AWID(S_AXI_HP3_AWID);
+  mp_S_AXI_HP3_transactor->WDATA(S_AXI_HP3_WDATA);
+  mp_S_AXI_HP3_transactor->WSTRB(S_AXI_HP3_WSTRB);
+  mp_S_AXI_HP3_transactor->CLK(S_AXI_HP3_ACLK);
+  m_S_AXI_HP3_transactor_rst_signal.write(1);
+  mp_S_AXI_HP3_transactor->RST(m_S_AXI_HP3_transactor_rst_signal);
+
 
   // initialize transactors stubs
   M_AXI_GP0_transactor_initiator_wr_socket_stub = nullptr;
   M_AXI_GP0_transactor_initiator_rd_socket_stub = nullptr;
+  S_AXI_HP3_transactor_target_wr_socket_stub = nullptr;
+  S_AXI_HP3_transactor_target_rd_socket_stub = nullptr;
 
 }
 
@@ -857,6 +1426,21 @@ void MP0_processing_system7_0_1::before_end_of_elaboration()
     M_AXI_GP0_transactor_initiator_rd_socket_stub = new xtlm::xtlm_aximm_initiator_stub("rd_socket",0);
     M_AXI_GP0_transactor_initiator_rd_socket_stub->bind(*(mp_M_AXI_GP0_transactor->rd_socket));
     mp_M_AXI_GP0_transactor->disable_transactor();
+  }
+
+  // configure 'S_AXI_HP3' transactor
+  if (xsc::utils::xsc_sim_manager::getInstanceParameterInt("MP0_processing_system7_0_1", "S_AXI_HP3_TLM_MODE") != 1)
+  {
+    mp_impl->S_AXI_HP3_rd_socket->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_impl->S_AXI_HP3_wr_socket->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
+  }
+  else
+  {
+    S_AXI_HP3_transactor_target_wr_socket_stub = new xtlm::xtlm_aximm_target_stub("wr_socket",0);
+    S_AXI_HP3_transactor_target_wr_socket_stub->bind(*(mp_S_AXI_HP3_transactor->wr_socket));
+    S_AXI_HP3_transactor_target_rd_socket_stub = new xtlm::xtlm_aximm_target_stub("rd_socket",0);
+    S_AXI_HP3_transactor_target_rd_socket_stub->bind(*(mp_S_AXI_HP3_transactor->rd_socket));
+    mp_S_AXI_HP3_transactor->disable_transactor();
   }
 
 }
@@ -874,6 +1458,12 @@ MP0_processing_system7_0_1::~MP0_processing_system7_0_1()
   delete mp_M_AXI_GP0_ARLEN_converter;
   delete mp_M_AXI_GP0_AWLEN_converter;
 
+  delete mp_S_AXI_HP3_transactor;
+  delete mp_S_AXI_HP3_ARLOCK_converter;
+  delete mp_S_AXI_HP3_AWLOCK_converter;
+  delete mp_S_AXI_HP3_ARLEN_converter;
+  delete mp_S_AXI_HP3_AWLEN_converter;
+
 }
 
 #ifdef MTI_SYSTEMC
@@ -886,6 +1476,6 @@ XMSC_MODULE_EXPORT(MP0_processing_system7_0_1);
 
 #ifdef RIVIERA
 SC_MODULE_EXPORT(MP0_processing_system7_0_1);
-SC_REGISTER_BV(54);
+SC_REGISTER_BV(64);
 #endif
 

@@ -30,7 +30,19 @@ entity bd_9b5a is
     SLOT_0_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_0_AXI_wvalid : in STD_LOGIC;
     SLOT_1_GPIO_tri_o : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SLOT_2_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vsync : in STD_LOGIC;
+    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_3_AXIS_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    SLOT_3_AXIS_tlast : in STD_LOGIC;
+    SLOT_3_AXIS_tready : in STD_LOGIC;
+    SLOT_3_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_3_AXIS_tvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
@@ -43,25 +55,37 @@ architecture STRUCTURE of bd_9b5a is
   component bd_9b5a_ila_lib_0 is
   port (
     clk : in STD_LOGIC;
-    probe0 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe1 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe2 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 8 downto 0 );
-    probe5 : in STD_LOGIC_VECTOR ( 2 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe5 : in STD_LOGIC_VECTOR ( 8 downto 0 );
+    probe6 : in STD_LOGIC_VECTOR ( 2 downto 0 );
     probe7 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe8 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe9 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe10 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe11 : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    probe12 : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    probe13 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe12 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe13 : in STD_LOGIC_VECTOR ( 3 downto 0 );
     probe14 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe15 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe16 : in STD_LOGIC_VECTOR ( 1 downto 0 );
     probe17 : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    probe18 : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    probe18 : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    probe19 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    probe20 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe21 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe22 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe23 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe24 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe25 : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    probe26 : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    probe27 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe28 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe29 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe30 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_9b5a_ila_lib_0;
   component bd_9b5a_g_inst_0 is
@@ -91,6 +115,12 @@ architecture STRUCTURE of bd_9b5a is
     slot_0_axi_rresp : in STD_LOGIC_VECTOR ( 1 downto 0 );
     slot_0_axi_rvalid : in STD_LOGIC;
     slot_0_axi_rready : in STD_LOGIC;
+    slot_1_axis_tvalid : in STD_LOGIC;
+    slot_1_axis_tready : in STD_LOGIC;
+    slot_1_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    slot_1_axis_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    slot_1_axis_tlast : in STD_LOGIC;
+    slot_1_axis_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_slot_0_axi_awaddr : out STD_LOGIC_VECTOR ( 8 downto 0 );
     m_slot_0_axi_awprot : out STD_LOGIC_VECTOR ( 2 downto 0 );
     m_slot_0_axi_awvalid : out STD_LOGIC;
@@ -109,7 +139,13 @@ architecture STRUCTURE of bd_9b5a is
     m_slot_0_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     m_slot_0_axi_rresp : out STD_LOGIC_VECTOR ( 1 downto 0 );
     m_slot_0_axi_rvalid : out STD_LOGIC;
-    m_slot_0_axi_rready : out STD_LOGIC
+    m_slot_0_axi_rready : out STD_LOGIC;
+    m_slot_1_axis_tvalid : out STD_LOGIC;
+    m_slot_1_axis_tready : out STD_LOGIC;
+    m_slot_1_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_slot_1_axis_tkeep : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    m_slot_1_axis_tlast : out STD_LOGIC;
+    m_slot_1_axis_tuser : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component bd_9b5a_g_inst_0;
   component bd_9b5a_slot_0_aw_0 is
@@ -147,6 +183,12 @@ architecture STRUCTURE of bd_9b5a is
     dout : out STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   end component bd_9b5a_slot_0_r_0;
+  signal Conn1_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal Conn1_TKEEP : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal Conn1_TLAST : STD_LOGIC;
+  signal Conn1_TREADY : STD_LOGIC;
+  signal Conn1_TUSER : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal Conn1_TVALID : STD_LOGIC;
   signal Conn_ARADDR : STD_LOGIC_VECTOR ( 8 downto 0 );
   signal Conn_ARPROT : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal Conn_ARREADY : STD_LOGIC;
@@ -167,6 +209,11 @@ architecture STRUCTURE of bd_9b5a is
   signal Conn_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal Conn_WVALID : STD_LOGIC;
   signal SLOT_1_GPIO_tri_o_1 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal SLOT_2_VIDEO_TIMING_active_video_1 : STD_LOGIC;
+  signal SLOT_2_VIDEO_TIMING_hblank_1 : STD_LOGIC;
+  signal SLOT_2_VIDEO_TIMING_hsync_1 : STD_LOGIC;
+  signal SLOT_2_VIDEO_TIMING_vblank_1 : STD_LOGIC;
+  signal SLOT_2_VIDEO_TIMING_vsync_1 : STD_LOGIC;
   signal clk_1 : STD_LOGIC;
   signal net_slot_0_axi_ar_cnt : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal net_slot_0_axi_ar_ctrl : STD_LOGIC_VECTOR ( 1 downto 0 );
@@ -196,6 +243,13 @@ architecture STRUCTURE of bd_9b5a is
   signal net_slot_0_axi_wready : STD_LOGIC;
   signal net_slot_0_axi_wstrb : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal net_slot_0_axi_wvalid : STD_LOGIC;
+  signal net_slot_3_axis_tdata : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal net_slot_3_axis_tkeep : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal net_slot_3_axis_tlast : STD_LOGIC;
+  signal net_slot_3_axis_tready : STD_LOGIC;
+  signal net_slot_3_axis_tuser : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal net_slot_3_axis_tvalid : STD_LOGIC;
+  signal probe0_1 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal resetn_1 : STD_LOGIC;
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of SLOT_0_AXI_arready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARREADY";
@@ -208,9 +262,17 @@ architecture STRUCTURE of bd_9b5a is
   attribute X_INTERFACE_INFO of SLOT_0_AXI_rvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI RVALID";
   attribute X_INTERFACE_INFO of SLOT_0_AXI_wready : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WREADY";
   attribute X_INTERFACE_INFO of SLOT_0_AXI_wvalid : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WVALID";
+  attribute X_INTERFACE_INFO of SLOT_2_VIDEO_TIMING_active_video : signal is "xilinx.com:interface:video_timing:2.0 SLOT_2_VIDEO_TIMING ACTIVE_VIDEO";
+  attribute X_INTERFACE_INFO of SLOT_2_VIDEO_TIMING_hblank : signal is "xilinx.com:interface:video_timing:2.0 SLOT_2_VIDEO_TIMING HBLANK";
+  attribute X_INTERFACE_INFO of SLOT_2_VIDEO_TIMING_hsync : signal is "xilinx.com:interface:video_timing:2.0 SLOT_2_VIDEO_TIMING HSYNC";
+  attribute X_INTERFACE_INFO of SLOT_2_VIDEO_TIMING_vblank : signal is "xilinx.com:interface:video_timing:2.0 SLOT_2_VIDEO_TIMING VBLANK";
+  attribute X_INTERFACE_INFO of SLOT_2_VIDEO_TIMING_vsync : signal is "xilinx.com:interface:video_timing:2.0 SLOT_2_VIDEO_TIMING VSYNC";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tlast : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TLAST";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tready : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TREADY";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tvalid : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TVALID";
   attribute X_INTERFACE_INFO of clk : signal is "xilinx.com:signal:clock:1.0 CLK.CLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
-  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXI, ASSOCIATED_RESET resetn, CLK_DOMAIN MP0_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_PARAMETER of clk : signal is "XIL_INTERFACENAME CLK.CLK, ASSOCIATED_BUSIF SLOT_0_AXI:SLOT_3_AXIS, ASSOCIATED_RESET resetn, CLK_DOMAIN MP0_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of resetn : signal is "xilinx.com:signal:reset:1.0 RST.RESETN RST";
   attribute X_INTERFACE_PARAMETER of resetn : signal is "XIL_INTERFACENAME RST.RESETN, INSERT_VIP 0, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of SLOT_0_AXI_araddr : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI ARADDR";
@@ -224,7 +286,17 @@ architecture STRUCTURE of bd_9b5a is
   attribute X_INTERFACE_INFO of SLOT_0_AXI_wdata : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WDATA";
   attribute X_INTERFACE_INFO of SLOT_0_AXI_wstrb : signal is "xilinx.com:interface:aximm:1.0 SLOT_0_AXI WSTRB";
   attribute X_INTERFACE_INFO of SLOT_1_GPIO_tri_o : signal is "xilinx.com:interface:gpio:1.0 SLOT_1_GPIO TRI_O";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tdata : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TDATA";
+  attribute X_INTERFACE_PARAMETER of SLOT_3_AXIS_tdata : signal is "XIL_INTERFACENAME SLOT_3_AXIS, CLK_DOMAIN MP0_processing_system7_0_1_FCLK_CLK0, FREQ_HZ 100000000, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 1, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 1";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tkeep : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TKEEP";
+  attribute X_INTERFACE_INFO of SLOT_3_AXIS_tuser : signal is "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TUSER";
 begin
+  Conn1_TDATA(31 downto 0) <= SLOT_3_AXIS_tdata(31 downto 0);
+  Conn1_TKEEP(3 downto 0) <= SLOT_3_AXIS_tkeep(3 downto 0);
+  Conn1_TLAST <= SLOT_3_AXIS_tlast;
+  Conn1_TREADY <= SLOT_3_AXIS_tready;
+  Conn1_TUSER(0) <= SLOT_3_AXIS_tuser(0);
+  Conn1_TVALID <= SLOT_3_AXIS_tvalid;
   Conn_ARADDR(8 downto 0) <= SLOT_0_AXI_araddr(8 downto 0);
   Conn_ARPROT(2 downto 0) <= SLOT_0_AXI_arprot(2 downto 0);
   Conn_ARREADY <= SLOT_0_AXI_arready;
@@ -245,7 +317,13 @@ begin
   Conn_WSTRB(3 downto 0) <= SLOT_0_AXI_wstrb(3 downto 0);
   Conn_WVALID <= SLOT_0_AXI_wvalid;
   SLOT_1_GPIO_tri_o_1(7 downto 0) <= SLOT_1_GPIO_tri_o(7 downto 0);
+  SLOT_2_VIDEO_TIMING_active_video_1 <= SLOT_2_VIDEO_TIMING_active_video;
+  SLOT_2_VIDEO_TIMING_hblank_1 <= SLOT_2_VIDEO_TIMING_hblank;
+  SLOT_2_VIDEO_TIMING_hsync_1 <= SLOT_2_VIDEO_TIMING_hsync;
+  SLOT_2_VIDEO_TIMING_vblank_1 <= SLOT_2_VIDEO_TIMING_vblank;
+  SLOT_2_VIDEO_TIMING_vsync_1 <= SLOT_2_VIDEO_TIMING_vsync;
   clk_1 <= clk;
+  probe0_1(0) <= probe0(0);
   resetn_1 <= resetn;
 g_inst: component bd_9b5a_g_inst_0
      port map (
@@ -274,6 +352,12 @@ g_inst: component bd_9b5a_g_inst_0
       m_slot_0_axi_wready => net_slot_0_axi_wready,
       m_slot_0_axi_wstrb(3 downto 0) => net_slot_0_axi_wstrb(3 downto 0),
       m_slot_0_axi_wvalid => net_slot_0_axi_wvalid,
+      m_slot_1_axis_tdata(31 downto 0) => net_slot_3_axis_tdata(31 downto 0),
+      m_slot_1_axis_tkeep(3 downto 0) => net_slot_3_axis_tkeep(3 downto 0),
+      m_slot_1_axis_tlast => net_slot_3_axis_tlast,
+      m_slot_1_axis_tready => net_slot_3_axis_tready,
+      m_slot_1_axis_tuser(0) => net_slot_3_axis_tuser(0),
+      m_slot_1_axis_tvalid => net_slot_3_axis_tvalid,
       slot_0_axi_araddr(8 downto 0) => Conn_ARADDR(8 downto 0),
       slot_0_axi_arprot(2 downto 0) => Conn_ARPROT(2 downto 0),
       slot_0_axi_arready => Conn_ARREADY,
@@ -292,30 +376,48 @@ g_inst: component bd_9b5a_g_inst_0
       slot_0_axi_wdata(31 downto 0) => Conn_WDATA(31 downto 0),
       slot_0_axi_wready => Conn_WREADY,
       slot_0_axi_wstrb(3 downto 0) => Conn_WSTRB(3 downto 0),
-      slot_0_axi_wvalid => Conn_WVALID
+      slot_0_axi_wvalid => Conn_WVALID,
+      slot_1_axis_tdata(31 downto 0) => Conn1_TDATA(31 downto 0),
+      slot_1_axis_tkeep(3 downto 0) => Conn1_TKEEP(3 downto 0),
+      slot_1_axis_tlast => Conn1_TLAST,
+      slot_1_axis_tready => Conn1_TREADY,
+      slot_1_axis_tuser(0) => Conn1_TUSER(0),
+      slot_1_axis_tvalid => Conn1_TVALID
     );
 ila_lib: component bd_9b5a_ila_lib_0
      port map (
       clk => clk_1,
-      probe0(1 downto 0) => net_slot_0_axi_ar_cnt(1 downto 0),
-      probe1(8 downto 0) => net_slot_0_axi_araddr(8 downto 0),
-      probe10(1 downto 0) => net_slot_0_axi_rresp(1 downto 0),
-      probe11(31 downto 0) => net_slot_0_axi_wdata(31 downto 0),
-      probe12(3 downto 0) => net_slot_0_axi_wstrb(3 downto 0),
-      probe13(1 downto 0) => net_slot_0_axi_aw_ctrl(1 downto 0),
-      probe14(1 downto 0) => net_slot_0_axi_w_ctrl(1 downto 0),
-      probe15(1 downto 0) => net_slot_0_axi_b_ctrl(1 downto 0),
-      probe16(1 downto 0) => net_slot_0_axi_ar_ctrl(1 downto 0),
-      probe17(1 downto 0) => net_slot_0_axi_r_ctrl(1 downto 0),
-      probe18(7 downto 0) => SLOT_1_GPIO_tri_o_1(7 downto 0),
-      probe2(2 downto 0) => net_slot_0_axi_arprot(2 downto 0),
-      probe3(1 downto 0) => net_slot_0_axi_aw_cnt(1 downto 0),
-      probe4(8 downto 0) => net_slot_0_axi_awaddr(8 downto 0),
-      probe5(2 downto 0) => net_slot_0_axi_awprot(2 downto 0),
-      probe6(1 downto 0) => net_slot_0_axi_b_cnt(1 downto 0),
-      probe7(1 downto 0) => net_slot_0_axi_bresp(1 downto 0),
-      probe8(1 downto 0) => net_slot_0_axi_r_cnt(1 downto 0),
-      probe9(31 downto 0) => net_slot_0_axi_rdata(31 downto 0)
+      probe0(0) => probe0_1(0),
+      probe1(1 downto 0) => net_slot_0_axi_ar_cnt(1 downto 0),
+      probe10(31 downto 0) => net_slot_0_axi_rdata(31 downto 0),
+      probe11(1 downto 0) => net_slot_0_axi_rresp(1 downto 0),
+      probe12(31 downto 0) => net_slot_0_axi_wdata(31 downto 0),
+      probe13(3 downto 0) => net_slot_0_axi_wstrb(3 downto 0),
+      probe14(1 downto 0) => net_slot_0_axi_aw_ctrl(1 downto 0),
+      probe15(1 downto 0) => net_slot_0_axi_w_ctrl(1 downto 0),
+      probe16(1 downto 0) => net_slot_0_axi_b_ctrl(1 downto 0),
+      probe17(1 downto 0) => net_slot_0_axi_ar_ctrl(1 downto 0),
+      probe18(1 downto 0) => net_slot_0_axi_r_ctrl(1 downto 0),
+      probe19(7 downto 0) => SLOT_1_GPIO_tri_o_1(7 downto 0),
+      probe2(8 downto 0) => net_slot_0_axi_araddr(8 downto 0),
+      probe20(0) => SLOT_2_VIDEO_TIMING_active_video_1,
+      probe21(0) => SLOT_2_VIDEO_TIMING_hblank_1,
+      probe22(0) => SLOT_2_VIDEO_TIMING_hsync_1,
+      probe23(0) => SLOT_2_VIDEO_TIMING_vblank_1,
+      probe24(0) => SLOT_2_VIDEO_TIMING_vsync_1,
+      probe25(31 downto 0) => net_slot_3_axis_tdata(31 downto 0),
+      probe26(3 downto 0) => net_slot_3_axis_tkeep(3 downto 0),
+      probe27(0) => net_slot_3_axis_tuser(0),
+      probe28(0) => net_slot_3_axis_tvalid,
+      probe29(0) => net_slot_3_axis_tready,
+      probe3(2 downto 0) => net_slot_0_axi_arprot(2 downto 0),
+      probe30(0) => net_slot_3_axis_tlast,
+      probe4(1 downto 0) => net_slot_0_axi_aw_cnt(1 downto 0),
+      probe5(8 downto 0) => net_slot_0_axi_awaddr(8 downto 0),
+      probe6(2 downto 0) => net_slot_0_axi_awprot(2 downto 0),
+      probe7(1 downto 0) => net_slot_0_axi_b_cnt(1 downto 0),
+      probe8(1 downto 0) => net_slot_0_axi_bresp(1 downto 0),
+      probe9(1 downto 0) => net_slot_0_axi_r_cnt(1 downto 0)
     );
 slot_0_ar: component bd_9b5a_slot_0_ar_0
      port map (

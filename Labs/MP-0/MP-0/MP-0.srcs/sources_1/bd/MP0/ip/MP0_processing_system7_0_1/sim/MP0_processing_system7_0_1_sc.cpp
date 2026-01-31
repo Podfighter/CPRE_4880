@@ -106,7 +106,7 @@ MP0_processing_system7_0_1_sc::MP0_processing_system7_0_1_sc(const sc_core::sc_m
     model_param_props.addLong("C_USE_S_AXI_HP0", "0");
     model_param_props.addLong("C_USE_S_AXI_HP1", "0");
     model_param_props.addLong("C_USE_S_AXI_HP2", "0");
-    model_param_props.addLong("C_USE_S_AXI_HP3", "0");
+    model_param_props.addLong("C_USE_S_AXI_HP3", "1");
     model_param_props.addLong("C_USE_S_AXI_ACP", "0");
     model_param_props.addLong("C_GP0_EN_MODIFIABLE_TXN", "1");
     model_param_props.addLong("C_GP1_EN_MODIFIABLE_TXN", "1");
@@ -123,6 +123,8 @@ MP0_processing_system7_0_1_sc::MP0_processing_system7_0_1_sc(const sc_core::sc_m
   // initialize sockets
   M_AXI_GP0_rd_socket = mp_impl->M_AXI_GP0_rd_socket;
   M_AXI_GP0_wr_socket = mp_impl->M_AXI_GP0_wr_socket;
+  S_AXI_HP3_rd_socket = mp_impl->S_AXI_HP3_rd_socket;
+  S_AXI_HP3_wr_socket = mp_impl->S_AXI_HP3_wr_socket;
 }
 
 MP0_processing_system7_0_1_sc::~MP0_processing_system7_0_1_sc()

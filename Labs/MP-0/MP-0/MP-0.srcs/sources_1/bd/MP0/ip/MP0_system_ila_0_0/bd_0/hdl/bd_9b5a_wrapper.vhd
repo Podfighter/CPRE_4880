@@ -30,7 +30,19 @@ entity bd_9b5a_wrapper is
     SLOT_0_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_0_AXI_wvalid : in STD_LOGIC;
     SLOT_1_GPIO_tri_o : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SLOT_2_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vsync : in STD_LOGIC;
+    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_3_AXIS_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    SLOT_3_AXIS_tlast : in STD_LOGIC;
+    SLOT_3_AXIS_tready : in STD_LOGIC;
+    SLOT_3_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_3_AXIS_tvalid : in STD_LOGIC;
     clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC
   );
 end bd_9b5a_wrapper;
@@ -39,6 +51,7 @@ architecture STRUCTURE of bd_9b5a_wrapper is
   component bd_9b5a is
   port (
     clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     resetn : in STD_LOGIC;
     SLOT_0_AXI_araddr : in STD_LOGIC_VECTOR ( 8 downto 0 );
     SLOT_0_AXI_arprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
@@ -59,7 +72,18 @@ architecture STRUCTURE of bd_9b5a_wrapper is
     SLOT_0_AXI_wready : in STD_LOGIC;
     SLOT_0_AXI_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     SLOT_0_AXI_wvalid : in STD_LOGIC;
-    SLOT_1_GPIO_tri_o : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    SLOT_1_GPIO_tri_o : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    SLOT_2_VIDEO_TIMING_active_video : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_hsync : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vblank : in STD_LOGIC;
+    SLOT_2_VIDEO_TIMING_vsync : in STD_LOGIC;
+    SLOT_3_AXIS_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    SLOT_3_AXIS_tkeep : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    SLOT_3_AXIS_tlast : in STD_LOGIC;
+    SLOT_3_AXIS_tready : in STD_LOGIC;
+    SLOT_3_AXIS_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
+    SLOT_3_AXIS_tvalid : in STD_LOGIC
   );
   end component bd_9b5a;
 begin
@@ -85,7 +109,19 @@ bd_9b5a_i: component bd_9b5a
       SLOT_0_AXI_wstrb(3 downto 0) => SLOT_0_AXI_wstrb(3 downto 0),
       SLOT_0_AXI_wvalid => SLOT_0_AXI_wvalid,
       SLOT_1_GPIO_tri_o(7 downto 0) => SLOT_1_GPIO_tri_o(7 downto 0),
+      SLOT_2_VIDEO_TIMING_active_video => SLOT_2_VIDEO_TIMING_active_video,
+      SLOT_2_VIDEO_TIMING_hblank => SLOT_2_VIDEO_TIMING_hblank,
+      SLOT_2_VIDEO_TIMING_hsync => SLOT_2_VIDEO_TIMING_hsync,
+      SLOT_2_VIDEO_TIMING_vblank => SLOT_2_VIDEO_TIMING_vblank,
+      SLOT_2_VIDEO_TIMING_vsync => SLOT_2_VIDEO_TIMING_vsync,
+      SLOT_3_AXIS_tdata(31 downto 0) => SLOT_3_AXIS_tdata(31 downto 0),
+      SLOT_3_AXIS_tkeep(3 downto 0) => SLOT_3_AXIS_tkeep(3 downto 0),
+      SLOT_3_AXIS_tlast => SLOT_3_AXIS_tlast,
+      SLOT_3_AXIS_tready => SLOT_3_AXIS_tready,
+      SLOT_3_AXIS_tuser(0) => SLOT_3_AXIS_tuser(0),
+      SLOT_3_AXIS_tvalid => SLOT_3_AXIS_tvalid,
       clk => clk,
+      probe0(0) => probe0(0),
       resetn => resetn
     );
 end STRUCTURE;

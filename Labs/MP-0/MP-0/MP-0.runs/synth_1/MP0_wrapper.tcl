@@ -70,6 +70,8 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 5
+set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -79,7 +81,7 @@ set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir X:/cpre488/Labs/MP-0/MP-0/MP-0.cache/wt [current_project]
 set_property parent.project_path X:/cpre488/Labs/MP-0/MP-0/MP-0.xpr [current_project]
-set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
@@ -109,7 +111,22 @@ set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/M
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_0_0/bd_0/ip/ip_0/bd_9b5a_ila_lib_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_0_0/bd_0/bd_9b5a_ooc.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_0_0/MP0_system_ila_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_axi_vdma_0_0/MP0_axi_vdma_0_0.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_axi_vdma_0_0/MP0_axi_vdma_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_axi_vdma_0_0/MP0_axi_vdma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_v_tc_0_0/MP0_v_tc_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_v_tc_0_0/MP0_v_tc_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_v_axi4s_vid_out_0_0/MP0_v_axi4s_vid_out_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_v_axi4s_vid_out_0_0/MP0_v_axi4s_vid_out_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_auto_pc_0/MP0_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_xbar_1/MP0_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_auto_pc_1/MP0_auto_pc_1_ooc.xdc]
+set_property used_in_synthesis false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/bd_0/ip/ip_0/bd_5b0b_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/bd_0/bd_5b0b_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/ip/MP0_system_ila_1_0/MP0_system_ila_1_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all X:/cpre488/Labs/MP-0/MP-0/MP-0.srcs/sources_1/bd/MP0/MP0_ooc.xdc]
 
 OPTRACE "Adding files" END { }

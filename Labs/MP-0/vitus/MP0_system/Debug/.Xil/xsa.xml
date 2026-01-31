@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Root VersionMajor="1" VersionMinor="15">
-  <GenAppInfo Name="Vivado" Version="2020.1" CL="2902540" TimeStamp="Thu Jan 29 17:26:02 2026"/>
+  <GenAppInfo Name="Vivado" Version="2020.1" CL="2902540" TimeStamp="Sat Jan 31 15:34:14 2026"/>
   <DSA Vendor="xilinx" BoardId="zed" Name="" VersionMajor="0" VersionMinor="0" Description="Vivado generated Hardware Platform" FeatureRomTimestamp="0" DcpLogicFunctionStripped="false" DcpEncrypt="false" Unified="true" Fixed="true" DefaultOutputType="hw_export">
     <Build UsesPR="false" PlatformState="pre_synth" AcceleratorBinaryContent="bitstream" ValidBinaryContentValues="dcp,bitstream" TopModuleName="MP0_wrapper"/>
     <Board Name="em.avnet.com:zed:1.4" Vendor="em.avnet.com" Part="xc7z020clg484-1" BoardPart="em.avnet.com:zed:part0:1.4">
@@ -13,7 +13,7 @@
     <Devices>
       <Device Name="fpga0" Type="8" FpgaDevice="zynq:xc7z020:clg484:-1">
         <Core Name="OCL_REGION_0" Type="clc_region" ComputeUnits="60">
-          <AvailableResources LUT="50683" REG="102379" BRAM="137" DSP="220"/>
+          <AvailableResources LUT="47447" REG="96847" BRAM="132" DSP="220"/>
         </Core>
       </Device>
     </Devices>
