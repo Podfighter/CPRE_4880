@@ -51,13 +51,13 @@ int main() {
       for (j = 0; j < 640; j++) {
 
         if (j < 213) {
-          test_image[i][j] = 0x000F; // red pixels
+          test_image[i][j] = 0x000A; // red pixels
         }
         else if(j < 426 ) {
-          test_image[i][j] = 0x00F0; // green pixels
+          test_image[i][j] = 0x00B0; // green pixels
         }
         else {
-          test_image[i][j] = 0x0F00; // blue pixels
+          test_image[i][j] = 0x0C00; // blue pixels
         }
 
       }

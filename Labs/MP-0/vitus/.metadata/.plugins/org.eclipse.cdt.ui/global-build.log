@@ -1,36 +1,39 @@
-Nothing to build in platform 'design_1_wrapper'
+Nothing to build in platform 'MP0_wrapper'
 
-17:46:55 **** Incremental Build of configuration Debug for project MP0_Round3 ****
+18:14:45 **** Incremental Build of project design_1_wrapper ****
+buildplatform.bat 64874 design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#9
+18:14:49 **** Incremental Build of configuration Debug for project MP0_Round3 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/helloworld.c'
+'Building file: ../src/Video_Test.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Video_Test.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/Video_Test.d" -MT"src/Video_Test.o" -o "src/Video_Test.o" "../src/Video_Test.c"
 In file included from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:293,
-                 from ../src/helloworld.c:24:
-../src/helloworld.c: In function 'main':
+                 from ../src/Video_Test.c:24:
+../src/Video_Test.c: In function 'main':
 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_hw.h:344:49: warning: passing argument 2 of 'Xil_Out32' makes integer from pointer without a cast [-Wint-conversion]
   344 |     XAxiVdma_Out32((BaseAddress) + (RegOffset), (Data))
       |                                                 ^~~~~~
       |                                                 |
       |                                                 u16 (*)[640] {aka short unsigned int (*)[640]}
-../src/helloworld.c:75:5: note: in expansion of macro 'XAxiVdma_WriteReg'
+../src/Video_Test.c:75:5: note: in expansion of macro 'XAxiVdma_WriteReg'
    75 |     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, test_image);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
       |     ^~~~~~~~~~~~~~~~~
 In file included from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xvtc_hw.h:142,
                  from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xvtc.h:290,
-                 from ../src/helloworld.c:23:
+                 from ../src/Video_Test.c:23:
 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xil_io.h:200:48: note: expected 'u32' {aka 'long unsigned int'} but argument is of type 'u16 (*)[640]' {aka 'short unsigned int (*)[640]'}
   200 | static INLINE void Xil_Out32(UINTPTR Addr, u32 Value)
       |                                            ~~~~^~~~~
-'Finished building: ../src/helloworld.c'
+'Finished building: ../src/Video_Test.c'
 ' '
 'Building target: MP0_Round3.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "MP0_Round3.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "MP0_Round3.elf"  ./src/Video_Test.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: MP0_Round3.elf'
 ' '
 'Invoking: ARM v7 Print Size'
@@ -39,3 +42,48 @@ arm-none-eabi-size MP0_Round3.elf  |tee "MP0_Round3.elf.size"
   34376	   1152	 636984	 672512	  a4300	MP0_Round3.elf
 'Finished building: MP0_Round3.elf.size'
 ' '
+18:14:53 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
+sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
+creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+Nothing to build in platform 'MP0_wrapper'
+
+18:22:38 **** Incremental Build of project design_1_wrapper ****
+buildplatform.bat 64874 design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#12
+18:22:42 **** Incremental Build of configuration Debug for project MP0_Round3 ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+18:22:47 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
+sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
+creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+Nothing to build in platform 'MP0_wrapper'
+
+18:30:15 **** Incremental Build of project design_1_wrapper ****
+buildplatform.bat 64874 design_1_wrapper no_domain_build 
+XSDB Server Channel: tcfchan#15
+18:30:21 **** Incremental Build of configuration Debug for project MP0_Round3 ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.
+18:30:25 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
+sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
+creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
