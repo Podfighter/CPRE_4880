@@ -144,7 +144,7 @@ OPTRACE "add files" START { }
   add_files X:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/sik2004/Downloads/MP-0/MP-0/docs/ZedBoard/zedboard_master.xdc
+  read_xdc X:/cpre488/Labs/MP-0/MP0_round2/zedboard_master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

@@ -113,15 +113,29 @@ set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/M
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_design_1_25M_0/design_1_rst_design_1_25M_0_board.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_design_1_25M_0/design_1_rst_design_1_25M_0.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_rst_design_1_25M_0/design_1_rst_design_1_25M_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/bd_0/ip/ip_0/bd_365d_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/bd_0/bd_365d_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_1_0/design_1_system_ila_1_0_ooc.xdc]
+set_property used_in_synthesis false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/bd_0/ip/ip_0/bd_f74c_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/bd_0/bd_f74c_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_3/design_1_system_ila_0_3_ooc.xdc]
+set_property used_in_synthesis false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/bd_0/ip/ip_0/bd_36ad_ila_lib_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/bd_0/bd_36ad_ooc.xdc]
+set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_2_0/design_1_system_ila_2_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1_ooc.xdc]
-set_property used_in_synthesis false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/bd_0/ip/ip_0/bd_36cd_ila_lib_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/bd_0/bd_36cd_ooc.xdc]
-set_property used_in_implementation false [get_files -all x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_system_ila_0_1/design_1_system_ila_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all X:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 
 OPTRACE "Adding files" END { }
@@ -133,8 +147,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/sik2004/Downloads/MP-0/MP-0/docs/ZedBoard/zedboard_master.xdc
-set_property used_in_implementation false [get_files C:/Users/sik2004/Downloads/MP-0/MP-0/docs/ZedBoard/zedboard_master.xdc]
+read_xdc X:/cpre488/Labs/MP-0/MP0_round2/zedboard_master.xdc
+set_property used_in_implementation false [get_files X:/cpre488/Labs/MP-0/MP0_round2/zedboard_master.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

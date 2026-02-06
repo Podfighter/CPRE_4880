@@ -1,89 +1,74 @@
 Nothing to build in platform 'MP0_wrapper'
 
-18:14:45 **** Incremental Build of project design_1_wrapper ****
-buildplatform.bat 64874 design_1_wrapper no_domain_build 
-XSDB Server Channel: tcfchan#9
-18:14:49 **** Incremental Build of configuration Debug for project MP0_Round3 ****
+Nothing to build in platform 'design_1_wrapper'
+
+18:58:00 **** Incremental Build of configuration Debug for project NES_Bootloader ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-'Building file: ../src/Video_Test.c'
+'Building file: ../src/nes_bootloader.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/Video_Test.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/Video_Test.d" -MT"src/Video_Test.o" -o "src/Video_Test.o" "../src/Video_Test.c"
-In file included from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma.h:293,
-                 from ../src/Video_Test.c:24:
-../src/Video_Test.c: In function 'main':
-X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xaxivdma_hw.h:344:49: warning: passing argument 2 of 'Xil_Out32' makes integer from pointer without a cast [-Wint-conversion]
-  344 |     XAxiVdma_Out32((BaseAddress) + (RegOffset), (Data))
-      |                                                 ^~~~~~
-      |                                                 |
-      |                                                 u16 (*)[640] {aka short unsigned int (*)[640]}
-../src/Video_Test.c:75:5: note: in expansion of macro 'XAxiVdma_WriteReg'
-   75 |     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, test_image);  // Read Channel: VDMA MM2S Frame buffer Start Addr 1
-      |     ^~~~~~~~~~~~~~~~~
-In file included from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xvtc_hw.h:142,
-                 from X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xvtc.h:290,
-                 from ../src/Video_Test.c:23:
-X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include/xil_io.h:200:48: note: expected 'u32' {aka 'long unsigned int'} but argument is of type 'u16 (*)[640]' {aka 'short unsigned int (*)[640]'}
-  200 | static INLINE void Xil_Out32(UINTPTR Addr, u32 Value)
-      |                                            ~~~~^~~~~
-'Finished building: ../src/Video_Test.c'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\src" -I"X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\src\xilsd" -c -fmessage-length=0 -MT"src/nes_bootloader.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/nes_bootloader.d" -MT"src/nes_bootloader.o" -o "src/nes_bootloader.o" "../src/nes_bootloader.c"
+../src/nes_bootloader.c: In function 'main':
+../src/nes_bootloader.c:27:7: warning: unused variable 'bg' [-Wunused-variable]
+   27 |  FIL *bg = NULL;
+      |       ^~
+../src/nes_bootloader.c:26:7: warning: unused variable 'fie' [-Wunused-variable]
+   26 |  FIL *fie = NULL;
+      |       ^~~
+../src/nes_bootloader.c: In function 'menu_call':
+../src/nes_bootloader.c:69:8: warning: unused variable 'j' [-Wunused-variable]
+   69 |  int i,j = 0;
+      |        ^
+../src/nes_bootloader.c:69:6: warning: unused variable 'i' [-Wunused-variable]
+   69 |  int i,j = 0;
+      |      ^
+../src/nes_bootloader.c:68:8: warning: unused variable 'buf' [-Wunused-variable]
+   68 |  char* buf[82];
+      |        ^~~
+../src/nes_bootloader.c: In function 'nes_load':
+../src/nes_bootloader.c:82:25: warning: pointer targets in passing argument 2 of 'nes_strncpy' differ in signedness [-Wpointer-sign]
+   82 |  nes_strncpy(nes_fname, "supmario.nes", 15);
+      |                         ^~~~~~~~~~~~~~
+      |                         |
+      |                         char *
+In file included from ../src/nes_bootloader.h:29,
+                 from ../src/nes_bootloader.c:19:
+../src/utils.h:24:10: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'char *'
+   24 | uint8_t *nes_strncpy(uint8_t *dest, uint8_t *src, uint8_t n);
+      |          ^~~~~~~~~~~
+../src/nes_bootloader.c:92:27: warning: pointer targets in passing argument 1 of 'NESCore_LoadROM' differ in signedness [-Wpointer-sign]
+   92 |  result = NESCore_LoadROM(nes_fname);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint8_t * {aka unsigned char *}
+In file included from ../src/nes_bootloader.c:20:
+X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\src\NESCore/NESCore.h:298:33: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+  298 | int NESCore_LoadROM(const char *fileName);
+      |                     ~~~~~~~~~~~~^~~~~~~~
+../src/nes_bootloader.c: In function 'xil_init':
+../src/nes_bootloader.c:137:10: warning: unused variable 'Status' [-Wunused-variable]
+  137 |  XStatus Status = XST_SUCCESS;
+      |          ^~~~~~
+'Finished building: ../src/nes_bootloader.c'
 ' '
-'Building target: MP0_Round3.elf'
+'Building target: NES_Bootloader.elf'
 'Invoking: ARM v7 gcc linker'
-arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "MP0_Round3.elf"  ./src/Video_Test.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: MP0_Round3.elf'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bsplib/lib -o "NES_Bootloader.elf"  ./src/xilsd/ff.o ./src/xilsd/mmc.o ./src/xilsd/xilsd.o  ./src/NESCore/M6502.o ./src/NESCore/NESCore.o ./src/NESCore/NESCore_Mapper.o ./src/NESCore/NESCore_pAPU.o  ./src/NESCore_Callback.o ./src/bmp_misc.o ./src/nes_bootloader.o ./src/utils.o ./src/wav_misc.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: NES_Bootloader.elf'
 ' '
 'Invoking: ARM v7 Print Size'
-arm-none-eabi-size MP0_Round3.elf  |tee "MP0_Round3.elf.size"
+arm-none-eabi-size NES_Bootloader.elf  |tee "NES_Bootloader.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  34376	   1152	 636984	 672512	  a4300	MP0_Round3.elf
-'Finished building: MP0_Round3.elf.size'
+ 480715	   4676	 760752	1246143	 1303bf	NES_Bootloader.elf
+'Finished building: NES_Bootloader.elf.size'
 ' '
-18:14:53 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
+18:58:02 **** Incremental Build of configuration Debug for project NES_Bootloader_system ****
 make all 
 Generating bif file for the system project
-generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
-sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
-creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
-Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
-Nothing to build in platform 'MP0_wrapper'
-
-18:22:38 **** Incremental Build of project design_1_wrapper ****
-buildplatform.bat 64874 design_1_wrapper no_domain_build 
-XSDB Server Channel: tcfchan#12
-18:22:42 **** Incremental Build of configuration Debug for project MP0_Round3 ****
-make all 
-make --no-print-directory pre-build
-a9-linaro-pre-build-step
-' '
-make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
-18:22:47 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
-make all 
-Generating bif file for the system project
-generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
-sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
-creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
-Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
-Nothing to build in platform 'MP0_wrapper'
-
-18:30:15 **** Incremental Build of project design_1_wrapper ****
-buildplatform.bat 64874 design_1_wrapper no_domain_build 
-XSDB Server Channel: tcfchan#15
-18:30:21 **** Incremental Build of configuration Debug for project MP0_Round3 ****
-make all 
-make --no-print-directory pre-build
-a9-linaro-pre-build-step
-' '
-make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
-18:30:25 **** Incremental Build of configuration Debug for project MP0_Round3_system ****
-make all 
-Generating bif file for the system project
-generate_system_bif.bat 64874 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif
-sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/MP0_Round3/Debug/MP0_Round3.elf,ps7_cortexa9_0
-creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/MP0_Round3/_ide/bitstream/design_1_wrapper.bit
-Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/MP0_Round3_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN
+generate_system_bif.bat 57377 X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm domain_ps7_cortexa9_0 X:/cpre488/Labs/MP-0/vitus/NES_Bootloader_system/Debug/system.bif
+sdcard_gen --xpfm X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif X:/cpre488/Labs/MP-0/vitus/NES_Bootloader_system/Debug/system.bif --bitstream X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit --elf X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf,ps7_cortexa9_0
+creating BOOT.BIN using X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+Running C:/Xilinx/Vitis/2020.1/bin/bootgen  -image X:/cpre488/Labs/MP-0/vitus/NES_Bootloader_system/Debug/sd_card_temp/boot.bif -w -o i BOOT.BIN

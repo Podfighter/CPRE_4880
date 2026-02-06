@@ -1,0 +1,271 @@
+/*****************************************************************************
+ * Joseph Zambreno
+ * Phillip Jones
+ *
+ * Department of Electrical and Computer Engineering
+ * Iowa State University
+ *****************************************************************************/
+
+/*****************************************************************************
+ * nes_bootloader.c - main nes_bootloader application code. The bootloader
+ * reads a .nes file from the SD card, and uses this information to
+ * load and emulate the NES rom.
+ *
+ *
+ * NOTES:
+ * 10/25/13 by JAZ::Design created.
+ *****************************************************************************/
+
+#include "nes_bootloader.h"
+
+#include <unistd.h>  // for usleep
+#include "NESCore/NESCore.h"
+
+void menu_call(FIL* fi, FIL* bg);
+// Main function. Performs Xilinx-specific initialization, and then goes into the main polling loop
+int main() {
+	FIL *fie = NULL;
+	FIL *bg = NULL;
+
+	// Initialize all memory space
+	xil_init();
+
+	// Initialize the NESCore
+	NESCore_Init();
+
+
+	// Enable the cache
+    Xil_DCacheEnable();
+    xil_printf("WAV_BASEADDR = %X \r\n", WAV_BASEADDR);
+
+    // Main polling loop. For now, you can hard-code the .nes ROM you would like to load.
+    // Later, improve the code to have user-specified entry and exit options
+	while (1) {
+		menu_call(fie,bg);
+
+
+		nes_load();
+		//we'll put NES load into the menu_call function.
+
+		//add some kind of menu call here!
+		//menu_call();
+	}
+
+}
+
+
+void draw_text(char* msg,int xpos, int ypos){
+	//nice little dedicated text printing function that will start printing the exact string in from left to right,
+	//the indicated xpos and ypos refer to the upper left corner of where the printing will begin
+
+
+}
+void menu_call(FIL* fi, FIL* bg){
+	//load db
+	Xil_DCacheDisable();
+
+	xilsd_fopen(fi,"rominfo.db");
+
+	xilsd_fopen(bg,"bgsplash.bmp");
+	char* buf[82];
+	int i,j = 0;
+	return;
+
+//	uint16_t *ptr = (uint16_t)FBUFFER_BASEADDR;
+//	uint32_t *bfprep;
+//	uint32_t *bgptr;
+//	bfprep = bmpRead(bg,bgptr);
+//	int DUMMY = 1;
+//	//should be able to just use bfprep now no problem
+//
+//	//now i gotta start loading the individual strings into individual print buffers
+//	//guhhhhh
+//
+//while(DUMMY){
+//	//print background and stuff
+//	//start at FBUFFER_BASEADDR, background is 640x480!
+//	for(i = 0;i < 480;i++){
+//		for(j = 0;j < 640;j++){
+//			ptr[j + 640*i] = bfprep[j + 640*i];
+//			//print base image out!
+//
+//		}
+//	}
+//
+//	while(DUMMY){
+//		//this'll get refreshed whenever the stuff gets updated
+//	xilsd_fread(buf,sizeof(char),82,fi);
+//
+//	char rom[15];
+//	char gamename[25];
+//	char publisher[25];
+//	char year[4];
+//	char genre[15];
+//
+//	strtok(buf,';');
+//	strcpy(rom,buf);
+//	strtok(buf,';');
+//	strcpy(gamename,buf);
+//	strtok(buf,';');
+//	strcpy(publisher,buf);
+//	strtok(buf,';');
+//	strcpy(year,buf);
+//	strtok(buf,';');
+//	strcpy(genre,buf);
+//
+//	while(1){}
+//	//tokenization complete, prepare the background and start printing overlay graphics
+//
+//	}
+//
+//
+//
+//}
+	//wow this fucking reeks but i dont think there's a smarter way to do it that isnt overcomplicated
+	//in the wise words of terry a. davis, this is divine intellect
+
+
+	//temporary holding place for each menu element, when the user signals left/right, step to the previous or next listed game.
+	//this shouldn't be too hard to get working.
+
+
+
+	//load background
+	//load preview
+	//load text
+
+
+
+}
+
+
+
+
+// Runs the main NES emulation
+void nes_load() {
+
+	int32_t result = 0, i;
+	uint8_t nes_fname[17];
+
+	nes_strncpy(nes_fname, "supmario.nes", 15);
+
+	usleep(100000);
+
+	if (bootstate.debug_level >= 1)
+		xil_printf("nes_load(): loading %s\r\n", nes_fname);
+
+
+	// Disable the cache so it will play nice with xilsd (needed here)
+	Xil_DCacheDisable();
+	result = NESCore_LoadROM(nes_fname);
+	if (result != 0) {
+		xil_printf("nes_load(): invalid ROM load. Returning\r\n");
+	}
+	// Enable the cache for performance reasons
+    Xil_DCacheEnable();
+
+
+
+	result = NESCore_Reset();
+	if (result != 0) {
+		xil_printf("nes_load(): invalid reset. Returning\r\n");
+	}
+
+	if (bootstate.debug_level >= 1)
+		xil_printf("nes_load(): beginning emulation of %s\r\n", nes_fname);
+
+
+	bootstate.nes_playing = 1;
+	usleep(100000);
+	ptv = 0;
+
+	// Runs the emulator 20 cycles at a time. Currently there is no exit condition.
+	do {
+
+		for (i = 0; i < RESET_TIME; i++) {
+			NESCore_Cycle();
+		}
+
+	} while (1);
+
+
+	bootstate.nes_playing = 0;
+
+	return;
+
+}
+
+
+
+
+
+// Initializes bootloader state, the Xilinx peripherals, and the front buffer
+void xil_init() {
+
+	XStatus Status = XST_SUCCESS;
+	uint32_t i;
+	uint16_t *ptr;
+
+	// Setup the bootloader state variables.
+	bootstate.nes_playing = 0;
+	bootstate.activeBuffer = (uint32_t *)FBUFFER_BASEADDR;
+
+
+	bootstate.debug_level = 1;
+
+	// For now, we disable the DCache as it causes problems with xilsd and vdma
+	Xil_DCacheDisable();
+
+
+	// Initialize the VTC module
+	if (bootstate.debug_level >= 1)
+		print("xil_init(): Initializing v_tc module\r\n");
+
+	VtcCfgPtr = XVtc_LookupConfig(XPAR_V_TC_0_DEVICE_ID);
+	XVtc_CfgInitialize(&Vtc, VtcCfgPtr, VtcCfgPtr->BaseAddress);
+	XVtc_EnableGenerator(&Vtc);
+
+
+	// Initialize the front buffer
+	if (bootstate.debug_level >= 1)
+		print("xil_init(): Initializing front buffer\r\n");
+
+	// Initialize the framebuffer. We can overwrite the edges with 0s.
+	ptr = (uint16_t *)FBUFFER_BASEADDR;
+	for (i = 0; i < WIDTH*HEIGHT; i++) {
+		ptr[i] = INIT_COLOR;
+		if (i % WIDTH == 0)
+			ptr[i] = 0;
+	}
+
+	// Initialize the back buffer
+	if (bootstate.debug_level >= 1)
+		print("xil_init(): Initializing back buffer\r\n");
+
+	ptr = (uint16_t *)BBUFFER_BASEADDR;
+	for (i = 0; i < WIDTH*HEIGHT; i++) {
+		ptr[i] = INIT_COLOR;
+		if (i % WIDTH == 0)
+			ptr[i] = 0;
+	}
+
+	// Initialize the VDMA module
+	if (bootstate.debug_level >= 1)
+		print("xil_init(): Initializing vdma module\r\n");
+
+
+    // Set up VDMA config registers. Copy-paste solution from vga_test.c (but note difference in framebuffer start address)
+	#define CHANGE_ME 0
+
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0b11);  // Circular Mode and Start bits set, VDMA MM2S Control
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 0);  // VDMA MM2S Reg_Index
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, FBUFFER_BASEADDR );  // VDMA MM2S Start Addr 1
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_STRD_FRMDLY_OFFSET, 0x500);  // 1280 bytes, VDMA MM2S FRM_Delay, and Stride
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_HSIZE_OFFSET, 0x500);  // 1280 bytes, VDMA MM2S HSIZE
+    XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_VSIZE_OFFSET, 0x1E0);  // 480 lines, VDMA MM2S VSIZE  (Note: Starts VDMA transaction
+
+
+  	return;
+}
+
+

@@ -1,16 +1,232 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Sat Jan 31 17:21:35 2026
+// Date        : Thu Feb  5 14:47:18 2026
 // Host        : CO2041-08 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_v_tc_0_0/design_1_v_tc_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_v_tc_0_0 -prefix
+//               design_1_v_tc_0_0_ design_1_v_tc_0_0_sim_netlist.v
 // Design      : design_1_v_tc_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z020clg484-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
+
+module design_1_v_tc_0_0_address_decoder
+   (ipif_proc_CS,
+    \AXI4_LITE_INTERFACE.ipif_RdAck_reg ,
+    \AXI4_LITE_INTERFACE.ipif_WrAck_reg ,
+    aclk,
+    aresetn,
+    Q,
+    D,
+    ipif_RdAck,
+    s_axi_arready,
+    ipif_WrAck,
+    s_axi_awready,
+    s_axi_awready_0);
+  output [1:0]ipif_proc_CS;
+  output \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
+  output \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
+  input aclk;
+  input aresetn;
+  input Q;
+  input [1:0]D;
+  input ipif_RdAck;
+  input s_axi_arready;
+  input ipif_WrAck;
+  input s_axi_awready;
+  input [9:0]s_axi_awready_0;
+
+  wire \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
+  wire \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
+  wire [1:0]D;
+  wire \MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ;
+  wire \MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ;
+  wire \MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ;
+  wire Q;
+  wire aclk;
+  wire aresetn;
+  wire ipif_RdAck;
+  wire ipif_WrAck;
+  wire [1:0]ipif_proc_CS;
+  wire s_axi_arready;
+  wire s_axi_awready;
+  wire [9:0]s_axi_awready_0;
+  wire s_axi_wready_INST_0_i_1_n_0;
+  wire s_axi_wready_INST_0_i_2_n_0;
+
+  LUT4 #(
+    .INIT(16'h0008)) 
+    \MEM_DECODE_GEN[0].cs_out_i[0]_i_1 
+       (.I0(\MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ),
+        .I1(aresetn),
+        .I2(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
+        .I3(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
+        .O(\MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ));
+  LUT4 #(
+    .INIT(16'h2F20)) 
+    \MEM_DECODE_GEN[0].cs_out_i[0]_i_2 
+       (.I0(D[1]),
+        .I1(D[0]),
+        .I2(Q),
+        .I3(ipif_proc_CS[1]),
+        .O(\MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ));
+  FDRE \MEM_DECODE_GEN[0].cs_out_i_reg[0] 
+       (.C(aclk),
+        .CE(1'b1),
+        .D(\MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ),
+        .Q(ipif_proc_CS[1]),
+        .R(1'b0));
+  LUT6 #(
+    .INIT(64'h0000000000002E00)) 
+    \MEM_DECODE_GEN[1].cs_out_i[1]_i_1 
+       (.I0(ipif_proc_CS[0]),
+        .I1(Q),
+        .I2(D[1]),
+        .I3(aresetn),
+        .I4(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
+        .I5(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
+        .O(\MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ));
+  FDRE \MEM_DECODE_GEN[1].cs_out_i_reg[1] 
+       (.C(aclk),
+        .CE(1'b1),
+        .D(\MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ),
+        .Q(ipif_proc_CS[0]),
+        .R(1'b0));
+  LUT4 #(
+    .INIT(16'hAAEA)) 
+    s_axi_arready_INST_0
+       (.I0(ipif_RdAck),
+        .I1(s_axi_arready),
+        .I2(s_axi_wready_INST_0_i_1_n_0),
+        .I3(s_axi_wready_INST_0_i_2_n_0),
+        .O(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ));
+  LUT4 #(
+    .INIT(16'hAAEA)) 
+    s_axi_wready_INST_0
+       (.I0(ipif_WrAck),
+        .I1(s_axi_awready),
+        .I2(s_axi_wready_INST_0_i_1_n_0),
+        .I3(s_axi_wready_INST_0_i_2_n_0),
+        .O(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ));
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    s_axi_wready_INST_0_i_1
+       (.I0(s_axi_awready_0[8]),
+        .I1(s_axi_awready_0[7]),
+        .I2(s_axi_awready_0[4]),
+        .I3(s_axi_awready_0[5]),
+        .I4(s_axi_awready_0[6]),
+        .O(s_axi_wready_INST_0_i_1_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFB)) 
+    s_axi_wready_INST_0_i_2
+       (.I0(s_axi_awready_0[1]),
+        .I1(s_axi_awready_0[9]),
+        .I2(s_axi_awready_0[0]),
+        .I3(s_axi_awready_0[3]),
+        .I4(s_axi_awready_0[2]),
+        .O(s_axi_wready_INST_0_i_2_n_0));
+endmodule
+
+module design_1_v_tc_0_0_axi_lite_ipif
+   (s_axi_aresetn,
+    s_axi_rresp,
+    D,
+    ipif_proc_CS,
+    s_axi_rvalid_i_reg,
+    s_axi_bvalid_i_reg,
+    s_axi_bresp,
+    \AXI4_LITE_INTERFACE.ipif_RdAck_reg ,
+    \AXI4_LITE_INTERFACE.ipif_WrAck_reg ,
+    s_axi_rdata,
+    aclk,
+    ipif_Error,
+    s_axi_arvalid,
+    s_axi_rready,
+    s_axi_bready,
+    aresetn,
+    s_axi_awvalid,
+    s_axi_wvalid,
+    out_data,
+    ipif_RdAck,
+    ipif_WrAck,
+    s_axi_araddr,
+    s_axi_awaddr);
+  output s_axi_aresetn;
+  output [0:0]s_axi_rresp;
+  output [9:0]D;
+  output [1:0]ipif_proc_CS;
+  output s_axi_rvalid_i_reg;
+  output s_axi_bvalid_i_reg;
+  output [0:0]s_axi_bresp;
+  output \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
+  output \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
+  output [31:0]s_axi_rdata;
+  input aclk;
+  input ipif_Error;
+  input s_axi_arvalid;
+  input s_axi_rready;
+  input s_axi_bready;
+  input aresetn;
+  input s_axi_awvalid;
+  input s_axi_wvalid;
+  input [31:0]out_data;
+  input ipif_RdAck;
+  input ipif_WrAck;
+  input [8:0]s_axi_araddr;
+  input [8:0]s_axi_awaddr;
+
+  wire \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
+  wire \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
+  wire [9:0]D;
+  wire aclk;
+  wire aresetn;
+  wire ipif_Error;
+  wire ipif_RdAck;
+  wire ipif_WrAck;
+  wire [1:0]ipif_proc_CS;
+  wire [31:0]out_data;
+  wire [8:0]s_axi_araddr;
+  wire s_axi_aresetn;
+  wire s_axi_arvalid;
+  wire [8:0]s_axi_awaddr;
+  wire s_axi_awvalid;
+  wire s_axi_bready;
+  wire [0:0]s_axi_bresp;
+  wire s_axi_bvalid_i_reg;
+  wire [31:0]s_axi_rdata;
+  wire s_axi_rready;
+  wire [0:0]s_axi_rresp;
+  wire s_axi_rvalid_i_reg;
+  wire s_axi_wvalid;
+
+  design_1_v_tc_0_0_slave_attachment I_SLAVE_ATTACHMENT
+       (.\AXI4_LITE_INTERFACE.ipif_RdAck_reg (\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
+        .\AXI4_LITE_INTERFACE.ipif_WrAck_reg (\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
+        .D(D),
+        .aclk(aclk),
+        .aresetn(aresetn),
+        .ipif_Error(ipif_Error),
+        .ipif_RdAck(ipif_RdAck),
+        .ipif_WrAck(ipif_WrAck),
+        .ipif_proc_CS(ipif_proc_CS),
+        .out_data(out_data),
+        .s_axi_araddr(s_axi_araddr),
+        .s_axi_aresetn(s_axi_aresetn),
+        .s_axi_arvalid(s_axi_arvalid),
+        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awvalid(s_axi_awvalid),
+        .s_axi_bready(s_axi_bready),
+        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bvalid_i_reg_0(s_axi_bvalid_i_reg),
+        .s_axi_rdata(s_axi_rdata),
+        .s_axi_rready(s_axi_rready),
+        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rvalid_i_reg_0(s_axi_rvalid_i_reg),
+        .s_axi_wvalid(s_axi_wvalid));
+endmodule
 
 (* CHECK_LICENSE_TYPE = "design_1_v_tc_0_0,v_tc,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "v_tc,Vivado 2020.1" *) 
 (* NotValidForBitStream *)
@@ -47,7 +263,7 @@ module design_1_v_tc_0_0
     irq,
     fsync_in,
     fsync_out);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_intf CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clk_intf CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clk_intf, ASSOCIATED_BUSIF vtiming_in:vtiming_out, ASSOCIATED_RESET resetn, ASSOCIATED_CLKEN clken, FREQ_HZ 25000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK1, INSERT_VIP 0" *) input clk;
   (* x_interface_info = "xilinx.com:signal:clockenable:1.0 clken_intf CE" *) (* x_interface_parameter = "XIL_INTERFACENAME clken_intf, POLARITY ACTIVE_LOW" *) input clken;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 s_axi_aclk_intf CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclk_intf, ASSOCIATED_BUSIF ctrl, ASSOCIATED_RESET s_axi_aresetn, ASSOCIATED_CLKEN s_axi_aclken, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, INSERT_VIP 0" *) input s_axi_aclk;
   (* x_interface_info = "xilinx.com:signal:clockenable:1.0 s_axi_aclken_intf CE" *) (* x_interface_parameter = "XIL_INTERFACENAME s_axi_aclken_intf, POLARITY ACTIVE_LOW" *) input s_axi_aclken;
@@ -257,225 +473,6 @@ module design_1_v_tc_0_0
         .vsync_out(vsync_out));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
-module design_1_v_tc_0_0_address_decoder
-   (ipif_proc_CS,
-    \AXI4_LITE_INTERFACE.ipif_RdAck_reg ,
-    \AXI4_LITE_INTERFACE.ipif_WrAck_reg ,
-    aclk,
-    aresetn,
-    Q,
-    D,
-    ipif_RdAck,
-    s_axi_arready,
-    ipif_WrAck,
-    s_axi_awready,
-    s_axi_awready_0);
-  output [1:0]ipif_proc_CS;
-  output \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
-  output \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
-  input aclk;
-  input aresetn;
-  input Q;
-  input [1:0]D;
-  input ipif_RdAck;
-  input s_axi_arready;
-  input ipif_WrAck;
-  input s_axi_awready;
-  input [9:0]s_axi_awready_0;
-
-  wire \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
-  wire \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
-  wire [1:0]D;
-  wire \MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ;
-  wire \MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ;
-  wire \MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ;
-  wire Q;
-  wire aclk;
-  wire aresetn;
-  wire ipif_RdAck;
-  wire ipif_WrAck;
-  wire [1:0]ipif_proc_CS;
-  wire s_axi_arready;
-  wire s_axi_awready;
-  wire [9:0]s_axi_awready_0;
-  wire s_axi_wready_INST_0_i_1_n_0;
-  wire s_axi_wready_INST_0_i_2_n_0;
-
-  LUT4 #(
-    .INIT(16'h0008)) 
-    \MEM_DECODE_GEN[0].cs_out_i[0]_i_1 
-       (.I0(\MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ),
-        .I1(aresetn),
-        .I2(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
-        .I3(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
-        .O(\MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F20)) 
-    \MEM_DECODE_GEN[0].cs_out_i[0]_i_2 
-       (.I0(D[1]),
-        .I1(D[0]),
-        .I2(Q),
-        .I3(ipif_proc_CS[1]),
-        .O(\MEM_DECODE_GEN[0].cs_out_i[0]_i_2_n_0 ));
-  FDRE \MEM_DECODE_GEN[0].cs_out_i_reg[0] 
-       (.C(aclk),
-        .CE(1'b1),
-        .D(\MEM_DECODE_GEN[0].cs_out_i[0]_i_1_n_0 ),
-        .Q(ipif_proc_CS[1]),
-        .R(1'b0));
-  LUT6 #(
-    .INIT(64'h0000000000002E00)) 
-    \MEM_DECODE_GEN[1].cs_out_i[1]_i_1 
-       (.I0(ipif_proc_CS[0]),
-        .I1(Q),
-        .I2(D[1]),
-        .I3(aresetn),
-        .I4(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
-        .I5(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
-        .O(\MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ));
-  FDRE \MEM_DECODE_GEN[1].cs_out_i_reg[1] 
-       (.C(aclk),
-        .CE(1'b1),
-        .D(\MEM_DECODE_GEN[1].cs_out_i[1]_i_1_n_0 ),
-        .Q(ipif_proc_CS[0]),
-        .R(1'b0));
-  LUT4 #(
-    .INIT(16'hAAEA)) 
-    s_axi_arready_INST_0
-       (.I0(ipif_RdAck),
-        .I1(s_axi_arready),
-        .I2(s_axi_wready_INST_0_i_1_n_0),
-        .I3(s_axi_wready_INST_0_i_2_n_0),
-        .O(\AXI4_LITE_INTERFACE.ipif_RdAck_reg ));
-  LUT4 #(
-    .INIT(16'hAAEA)) 
-    s_axi_wready_INST_0
-       (.I0(ipif_WrAck),
-        .I1(s_axi_awready),
-        .I2(s_axi_wready_INST_0_i_1_n_0),
-        .I3(s_axi_wready_INST_0_i_2_n_0),
-        .O(\AXI4_LITE_INTERFACE.ipif_WrAck_reg ));
-  LUT5 #(
-    .INIT(32'h00000001)) 
-    s_axi_wready_INST_0_i_1
-       (.I0(s_axi_awready_0[8]),
-        .I1(s_axi_awready_0[7]),
-        .I2(s_axi_awready_0[4]),
-        .I3(s_axi_awready_0[5]),
-        .I4(s_axi_awready_0[6]),
-        .O(s_axi_wready_INST_0_i_1_n_0));
-  LUT5 #(
-    .INIT(32'hFFFFFFFB)) 
-    s_axi_wready_INST_0_i_2
-       (.I0(s_axi_awready_0[1]),
-        .I1(s_axi_awready_0[9]),
-        .I2(s_axi_awready_0[0]),
-        .I3(s_axi_awready_0[3]),
-        .I4(s_axi_awready_0[2]),
-        .O(s_axi_wready_INST_0_i_2_n_0));
-endmodule
-
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
-module design_1_v_tc_0_0_axi_lite_ipif
-   (s_axi_aresetn,
-    s_axi_rresp,
-    D,
-    ipif_proc_CS,
-    s_axi_rvalid_i_reg,
-    s_axi_bvalid_i_reg,
-    s_axi_bresp,
-    \AXI4_LITE_INTERFACE.ipif_RdAck_reg ,
-    \AXI4_LITE_INTERFACE.ipif_WrAck_reg ,
-    s_axi_rdata,
-    aclk,
-    ipif_Error,
-    s_axi_arvalid,
-    s_axi_rready,
-    s_axi_bready,
-    aresetn,
-    s_axi_awvalid,
-    s_axi_wvalid,
-    out_data,
-    ipif_RdAck,
-    ipif_WrAck,
-    s_axi_araddr,
-    s_axi_awaddr);
-  output s_axi_aresetn;
-  output [0:0]s_axi_rresp;
-  output [9:0]D;
-  output [1:0]ipif_proc_CS;
-  output s_axi_rvalid_i_reg;
-  output s_axi_bvalid_i_reg;
-  output [0:0]s_axi_bresp;
-  output \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
-  output \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
-  output [31:0]s_axi_rdata;
-  input aclk;
-  input ipif_Error;
-  input s_axi_arvalid;
-  input s_axi_rready;
-  input s_axi_bready;
-  input aresetn;
-  input s_axi_awvalid;
-  input s_axi_wvalid;
-  input [31:0]out_data;
-  input ipif_RdAck;
-  input ipif_WrAck;
-  input [8:0]s_axi_araddr;
-  input [8:0]s_axi_awaddr;
-
-  wire \AXI4_LITE_INTERFACE.ipif_RdAck_reg ;
-  wire \AXI4_LITE_INTERFACE.ipif_WrAck_reg ;
-  wire [9:0]D;
-  wire aclk;
-  wire aresetn;
-  wire ipif_Error;
-  wire ipif_RdAck;
-  wire ipif_WrAck;
-  wire [1:0]ipif_proc_CS;
-  wire [31:0]out_data;
-  wire [8:0]s_axi_araddr;
-  wire s_axi_aresetn;
-  wire s_axi_arvalid;
-  wire [8:0]s_axi_awaddr;
-  wire s_axi_awvalid;
-  wire s_axi_bready;
-  wire [0:0]s_axi_bresp;
-  wire s_axi_bvalid_i_reg;
-  wire [31:0]s_axi_rdata;
-  wire s_axi_rready;
-  wire [0:0]s_axi_rresp;
-  wire s_axi_rvalid_i_reg;
-  wire s_axi_wvalid;
-
-  design_1_v_tc_0_0_slave_attachment I_SLAVE_ATTACHMENT
-       (.\AXI4_LITE_INTERFACE.ipif_RdAck_reg (\AXI4_LITE_INTERFACE.ipif_RdAck_reg ),
-        .\AXI4_LITE_INTERFACE.ipif_WrAck_reg (\AXI4_LITE_INTERFACE.ipif_WrAck_reg ),
-        .D(D),
-        .aclk(aclk),
-        .aresetn(aresetn),
-        .ipif_Error(ipif_Error),
-        .ipif_RdAck(ipif_RdAck),
-        .ipif_WrAck(ipif_WrAck),
-        .ipif_proc_CS(ipif_proc_CS),
-        .out_data(out_data),
-        .s_axi_araddr(s_axi_araddr),
-        .s_axi_aresetn(s_axi_aresetn),
-        .s_axi_arvalid(s_axi_arvalid),
-        .s_axi_awaddr(s_axi_awaddr),
-        .s_axi_awvalid(s_axi_awvalid),
-        .s_axi_bready(s_axi_bready),
-        .s_axi_bresp(s_axi_bresp),
-        .s_axi_bvalid_i_reg_0(s_axi_bvalid_i_reg),
-        .s_axi_rdata(s_axi_rdata),
-        .s_axi_rready(s_axi_rready),
-        .s_axi_rresp(s_axi_rresp),
-        .s_axi_rvalid_i_reg_0(s_axi_rvalid_i_reg),
-        .s_axi_wvalid(s_axi_wvalid));
-endmodule
-
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module design_1_v_tc_0_0_slave_attachment
    (s_axi_aresetn,
     s_axi_rresp,
@@ -1392,7 +1389,6 @@ module design_1_v_tc_0_0_slave_attachment
         .R(rst));
 endmodule
 
-(* ORIG_REF_NAME = "mux_tree" *) 
 module design_1_v_tc_0_0_mux_tree
    (\GEN_SEL_DELAY[4].sel_int_reg[4][0]_0 ,
     \data_sync_reg[2][34] ,
@@ -13958,7 +13954,6 @@ module design_1_v_tc_0_0_mux_tree__parameterized0
         .R(\GEN_TREE.GEN_BRANCH[5].GEN_MUX_REG.data_out_reg_reg[5][0]_1 ));
 endmodule
 
-(* ORIG_REF_NAME = "tc_generator" *) 
 module design_1_v_tc_0_0_tc_generator
    (fsync_out,
     hsync_out,
@@ -16842,7 +16837,6 @@ module design_1_v_tc_0_0_tc_generator
         .R(p_3_in));
 endmodule
 
-(* ORIG_REF_NAME = "tc_top" *) 
 module design_1_v_tc_0_0_tc_top
    (fsync_out,
     hsync_out,
@@ -17202,7 +17196,7 @@ endmodule
 (* C_LINE_DELAY = "0" *) (* C_MAX_LINES = "4096" *) (* C_MAX_PIXELS = "4096" *) 
 (* C_NUM_FSYNCS = "1" *) (* C_PIXEL_DELAY = "0" *) (* C_SYNC_EN = "0" *) 
 (* C_S_AXI_ADDR_WIDTH = "9" *) (* C_S_AXI_CLK_FREQ_HZ = "100000000" *) (* C_S_AXI_DATA_WIDTH = "32" *) 
-(* ORIG_REF_NAME = "v_tc" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module design_1_v_tc_0_0_v_tc
    (s_axi_aclk,
     s_axi_aclken,
@@ -17709,7 +17703,6 @@ module design_1_v_tc_0_0_v_tc
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "video_clock_cross" *) 
 module design_1_v_tc_0_0_video_clock_cross
    (\data_sync_reg[2][41]_0 ,
     out_data,
@@ -26910,7 +26903,7 @@ endmodule
 (* C_TIMEOUT_HOURS = "8" *) (* C_TIMEOUT_MINS = "0" *) (* C_TIME_AXI_WRITE = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011110011110000000000000000000000000111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) 
 (* C_TIME_DBUFFER = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111000111111111111100000000000000000000000000000000000000000000000000000011100000000000000000000000000000000011111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111000111111111111100011111111111110001111111111111" *) (* C_TIME_DEFAULT = "960'b000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111100000000000101000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000111111100000000000000000000001100100000000000100000110100000010000011010000001011110000000000101001000000000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000010100000000000001010000000000000011110101100000001111010010000001010110111000000101011011100000001111000000000001010000000" *) (* C_TIME_NUM_REGS = "30" *) 
 (* C_VERSION_MAJOR = "6" *) (* C_VERSION_MINOR = "2" *) (* C_VERSION_REVISION = "0" *) 
-(* ORIG_REF_NAME = "video_ctrl" *) (* downgradeipidentifiedwarnings = "yes" *) (* keep_hierarchy = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) (* keep_hierarchy = "yes" *) 
 module design_1_v_tc_0_0_video_ctrl
    (aclk,
     aclk_en,

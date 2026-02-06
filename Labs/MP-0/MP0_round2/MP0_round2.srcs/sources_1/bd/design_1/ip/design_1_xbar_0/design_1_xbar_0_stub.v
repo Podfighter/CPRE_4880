@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 // Date        : Tue Feb  3 16:50:45 2026
 // Host        : CO2041-15 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               x:/cpre488/Labs/MP-0/MP0_round2/MP0_round2.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_xbar_0 -prefix
+//               design_1_xbar_0_ design_1_xbar_0_stub.v
 // Design      : design_1_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

@@ -1,10 +1,160 @@
-18:30:21 **** Incremental Build of configuration Debug for project MP0_Round3 ****
+18:13:42 **** Incremental Build of configuration Debug for project MP0_Round3 ****
 make all 
 make --no-print-directory pre-build
 a9-linaro-pre-build-step
 ' '
 make --no-print-directory main-build
-make[1]: Nothing to be done for 'main-build'.
+'Building file: ../src/xilsd/ff.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/xilsd/ff.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/ff.d" -MT"src/xilsd/ff.o" -o "src/xilsd/ff.o" "../src/xilsd/ff.c"
+'Finished building: ../src/xilsd/ff.c'
+' '
+'Building file: ../src/xilsd/mmc.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/xilsd/mmc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/mmc.d" -MT"src/xilsd/mmc.o" -o "src/xilsd/mmc.o" "../src/xilsd/mmc.c"
+'Finished building: ../src/xilsd/mmc.c'
+' '
+'Building file: ../src/xilsd/xilsd.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/xilsd/xilsd.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/xilsd/xilsd.d" -MT"src/xilsd/xilsd.o" -o "src/xilsd/xilsd.o" "../src/xilsd/xilsd.c"
+'Finished building: ../src/xilsd/xilsd.c'
+' '
+'Building file: ../src/NESCore/M6502.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/NESCore/M6502.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore/M6502.d" -MT"src/NESCore/M6502.o" -o "src/NESCore/M6502.o" "../src/NESCore/M6502.c"
+In file included from x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:30,
+                 from ../src/NESCore/M6502.c:20:
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_callback.h:34:13: warning: inline function 'play_next_squeue' declared but never defined
+   34 | inline void play_next_squeue();
+      |             ^~~~~~~~~~~~~~~~
+In file included from ../src/NESCore/M6502.c:20:
+../src/NESCore/M6502.c: In function 'Rd6502':
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:83:52: warning: 'wScratch' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   83 |                     bScratch = W.PPUBANK[ wScratch >> 10 ] [ wScratch & 0x3FF ];
+      |                                           ~~~~~~~~~^~~~~
+'Finished building: ../src/NESCore/M6502.c'
+' '
+'Building file: ../src/NESCore/NESCore.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/NESCore/NESCore.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore/NESCore.d" -MT"src/NESCore/NESCore.o" -o "src/NESCore/NESCore.o" "../src/NESCore/NESCore.c"
+In file included from ../src/NESCore/NESCore.c:28:
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nes_bootloader.h:29:10: fatal error: src/bmp_misc.h: No such file or directory
+   29 | #include "src/bmp_misc.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/NESCore/NESCore.c'
+' '
+'Building file: ../src/NESCore/NESCore_Mapper.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/NESCore/NESCore_Mapper.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore/NESCore_Mapper.d" -MT"src/NESCore/NESCore_Mapper.o" -o "src/NESCore/NESCore_Mapper.o" "../src/NESCore/NESCore_Mapper.c"
+In file included from ../src/NESCore/NESCore_Mapper.c:32:
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_callback.h:34:13: warning: inline function 'play_next_squeue' declared but never defined
+   34 | inline void play_next_squeue();
+      |             ^~~~~~~~~~~~~~~~
+'Finished building: ../src/NESCore/NESCore_Mapper.c'
+' '
+'Building file: ../src/NESCore/NESCore_pAPU.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/NESCore/NESCore_pAPU.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore/NESCore_pAPU.d" -MT"src/NESCore/NESCore_pAPU.o" -o "src/NESCore/NESCore_pAPU.o" "../src/NESCore/NESCore_pAPU.c"
+In file included from x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore.h:29,
+                 from x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:29,
+                 from ../src/NESCore/NESCore_pAPU.c:28:
+../src/NESCore/NESCore_pAPU.c: In function 'ApuRenderingWave1':
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_papu.h:128:70: warning: '<<' in boolean context, did you mean '<' ? [-Wint-in-bool-context]
+  128 | #define MC1SweepDelay     ( ( ( (word) S.pAPU.ApuC1b & 0x70 ) >> 4 ) << 10)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+../src/NESCore/NESCore_pAPU.c:316:42: note: in expansion of macro 'MC1SweepDelay'
+  316 |     if ( MC1SweepOn && MC1SweepShifts && MC1SweepDelay )
+      |                                          ^~~~~~~~~~~~~
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_papu.h:128:70: warning: '<<' in boolean context, did you mean '<' ? [-Wint-in-bool-context]
+  128 | #define MC1SweepDelay     ( ( ( (word) S.pAPU.ApuC1b & 0x70 ) >> 4 ) << 10)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+../src/NESCore/NESCore_pAPU.c:319:45: note: in expansion of macro 'MC1SweepDelay'
+  319 |       while ( S.pAPU.ApuC1SweepPhase < 0 && MC1SweepDelay)
+      |                                             ^~~~~~~~~~~~~
+../src/NESCore/NESCore_pAPU.c: In function 'ApuRenderingWave2':
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_papu.h:140:70: warning: '<<' in boolean context, did you mean '<' ? [-Wint-in-bool-context]
+  140 | #define MC2SweepDelay     ( ( ( (word) S.pAPU.ApuC2b & 0x70 ) >> 4 ) << 10)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+../src/NESCore/NESCore_pAPU.c:445:42: note: in expansion of macro 'MC2SweepDelay'
+  445 |     if ( MC2SweepOn && MC2SweepShifts && MC2SweepDelay)
+      |                                          ^~~~~~~~~~~~~
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_papu.h:140:70: warning: '<<' in boolean context, did you mean '<' ? [-Wint-in-bool-context]
+  140 | #define MC2SweepDelay     ( ( ( (word) S.pAPU.ApuC2b & 0x70 ) >> 4 ) << 10)
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+../src/NESCore/NESCore_pAPU.c:448:46: note: in expansion of macro 'MC2SweepDelay'
+  448 |       while ( S.pAPU.ApuC2SweepPhase <= 0 && MC2SweepDelay)
+      |                                              ^~~~~~~~~~~~~
+../src/NESCore/NESCore_pAPU.c: In function 'ApuRenderingWave4':
+../src/NESCore/NESCore_pAPU.c:675:9: warning: this 'else' clause does not guard... [-Wmisleading-indentation]
+  675 |         else
+      |         ^~~~
+../src/NESCore/NESCore_pAPU.c:678:11: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'else'
+  678 |           S.pAPU.ApuC4Sr >>= 1;
+      |           ^
+In file included from x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:30,
+                 from ../src/NESCore/NESCore_pAPU.c:28:
+../src/NESCore/NESCore_pAPU.c: At top level:
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\nescore_callback.h:34:13: warning: inline function 'play_next_squeue' declared but never defined
+   34 | inline void play_next_squeue();
+      |             ^~~~~~~~~~~~~~~~
+In file included from ../src/NESCore/NESCore_pAPU.c:28:
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:188:13: warning: 'Wr6502' defined but not used [-Wunused-function]
+  188 | static void Wr6502(word wAddr, byte bData)
+      |             ^~~~~~
+../src/NESCore/NESCore_pAPU.c: In function 'Rd6502':
+x:\cpre488\labs\mp-0\vitus\mp0_round3\src\nescore\m6502_rw.h:83:52: warning: 'wScratch' may be used uninitialized in this function [-Wmaybe-uninitialized]
+   83 |                     bScratch = W.PPUBANK[ wScratch >> 10 ] [ wScratch & 0x3FF ];
+      |                                           ~~~~~~~~~^~~~~
+'Finished building: ../src/NESCore/NESCore_pAPU.c'
+' '
+'Building file: ../src/NESCore_Callback.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/NESCore_Callback.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/NESCore_Callback.d" -MT"src/NESCore_Callback.o" -o "src/NESCore_Callback.o" "../src/NESCore_Callback.c"
+../src/NESCore_Callback.c:19:10: fatal error: src/NESCore/NESCore_Callback.h: No such file or directory
+   19 | #include "src/NESCore/NESCore_Callback.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/NESCore_Callback.c'
+' '
+'Building file: ../src/bmp_misc.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/bmp_misc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/bmp_misc.d" -MT"src/bmp_misc.o" -o "src/bmp_misc.o" "../src/bmp_misc.c"
+../src/bmp_misc.c:17:10: fatal error: src/bmp_misc.h: No such file or directory
+   17 | #include "src/bmp_misc.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/bmp_misc.c'
+' '
+'Building file: ../src/nes_bootloader.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/nes_bootloader.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/nes_bootloader.d" -MT"src/nes_bootloader.o" -o "src/nes_bootloader.o" "../src/nes_bootloader.c"
+../src/nes_bootloader.c:19:10: fatal error: src/nes_bootloader.h: No such file or directory
+   19 | #include "src/nes_bootloader.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/nes_bootloader.c'
+' '
+'Building file: ../src/utils.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/utils.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/utils.d" -MT"src/utils.o" -o "src/utils.o" "../src/utils.c"
+../src/utils.c:17:10: fatal error: src/utils.h: No such file or directory
+   17 | #include "src/utils.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/utils.c'
+' '
+'Building file: ../src/wav_misc.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -IX:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/domain_ps7_cortexa9_0/bspinclude/include -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\NESCore" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src" -I"X:\cpre488\Labs\MP-0\vitus\MP0_Round3\src\xilsd" -c -fmessage-length=0 -MT"src/wav_misc.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -MMD -MP -MF"src/wav_misc.d" -MT"src/wav_misc.o" -o "src/wav_misc.o" "../src/wav_misc.c"
+../src/wav_misc.c:17:10: fatal error: src/wav_misc.h: No such file or directory
+   17 | #include "src/wav_misc.h"
+      |          ^~~~~~~~~~~~~~~~
+compilation terminated.
+'Finished building: ../src/wav_misc.c'
+' '
+make[1]: *** No rule to make target 'NESCore_Callback.o', needed by 'MP0_Round3.elf'.  Stop.
+make: *** [makefile:36: all] Error 2
 
-18:30:21 Build Finished (took 213ms)
+18:13:45 Build Finished (took 3s.127ms)
 

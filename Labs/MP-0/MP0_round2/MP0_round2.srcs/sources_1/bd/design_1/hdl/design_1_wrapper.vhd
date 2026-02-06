@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Tue Feb  3 18:25:51 2026
---Host        : CO2041-15 running 64-bit major release  (build 9200)
+--Date        : Thu Feb  5 16:16:21 2026
+--Host        : CO2041-08 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -35,6 +35,8 @@ entity design_1_wrapper is
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     VGA : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_HS : out STD_LOGIC;
+    VGA_VS : out STD_LOGIC;
     btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 )
@@ -44,6 +46,10 @@ end design_1_wrapper;
 architecture STRUCTURE of design_1_wrapper is
   component design_1 is
   port (
+    VGA : out STD_LOGIC_VECTOR ( 11 downto 0 );
+    VGA_HS : out STD_LOGIC;
+    VGA_VS : out STD_LOGIC;
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ddr_vrn : inout STD_LOGIC;
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
@@ -66,9 +72,7 @@ architecture STRUCTURE of design_1_wrapper is
     DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
     sws_8bits_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
-    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    VGA : out STD_LOGIC_VECTOR ( 11 downto 0 )
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
   end component design_1;
 begin
@@ -96,6 +100,8 @@ design_1_i: component design_1
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
       VGA(11 downto 0) => VGA(11 downto 0),
+      VGA_HS => VGA_HS,
+      VGA_VS => VGA_VS,
       btns_5bits_tri_i(4 downto 0) => btns_5bits_tri_i(4 downto 0),
       leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0),
       sws_8bits_tri_i(7 downto 0) => sws_8bits_tri_i(7 downto 0)

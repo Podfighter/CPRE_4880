@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1770164759">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1770333296">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -32,7 +32,7 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="C:/Users/sik2004/Downloads/MP-0/MP-0/docs/ZedBoard/zedboard_master.xdc">
+    <File Path="$PPRDIR/zedboard_master.xdc">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -61,5 +61,5 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_vdma_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_system_ila_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_rst_design_1_25M_0"/>
 </GenRun>
