@@ -20,6 +20,7 @@
 #include "NESCore.h"
 #include <unistd.h>  // for usleep
 
+void menu_call(FIL* fi, FIL* bg);
 // Main function. Performs Xilinx-specific initialization, and then goes into the main polling loop
 int main() {
 	FIL *fie = NULL;
@@ -39,10 +40,37 @@ int main() {
     // Main polling loop. For now, you can hard-code the .nes ROM you would like to load.
     // Later, improve the code to have user-specified entry and exit options
 	while (1) {
+
+
 		nes_load();
+		//we'll put NES load into the menu_call function.
+
+		//add some kind of menu call here!
+		//menu_call();
 	}
 
 }
+
+
+void draw_text(char* msg,int xpos, int ypos){
+	//nice little dedicated text printing function that will start printing the exact string in from left to right,
+	//the indicated xpos and ypos refer to the upper left corner of where the printing will begin
+
+
+}
+void menu_call(FIL* fi, FIL* bg){
+	//load db
+	Xil_DCacheDisable();
+
+	xilsd_fopen(fi,"rominfo.db");
+
+	xilsd_fopen(bg,"bgsplash.bmp");
+	char* buf[82];
+	int i,j = 0;
+	return;
+}
+
+
 
 
 // Runs the main NES emulation
@@ -98,6 +126,10 @@ void nes_load() {
 	return;
 
 }
+
+
+
+
 
 // Initializes bootloader state, the Xilinx peripherals, and the front buffer
 void xil_init() {
@@ -155,6 +187,8 @@ void xil_init() {
 
 
     // Set up VDMA config registers. Copy-paste solution from vga_test.c (but note difference in framebuffer start address)
+	#define CHANGE_ME 0
+
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_CR_OFFSET,  0b11);  // Circular Mode and Start bits set, VDMA MM2S Control
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_HI_FRMBUF_OFFSET, 1);  // VDMA MM2S Reg_Index
     XAxiVdma_WriteReg(XPAR_AXI_VDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET + XAXIVDMA_START_ADDR_OFFSET, FBUFFER_BASEADDR );  // VDMA MM2S Start Addr 1
