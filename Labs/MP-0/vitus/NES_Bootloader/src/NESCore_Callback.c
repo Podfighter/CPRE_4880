@@ -24,6 +24,8 @@
 // The main output frame callback. Copy the results into the front-buffer.
 // Note that the NES (and the emulator) outputs essentially a 256x240 image.
 // Your challenge is to figure out how to map that to your 640x480 framebuffer.
+
+uint8_t NES_BUTTON_BUFFER[9]; // 0-B, 1-Y, 2-SELECT, 3-START, 4-UP, 5-DOWN, 6-LEFT,7-RIGHT, 8-A
 void NESCore_Callback_OutputFrame(word *WorkFrame) {
 
 	extern uint16_t NesPalette3[];
@@ -81,13 +83,18 @@ int r,k = 0;
 
 
 
+
+
 			ptr[j*2 + 640 * i * 2 + 64] = tpixel ;
 
-			ptr[j*2 + 640 * i * 2 + 65] = tpixel;
+		    ptr[j*2 + 640 * i * 2 + 65] = tpixel;
 
 			ptr[j*2 + 640 * i * 2 + 64 + 640] = tpixel;
 
 			ptr[j*2 + 640 * i * 2 + 65 + 640] = tpixel;
+
+
+
 
 //			ptr[j*2 + 640 * i + 64 + 640*240] = tpixel << 4;
 //			ptr[j*2 + 640 * i + 65 + 240*640] = tpixel << 4;
@@ -122,9 +129,22 @@ void NESCore_Callback_InputPadState(dword *pdwPad1, dword *pdwPad2) {
 
 	// Currently hard-coded so that player 1 is pressing A and B, and player 2 is pressing nothing.
 	char p1buf,p2buf = 0;
-	p1buf = ((Xil_In8(XPAR_GPIO_1_BASEADDR) << 4) | Xil_In8(XPAR_GPIO_2_BASEADDR) | ((Xil_In8(XPAR_GPIO_1_BASEADDR))& 0x10));
 
-	*pdwPad1 = p1buf;
+	Xil_Out8(XPAR_GPIO_0_BASEADDR, 2);
+	Xil_Out8(XPAR_GPIO_0_BASEADDR, 0);
+	NES_BUTTON_BUFFER[0] = ~(Xil_In8(XPAR_GPIO_0_BASEADDR)) & 0x1;
+
+	for(int i = 1; i<9; i++){
+		Xil_Out8(XPAR_GPIO_0_BASEADDR, 4);
+		Xil_Out8(XPAR_GPIO_0_BASEADDR, 0);
+		NES_BUTTON_BUFFER[i] = ~(Xil_In8(XPAR_GPIO_0_BASEADDR)) & 0x1;
+	}
+
+	//p1buf = ((Xil_In8(XPAR_GPIO_1_BASEADDR) << 4) | Xil_In8(XPAR_GPIO_2_BASEADDR) | ((Xil_In8(XPAR_GPIO_1_BASEADDR))& 0x10));
+
+
+	*pdwPad1 = ((Xil_In8(XPAR_GPIO_1_BASEADDR) << 4) | Xil_In8(XPAR_GPIO_2_BASEADDR) | ((Xil_In8(XPAR_GPIO_1_BASEADDR))& 0x10)) | ((NES_BUTTON_BUFFER[8])+(NES_BUTTON_BUFFER[0] << 1)+(NES_BUTTON_BUFFER[2] << 2)+(NES_BUTTON_BUFFER[3] << 3)+(NES_BUTTON_BUFFER[4] << 4)+(NES_BUTTON_BUFFER[5] << 5)+(NES_BUTTON_BUFFER[6] << 6)+(NES_BUTTON_BUFFER[7] << 7));
+
 	*pdwPad2 = 0;
 
 

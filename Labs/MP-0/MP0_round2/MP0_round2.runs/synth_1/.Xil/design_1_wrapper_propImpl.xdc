@@ -6,6 +6,12 @@ create_clock -period 10.000 [get_ports {}]
 set_property src_info {type:SCOPED_XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
 create_clock -period 40.000 [get_ports {}]
 current_instance
+set_property src_info {type:XDC file:2 line:87 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y11  [get_ports {snesin[0]}];  # "JA1"
+set_property src_info {type:XDC file:2 line:89 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN AA11 [get_ports {snesout[0]}];  # "JA2"
+set_property src_info {type:XDC file:2 line:90 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN Y10  [get_ports {snesout[1]}];  # "JA3"
 set_property src_info {type:XDC file:2 line:187 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN Y21  [get_ports {VGA[0]}];  # "VGA-B1"
 set_property src_info {type:XDC file:2 line:188 export:INPUT save:INPUT read:READ} [current_design]

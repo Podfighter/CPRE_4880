@@ -3706,3 +3706,1503 @@ con
 ----------------End of Script----------------
 
 18:58:18 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+19:15:33 WARN  : channel "tcfchan#54" closed
+19:15:33 INFO  : Disconnected from the channel tcfchan#86.
+11:19:02 INFO  : Launching XSCT server: xsct.bat -n  -interactive X:\cpre488\Labs\MP-0\vitus\temp_xsdb_launch_script.tcl
+11:19:05 INFO  : XSCT server has started successfully.
+11:19:05 INFO  : plnx-install-location is set to ''
+11:19:05 INFO  : Successfully done setting XSCT server connection channel  
+11:19:05 INFO  : Successfully done setting workspace for the tool. 
+11:19:07 INFO  : Platform repository initialization has completed.
+11:19:08 INFO  : Registering command handlers for Vitis TCF services
+11:19:11 INFO  : Successfully done query RDI_DATADIR 
+11:24:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:24:15 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:24:15 INFO  : 'jtag frequency' command is executed.
+11:24:15 INFO  : Context for 'APU' is selected.
+11:24:15 INFO  : System reset is completed.
+11:24:18 INFO  : 'after 3000' command is executed.
+11:24:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:24:20 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:24:20 INFO  : Context for 'APU' is selected.
+11:24:20 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:24:20 INFO  : 'configparams force-mem-access 1' command is executed.
+11:24:20 INFO  : Context for 'APU' is selected.
+11:24:20 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:24:21 INFO  : 'ps7_init' command is executed.
+11:24:21 INFO  : 'ps7_post_config' command is executed.
+11:24:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:24:22 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:24:22 INFO  : 'configparams force-mem-access 0' command is executed.
+11:24:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:24:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:24:22 INFO  : 'con' command is executed.
+11:24:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:24:22 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:25:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:25:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:25:42 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:25:54 INFO  : Disconnected from the channel tcfchan#1.
+11:25:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:25:55 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:25:55 INFO  : 'jtag frequency' command is executed.
+11:25:55 INFO  : Context for 'APU' is selected.
+11:25:55 INFO  : System reset is completed.
+11:25:58 INFO  : 'after 3000' command is executed.
+11:25:58 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:26:01 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:26:01 INFO  : Context for 'APU' is selected.
+11:26:04 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:26:04 INFO  : 'configparams force-mem-access 1' command is executed.
+11:26:04 INFO  : Context for 'APU' is selected.
+11:26:04 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:26:04 INFO  : 'ps7_init' command is executed.
+11:26:04 INFO  : 'ps7_post_config' command is executed.
+11:26:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:26:05 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:26:05 INFO  : 'configparams force-mem-access 0' command is executed.
+11:26:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:26:05 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:26:05 INFO  : 'con' command is executed.
+11:26:05 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:26:05 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:30:35 INFO  : Disconnected from the channel tcfchan#2.
+11:30:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:30:37 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:30:37 INFO  : 'jtag frequency' command is executed.
+11:30:37 INFO  : Context for 'APU' is selected.
+11:30:37 INFO  : System reset is completed.
+11:30:40 INFO  : 'after 3000' command is executed.
+11:30:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:30:42 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:30:42 INFO  : Context for 'APU' is selected.
+11:30:45 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:30:45 INFO  : 'configparams force-mem-access 1' command is executed.
+11:30:45 INFO  : Context for 'APU' is selected.
+11:30:45 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:30:45 INFO  : 'ps7_init' command is executed.
+11:30:45 INFO  : 'ps7_post_config' command is executed.
+11:30:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:30:47 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:30:47 INFO  : 'configparams force-mem-access 0' command is executed.
+11:30:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:30:47 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:30:47 INFO  : 'con' command is executed.
+11:30:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:30:47 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:31:52 INFO  : Disconnected from the channel tcfchan#3.
+11:31:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:31:53 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:31:53 INFO  : 'jtag frequency' command is executed.
+11:31:53 INFO  : Context for 'APU' is selected.
+11:31:53 INFO  : System reset is completed.
+11:31:56 INFO  : 'after 3000' command is executed.
+11:31:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:31:59 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:31:59 INFO  : Context for 'APU' is selected.
+11:32:02 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:32:02 INFO  : 'configparams force-mem-access 1' command is executed.
+11:32:02 INFO  : Context for 'APU' is selected.
+11:32:02 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:32:02 INFO  : 'ps7_init' command is executed.
+11:32:02 INFO  : 'ps7_post_config' command is executed.
+11:32:02 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:32:03 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:32:03 INFO  : 'configparams force-mem-access 0' command is executed.
+11:32:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:32:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:32:03 INFO  : 'con' command is executed.
+11:32:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:32:03 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:36:03 INFO  : Disconnected from the channel tcfchan#4.
+11:36:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:04 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:36:04 INFO  : 'jtag frequency' command is executed.
+11:36:04 INFO  : Context for 'APU' is selected.
+11:36:04 INFO  : System reset is completed.
+11:36:07 INFO  : 'after 3000' command is executed.
+11:36:07 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:36:09 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:36:09 INFO  : Context for 'APU' is selected.
+11:36:12 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:36:12 INFO  : 'configparams force-mem-access 1' command is executed.
+11:36:12 INFO  : Context for 'APU' is selected.
+11:36:12 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:36:13 INFO  : 'ps7_init' command is executed.
+11:36:13 INFO  : 'ps7_post_config' command is executed.
+11:36:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:36:14 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:36:14 INFO  : 'configparams force-mem-access 0' command is executed.
+11:36:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:36:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:36:14 INFO  : 'con' command is executed.
+11:36:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:36:14 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:38:21 INFO  : Disconnected from the channel tcfchan#5.
+11:38:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:22 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:38:22 INFO  : 'jtag frequency' command is executed.
+11:38:22 INFO  : Context for 'APU' is selected.
+11:38:22 INFO  : System reset is completed.
+11:38:25 INFO  : 'after 3000' command is executed.
+11:38:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:38:27 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:38:27 INFO  : Context for 'APU' is selected.
+11:38:30 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:38:30 INFO  : 'configparams force-mem-access 1' command is executed.
+11:38:30 INFO  : Context for 'APU' is selected.
+11:38:31 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:38:31 INFO  : 'ps7_init' command is executed.
+11:38:31 INFO  : 'ps7_post_config' command is executed.
+11:38:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:32 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:38:32 INFO  : 'configparams force-mem-access 0' command is executed.
+11:38:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:38:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:38:32 INFO  : 'con' command is executed.
+11:38:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:38:32 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:40:42 INFO  : Disconnected from the channel tcfchan#6.
+11:40:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:40:43 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:40:43 INFO  : 'jtag frequency' command is executed.
+11:40:43 INFO  : Context for 'APU' is selected.
+11:40:43 INFO  : System reset is completed.
+11:40:46 INFO  : 'after 3000' command is executed.
+11:40:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:40:49 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:40:49 INFO  : Context for 'APU' is selected.
+11:40:52 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:40:52 INFO  : 'configparams force-mem-access 1' command is executed.
+11:40:52 INFO  : Context for 'APU' is selected.
+11:40:52 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:40:52 INFO  : 'ps7_init' command is executed.
+11:40:52 INFO  : 'ps7_post_config' command is executed.
+11:40:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:53 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:40:53 INFO  : 'configparams force-mem-access 0' command is executed.
+11:40:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:40:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:40:53 INFO  : 'con' command is executed.
+11:40:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:40:53 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:44:23 INFO  : Disconnected from the channel tcfchan#7.
+11:44:27 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+11:44:35 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa is already opened
+
+11:44:49 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+11:44:52 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa is already opened
+
+11:45:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:45:39 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:45:39 INFO  : 'jtag frequency' command is executed.
+11:45:39 INFO  : Context for 'APU' is selected.
+11:45:39 INFO  : System reset is completed.
+11:45:42 INFO  : 'after 3000' command is executed.
+11:45:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:45:44 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:45:44 INFO  : Context for 'APU' is selected.
+11:45:44 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:45:44 INFO  : 'configparams force-mem-access 1' command is executed.
+11:45:44 INFO  : Context for 'APU' is selected.
+11:45:44 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:45:44 INFO  : 'ps7_init' command is executed.
+11:45:44 INFO  : 'ps7_post_config' command is executed.
+11:45:44 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:46 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:45:46 INFO  : 'configparams force-mem-access 0' command is executed.
+11:45:46 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:45:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:45:46 INFO  : 'con' command is executed.
+11:45:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:45:46 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:52:13 INFO  : Disconnected from the channel tcfchan#10.
+11:52:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:52:14 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:52:14 INFO  : 'jtag frequency' command is executed.
+11:52:14 INFO  : Context for 'APU' is selected.
+11:52:14 INFO  : System reset is completed.
+11:52:17 INFO  : 'after 3000' command is executed.
+11:52:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:52:20 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:52:20 INFO  : Context for 'APU' is selected.
+11:52:23 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:52:23 INFO  : 'configparams force-mem-access 1' command is executed.
+11:52:23 INFO  : Context for 'APU' is selected.
+11:52:23 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:52:23 INFO  : 'ps7_init' command is executed.
+11:52:23 INFO  : 'ps7_post_config' command is executed.
+11:52:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:24 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:52:24 INFO  : 'configparams force-mem-access 0' command is executed.
+11:52:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:52:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:24 INFO  : 'con' command is executed.
+11:52:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:52:24 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+11:52:31 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+11:52:35 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa is already opened
+
+11:52:44 INFO  : Disconnected from the channel tcfchan#11.
+11:52:45 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:52:45 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+11:52:45 INFO  : 'jtag frequency' command is executed.
+11:52:45 INFO  : Context for 'APU' is selected.
+11:52:45 INFO  : System reset is completed.
+11:52:48 INFO  : 'after 3000' command is executed.
+11:52:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+11:52:51 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+11:52:51 INFO  : Context for 'APU' is selected.
+11:52:54 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+11:52:54 INFO  : 'configparams force-mem-access 1' command is executed.
+11:52:54 INFO  : Context for 'APU' is selected.
+11:52:54 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+11:52:54 INFO  : 'ps7_init' command is executed.
+11:52:54 INFO  : 'ps7_post_config' command is executed.
+11:52:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:55 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+11:52:55 INFO  : 'configparams force-mem-access 0' command is executed.
+11:52:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+11:52:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+11:52:55 INFO  : 'con' command is executed.
+11:52:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+11:52:55 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+12:50:13 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+12:50:17 ERROR : (XSDB Server)ERROR: [Hsi 55-1571] The design file X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa is already opened
+
+12:50:42 INFO  : Disconnected from the channel tcfchan#13.
+12:50:43 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:50:43 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+12:50:43 INFO  : 'jtag frequency' command is executed.
+12:50:43 INFO  : Context for 'APU' is selected.
+12:50:43 INFO  : System reset is completed.
+12:50:46 INFO  : 'after 3000' command is executed.
+12:50:46 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+12:50:48 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+12:50:48 INFO  : Context for 'APU' is selected.
+12:50:52 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+12:50:52 INFO  : 'configparams force-mem-access 1' command is executed.
+12:50:52 INFO  : Context for 'APU' is selected.
+12:50:52 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+12:50:52 INFO  : 'ps7_init' command is executed.
+12:50:52 INFO  : 'ps7_post_config' command is executed.
+12:50:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:50:53 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:50:53 INFO  : 'configparams force-mem-access 0' command is executed.
+12:50:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:50:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:50:53 INFO  : 'con' command is executed.
+12:50:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:50:53 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+13:40:27 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+13:40:44 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:40:44 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+13:40:46 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+13:41:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+13:41:05 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+13:41:08 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+13:41:44 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+13:41:51 INFO  : Result from executing command 'getProjects': MP0_wrapper;design_1_wrapper
+13:41:51 INFO  : Result from executing command 'getPlatforms': MP0_wrapper|X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/MP0_wrapper.xpfm;design_1_wrapper|X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+13:41:51 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+13:41:55 INFO  : The hardware specfication used by project 'NES_Bootloader' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+13:41:55 INFO  : The file 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+13:41:55 INFO  : The updated bitstream files are copied from platform to folder 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\bitstream' in project 'NES_Bootloader'.
+13:41:55 INFO  : The file 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\psinit\ps7_init.tcl' stored in project is removed.
+13:41:58 INFO  : The updated ps init files are copied from platform to folder 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\psinit' in project 'NES_Bootloader'.
+14:00:04 INFO  : Hardware specification for platform project 'design_1_wrapper' is updated.
+14:00:11 INFO  : Result from executing command 'getProjects': MP0_wrapper;design_1_wrapper
+14:00:11 INFO  : Result from executing command 'getPlatforms': MP0_wrapper|X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/MP0_wrapper.xpfm;design_1_wrapper|X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+14:00:11 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:00:16 INFO  : The hardware specfication used by project 'NES_Bootloader' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+14:00:16 INFO  : The file 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+14:00:16 INFO  : The updated bitstream files are copied from platform to folder 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\bitstream' in project 'NES_Bootloader'.
+14:00:16 INFO  : The file 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\psinit\ps7_init.tcl' stored in project is removed.
+14:00:19 INFO  : The updated ps init files are copied from platform to folder 'X:\cpre488\Labs\MP-0\vitus\NES_Bootloader\_ide\psinit' in project 'NES_Bootloader'.
+14:17:20 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:18:18 INFO  : Disconnected from the channel tcfchan#15.
+14:18:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:18:20 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:18:20 INFO  : 'jtag frequency' command is executed.
+14:18:20 INFO  : Context for 'APU' is selected.
+14:18:20 INFO  : System reset is completed.
+14:18:23 INFO  : 'after 3000' command is executed.
+14:18:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:18:25 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:18:25 INFO  : Context for 'APU' is selected.
+14:18:25 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:18:25 INFO  : 'configparams force-mem-access 1' command is executed.
+14:18:25 INFO  : Context for 'APU' is selected.
+14:18:25 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:18:26 INFO  : 'ps7_init' command is executed.
+14:18:26 INFO  : 'ps7_post_config' command is executed.
+14:18:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:27 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:18:27 INFO  : 'configparams force-mem-access 0' command is executed.
+14:18:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:18:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:18:27 INFO  : 'con' command is executed.
+14:18:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:18:27 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:20:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:20:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:20:13 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:20:19 INFO  : Disconnected from the channel tcfchan#21.
+14:20:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:20:20 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:20:20 INFO  : 'jtag frequency' command is executed.
+14:20:20 INFO  : Context for 'APU' is selected.
+14:20:20 INFO  : System reset is completed.
+14:20:23 INFO  : 'after 3000' command is executed.
+14:20:23 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:20:26 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:20:26 INFO  : Context for 'APU' is selected.
+14:20:26 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:20:26 INFO  : 'configparams force-mem-access 1' command is executed.
+14:20:26 INFO  : Context for 'APU' is selected.
+14:20:26 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:20:26 INFO  : 'ps7_init' command is executed.
+14:20:26 INFO  : 'ps7_post_config' command is executed.
+14:20:26 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:20:27 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:20:27 INFO  : 'configparams force-mem-access 0' command is executed.
+14:20:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:20:27 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:20:27 INFO  : 'con' command is executed.
+14:20:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:20:27 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:21:16 INFO  : Disconnected from the channel tcfchan#22.
+14:21:21 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:21:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:21:30 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:21:30 INFO  : 'jtag frequency' command is executed.
+14:21:30 INFO  : Context for 'APU' is selected.
+14:21:30 INFO  : System reset is completed.
+14:21:33 INFO  : 'after 3000' command is executed.
+14:21:33 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:21:36 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:21:36 INFO  : Context for 'APU' is selected.
+14:21:36 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:21:36 INFO  : 'configparams force-mem-access 1' command is executed.
+14:21:36 INFO  : Context for 'APU' is selected.
+14:21:36 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:21:36 INFO  : 'ps7_init' command is executed.
+14:21:36 INFO  : 'ps7_post_config' command is executed.
+14:21:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:37 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:21:37 INFO  : 'configparams force-mem-access 0' command is executed.
+14:21:37 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:21:37 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:21:37 INFO  : 'con' command is executed.
+14:21:37 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:21:37 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:23:32 INFO  : Disconnected from the channel tcfchan#24.
+14:26:22 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:26:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:26:33 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:26:33 INFO  : 'jtag frequency' command is executed.
+14:26:33 INFO  : Context for 'APU' is selected.
+14:26:33 INFO  : System reset is completed.
+14:26:36 INFO  : 'after 3000' command is executed.
+14:26:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:26:39 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:26:39 INFO  : Context for 'APU' is selected.
+14:26:39 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:26:39 INFO  : 'configparams force-mem-access 1' command is executed.
+14:26:39 INFO  : Context for 'APU' is selected.
+14:26:39 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:26:39 INFO  : 'ps7_init' command is executed.
+14:26:39 INFO  : 'ps7_post_config' command is executed.
+14:26:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:40 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:26:40 INFO  : 'configparams force-mem-access 0' command is executed.
+14:26:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:26:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:26:40 INFO  : 'con' command is executed.
+14:26:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:26:40 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:29:58 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:30:16 INFO  : Disconnected from the channel tcfchan#26.
+14:30:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:30:17 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:30:17 INFO  : 'jtag frequency' command is executed.
+14:30:17 INFO  : Context for 'APU' is selected.
+14:30:17 INFO  : System reset is completed.
+14:30:20 INFO  : 'after 3000' command is executed.
+14:30:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:30:23 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:30:23 INFO  : Context for 'APU' is selected.
+14:30:23 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:30:23 INFO  : 'configparams force-mem-access 1' command is executed.
+14:30:23 INFO  : Context for 'APU' is selected.
+14:30:23 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:30:23 INFO  : 'ps7_init' command is executed.
+14:30:23 INFO  : 'ps7_post_config' command is executed.
+14:30:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:24 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:30:24 INFO  : 'configparams force-mem-access 0' command is executed.
+14:30:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:30:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:30:25 INFO  : 'con' command is executed.
+14:30:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:30:25 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:30:55 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:31:09 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:32:13 INFO  : Disconnected from the channel tcfchan#28.
+14:32:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:32:14 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:32:14 INFO  : 'jtag frequency' command is executed.
+14:32:14 INFO  : Context for 'APU' is selected.
+14:32:14 INFO  : System reset is completed.
+14:32:17 INFO  : 'after 3000' command is executed.
+14:32:17 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:32:19 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:32:19 INFO  : Context for 'APU' is selected.
+14:32:19 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:32:19 INFO  : 'configparams force-mem-access 1' command is executed.
+14:32:19 INFO  : Context for 'APU' is selected.
+14:32:19 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:32:20 INFO  : 'ps7_init' command is executed.
+14:32:20 INFO  : 'ps7_post_config' command is executed.
+14:32:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:21 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:32:21 INFO  : 'configparams force-mem-access 0' command is executed.
+14:32:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:32:21 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:32:21 INFO  : 'con' command is executed.
+14:32:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:32:21 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:33:59 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:35:10 INFO  : Disconnected from the channel tcfchan#31.
+14:35:11 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:35:11 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:35:11 INFO  : 'jtag frequency' command is executed.
+14:35:11 INFO  : Context for 'APU' is selected.
+14:35:11 INFO  : System reset is completed.
+14:35:14 INFO  : 'after 3000' command is executed.
+14:35:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:35:17 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:35:17 INFO  : Context for 'APU' is selected.
+14:35:17 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:35:17 INFO  : 'configparams force-mem-access 1' command is executed.
+14:35:17 INFO  : Context for 'APU' is selected.
+14:35:17 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:35:17 INFO  : 'ps7_init' command is executed.
+14:35:17 INFO  : 'ps7_post_config' command is executed.
+14:35:17 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:18 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:35:18 INFO  : 'configparams force-mem-access 0' command is executed.
+14:35:18 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:35:18 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:35:19 INFO  : 'con' command is executed.
+14:35:19 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:35:19 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:36:05 INFO  : Disconnected from the channel tcfchan#33.
+14:36:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:36:06 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:36:06 INFO  : 'jtag frequency' command is executed.
+14:36:06 INFO  : Context for 'APU' is selected.
+14:36:06 INFO  : System reset is completed.
+14:36:09 INFO  : 'after 3000' command is executed.
+14:36:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:36:11 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:36:11 INFO  : Context for 'APU' is selected.
+14:36:11 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:36:11 INFO  : 'configparams force-mem-access 1' command is executed.
+14:36:11 INFO  : Context for 'APU' is selected.
+14:36:11 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:36:12 INFO  : 'ps7_init' command is executed.
+14:36:12 INFO  : 'ps7_post_config' command is executed.
+14:36:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:36:13 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:36:13 INFO  : 'configparams force-mem-access 0' command is executed.
+14:36:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:36:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:36:13 INFO  : 'con' command is executed.
+14:36:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:36:13 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:36:44 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:36:44 INFO  : Disconnected from the channel tcfchan#34.
+14:37:04 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:37:24 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:37:25 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:37:25 INFO  : 'jtag frequency' command is executed.
+14:37:25 INFO  : Context for 'APU' is selected.
+14:37:25 INFO  : System reset is completed.
+14:37:28 INFO  : 'after 3000' command is executed.
+14:37:28 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:37:30 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:37:30 INFO  : Context for 'APU' is selected.
+14:37:30 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:37:30 INFO  : 'configparams force-mem-access 1' command is executed.
+14:37:30 INFO  : Context for 'APU' is selected.
+14:37:30 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:37:31 INFO  : 'ps7_init' command is executed.
+14:37:31 INFO  : 'ps7_post_config' command is executed.
+14:37:31 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:37:32 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:37:32 INFO  : 'configparams force-mem-access 0' command is executed.
+14:37:32 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:37:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:37:32 INFO  : 'con' command is executed.
+14:37:32 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:37:32 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:38:21 INFO  : Disconnected from the channel tcfchan#37.
+14:38:32 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:39:54 INFO  : Result from executing command 'getProjects': MP0_wrapper;design_1_wrapper
+14:39:54 INFO  : Result from executing command 'getPlatforms': MP0_wrapper|X:/cpre488/Labs/MP-0/vitus/MP0_wrapper/export/MP0_wrapper/MP0_wrapper.xpfm;design_1_wrapper|X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm
+14:39:54 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:40:17 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:17 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:40:17 INFO  : 'jtag frequency' command is executed.
+14:40:17 INFO  : Context for 'APU' is selected.
+14:40:17 INFO  : System reset is completed.
+14:40:20 INFO  : 'after 3000' command is executed.
+14:40:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:40:23 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:40:23 INFO  : Context for 'APU' is selected.
+14:40:23 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:40:23 INFO  : 'configparams force-mem-access 1' command is executed.
+14:40:23 INFO  : Context for 'APU' is selected.
+14:40:23 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:40:23 INFO  : 'ps7_init' command is executed.
+14:40:23 INFO  : 'ps7_post_config' command is executed.
+14:40:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:24 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:40:24 INFO  : 'configparams force-mem-access 0' command is executed.
+14:40:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:40:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:40:24 INFO  : 'con' command is executed.
+14:40:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:40:24 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:45:05 INFO  : Disconnected from the channel tcfchan#42.
+14:45:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:45:06 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:45:06 INFO  : 'jtag frequency' command is executed.
+14:45:06 INFO  : Context for 'APU' is selected.
+14:45:07 INFO  : System reset is completed.
+14:45:10 INFO  : 'after 3000' command is executed.
+14:45:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:45:12 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:45:12 INFO  : Context for 'APU' is selected.
+14:45:12 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:45:12 INFO  : 'configparams force-mem-access 1' command is executed.
+14:45:12 INFO  : Context for 'APU' is selected.
+14:45:12 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:45:12 INFO  : 'ps7_init' command is executed.
+14:45:12 INFO  : 'ps7_post_config' command is executed.
+14:45:12 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:13 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:45:13 INFO  : 'configparams force-mem-access 0' command is executed.
+14:45:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:45:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:45:14 INFO  : 'con' command is executed.
+14:45:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:45:14 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:46:13 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:46:51 INFO  : Disconnected from the channel tcfchan#43.
+14:46:52 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:46:52 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:46:52 INFO  : 'jtag frequency' command is executed.
+14:46:53 INFO  : Context for 'APU' is selected.
+14:46:53 INFO  : System reset is completed.
+14:46:56 INFO  : 'after 3000' command is executed.
+14:46:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:46:58 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:46:58 INFO  : Context for 'APU' is selected.
+14:46:58 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:46:58 INFO  : 'configparams force-mem-access 1' command is executed.
+14:46:58 INFO  : Context for 'APU' is selected.
+14:46:58 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:46:58 INFO  : 'ps7_init' command is executed.
+14:46:58 INFO  : 'ps7_post_config' command is executed.
+14:46:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:46:59 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:46:59 INFO  : 'configparams force-mem-access 0' command is executed.
+14:46:59 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:47:00 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:47:00 INFO  : 'con' command is executed.
+14:47:00 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:47:00 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:52:30 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:53:25 INFO  : Disconnected from the channel tcfchan#45.
+14:53:26 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:53:26 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:53:26 INFO  : 'jtag frequency' command is executed.
+14:53:26 INFO  : Context for 'APU' is selected.
+14:53:26 INFO  : System reset is completed.
+14:53:29 INFO  : 'after 3000' command is executed.
+14:53:29 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:53:31 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:53:31 INFO  : Context for 'APU' is selected.
+14:53:31 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:53:31 INFO  : 'configparams force-mem-access 1' command is executed.
+14:53:31 INFO  : Context for 'APU' is selected.
+14:53:31 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:53:31 INFO  : 'ps7_init' command is executed.
+14:53:31 INFO  : 'ps7_post_config' command is executed.
+14:53:32 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:53:33 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:53:33 INFO  : 'configparams force-mem-access 0' command is executed.
+14:53:33 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:53:33 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:53:33 INFO  : 'con' command is executed.
+14:53:33 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:53:33 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:55:57 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:56:08 INFO  : Disconnected from the channel tcfchan#47.
+14:56:09 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:56:09 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:56:09 INFO  : 'jtag frequency' command is executed.
+14:56:09 INFO  : Context for 'APU' is selected.
+14:56:09 INFO  : System reset is completed.
+14:56:12 INFO  : 'after 3000' command is executed.
+14:56:12 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:56:14 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:56:14 INFO  : Context for 'APU' is selected.
+14:56:14 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:56:14 INFO  : 'configparams force-mem-access 1' command is executed.
+14:56:14 INFO  : Context for 'APU' is selected.
+14:56:14 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:56:15 INFO  : 'ps7_init' command is executed.
+14:56:15 INFO  : 'ps7_post_config' command is executed.
+14:56:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:56:16 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:56:16 INFO  : 'configparams force-mem-access 0' command is executed.
+14:56:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:56:16 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:56:16 INFO  : 'con' command is executed.
+14:56:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:56:16 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+14:58:44 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+14:59:06 INFO  : Disconnected from the channel tcfchan#49.
+14:59:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:59:07 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+14:59:07 INFO  : 'jtag frequency' command is executed.
+14:59:07 INFO  : Context for 'APU' is selected.
+14:59:07 INFO  : System reset is completed.
+14:59:10 INFO  : 'after 3000' command is executed.
+14:59:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+14:59:12 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+14:59:12 INFO  : Context for 'APU' is selected.
+14:59:12 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+14:59:12 INFO  : 'configparams force-mem-access 1' command is executed.
+14:59:12 INFO  : Context for 'APU' is selected.
+14:59:12 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+14:59:13 INFO  : 'ps7_init' command is executed.
+14:59:13 INFO  : 'ps7_post_config' command is executed.
+14:59:13 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:59:14 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+14:59:14 INFO  : 'configparams force-mem-access 0' command is executed.
+14:59:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:59:14 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+14:59:14 INFO  : 'con' command is executed.
+14:59:14 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+14:59:14 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+15:00:20 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+15:00:35 INFO  : Disconnected from the channel tcfchan#51.
+15:00:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:00:36 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+15:00:36 INFO  : 'jtag frequency' command is executed.
+15:00:36 INFO  : Context for 'APU' is selected.
+15:00:36 INFO  : System reset is completed.
+15:00:39 INFO  : 'after 3000' command is executed.
+15:00:39 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+15:00:42 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+15:00:42 INFO  : Context for 'APU' is selected.
+15:00:42 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:00:42 INFO  : 'configparams force-mem-access 1' command is executed.
+15:00:42 INFO  : Context for 'APU' is selected.
+15:00:42 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+15:00:42 INFO  : 'ps7_init' command is executed.
+15:00:42 INFO  : 'ps7_post_config' command is executed.
+15:00:42 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:43 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:00:43 INFO  : 'configparams force-mem-access 0' command is executed.
+15:00:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:00:43 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:00:43 INFO  : 'con' command is executed.
+15:00:43 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:00:43 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+15:02:04 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+15:02:15 INFO  : Disconnected from the channel tcfchan#53.
+15:02:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:02:16 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+15:02:16 INFO  : 'jtag frequency' command is executed.
+15:02:16 INFO  : Context for 'APU' is selected.
+15:02:17 INFO  : System reset is completed.
+15:02:20 INFO  : 'after 3000' command is executed.
+15:02:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+15:02:22 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+15:02:22 INFO  : Context for 'APU' is selected.
+15:02:22 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:02:22 INFO  : 'configparams force-mem-access 1' command is executed.
+15:02:22 INFO  : Context for 'APU' is selected.
+15:02:22 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+15:02:22 INFO  : 'ps7_init' command is executed.
+15:02:22 INFO  : 'ps7_post_config' command is executed.
+15:02:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:23 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:02:23 INFO  : 'configparams force-mem-access 0' command is executed.
+15:02:23 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:02:23 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:02:24 INFO  : 'con' command is executed.
+15:02:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:02:24 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+15:05:45 INFO  : Disconnected from the channel tcfchan#55.
+15:05:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:05:46 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+15:05:46 INFO  : 'jtag frequency' command is executed.
+15:05:46 INFO  : Context for 'APU' is selected.
+15:05:46 INFO  : System reset is completed.
+15:05:49 INFO  : 'after 3000' command is executed.
+15:05:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+15:05:52 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+15:05:52 INFO  : Context for 'APU' is selected.
+15:05:52 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:05:52 INFO  : 'configparams force-mem-access 1' command is executed.
+15:05:52 INFO  : Context for 'APU' is selected.
+15:05:52 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+15:05:52 INFO  : 'ps7_init' command is executed.
+15:05:52 INFO  : 'ps7_post_config' command is executed.
+15:05:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:05:53 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:05:53 INFO  : 'configparams force-mem-access 0' command is executed.
+15:05:53 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:05:53 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:05:53 INFO  : 'con' command is executed.
+15:05:53 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:05:53 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+15:15:17 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+15:15:32 INFO  : Disconnected from the channel tcfchan#56.
+15:15:33 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:15:33 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+15:15:33 INFO  : 'jtag frequency' command is executed.
+15:15:33 INFO  : Context for 'APU' is selected.
+15:15:33 INFO  : System reset is completed.
+15:15:36 INFO  : 'after 3000' command is executed.
+15:15:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+15:15:38 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+15:15:38 INFO  : Context for 'APU' is selected.
+15:15:38 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+15:15:38 INFO  : 'configparams force-mem-access 1' command is executed.
+15:15:38 INFO  : Context for 'APU' is selected.
+15:15:38 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+15:15:39 INFO  : 'ps7_init' command is executed.
+15:15:39 INFO  : 'ps7_post_config' command is executed.
+15:15:39 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:15:40 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:15:40 INFO  : 'configparams force-mem-access 0' command is executed.
+15:15:40 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:15:40 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:15:40 INFO  : 'con' command is executed.
+15:15:40 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:15:40 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+16:14:04 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+16:14:31 INFO  : Checking for BSP changes to sync application flags for project 'NES_Bootloader'...
+16:14:47 INFO  : Disconnected from the channel tcfchan#58.
+16:14:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:14:48 INFO  : Jtag cable 'Digilent Zed 210248B9D9EE' is selected.
+16:14:48 INFO  : 'jtag frequency' command is executed.
+16:14:48 INFO  : Context for 'APU' is selected.
+16:14:48 INFO  : System reset is completed.
+16:14:51 INFO  : 'after 3000' command is executed.
+16:14:51 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}' command is executed.
+16:14:53 INFO  : FPGA configured successfully with bitstream "X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit"
+16:14:53 INFO  : Context for 'APU' is selected.
+16:14:53 INFO  : Hardware design and registers information is loaded from 'X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa'.
+16:14:53 INFO  : 'configparams force-mem-access 1' command is executed.
+16:14:53 INFO  : Context for 'APU' is selected.
+16:14:53 INFO  : Sourcing of 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl' is done.
+16:14:54 INFO  : 'ps7_init' command is executed.
+16:14:54 INFO  : 'ps7_post_config' command is executed.
+16:14:54 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:14:55 INFO  : The application 'X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:14:55 INFO  : 'configparams force-mem-access 0' command is executed.
+16:14:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zed 210248B9D9EE" && level==0 && jtag_device_ctx=="jsn-Zed-210248B9D9EE-23727093-0"}
+fpga -file X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw X:/cpre488/Labs/MP-0/vitus/design_1_wrapper/export/design_1_wrapper/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow X:/cpre488/Labs/MP-0/vitus/NES_Bootloader/Debug/NES_Bootloader.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:14:55 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:14:55 INFO  : 'con' command is executed.
+16:14:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:14:55 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
