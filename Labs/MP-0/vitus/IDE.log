@@ -5206,3 +5206,16 @@ con
 ----------------End of Script----------------
 
 16:14:55 INFO  : Launch script is exported to file 'X:\cpre488\Labs\MP-0\vitus\.sdk\launch_scripts\single_application_debug\debugger_nes_bootloader-default.tcl'
+17:35:34 INFO  : Disconnected from the channel tcfchan#61.
+23:09:50 INFO  : Launching XSCT server: xsct.bat -n  -interactive \\XFILES.ECE.IASTATE.EDU\home\sik2004\cpre488\Labs\MP-0\vitus\temp_xsdb_launch_script.tcl
+23:09:51 INFO  : XSCT server has started successfully.
+23:09:51 INFO  : Successfully done setting XSCT server connection channel  
+23:09:51 INFO  : plnx-install-location is set to ''
+23:09:51 INFO  : Successfully done setting workspace for the tool. 
+23:09:53 ERROR : Error encountered while initializing user repository paths
+Reason: No Platforms Found.
+
+
+23:09:53 INFO  : Platform repository initialization has completed.
+23:09:53 INFO  : Successfully done query RDI_DATADIR 
+23:09:53 INFO  : Registering command handlers for Vitis TCF services

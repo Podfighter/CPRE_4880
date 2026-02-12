@@ -9564,3 +9564,92 @@ Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-99: Launc
 
 !ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 16:14:55.388
 !MESSAGE XSCT command with result: [con], Result: [null, ]. Thread: Worker-99: Launching Debugger_NES_Bootloader-Default
+
+!ENTRY org.eclipse.ui.workbench 4 0 2026-02-08 17:28:48.739
+!MESSAGE Invalid thread access
+!STACK 0
+org.eclipse.swt.SWTException: Invalid thread access
+	at org.eclipse.swt.SWT.error(SWT.java:4552)
+	at org.eclipse.swt.SWT.error(SWT.java:4467)
+	at org.eclipse.swt.SWT.error(SWT.java:4438)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:448)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:366)
+	at org.eclipse.swt.widgets.Widget.getData(Widget.java:512)
+	at org.eclipse.ui.internal.ide.handlers.PagePropertyTester.test(PagePropertyTester.java:36)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:58)
+	at org.eclipse.core.internal.expressions.TestExpression.evaluate(TestExpression.java:100)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateAnd(CompositeExpression.java:51)
+	at org.eclipse.core.internal.expressions.WithExpression.evaluate(WithExpression.java:75)
+	at org.eclipse.core.internal.expressions.CompositeExpression.evaluateOr(CompositeExpression.java:65)
+	at org.eclipse.core.internal.expressions.OrExpression.evaluate(OrExpression.java:22)
+	at org.eclipse.core.internal.expressions.ReferenceExpression.evaluate(ReferenceExpression.java:71)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:71)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:98)
+	at org.eclipse.ui.internal.services.EvaluationService.requestEvaluation(EvaluationService.java:293)
+	at org.eclipse.ui.internal.handlers.DirtyStateTracker.update(DirtyStateTracker.java:45)
+	at org.eclipse.ui.internal.handlers.DirtyStateTracker.propertyChanged(DirtyStateTracker.java:107)
+	at org.eclipse.ui.part.WorkbenchPart.firePropertyChange(WorkbenchPart.java:119)
+	at com.xilinx.ide.tools.lscript.ui.LscriptEditor.access$2(LscriptEditor.java:1)
+	at com.xilinx.ide.tools.lscript.ui.LscriptEditor$ResourceChangeListener.resourceChanged(LscriptEditor.java:188)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:297)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:287)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:150)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:376)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1499)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:46)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 17:35:34.740
+!MESSAGE XSCT Command: [disconnect tcfchan#61], Thread: Thread-3127
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 17:35:34.746
+!MESSAGE XSCT command with result: [disconnect tcfchan#61], Result: [null, ]. Thread: Thread-3127
+!SESSION 2026-02-08 23:06:24.875 -----------------------------------------------
+eclipse.buildId=2020.1
+java.version=9.0.4
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.launchbar.core 2 0 2026-02-08 23:09:49.403
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2026-02-08 23:09:49.403
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2026-02-08 23:09:49.419
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.ui 4 4 2026-02-08 23:09:49.576
+!MESSAGE Plug-in 'org.eclipse.ui.editors' contributed an invalid Menu Extension (Path: 'navigate' is invalid): org.eclipse.ui.edit.text.gotoLastEditPosition
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.575
+!MESSAGE XSCT Command: [set sdk::sdk_chan tcfchan#0], Thread: Thread-38
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.575
+!MESSAGE XSCT Command: [plnx-install-path  ; ::scw::scw_mode gui], Thread: Thread-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.575
+!MESSAGE XSCT command with result: [set sdk::sdk_chan tcfchan#0], Result: [null, tcfchan#0]. Thread: Thread-38
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.575
+!MESSAGE XSCT command with result: [plnx-install-path  ; ::scw::scw_mode gui], Result: [null, ]. Thread: Thread-26
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.590
+!MESSAGE XSCT Command: [setws //xfiles.ece.iastate.edu/home/sik2004/cpre488/Labs/MP-0/vitus], Thread: Thread-38
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:51.592
+!MESSAGE XSCT command with result: [setws //xfiles.ece.iastate.edu/home/sik2004/cpre488/Labs/MP-0/vitus], Result: [null, ]. Thread: Thread-38
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:53.164
+!MESSAGE XSCT Command: [::hsi::utils::init_repo], Thread: Worker-2: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:53.316
+!MESSAGE XSCT command with result: [::hsi::utils::init_repo], Result: [null, ]. Thread: Worker-2: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:53.316
+!MESSAGE XSCT Command: [set query_var1 $::env(RDI_DATADIR)], Thread: Worker-2: Initializing s/w repositories
+
+!ENTRY com.xilinx.sdk.utils 0 0 2026-02-08 23:09:53.316
+!MESSAGE XSCT command with result: [set query_var1 $::env(RDI_DATADIR)], Result: [null, C:/Xilinx/Vitis/2020.1/data]. Thread: Worker-2: Initializing s/w repositories

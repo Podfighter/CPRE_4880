@@ -24,7 +24,7 @@
 	<item value="Auto Detect" key="NES_Bootloader-device"/>
 	<item value="" key="MP_0-bmmFile"/>
 	<item value="_ide/bitstream/MP0_wrapper.bit" key="MP0_Round2-bitFile"/>
-	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248492833&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248492833-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248492833-23727093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248B9D9EE&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248B9D9EE-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248B9D9EE-23727093-0&quot;}}]}" key="devices_info_Local"/>
 	<item value="X:\cpre488\Labs\MP-0\vitus\MP0_Round3\_ide\bitstream\design_1_wrapper.bit" key="MP0-bitFile"/>
 	<item value="false" key="NES_Bootloader-skip_rev_check"/>
 	<item value="" key="NES_Bootloader-bmmFile"/>

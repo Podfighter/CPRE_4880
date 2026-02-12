@@ -252,3 +252,6 @@ timestamp=[2026-02-08 16:14:05], mode=BUILD, duration=0:00:00.871, duration_ms=8
 timestamp=[2026-02-08 16:14:09], mode=BUILD, duration=0:00:04.145, duration_ms=4145, data={name=NES_Bootloader_system, configuration=Debug, clean_build=false}
 timestamp=[2026-02-08 16:14:33], mode=BUILD, duration=0:00:01.826, duration_ms=1826, data={name=NES_Bootloader, configuration=Debug, clean_build=false}
 timestamp=[2026-02-08 16:14:37], mode=BUILD, duration=0:00:04.013, duration_ms=4013, data={name=NES_Bootloader_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-08 23:09:52], mode=WORKBENCH_START, duration=0:00:05.104, duration_ms=5104, data={}
+timestamp=[2026-02-08 23:09:53], mode=WORKBENCH_UI_INIT, duration=0:00:00.316, duration_ms=316, data={editors_count=17, platform_editors_count=4, projects_count=13, platform_projects_count=2, active_platform_editor=false, projects=MP0,MP0_Round2,MP0_Round2_system,MP0_Round3,MP0_Round3_system,MP0_system,MP0_wrapper,MP_0,MP_0_system,NES_Bootloader,NES_Bootloader_system,RemoteSystemsTempFiles,design_1_wrapper}
+timestamp=[2026-02-08 23:09:53], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.056, duration_ms=56, data={}
