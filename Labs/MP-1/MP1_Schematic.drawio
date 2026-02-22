@@ -157,8 +157,8 @@
             <mxPoint x="320" y="209.9700000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="bmUrjIMQF5a2rMHkKFHZ-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="frame_valid" vertex="1">
-          <mxGeometry height="20" width="60" x="180" y="240" as="geometry" />
+        <mxCell id="bmUrjIMQF5a2rMHkKFHZ-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="frame_seen" vertex="1">
+          <mxGeometry height="20" width="60" x="178" y="240" as="geometry" />
         </mxCell>
         <mxCell id="bmUrjIMQF5a2rMHkKFHZ-9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;">
           <mxGeometry relative="1" as="geometry">
