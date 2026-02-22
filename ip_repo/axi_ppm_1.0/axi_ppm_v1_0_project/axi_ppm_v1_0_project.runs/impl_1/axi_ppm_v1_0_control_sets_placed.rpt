@@ -1,0 +1,128 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Sun Feb 22 02:52:37 2026
+| Host         : CO2041-15 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file axi_ppm_v1_0_control_sets_placed.rpt
+| Design       : axi_ppm_v1_0
+| Device       : xc7z020
+-----------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    50 |
+|    Minimum number of control sets                        |    50 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    42 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    50 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |    36 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    11 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               6 |            2 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             171 |           35 |
+| Yes          | No                    | No                     |             120 |           46 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             477 |          132 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------+------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+|       Clock Signal      |                     Enable Signal                    |                     Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------+------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/axi_arready0               | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              4 |         2.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/axi_awready0               | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              4 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG |                                                      |                                                         |                2 |              6 |         3.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg1[23]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg1[7]_i_1_n_0        | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg10[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg14[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg13[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/p_1_in[0]                  | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                3 |              8 |         2.67 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg12[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg14[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg15[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg3[23]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                5 |              8 |         1.60 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/p_1_in[15]                 | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg11[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/p_1_in[23]                 | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/p_1_in[31]                 | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg1[15]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg10[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg12[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg3[15]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                3 |              8 |         2.67 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg11[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg13[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg15[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg3[31]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg11[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg10[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg14[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                3 |              8 |         2.67 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg11[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg15[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg1[31]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg12[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg12[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg13[15]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg14[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg3[7]_i_1_n_0        | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg13[7]_i_1_n_0       | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg10[31]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                1 |              8 |         8.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg15[23]_i_1_n_0      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |                2 |              8 |         4.00 |
+|  s00_axi_aclk_IBUF_BUFG |                                                      | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/timerwire[19]_i_1_n_0 |                6 |             20 |         3.33 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/__2/i__n_0         |                                                         |                7 |             20 |         2.86 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/__3/i__n_0         |                                                         |                7 |             20 |         2.86 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/__4/i__n_0         |                                                         |                4 |             20 |         5.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/wdata1[19]_i_1_n_0 |                                                         |               10 |             20 |         2.00 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/wdata2[19]_i_1_n_0 |                                                         |                9 |             20 |         2.22 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_cap/wdata3[19]_i_1_n_0 |                                                         |                9 |             20 |         2.22 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/state              | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |               11 |             23 |         2.09 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/slv_reg_rden               | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |               27 |             32 |         1.19 |
+|  s00_axi_aclk_IBUF_BUFG | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/ch_widths[0]_6     | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |               26 |            126 |         4.85 |
+|  s00_axi_aclk_IBUF_BUFG |                                                      | axi_ppm_v1_0_S00_AXI_inst/ppm_gen/SR[0]                 |               29 |            151 |         5.21 |
++-------------------------+------------------------------------------------------+---------------------------------------------------------+------------------+----------------+--------------+
+
+
