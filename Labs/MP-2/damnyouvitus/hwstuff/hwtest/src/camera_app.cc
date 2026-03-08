@@ -195,7 +195,25 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 
 
 					}
+                        buf[row*4][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4][col*4 + 1] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4 + 1] = pS2MM_Mem[row*1920 + 405*1920 + col + 720];
 
+                        buf[row*4][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4][col*4 + 1] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4 + 1] = pS2MM_Mem[row*1920 + 405*1920 + col + 720];
+
+                        buf[row*4][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4][col*4 + 1] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4 + 1] = pS2MM_Mem[row*1920 + 405*1920 + col + 720];
+                        
+                        buf[row*4][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4][col*4 + 1] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4] = pS2MM_Mem[row*1920 + 1920*405 + col + 720];
+									 			buf[row*4 + 1][col*4 + 1] = pS2MM_Mem[row*1920 + 405*1920 + col + 720];
 
 
 		}
