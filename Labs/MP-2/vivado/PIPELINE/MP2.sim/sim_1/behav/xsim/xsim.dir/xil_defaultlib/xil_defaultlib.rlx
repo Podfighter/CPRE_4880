@@ -1,0 +1,8 @@
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,axi_vip_v1_1_7;mipi_dphy_v4_2_0;processing_system7_vip_v1_0_9;xilinx_vip,,,,,,
+C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/imports/hdl/DVIClocking.vhd,1772826436,vhdl,,,,dviclocking,,,,,,,,
+C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/imports/hdl/SyncAsync.vhd,1772826436,vhdl,C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/imports/hdl/SyncAsyncReset.vhd,,,syncasync,,,,,,,,
+C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/imports/hdl/SyncAsyncReset.vhd,1772826436,vhdl,C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/imports/hdl/DVIClocking.vhd,,,resetbridge,,,,,,,,
