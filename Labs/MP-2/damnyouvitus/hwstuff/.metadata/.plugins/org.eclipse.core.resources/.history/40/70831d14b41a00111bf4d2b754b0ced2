@@ -40,7 +40,6 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 
 	Xuint16 snapshot[32][1080][1920] = {0};
 	Xuint16 video[50][1080][1920] = {0};
-	Xuint16 buf[1080][1920] = {0};
 
 	//let's do video. Shouldn't be that hard? let's do 10 fps, also (allocate it on the heap...?)
 	signed char index = 0;
@@ -66,48 +65,6 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 			zoom = (zoom < 0) ? 0 : zoom;
 			sleep(0.1);
 		}
-
-//		switch(zoom){
-//		case 0:
-//			for (int row = 0; row < 1080; row++) {
-//						 		  for(int col = 0;col < 1920;col++){
-//
-//						 			  //grab vals
-//						 			  buf[row][col] = pS2MM_Mem[row*1920 + col];
-//						 		  }
-//						  }
-//
-//
-//			break;
-//
-//		case 1:
-//			for (int row = 0; row < 1080; row + 2) {
-//						 		  for(int col = 0;col < 1920;col + 2){
-//
-//						 			  //grab vals
-//						 			  buf[row][col] = pS2MM_Mem[row*1920 + col];
-//						 			 buf[row][col + 1] = pS2MM_Mem[row*1920 + col];
-//						 			buf[row + 1][col] = pS2MM_Mem[row*1920 + col];
-//						 			buf[row + 1][col + 1] = pS2MM_Mem[row*1920 + col];
-//						 		  }
-//						  }
-//
-//
-//			break;
-//
-//		case 2:
-//
-//			break;
-//
-//		case 3:
-//
-//			break;
-//
-//		default:
-//			break;
-//
-//
-//		}
 
 
 

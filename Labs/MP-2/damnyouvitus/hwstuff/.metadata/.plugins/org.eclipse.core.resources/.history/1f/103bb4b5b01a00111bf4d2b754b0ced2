@@ -40,82 +40,17 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 
 	Xuint16 snapshot[32][1080][1920] = {0};
 	Xuint16 video[50][1080][1920] = {0};
-	Xuint16 buf[1080][1920] = {0};
 
 	//let's do video. Shouldn't be that hard? let's do 10 fps, also (allocate it on the heap...?)
 	signed char index = 0;
-	signed char zoom = 0;
-	//0 is lowest, 3 is highest
-	//x1 = 0, x2 = 1, x4 = 2, x 8 = 3
-	do{
+	signed char sel = 0;
 
+
+	do{
 
 
 		b_read = Xil_In8(XPAR_AXI_GPIO_0_BASEADDR);
 		s_read = Xil_In8(XPAR_AXI_GPIO_1_BASEADDR);
-
-		//what zoom do we want to use?
-		if(b_read & 0x10){
-			zoom++;
-			zoom = (zoom > 3) ? 0 : zoom;
-			sleep(0.1);
-		}
-
-		if(b_read & 0x2){
-			zoom--;
-			zoom = (zoom < 0) ? 0 : zoom;
-			sleep(0.1);
-		}
-
-//		switch(zoom){
-//		case 0:
-//			for (int row = 0; row < 1080; row++) {
-//						 		  for(int col = 0;col < 1920;col++){
-//
-//						 			  //grab vals
-//						 			  buf[row][col] = pS2MM_Mem[row*1920 + col];
-//						 		  }
-//						  }
-//
-//
-//			break;
-//
-//		case 1:
-//			for (int row = 0; row < 1080; row + 2) {
-//						 		  for(int col = 0;col < 1920;col + 2){
-//
-//						 			  //grab vals
-//						 			  buf[row][col] = pS2MM_Mem[row*1920 + col];
-//						 			 buf[row][col + 1] = pS2MM_Mem[row*1920 + col];
-//						 			buf[row + 1][col] = pS2MM_Mem[row*1920 + col];
-//						 			buf[row + 1][col + 1] = pS2MM_Mem[row*1920 + col];
-//						 		  }
-//						  }
-//
-//
-//			break;
-//
-//		case 2:
-//
-//			break;
-//
-//		case 3:
-//
-//			break;
-//
-//		default:
-//			break;
-//
-//
-//		}
-
-
-
-
-
-
-
-
 
 		if(b_read & 0x01){
 
@@ -212,7 +147,7 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 								XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR & ~XAXIVDMA_CR_TAIL_EN_MASK);
 
 		for (int frame = 0; frame < 50;frame++){
-			sleep(0.1);
+
 			for (int row = 0; row < 1080; row++) {
 				for(int col = 0;col < 1920;col++){
 
@@ -228,17 +163,10 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 
 		}
 
-		if(s_read & 0x4){
+		while(1 == (s_read & 0x4)){
 		//do nothing until the switch ISNT flipped then immediately exit loop and die
-			while(s_read & 0x4){
-				s_read = Xil_In8(XPAR_AXI_GPIO_1_BASEADDR);
-			}
-
+		s_read = Xil_In8(XPAR_AXI_GPIO_1_BASEADDR);
 		}
-
-
-
-
 
 		}
 
@@ -266,6 +194,7 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 										XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_TX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_MM2S_DMACR | XAXIVDMA_CR_TAIL_EN_MASK);
 									    vdma_S2MM_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET);
 									    XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR | XAXIVDMA_CR_TAIL_EN_MASK);
+							sleep(0.1);
 
 
 			}

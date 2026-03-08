@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Auto Detect" key="hwtest-device"/>
+	<item value="false" key="hwtest-skip_rev_check"/>
+	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248B9DB51&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248B9DB51-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248B9DB51-23727093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="" key="hwtest-bmmFile"/>
+	<item value="false" key="hwtest-partial_bit"/>
+	<item value="hwtest" key="programfpga.sdxproject"/>
+	<item value="Local" key="hwtest-target"/>
+	<item value="C:\Users\ianrun75\Downloads\CPRE_4880\Labs\MP-2\damnyouvitus\hwstuff\hardwarecam\bitstream\system_wrapper.bit" key="hwtest-bitFile"/>
+</section>

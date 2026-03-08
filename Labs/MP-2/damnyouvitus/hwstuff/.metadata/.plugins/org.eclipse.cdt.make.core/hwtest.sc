@@ -1404,18 +1404,23 @@
     <instance id="xilinx.gnu.armv7.exe.debug.613630413;xilinx.gnu.armv7.exe.debug.613630413.;xilinx.gnu.armv7.cxx.toolchain.compiler.debug.1148166404;xilinx.gnu.armv7.cxx.compiler.input.1874985477">
                 
         <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+            <includePath path="#undef __ARM_FEATURE_CLZ" removed="true"/>
+            <includePath path="#undef __ARM_FEATURE_NUMERIC_MAXMIN" removed="true"/>
             <includePath path="#undef __thumb__" removed="true"/>
             <includePath path="#undef __thumb2__" removed="true"/>
             <includePath path="#undef __ARM_NEON" removed="true"/>
             <includePath path="#undef __ARM_NEON_FP" removed="true"/>
             <includePath path="c:\xilinx\vitis\2020.1\gnu\aarch32\nt\gcc-arm-none-eabi\x86_64-oesdk-mingw32\usr\bin\arm-xilinx-eabi\../../lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/9.2.0/include"/>
+            <includePath path="#undef __ARM_FEATURE_SIMD32" removed="true"/>
             <includePath path="#undef __THUMBEL__" removed="true"/>
             <includePath path="c:\xilinx\vitis\2020.1\gnu\aarch32\nt\gcc-arm-none-eabi\x86_64-oesdk-mingw32\usr\bin\arm-xilinx-eabi\../../lib/arm-xilinx-eabi/gcc/arm-xilinx-eabi/9.2.0/include-fixed"/>
             <includePath path="#undef __ARM_ARCH_ISA_THUMB" removed="true"/>
             <includePath path="C:\Xilinx\Vitis\2020.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\\..\aarch32-xilinx-eabi/usr/include/c++/9.2.0"/>
+            <includePath path="#undef __ARM_ARCH_PROFILE" removed="true"/>
             <includePath path="C:\Xilinx\Vitis\2020.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\\..\aarch32-xilinx-eabi/usr/include/c++/9.2.0/arm-xilinx-eabi"/>
             <includePath path="#undef __ARM_FEATURE_DSP" removed="true"/>
             <includePath path="C:\Xilinx\Vitis\2020.1\gnu\aarch32\nt\gcc-arm-none-eabi\bin\\..\aarch32-xilinx-eabi/usr/include/c++/9.2.0/backward"/>
+            <includePath path="#undef __ARM_ARCH" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_COMPLEX" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_CRC32" removed="true"/>
             <includePath path="#undef __ARM_FEATURE_CRYPTO" removed="true"/>

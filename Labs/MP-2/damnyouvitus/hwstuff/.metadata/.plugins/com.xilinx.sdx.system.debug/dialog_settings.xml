@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="" key="hwtest_system-imgFile"/>
+	<item value="hwtest" key="programflash.hwplatform"/>
+	<item value="" key="hwtest-offSet"/>
+	<item value="C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/damnyouvitus/hwstuff/hardwarecam/export/hardwarecam/sw/hardwarecam/boot/fsbl.elf" key="hwtest_system-fsblFile"/>
+	<item value="qspi-x4-single" key="hwtest_system-flashType"/>
+	<item value="" key="hwtest_system-offSet"/>
+	<item value="false" key="hwtest_system-blankCheck"/>
+	<item value="Local" key="hwtest_system-target"/>
+	<item value="Auto Detect" key="hwtest-device"/>
+	<item value="C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/damnyouvitus/hwstuff/hardwarecam/export/hardwarecam/sw/hardwarecam/boot/fsbl.elf" key="hwtest-fsblFile"/>
+	<item value="false" key="hwtest-verifyFlash"/>
+	<item value="false" key="hwtest_system-verifyFlash"/>
+	<item value="" key="hwtest-imgFile"/>
+	<item value="qspi-x4-single" key="hwtest-flashType"/>
+	<item value="Auto Detect" key="hwtest_system-device"/>
+	<item value="Local" key="hwtest-target"/>
+	<item value="false" key="hwtest-blankCheck"/>
+</section>

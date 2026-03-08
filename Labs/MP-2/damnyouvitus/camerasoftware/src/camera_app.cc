@@ -308,7 +308,7 @@ void camera_loop(void)
 
 
 
-\= rgb2chroma(R,G,B,col);
+= rgb2chroma(R,G,B,col);
     }
   }
 
