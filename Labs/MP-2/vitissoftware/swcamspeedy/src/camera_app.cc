@@ -265,8 +265,9 @@ void camera_loop(void)
   // SW Pass-through: SW Copying Write VDMA Frame Buffer to HDMI read VDMA Frame Buffer (Note: This will display Upside down)
   // Copy 1000 frames using SW before going back to VDMA pass-through mode
   // YOUR Color Conversion SW algorithm will replace this SW pass-through code
-  for (j = 0; j < 500; j++) {
 
+  uint8_t *casted = (uint8_t *)pMM2S_Mem;
+  for (j = 0; j < 500; j++) {
 
 
 	  //9 rows to handle
@@ -416,7 +417,7 @@ void camera_loop(void)
 
 	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(chromaB))), 16);
 
-	          lumalow = vqshrun_n_s16(workbench, 8);
+	          lumalow = vadd_u8(vqshrun_n_s16(workbench,8),vdup_n_u8(16));
 
 
 	          //empty this into lumalow so it's available
@@ -428,7 +429,7 @@ void camera_loop(void)
 
 	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(chromaB))), 16);
 
-	          lumahigh = vqshrun_n_s16(workbench, 8);
+	          lumahigh = vadd_u8(vqshrun_n_s16(workbench,8), vdup_n_u8(16));
 
 	          //combine output
 	          luma = vcombine_u8(lumalow,lumahigh);
@@ -440,7 +441,7 @@ void camera_loop(void)
 	          uint8x8_t damn = vshrn_n_u16(vpaddlq_u8(chromaG),1);
 			  uint8x8_t it = vshrn_n_u16(vpaddlq_u8(chromaB),1);
 
-	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(god)),-12);
+	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(god)),-26);
 
 	          workbench = vmlaq_n_s16(workbench,vreinterpretq_s16_u16(vmovl_u8(damn)),-87);
 
@@ -468,11 +469,28 @@ void camera_loop(void)
 
 	          half2 = vzip_u8(vget_high_u8(luma),chromatemp.val[1]);
 
+	          if(row == 1920 && col == 0) {
+	              xil_printf("half1.val[0]: %02x %02x %02x %02x %02x %02x %02x %02x\r\n",
+	                  half1.val[0][0], half1.val[0][1], half1.val[0][2], half1.val[0][3],
+	                  half1.val[0][4], half1.val[0][5], half1.val[0][6], half1.val[0][7]);
+	              xil_printf("half1.val[1]: %02x %02x %02x %02x %02x %02x %02x %02x\r\n",
+	                  half1.val[1][0], half1.val[1][1], half1.val[1][2], half1.val[1][3],
+	                  half1.val[1][4], half1.val[1][5], half1.val[1][6], half1.val[1][7]);
+	              xil_printf("half2.val[0]: %02x %02x %02x %02x %02x %02x %02x %02x\r\n",
+	                  half2.val[0][0], half2.val[0][1], half2.val[0][2], half2.val[0][3],
+	                  half2.val[0][4], half2.val[0][5], half2.val[0][6], half2.val[0][7]);
+	              xil_printf("half2.val[1]: %02x %02x %02x %02x %02x %02x %02x %02x\r\n",
+	                  half2.val[1][0], half2.val[1][1], half2.val[1][2], half2.val[1][3],
+	                  half2.val[1][4], half2.val[1][5], half2.val[1][6], half2.val[1][7]);
+	          }
 
-	          memout = (uint8_t *)pMM2S_Mem + (row << 1) + (col << 1);
+
+	          memout = casted + (row << 1) + (col << 1);
 	          last_memout = (uint32_t)memout;
-	          vst2_u8(memout,half1);
-	          vst2_u8(memout+16,half2);
+	          vst1_u8(memout,half1.val[0]);
+	          vst1_u8(memout+8,half1.val[1]);
+	          vst1_u8(memout+16,half2.val[0]);
+	          vst1_u8(memout+24,half2.val[1]);
 
 
 
@@ -499,8 +517,6 @@ void camera_loop(void)
 	          toprow = toprhtrow;
 	          botlftrow = botrow;
 	          botrow = botrhtrow;
-
-
 
 	          }
 	          toggle = even;
