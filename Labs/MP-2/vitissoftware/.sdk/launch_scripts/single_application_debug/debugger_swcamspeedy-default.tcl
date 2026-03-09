@@ -14,5 +14,4 @@ ps7_post_config
 targets -set -nocase -filter {name =~ "*A9*#0"}
 dow C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vitissoftware/swcamspeedy/Debug/swcamspeedy.elf
 configparams force-mem-access 0
-targets -set -nocase -filter {name =~ "*A9*#0"}
-con
+bpadd -addr &main

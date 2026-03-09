@@ -8,12 +8,47 @@
 #include "./camera_app.h"
 #include <stdbool.h>
 #include "xparameters.h"
+#include "arm_neon.h"
+#include "xil_exception.h"
+#include "xil_printf.h"
 
+
+volatile Xuint16 *pS2MM_Mem;
+volatile Xuint16 *pMM2S_Mem;
+volatile uint32_t last_memout = 0;
+
+
+void DataAbortHandler(void *CallbackRef) {
+    uint32_t fault_addr;
+    uint32_t fault_status;
+
+    __asm__ volatile (
+        "MRC p15, 0, %0, c6, c0, 0\n"
+        "MRC p15, 0, %1, c5, c0, 0\n"
+        : "=r"(fault_addr), "=r"(fault_status)
+    );
+
+    xil_printf("FAULT ADDR:   0x%08X\r\n", fault_addr);
+    xil_printf("FAULT STATUS: 0x%08X\r\n", fault_status);
+    xil_printf("pS2MM_Mem:    0x%08X\r\n", (uint32_t)pS2MM_Mem);
+    xil_printf("pMM2S_Mem:    0x%08X\r\n", (uint32_t)pMM2S_Mem);
+    xil_printf("FAULT ADDR:   0x%08X\r\n", fault_addr);
+    xil_printf("FAULT STATUS: 0x%08X\r\n", fault_status);
+    xil_printf("last_memout:  0x%08X\r\n", last_memout);
+    xil_printf("pMM2S_Mem:    0x%08X\r\n", (uint32_t)pMM2S_Mem);
+    xil_printf("difference:   %d bytes\r\n", last_memout - (uint32_t)pMM2S_Mem);
+    while(1);
+}
+
+// then in main/init:
 
 int main()
 {
   // Start bringing up board
   configure_platform();
+  Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_DATA_ABORT_INT,
+      (Xil_ExceptionHandler)DataAbortHandler, NULL);
+  Xil_ExceptionEnable();
 
   enable_color_pipeline();
   // Start Video HDMI Output Stream
@@ -216,8 +251,8 @@ void camera_loop(void)
   XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR & ~XAXIVDMA_CR_TAIL_EN_MASK);
 
   // Pointers to the S2MM memory frame and M2SS memory frame
-  volatile Xuint16 *pS2MM_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_S2MM_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET);
-  volatile Xuint16 *pMM2S_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET+4);
+  pS2MM_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_S2MM_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET);
+  pMM2S_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET+4);
 
   xil_printf("SW processing 1000 frames...\r\n");
   xil_printf("pS2MM_Mem = %X\n\r", pS2MM_Mem);
@@ -230,87 +265,338 @@ void camera_loop(void)
   // SW Pass-through: SW Copying Write VDMA Frame Buffer to HDMI read VDMA Frame Buffer (Note: This will display Upside down)
   // Copy 1000 frames using SW before going back to VDMA pass-through mode
   // YOUR Color Conversion SW algorithm will replace this SW pass-through code
-  for (j = 0; j < 100; j++) {
-
-	  for (int row = 2; row < 1078; row++) {
-		  for(int col = 2;col < 1918;col++){
-
-			  //precalculation
-			  center = pS2MM_Mem[row*1920 + col];
-			  up = pS2MM_Mem[(row - 1)*1920 + col];
-			  down = pS2MM_Mem[(row + 1)*1920 + col];
-			  left = pS2MM_Mem[row*1920 + col -1];
-			  right = pS2MM_Mem[1920*row + col + 1];
-			  ul = pS2MM_Mem[1920*(row - 1) + col - 1 ];
-			  ur = pS2MM_Mem[1920*(row - 1) + col + 1];
-			  ll = pS2MM_Mem[1920*(row + 1) + col - 1 ];
-			  lr = pS2MM_Mem[1920*(row + 1) + col + 1];
-
-			  //conditions
-
-			  bluc = !((col & 1)|(row & 1));
-			  //blue is evens, red is odds.
-			  //odd green would be odd col, even row
-
-			  redc = (col & 1)&(row & 1);
+  for (j = 0; j < 500; j++) {
 
 
 
+	  //9 rows to handle
+	  uint8x16_t toprow;
+	  uint8x16_t midrow;
+	  uint8x16_t botrow;
+	  uint8x16_t midlftrow;
+	  uint8x16_t midrhtrow;
+	  uint8x16_t toplftrow;
+	  uint8x16_t toprhtrow;
+	  uint8x16_t botlftrow;
+	  uint8x16_t botrhtrow;
 
 
 
-			  //base colors
+	  //diags (everyone gets two diags (shifted rows))
+	  uint8x16_t mldia;
+	  uint8x16_t mrdia;
+	  uint8x16_t bldia;
+	  uint8x16_t brdia;
+	  uint8x16_t tldia;
+	  uint8x16_t trdia;
 
 
 
-			  //red
-			  R = redc*center;
 
-			  //blue
-			  B = bluc*center;
+	  //regs to hold avg'd values
+	  // uint8x16_t red2blue
+	  // uint8x16_t green2blue
 
-			  //green
-			  G = ((col & 1)^(row & 1))*center;
-			  //these only run once per loop. no point in precalculating them!
 
-			  //time to calculate
+	  //didn't need these but they kinda show how i thought about it
 
+	  // uint8x16_t blue2red
+	  // uint8x16_t green2red
+
+	  // uint8x16_t red2ogreen
+	  // uint8x16_t blue2ogreen
+
+	  // uint8x16_t red2egreen
+	  // uint8x16_t blue2egreen
+
+	  //output/chroma regs + toggle + workbench
+	  uint8x16_t toggle;
+	  uint8x16_t chromaR;
+	  uint8x16_t chromaG;
+	  uint8x16_t chromaB;
+
+	  //needs to be signed so we don't blow up our numbers when we do stuff
+	  int16x8_t workbench;
+
+
+	  //chroma output stuff (luma and chroma)
+	  uint8x16_t luma;
+	  uint8x16_t chroma;
+
+	  uint8x8_t lumalow,lumahigh,chromalow,chromahigh;
+	  uint8x8x2_t chromatemp,half1,half2;//hold the two chroma values
+
+	  uint8_t* memout;
+
+
+
+
+
+	  //masks for our purposes
+	  uint8_t tempeven[] = {
+	      0xFF, 0x00, 0xFF, 0x00,
+	      0xFF, 0x00, 0xFF, 0x00,
+	      0xFF, 0x00, 0xFF, 0x00,
+	      0xFF, 0x00, 0xFF, 0x00,
+	  };
+
+	  uint8_t tempodd[] = {
+	      0x00, 0xFF, 0x00, 0xFF,
+	      0x00, 0xFF, 0x00, 0xFF,
+	      0x00, 0xFF, 0x00, 0xFF,
+	      0x00, 0xFF, 0x00, 0xFF,
+	  };
+
+	  uint8x16_t even = vld1q_u8(tempeven);
+	  uint8x16_t odd = vld1q_u8(tempodd);
+
+
+//volatile? i hardly know her!
+	           uint8_t *top = ((uint8_t *)pS2MM_Mem);
+	           uint8_t *mid = (uint8_t*)pS2MM_Mem + 1920;
+	           uint8_t *bot = (uint8_t*)pS2MM_Mem + 3840;
+
+	          midlftrow = vld1q_u8(mid - 16);
+	          midrow = vld1q_u8(mid);
+
+
+
+	  for(int row = 1920;row < 1920*1077;row += 1920){
+
+	          toplftrow = vld1q_u8(top + row - 16);
+	          midlftrow = vld1q_u8(mid + row - 16);
+	          botlftrow = vld1q_u8(bot + row - 16);
+
+	          toprow = vld1q_u8(top + row);
+	          midrow = vld1q_u8(mid + row);
+	          botrow = vld1q_u8(bot + row);
+
+
+
+
+	      for(int col = 0;col < 1920; col += 16){
+
+
+
+	          //grab the rightmost column of blocks
+	          midrhtrow = vld1q_u8(mid + 16 + col + row);
+	          toprhtrow = vld1q_u8(top + 16 + col + row);
+	          botrhtrow = vld1q_u8(bot + 16 + col + row);
+
+
+	          //diagonal offsets (this is basically slicing our two variables)
+	          tldia = vextq_u8(toplftrow,toprow,15); //grab  the last byte of lftrow and add on the first 15 of midrow
+	          trdia = vextq_u8(toprow,toprhtrow,1); //same but l5 bytes of mid but 1 byte of rhtrow
+
+	          mldia = vextq_u8(midlftrow,midrow,15);
+	          mrdia = vextq_u8(midrow,midrhtrow,1);
+
+	          bldia = vextq_u8(botlftrow,botrow,15);
+	          brdia = vextq_u8(botrow,botrhtrow,1);
+
+
+
+	          //start demosaicing it up
+
+
+
+	          //vbslq_u8 basically just checks the mask and chooses which input to dump in (if it's even, dump red2blue, odd, dump red2egreen)
+	          chromaR = vbslq_u8(even,vrhaddq_u8((vrhaddq_u8(tldia,trdia)),(vrhaddq_u8(bldia,brdia))),vrhaddq_u8(toprow,botrow));
+
+	          chromaG = vbslq_u8(even,vrhaddq_u8((vrhaddq_u8(toprow,botrow)),(vrhaddq_u8(mldia,mrdia))),midrow);
+
+	          chromaB = vbslq_u8(even,midrow,vrhaddq_u8(mldia,mrdia));
+
+
+
+	          //convert it to chroma (do lows first)!
+	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(chromaR))), 47);
+
+	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(chromaG))), 157);
+
+	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_low_u8(chromaB))), 16);
+
+	          lumalow = vqshrun_n_s16(workbench, 8);
+
+
+	          //empty this into lumalow so it's available
+
+
+	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(chromaR))), 47);
+
+	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(chromaG))), 157);
+
+	          workbench = vmlaq_n_s16(workbench, vreinterpretq_s16_u16(vmovl_u8(vget_high_u8(chromaB))), 16);
+
+	          lumahigh = vqshrun_n_s16(workbench, 8);
+
+	          //combine output
+	          luma = vcombine_u8(lumalow,lumahigh);
+
+
+	          //chroma time
+
+	          uint8x8_t god = vshrn_n_u16(vpaddlq_u8(chromaR),1);
+	          uint8x8_t damn = vshrn_n_u16(vpaddlq_u8(chromaG),1);
+			  uint8x8_t it = vshrn_n_u16(vpaddlq_u8(chromaB),1);
+
+	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(god)),-12);
+
+	          workbench = vmlaq_n_s16(workbench,vreinterpretq_s16_u16(vmovl_u8(damn)),-87);
+
+	          workbench = vmlaq_n_s16(workbench,vreinterpretq_s16_u16(vmovl_u8(it)),112);
+
+	          chromalow = vadd_u8(vqshrun_n_s16(workbench,8),vdup_n_u8(128));
+
+	          god = vshrn_n_u16(vpaddlq_u8(chromaR),1);
+	          damn = vshrn_n_u16(vpaddlq_u8(chromaG),1);
+			  it = vshrn_n_u16(vpaddlq_u8(chromaB),1);
+
+	          workbench = vmulq_n_s16(vreinterpretq_s16_u16(vmovl_u8(god)),112);
+
+	          workbench = vmlaq_n_s16(workbench,vreinterpretq_s16_u16(vmovl_u8(damn)),-102);
+
+	          workbench = vmlaq_n_s16(workbench,vreinterpretq_s16_u16(vmovl_u8(it)),-10);
+
+	          chromahigh = vadd_u8(vqshrun_n_s16(workbench,8),vdup_n_u8(128));
+
+
+	          chromatemp = vzip_u8(chromalow,chromahigh);
+
+
+	          half1= vzip_u8(vget_low_u8(luma),chromatemp.val[0]);
+
+	          half2 = vzip_u8(vget_high_u8(luma),chromatemp.val[1]);
+
+
+	          memout = (uint8_t *)pMM2S_Mem + (row << 1) + (col << 1);
+	          last_memout = (uint32_t)memout;
+	          vst2_u8(memout,half1);
+	          vst2_u8(memout+16,half2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	          //swap the toggle so we can alternate between the row patterns
+
+	          //shift registers to save writes
+	          midlftrow = midrow;
+	          midrow = midrhtrow;
+	          toplftrow = toprow;
+	          toprow = toprhtrow;
+	          botlftrow = botrow;
+	          botrow = botrhtrow;
+
+
+
+	          }
+	          toggle = even;
+	          even = odd;
+	          odd = toggle;
+
+
+
+	      }
+
+
+
+
+
+
+
+
+//	  for (int row = 2; row < 1078; row++) {
+//		  for(int col = 2;col < 1918;col++){
+//
+//			  //precalculation
+//			  center = pS2MM_Mem[row*1920 + col];
+//			  up = pS2MM_Mem[(row - 1)*1920 + col];
+//			  down = pS2MM_Mem[(row + 1)*1920 + col];
+//			  left = pS2MM_Mem[row*1920 + col -1];
+//			  right = pS2MM_Mem[1920*row + col + 1];
+//			  ul = pS2MM_Mem[1920*(row - 1) + col - 1 ];
+//			  ur = pS2MM_Mem[1920*(row - 1) + col + 1];
+//			  ll = pS2MM_Mem[1920*(row + 1) + col - 1 ];
+//			  lr = pS2MM_Mem[1920*(row + 1) + col + 1];
+//
+//			  //conditions
+//
+//			  bluc = !((col & 1)|(row & 1));
+//			  //blue is evens, red is odds.
+//			  //odd green would be odd col, even row
+//
+//			  redc = (col & 1)&(row & 1);
 //
 //
-
-			  //averaging for da red
-			  B += redc*((ul + ur + ll + lr) >> 2);
-
-
-			  G += redc*((up + left + right + down) >> 2);
-
-			  //averaging for da blu
-			  R += bluc*((ul + ur + ll + lr) >> 2);
-
-			  G += bluc*((up + left + right + down) >> 2);
-
-			  //averaging for green (odd)
-
-			  B += (((col & 1)^(row & 1))&(col & 1))*((left + right) >> 1);
-
-		      R += (((col & 1)^(row & 1))&(col & 1))*((up + down) >> 1);
-
-
-			  //averaging for green (even)
-
-			  R += (((col & 1)^(row & 1))&(row & 1))*((left + right) >> 1);
 //
-		      B += (((col & 1)^(row & 1))&(row & 1))*((up + down) >> 1);
-
-
-
-
-
-
-
-		      pMM2S_Mem[row*1920 + col] = rgb2chroma(R,G,B,col);
-    }
-  }
+//
+//
+//
+//			  //base colors
+//
+//
+//
+//			  //red
+//			  R = redc*center;
+//
+//			  //blue
+//			  B = bluc*center;
+//
+//			  //green
+//			  G = ((col & 1)^(row & 1))*center;
+//			  //these only run once per loop. no point in precalculating them!
+//
+//			  //time to calculate
+//
+////
+////
+//
+//			  //averaging for da red
+//			  B += redc*((ul + ur + ll + lr) >> 2);
+//
+//
+//			  G += redc*((up + left + right + down) >> 2);
+//
+//			  //averaging for da blu
+//			  R += bluc*((ul + ur + ll + lr) >> 2);
+//
+//			  G += bluc*((up + left + right + down) >> 2);
+//
+//			  //averaging for green (odd)
+//
+//			  B += (((col & 1)^(row & 1))&(col & 1))*((left + right) >> 1);
+//
+//		      R += (((col & 1)^(row & 1))&(col & 1))*((up + down) >> 1);
+//
+//
+//			  //averaging for green (even)
+//
+//			  R += (((col & 1)^(row & 1))&(row & 1))*((left + right) >> 1);
+////
+//		      B += (((col & 1)^(row & 1))&(row & 1))*((up + down) >> 1);
+//
+//
+//
+//
+//
+//
+//
+//		      pMM2S_Mem[row*1920 + col] = rgb2chroma(R,G,B,col);
+//    }
+//  }
 
   }
   // Grab the VDMA Control Registers, and take VDMA channels out of Park

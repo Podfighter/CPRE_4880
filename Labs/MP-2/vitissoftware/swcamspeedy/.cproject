@@ -73,9 +73,9 @@
                                     								
                                 </option>
                                 								
-                                <option id="xilinx.gnu.compiler.misc.other.1415650916" name="Other flags" superClass="xilinx.gnu.compiler.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -MT&quot;$@&quot; -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.misc.other.1415650916" name="Other flags" superClass="xilinx.gnu.compiler.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -MT&quot;$@&quot; -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -O3 -mfpu=neon" valueType="string"/>
                                 								
-                                <option id="xilinx.gnu.compiler.option.optimization.flags.643158070" name="Other optimization flags" superClass="xilinx.gnu.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-O3 -mfpu=neon -mfloat-abi=hard" valueType="string"/>
+                                <option id="xilinx.gnu.compiler.option.optimization.flags.643158070" name="Other optimization flags" superClass="xilinx.gnu.compiler.option.optimization.flags" useByScannerDiscovery="false" value="-Ofast" valueType="string"/>
                                 								
                                 <inputType id="xilinx.gnu.armv7.cxx.compiler.input.1209151100" name="C++ source files" superClass="xilinx.gnu.armv7.cxx.compiler.input"/>
                                 							
