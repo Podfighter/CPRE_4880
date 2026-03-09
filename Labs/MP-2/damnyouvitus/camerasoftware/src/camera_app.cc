@@ -304,6 +304,9 @@ void camera_loop(void)
 
 
 
+	Xuint8 Y = ((47*Red + 157*Green + 16*Blue) >> 8) + 16;
+	Xuint8 Cb = ((-26*Red -87*Green + 112*Blue + 128) >> 8)*(!(index & 1));
+	Xuint8 Cr = ((112*Red -102*Green - 10*Blue + 128) >> 8)*((index & 1));
 
 
 

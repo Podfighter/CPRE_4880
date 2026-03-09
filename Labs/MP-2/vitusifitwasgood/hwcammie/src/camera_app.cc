@@ -10,6 +10,9 @@
 #include "xvprocss.h"
 #include "xv_demosaic.h"
 #include "xv_demosaic_hw.h"
+#include "xilsd.h"
+#include "ff.h"
+
 
 
 int main()
@@ -32,6 +35,17 @@ int main()
   cleanup_platform();
 }
 
+//void frame_out(Xuint16* frame, size_t size, size_t count,signed char index){
+//FIE* out;
+//char buf[20];
+//sprintf(buf,"imageraw%d",index);
+//	xilsd_fopen(out, buf);
+//	xilsd_fwrite(buf, size, count, out);
+//
+//	return;
+//
+//}
+
 void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 	char b_read;
 	char s_read;
@@ -53,7 +67,11 @@ void camera_interface(volatile Xuint16* pMM2S_Mem, volatile Xuint16* pS2MM_Mem){
 						vdma_S2MM_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET);
 						XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR & ~XAXIVDMA_CR_TAIL_EN_MASK);
 
-	do{
+
+
+
+
+						do{
 
 
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="swcamspeedy" location="C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vitissoftware/swcamspeedy" platform="C:/Users/ianrun75/Downloads/CPRE_4880/Labs/MP-2/vitissoftware/swplatform/export/swplatform/swplatform.xpfm" platformUID="xilinx:zed::0.0(custom)" systemProject="swcamspeedy_system" sysConfig="swplatform" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" language="CPP" mssSignature="d6453c81e1af373afea8cf08fa465a53">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.134714262">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.613742121" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
