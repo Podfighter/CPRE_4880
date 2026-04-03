@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="hwcammie-partial_bit"/>
+	<item value="Auto Detect" key="hwcammie-device"/>
+	<item value="_ide/bitstream/hwcammie.bit" key="hwcammie-bitFile"/>
+	<item value="{&quot;cables&quot;:[]}" key="devices_info_Local"/>
+	<item value="hwcammie" key="programfpga.sdxproject"/>
+	<item value="" key="hwcammie-bmmFile"/>
+	<item value="false" key="hwcammie-skip_rev_check"/>
+	<item value="Local" key="hwcammie-target"/>
+</section>

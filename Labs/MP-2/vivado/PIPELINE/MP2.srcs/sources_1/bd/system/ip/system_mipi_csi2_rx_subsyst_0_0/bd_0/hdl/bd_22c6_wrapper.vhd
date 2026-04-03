@@ -65,6 +65,14 @@ architecture STRUCTURE of bd_22c6_wrapper is
     csirxss_csi_irq : out STD_LOGIC;
     video_aclk : in STD_LOGIC;
     video_aresetn : in STD_LOGIC;
+    mipi_phy_if_clk_hs_n : in STD_LOGIC;
+    mipi_phy_if_clk_hs_p : in STD_LOGIC;
+    mipi_phy_if_clk_lp_n : in STD_LOGIC;
+    mipi_phy_if_clk_lp_p : in STD_LOGIC;
+    mipi_phy_if_data_hs_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    mipi_phy_if_data_hs_p : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    mipi_phy_if_data_lp_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    mipi_phy_if_data_lp_p : in STD_LOGIC_VECTOR ( 1 downto 0 );
     csirxss_s_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
     csirxss_s_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     csirxss_s_axi_awvalid : in STD_LOGIC_VECTOR ( 0 to 0 );
@@ -89,15 +97,7 @@ architecture STRUCTURE of bd_22c6_wrapper is
     video_out_tlast : out STD_LOGIC;
     video_out_tready : in STD_LOGIC;
     video_out_tuser : out STD_LOGIC_VECTOR ( 0 to 0 );
-    video_out_tvalid : out STD_LOGIC;
-    mipi_phy_if_clk_hs_n : in STD_LOGIC;
-    mipi_phy_if_clk_hs_p : in STD_LOGIC;
-    mipi_phy_if_clk_lp_n : in STD_LOGIC;
-    mipi_phy_if_clk_lp_p : in STD_LOGIC;
-    mipi_phy_if_data_hs_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    mipi_phy_if_data_hs_p : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    mipi_phy_if_data_lp_n : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    mipi_phy_if_data_lp_p : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    video_out_tvalid : out STD_LOGIC
   );
   end component bd_22c6;
 begin

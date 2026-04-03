@@ -1,0 +1,75 @@
+#include "./cannon_object_detect.h"
+#include "xparameters.h"
+#include "xvprocss.h"
+#include "xv_demosaic.h"
+#include "xv_demosaic_hw.h"
+#include "xilsd.h"
+#include "ff.h"
+
+void object_detect(void)
+{
+  Xuint32 parkptr; // Store Park location for VDMA Write or Read channel
+  Xuint32 vdma_S2MM_DMACR;  // Store value of VDMA Write channel Control Register
+  Xuint32 vdma_MM2S_DMACR;  // Store value of VDMA Read channel Control Register
+  Xuint16 buf[1080][1920] = {0};
+  Xuint16 mask = 0x5B6D;//0x5A52;
+  Xuint16 mask2 = 0x5B6D; //0xF052;
+  int i, j; // Loop indexes
+  int even_odd = 0;
+
+  xil_printf("\r\nEntering SW processing loop...\r\n");
+  while(1){
+  // Grab the DMA parkptr, and update it to ensure that when parked, the S2MM side is on frame 0, and the MM2S side on frame 1
+  parkptr = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_PARKPTR_OFFSET);
+  parkptr &= ~XAXIVDMA_PARKPTR_READREF_MASK;
+  parkptr &= ~XAXIVDMA_PARKPTR_WRTREF_MASK;
+  parkptr |= 0x1;
+  XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_PARKPTR_OFFSET, parkptr);
+
+  // Grab the VDMA Control Registers, and place VDMA channels in Park
+  // (i.e., Lock each VDMA channel to its own frame buffer)
+  vdma_MM2S_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_TX_OFFSET+XAXIVDMA_CR_OFFSET);
+  XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_TX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_MM2S_DMACR & ~XAXIVDMA_CR_TAIL_EN_MASK);
+  vdma_S2MM_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET);
+  XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR & ~XAXIVDMA_CR_TAIL_EN_MASK);
+
+  // Pointers to the S2MM memory frame and M2SS memory frame
+  volatile Xuint16 *pS2MM_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_S2MM_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET);
+  volatile Xuint16 *pMM2S_Mem = (Xuint16 *)XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_MM2S_ADDR_OFFSET+XAXIVDMA_START_ADDR_OFFSET+4);
+  Xuint16 buf2 = pS2MM_Mem[12*1920 + 5] & mask;
+
+  xil_printf("screen:%x Camera:%x \r\n ", buf2, pS2MM_Mem[12*1920 + 5]);
+  for (int row = 0; row < 1080; row++) {
+
+		  for(int col = 0;col < 1920;col++){
+
+  						 			  //grab vals
+			  //xil_printf("\r\nEntering SW processing loop...\r\n");
+			  if (even_odd % 2 == 0) {
+			  	  //buf[row][col] = pS2MM_Mem[row*1920 + col] & mask;
+				  buf[row][col] = mask;
+			    } else {
+			  	  //buf[row][col] = pS2MM_Mem[row*1920 + col] & mask2;
+			    	buf[row][col] = mask2;
+			    }
+			  even_odd++;
+			  //buf[row][col] = pS2MM_Mem[row*1920 + col] & mask;
+			  pMM2S_Mem[row*1920 + col] = buf[row][col];
+
+		  }
+}
+
+
+
+  //xil_printf("%x \n", pS2MM_Mem[12*1920 + 5]);
+
+  vdma_MM2S_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_TX_OFFSET+XAXIVDMA_CR_OFFSET);
+  XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_TX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_MM2S_DMACR | XAXIVDMA_CR_TAIL_EN_MASK);
+  vdma_S2MM_DMACR = XAxiVdma_ReadReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET);
+  XAxiVdma_WriteReg(XPAR_AXIVDMA_0_BASEADDR, XAXIVDMA_RX_OFFSET+XAXIVDMA_CR_OFFSET, vdma_S2MM_DMACR | XAXIVDMA_CR_TAIL_EN_MASK);
+  }
+  xil_printf("SW processing loop complete!\r\n");
+
+
+  return;
+}
