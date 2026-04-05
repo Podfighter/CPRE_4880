@@ -18,4 +18,4 @@
 
 
 
-void object_detect(void);
+void Cannon_object_detect(void);

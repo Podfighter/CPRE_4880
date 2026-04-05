@@ -18,6 +18,9 @@ typedef struct {
     int found;  // 1 if object was detected, 0 otherwise
 } detect_result_t;
 
+void yuv422_get_pixel(volatile Xuint16 *fb, int width, int col, int row,
+                             uint8_t *y_out, uint8_t *u_out, uint8_t *v_out);
+
 // convert a YUV sample to RGB (helper if you want to inspect pixels directly)
 void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
                 uint8_t *r_out, uint8_t *g_out, uint8_t *b_out);
@@ -26,6 +29,6 @@ void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
 // fb     - pointer to start of frame buffer (cast from mmap or VDMA pointer)
 // width  - frame width in pixels (1920)
 // height - frame height in pixels (1080)
-detect_result_t object_detect(volatile Xuint16 *fb, int width, int height);
+detect_result_t object_detect(volatile Xuint16 *fb,volatile Xuint16 *fb2, int width, int height);
 
 #endif /* OBJECT_DETECT_H */

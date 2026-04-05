@@ -31,7 +31,7 @@ int main()
 
   // Start SW Processing of Video Frames
   //camera_loop();
-  object_detect();
+  Cannon_object_detect();
 
   // Shutdown Platform
   cleanup_platform();

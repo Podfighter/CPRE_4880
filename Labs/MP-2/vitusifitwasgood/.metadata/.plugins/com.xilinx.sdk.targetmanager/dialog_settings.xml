@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="Auto Detect" key="hardwarecam-device"/>
+	<item value="_ide/bitstream/system_wrapper2.bit" key="hardwarecam-bitFile"/>
+	<item value="hardwarecam" key="programfpga.sdxproject"/>
+	<item value="false" key="hwcammie-skip_rev_check"/>
+	<item value="Local" key="hwcammie-target"/>
+	<item value="" key="hardwarecam-bmmFile"/>
 	<item value="false" key="hwcammie-partial_bit"/>
 	<item value="Auto Detect" key="hwcammie-device"/>
 	<item value="_ide/bitstream/hwcammie.bit" key="hwcammie-bitFile"/>
-	<item value="{&quot;cables&quot;:[]}" key="devices_info_Local"/>
-	<item value="hwcammie" key="programfpga.sdxproject"/>
+	<item value="{&quot;cables&quot;:[{&quot;name&quot;:&quot;Digilent Zed 210248B9D9EE&quot;,&quot;indexContextMap&quot;:{&quot;2&quot;:&quot;jsn-Zed-210248B9D9EE-4ba00477-0&quot;,&quot;3&quot;:&quot;jsn-Zed-210248B9D9EE-23727093-0&quot;}}]}" key="devices_info_Local"/>
+	<item value="false" key="hardwarecam-skip_rev_check"/>
+	<item value="false" key="hardwarecam-partial_bit"/>
 	<item value="" key="hwcammie-bmmFile"/>
-	<item value="false" key="hwcammie-skip_rev_check"/>
-	<item value="Local" key="hwcammie-target"/>
+	<item value="Local" key="hardwarecam-target"/>
 </section>

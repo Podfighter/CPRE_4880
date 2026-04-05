@@ -3,15 +3,18 @@
 
 // YUV 4:2:2 (YUYV) packs 2 pixels into 4 bytes: [Y0][U][Y1][V]
 // U and V are shared between the pixel pair so we snap to the even col
-static void yuv422_get_pixel(volatile Xuint16 *fb, int width, int col, int row,
+void yuv422_get_pixel(volatile Xuint16 *fb, int width, int col, int row,
                              uint8_t *y_out, uint8_t *u_out, uint8_t *v_out)
 {
-    int stride = width * 2;
+
+	int stride = width * 2;
     int base = row * stride + (col & ~1) * 2; // round col down to even
+
 
     *y_out = fb[base + (col & 1) * 2]; // Y0 at offset 0, Y1 at offset 2
     *u_out = fb[base + 1];
     *v_out = fb[base + 3];
+
 }
 
 // Convert YUV to RGB using BT.601 integer coefficients
@@ -39,7 +42,7 @@ void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
 // Scan the frame buffer for a red object and return its centroid
 // Steps by 2 in both directions to go faster (every other pixel is fine)
 // Needs at least 50 red pixels to count as a real detection
-detect_result_t object_detect(volatile Xuint16 *fb, int width, int height)
+detect_result_t object_detect(volatile Xuint16 *fb, volatile Xuint16 *fb2, int width, int height)
 {
     detect_result_t result = {0, 0, 0};
     long sum_x = 0, sum_y = 0;
@@ -59,15 +62,21 @@ detect_result_t object_detect(volatile Xuint16 *fb, int width, int height)
             double magnitudeG = g / sqrt( (r*r) + (g*g) + (b*b) );
             double magnitudeB = b / sqrt( (r*r) + (g*g) + (b*b) );
             int big = r+g+b;
+            //xil_printf("R:%d G:%d B:%d BIG:%d \r\n ", r, g, b, big);
 
 
             // check if the pixel is clearly red
             //if (r > 100 && r > (uint8_t)(g * 2) && r > (uint8_t)(b * 2))
-            if(magnitudeR >= 0.80 && magnitudeG <= 0.10 && magnitudeB <= 0.10 && big >= 70)
+            if(magnitudeR <= 0.20 && magnitudeG >= 0.9 && magnitudeB <= 0.2 && big >= 50 && big <= 150)
             {
+
+            	fb2[row*1920 + col] = 0x9C50;
                 sum_x += col;
                 sum_y += row;
                 count++;
+            }
+            else{
+            	fb2[row*1920 + col] = fb[row*1920 + col];
             }
         }
     }

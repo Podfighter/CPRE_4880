@@ -1,0 +1,88 @@
+#include "object_detect.h"
+#include <math.h>
+
+// YUV 4:2:2 (YUYV) packs 2 pixels into 4 bytes: [Y0][U][Y1][V]
+// U and V are shared between the pixel pair so we snap to the even col
+void yuv422_get_pixel(volatile Xuint16 *fb, int width, int col, int row,
+                             uint8_t *y_out, uint8_t *u_out, uint8_t *v_out)
+{
+    int stride = width * 2;
+    int base = row * stride + (col & ~1) * 2; // round col down to even
+
+    *y_out = fb[base + (col & 1) * 2]; // Y0 at offset 0, Y1 at offset 2
+    *u_out = fb[base + 1];
+    *v_out = fb[base + 3];
+}
+
+// Convert YUV to RGB using BT.601 integer coefficients
+// subtract offsets first (Y is offset by 16, U/V by 128)
+void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
+                uint8_t *r_out, uint8_t *g_out, uint8_t *b_out)
+{
+    int c = (int)y - 16;
+    int d = (int)u - 128;
+    int e = (int)v - 128;
+
+    int r = (298 * c + 409 * e + 128) >> 8;
+    int g = (298 * c - 100 * d - 208 * e + 128) >> 8;
+    int b = (298 * c + 516 * d + 128) >> 8;
+
+    // clamp to [0, 255]
+    *r_out = (uint8_t)(r < 0 ? 0 : r > 255 ? 255
+                                           : r);
+    *g_out = (uint8_t)(g < 0 ? 0 : g > 255 ? 255
+                                           : g);
+    *b_out = (uint8_t)(b < 0 ? 0 : b > 255 ? 255
+                                           : b);
+}
+
+// Scan the frame buffer for a red object and return its centroid
+// Steps by 2 in both directions to go faster (every other pixel is fine)
+// Needs at least 50 red pixels to count as a real detection
+detect_result_t object_detect(volatile Xuint16 *fb, volatile Xuint16 *fb2, int width, int height)
+{
+    detect_result_t result = {0, 0, 0};
+    long sum_x = 0, sum_y = 0;
+    int count = 0;
+    int row, col;
+
+    for (row = 0; row < height; row += 1)
+    {
+        for (col = 0; col < width; col += 1)
+        {
+            uint8_t y, u, v, r, g, b;
+
+            yuv422_get_pixel(fb, width, col, row, &y, &u, &v);
+            yuv_to_rgb(y, u, v, &r, &g, &b);
+
+            double magnitudeR = r / sqrt( (r*r) + (g*g) + (b*b) );
+            double magnitudeG = g / sqrt( (r*r) + (g*g) + (b*b) );
+            double magnitudeB = b / sqrt( (r*r) + (g*g) + (b*b) );
+            int big = r+g+b;
+            xil_printf("R:%d G:%d B:%d BIG:%d \r\n ", r, g, b, big);
+
+
+            // check if the pixel is clearly red
+            //if (r > 100 && r > (uint8_t)(g * 2) && r > (uint8_t)(b * 2))
+            if(magnitudeR >= 0.70 && magnitudeG <= 0.5 && magnitudeB <= 0.5 && big >= 70)
+            {
+            	fb2[row*1920 + col] = 0x9C50;
+                sum_x += col;
+                sum_y += row;
+                count++;
+            }
+            else{
+            	fb2[row*1920 + col] = fb[row*1920 + col];
+            }
+        }
+    }
+
+    if (count >= 50)
+    {
+        result.x = (int)(sum_x / count);
+        result.y = (int)(sum_y / count);
+        result.found = 1;
+    }
+
+    return result;
+}

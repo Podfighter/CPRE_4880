@@ -6,8 +6,9 @@
 #include "xv_demosaic_hw.h"
 #include "xilsd.h"
 #include "ff.h"
+#include <math.h>
 
-void object_detect(void)
+void Cannon_object_detect(void)
 {
   Xuint32 parkptr; // Store Park location for VDMA Write or Read channel
   Xuint32 vdma_S2MM_DMACR;  // Store value of VDMA Write channel Control Register
@@ -47,25 +48,27 @@ void object_detect(void)
 //  uint8 Gout = 0;
 //  uint8 Bout = 0;
   detect_result_t target;
-  target = object_detect(pS2MM_Mem, 1920, 1080);
+  target = object_detect(pS2MM_Mem, pMM2S_Mem, 1920, 1080);
+
+
 
 //  xil_printf("screen:%x Camera:%x \r\n ", buf2, pS2MM_Mem[12*1920 + 5]);
-
+//
   for (int row = 0; row < 1080; row++) {
 
 		  for(int col = 0;col < 1920;col++){
 
-			  //yuv422_get_pixel(pS2MM_Mem, 2, col, row, *Yout, *Uout, *Vout);
-			  //yuv_to_rgb(Yout, Uout, Vout, *Rout, *Gout, *Bout);
-
-
-  						 			  //grab vals
-			  //xil_printf("\r\nEntering SW processing loop...\r\n");
+//			  yuv422_get_pixel(pS2MM_Mem, 2, col, row, *Yout, *Uout, *Vout);
+//			  yuv_to_rgb(Yout, Uout, Vout, *Rout, *Gout, *Bout);
+//
+//
+//  						 			  grab vals
+//			  xil_printf("\r\nEntering SW processing loop...\r\n");
 //			  if (even_odd % 2 == 0) {
 //			  	  buf[row][col] = pS2MM_Mem[row*1920 + col] & mask;
 //				  //buf[row][col] = mask;
 //			    } else {
-//			  	  buf[row][col] = pS2MM_Mem[row*1920 + col] & mask2;
+//			  	  buf[row][col] = pS2MM_Mem[row*19 20 + col] & mask2;
 //			    	//buf[row][col] = mask2;
 //			    }
 //			  even_odd++;
