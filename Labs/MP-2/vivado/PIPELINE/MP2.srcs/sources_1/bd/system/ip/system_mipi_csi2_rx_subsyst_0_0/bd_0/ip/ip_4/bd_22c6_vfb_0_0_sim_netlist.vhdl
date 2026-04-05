@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Thu Apr  2 16:41:55 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_mipi_csi2_rx_subsyst_0_0/bd_0/ip/ip_4/bd_22c6_vfb_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top bd_22c6_vfb_0_0 -prefix
+--               bd_22c6_vfb_0_0_ bd_22c6_vfb_0_0_sim_netlist.vhdl
 -- Design      : bd_22c6_vfb_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -33,8 +33,6 @@ entity bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axisc_downsizer is
     s_axis_tid : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s_axis_tuser : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axisc_downsizer : entity is "axis_dwidth_converter_v1_1_20_axisc_downsizer";
 end bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axisc_downsizer;
 
 architecture STRUCTURE of bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axisc_downsizer is
@@ -2975,8 +2973,6 @@ entity bd_22c6_vfb_0_0_vfb_v1_0_15_op_inf is
     \sband_td_r_reg[55]_1\ : in STD_LOGIC_VECTOR ( 55 downto 0 );
     \vfb_data_reg[9]_0\ : in STD_LOGIC_VECTOR ( 9 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_vfb_v1_0_15_op_inf : entity is "vfb_v1_0_15_op_inf";
 end bd_22c6_vfb_0_0_vfb_v1_0_15_op_inf;
 
 architecture STRUCTURE of bd_22c6_vfb_0_0_vfb_v1_0_15_op_inf is
@@ -4181,8 +4177,6 @@ entity bd_22c6_vfb_0_0_vfb_v1_0_15_reorder is
     s_axis_tvalid : in STD_LOGIC;
     \buf_data_reg[1][172]_0\ : in STD_LOGIC_VECTOR ( 100 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_vfb_v1_0_15_reorder : entity is "vfb_v1_0_15_reorder";
 end bd_22c6_vfb_0_0_vfb_v1_0_15_reorder;
 
 architecture STRUCTURE of bd_22c6_vfb_0_0_vfb_v1_0_15_reorder is
@@ -13967,8 +13961,6 @@ entity bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axis_dwidth_converter is
     s_axis_tuser : in STD_LOGIC_VECTOR ( 23 downto 0 );
     aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axis_dwidth_converter : entity is "axis_dwidth_converter_v1_1_20_axis_dwidth_converter";
 end bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axis_dwidth_converter;
 
 architecture STRUCTURE of bd_22c6_vfb_0_0_axis_dwidth_converter_v1_1_20_axis_dwidth_converter is
@@ -14041,8 +14033,6 @@ entity bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter is
   attribute CHECK_LICENSE_TYPE of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter : entity is "bd_22c6_vfb_0_0_axis_converter,axis_dwidth_converter_v1_1_20_axis_dwidth_converter,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter : entity is "bd_22c6_vfb_0_0_axis_converter";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter : entity is "axis_dwidth_converter_v1_1_20_axis_dwidth_converter,Vivado 2020.1";
 end bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_converter;
@@ -14121,8 +14111,6 @@ entity bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_dconverter is
     \sband_tact1__0\ : in STD_LOGIC;
     sband_tu_r : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_dconverter : entity is "bd_22c6_vfb_0_0_axis_dconverter";
 end bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_dconverter;
 
 architecture STRUCTURE of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_axis_dconverter is
@@ -14414,8 +14402,6 @@ entity bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_core is
   attribute C_HS_LINE_RATE of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_core : entity is 420;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_core : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_core : entity is "bd_22c6_vfb_0_0_core";
   attribute VFB_4PXL_W : integer;
   attribute VFB_4PXL_W of bd_22c6_vfb_0_0_bd_22c6_vfb_0_0_core : entity is 40;
   attribute VFB_BYPASS_WC : integer;

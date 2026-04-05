@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Apr  2 16:43:14 2026
+// Date        : Thu Apr  2 16:43:13 2026
 // Host        : CO2041-11 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_v_proc_ss_0_1/bd_0/ip/ip_0/bd_ed91_csc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top bd_ed91_csc_0 -prefix
+//               bd_ed91_csc_0_ bd_ed91_csc_0_stub.v
 // Design      : bd_ed91_csc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Thu Apr  2 16:42:16 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_axis_subset_converter_1_0/system_axis_subset_converter_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_axis_subset_converter_1_0 -prefix
+--               system_axis_subset_converter_1_0_ system_axis_subset_converter_1_0_sim_netlist.vhdl
 -- Design      : system_axis_subset_converter_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -102,8 +102,6 @@ entity system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0 is
   attribute G_TASK_SEVERITY_INFO of system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0 : entity is 0;
   attribute G_TASK_SEVERITY_WARNING : integer;
   attribute G_TASK_SEVERITY_WARNING of system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0 : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0 : entity is "top_system_axis_subset_converter_1_0";
 end system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0;
 
 architecture STRUCTURE of system_axis_subset_converter_1_0_top_system_axis_subset_converter_1_0 is

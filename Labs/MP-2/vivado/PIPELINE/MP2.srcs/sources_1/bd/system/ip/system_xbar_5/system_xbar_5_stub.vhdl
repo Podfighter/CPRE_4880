@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Apr  2 16:41:59 2026
+-- Date        : Thu Apr  2 16:41:58 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_xbar_5/system_xbar_5_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top system_xbar_5 -prefix
+--               system_xbar_5_ system_xbar_5_stub.vhdl
 -- Design      : system_xbar_5
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

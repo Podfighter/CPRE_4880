@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Apr  2 16:42:18 2026
+-- Date        : Thu Apr  2 16:42:17 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_mipi_csi2_rx_subsyst_0_0/bd_0/ip/ip_2/bd_22c6_rx_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top bd_22c6_rx_0 -prefix
+--               bd_22c6_rx_0_ bd_22c6_rx_0_sim_netlist.vhdl
 -- Design      : bd_22c6_rx_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity bd_22c6_rx_0_xpm_cdc_array_single is
   attribute DEST_SYNC_FF of bd_22c6_rx_0_xpm_cdc_array_single : entity is 3;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_array_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_array_single : entity is "xpm_cdc_array_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of bd_22c6_rx_0_xpm_cdc_array_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -2452,8 +2450,6 @@ entity bd_22c6_rx_0_xpm_cdc_async_rst is
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_async_rst : entity is 0;
   attribute INV_DEF_VAL : string;
   attribute INV_DEF_VAL of bd_22c6_rx_0_xpm_cdc_async_rst : entity is "1'b0";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_async_rst : entity is "xpm_cdc_async_rst";
   attribute RST_ACTIVE_HIGH : integer;
   attribute RST_ACTIVE_HIGH of bd_22c6_rx_0_xpm_cdc_async_rst : entity is 0;
   attribute VERSION : integer;
@@ -2829,8 +2825,6 @@ entity bd_22c6_rx_0_xpm_cdc_gray is
   attribute DEST_SYNC_FF of bd_22c6_rx_0_xpm_cdc_gray : entity is 2;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_gray : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_gray : entity is "xpm_cdc_gray";
   attribute REG_OUTPUT : integer;
   attribute REG_OUTPUT of bd_22c6_rx_0_xpm_cdc_gray : entity is 0;
   attribute SIM_ASSERT_CHK : integer;
@@ -5341,8 +5335,6 @@ entity bd_22c6_rx_0_xpm_cdc_single is
   attribute DEST_SYNC_FF of bd_22c6_rx_0_xpm_cdc_single : entity is 3;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_single : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_single : entity is "xpm_cdc_single";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of bd_22c6_rx_0_xpm_cdc_single : entity is 0;
   attribute SRC_INPUT_REG : integer;
@@ -15470,8 +15462,6 @@ entity bd_22c6_rx_0_xpm_cdc_sync_rst is
   attribute INIT of bd_22c6_rx_0_xpm_cdc_sync_rst : entity is "0";
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_sync_rst : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_sync_rst : entity is "xpm_cdc_sync_rst";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of bd_22c6_rx_0_xpm_cdc_sync_rst : entity is 0;
   attribute VERSION : integer;
@@ -15757,8 +15747,6 @@ entity bd_22c6_rx_0_xpm_counter_updn is
     \count_value_i_reg[0]_1\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_counter_updn : entity is "xpm_counter_updn";
 end bd_22c6_rx_0_xpm_counter_updn;
 
 architecture STRUCTURE of bd_22c6_rx_0_xpm_counter_updn is
@@ -22299,8 +22287,6 @@ entity bd_22c6_rx_0_xpm_fifo_reg_bit is
     \gen_pf_ic_rc.gpf_ic.prog_full_i_reg\ : in STD_LOGIC;
     rst : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_reg_bit : entity is "xpm_fifo_reg_bit";
 end bd_22c6_rx_0_xpm_fifo_reg_bit;
 
 architecture STRUCTURE of bd_22c6_rx_0_xpm_fifo_reg_bit is
@@ -22706,8 +22692,6 @@ entity bd_22c6_rx_0_xpm_fifo_reg_vec is
     D : in STD_LOGIC_VECTOR ( 4 downto 0 );
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_reg_vec : entity is "xpm_fifo_reg_vec";
 end bd_22c6_rx_0_xpm_fifo_reg_vec;
 
 architecture STRUCTURE of bd_22c6_rx_0_xpm_fifo_reg_vec is
@@ -23823,8 +23807,6 @@ entity bd_22c6_rx_0_xpm_fifo_rst is
     \gen_pntr_flags_cc.wrp_eq_rdp_pf_cc.gpe_cc_sym.diff_pntr_pe_reg[3]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     wr_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_rst : entity is "xpm_fifo_rst";
 end bd_22c6_rx_0_xpm_fifo_rst;
 
 architecture STRUCTURE of bd_22c6_rx_0_xpm_fifo_rst is
@@ -24477,8 +24459,6 @@ entity bd_22c6_rx_0_xpm_memory_base is
   attribute MESSAGE_CONTROL of bd_22c6_rx_0_xpm_memory_base : entity is 0;
   attribute NUM_CHAR_LOC : integer;
   attribute NUM_CHAR_LOC of bd_22c6_rx_0_xpm_memory_base : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_memory_base : entity is "xpm_memory_base";
   attribute P_ECC_MODE : string;
   attribute P_ECC_MODE of bd_22c6_rx_0_xpm_memory_base : entity is "no_ecc";
   attribute P_ENABLE_BYTE_WRITE_A : integer;
@@ -28617,8 +28597,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_control is
     diwc_valid : in STD_LOGIC;
     \reg_ecc_status_i_reg[2]_0\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_control : entity is "mipi_csi2_rx_ctrl_v1_0_8_control";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_control;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_control is
@@ -30566,8 +30544,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc0 is
     crc_rst : in STD_LOGIC;
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc0 : entity is "mipi_csi2_rx_ctrl_v1_0_8_crc0";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc0;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc0 is
@@ -34042,8 +34018,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_data is
     \mem_wdata_reg[67]_0\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     \LINE_BUF_WR_64.lbuf_wr_byte_cnt_reg[31]_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_data : entity is "mipi_csi2_rx_ctrl_v1_0_8_data";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_data;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_data is
@@ -40711,8 +40685,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_lane_merger is
     o_pkt_prcng_d1_reg_0 : in STD_LOGIC;
     o_pkt_prcng_d1_reg_1 : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_lane_merger : entity is "mipi_csi2_rx_ctrl_v1_0_8_lane_merger";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_lane_merger;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_lane_merger is
@@ -41810,8 +41782,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_phecc is
     E : in STD_LOGIC_VECTOR ( 0 to 0 );
     m_axis_aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_phecc : entity is "mipi_csi2_rx_ctrl_v1_0_8_phecc";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_phecc;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_phecc is
@@ -47397,8 +47367,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_inf is
     dl0_errsoths : in STD_LOGIC;
     dl0_rxsynchs : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_inf : entity is "mipi_csi2_rx_ctrl_v1_0_8_ppi_inf";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_inf;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_inf is
@@ -48151,8 +48119,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_stream is
     mem_rdata : in STD_LOGIC_VECTOR ( 67 downto 0 );
     empty : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_stream : entity is "mipi_csi2_rx_ctrl_v1_0_8_stream";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_stream;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_stream is
@@ -57836,8 +57802,6 @@ entity bd_22c6_rx_0_xpm_cdc_handshake is
   attribute DEST_SYNC_FF of bd_22c6_rx_0_xpm_cdc_handshake : entity is 3;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_handshake : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_handshake : entity is "xpm_cdc_handshake";
   attribute SIM_ASSERT_CHK : integer;
   attribute SIM_ASSERT_CHK of bd_22c6_rx_0_xpm_cdc_handshake : entity is 0;
   attribute SRC_SYNC_FF : integer;
@@ -65268,8 +65232,6 @@ entity bd_22c6_rx_0_xpm_cdc_pulse is
   attribute DEST_SYNC_FF of bd_22c6_rx_0_xpm_cdc_pulse : entity is 3;
   attribute INIT_SYNC_FF : integer;
   attribute INIT_SYNC_FF of bd_22c6_rx_0_xpm_cdc_pulse : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_cdc_pulse : entity is "xpm_cdc_pulse";
   attribute REG_OUTPUT : integer;
   attribute REG_OUTPUT of bd_22c6_rx_0_xpm_cdc_pulse : entity is 0;
   attribute RST_USED : integer;
@@ -65932,8 +65894,6 @@ entity bd_22c6_rx_0_xpm_fifo_base is
   attribute FULL_RESET_VALUE of bd_22c6_rx_0_xpm_fifo_base : entity is 0;
   attribute FULL_RST_VAL : string;
   attribute FULL_RST_VAL of bd_22c6_rx_0_xpm_fifo_base : entity is "1'b0";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_base : entity is "xpm_fifo_base";
   attribute PE_THRESH_ADJ : integer;
   attribute PE_THRESH_ADJ of bd_22c6_rx_0_xpm_fifo_base : entity is 3;
   attribute PE_THRESH_MAX : integer;
@@ -69996,8 +69956,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc is
     E : in STD_LOGIC_VECTOR ( 1 downto 0 );
     D : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc : entity is "mipi_csi2_rx_ctrl_v1_0_8_crc";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_crc is
@@ -72291,8 +72249,6 @@ entity bd_22c6_rx_0_xpm_fifo_sync is
   attribute FIFO_WRITE_DEPTH of bd_22c6_rx_0_xpm_fifo_sync : entity is 16;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of bd_22c6_rx_0_xpm_fifo_sync : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_sync : entity is "xpm_fifo_sync";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of bd_22c6_rx_0_xpm_fifo_sync : entity is 5;
   attribute PROG_FULL_THRESH : integer;
@@ -73068,8 +73024,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_isr_cdc is
     \isr_i_reg[0]_0\ : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_isr_cdc : entity is "mipi_csi2_rx_ctrl_v1_0_8_isr_cdc";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_isr_cdc;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_isr_cdc is
@@ -77417,8 +77371,6 @@ entity bd_22c6_rx_0_xpm_fifo_async is
   attribute FIFO_WRITE_DEPTH of bd_22c6_rx_0_xpm_fifo_async : entity is 32;
   attribute FULL_RESET_VALUE : integer;
   attribute FULL_RESET_VALUE of bd_22c6_rx_0_xpm_fifo_async : entity is 0;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_xpm_fifo_async : entity is "xpm_fifo_async";
   attribute PROG_EMPTY_THRESH : integer;
   attribute PROG_EMPTY_THRESH of bd_22c6_rx_0_xpm_fifo_async : entity is 10;
   attribute PROG_FULL_THRESH : integer;
@@ -77883,8 +77835,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_line_buffer is
     p_0_in : in STD_LOGIC_VECTOR ( 2 downto 0 );
     m_axis_aresetn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_line_buffer : entity is "mipi_csi2_rx_ctrl_v1_0_8_line_buffer";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_line_buffer;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_line_buffer is
@@ -78038,8 +77988,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_fifo is
     din : in STD_LOGIC_VECTOR ( 11 downto 0 );
     rd_en : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_fifo : entity is "mipi_csi2_rx_ctrl_v1_0_8_ppi_fifo";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_fifo;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_ppi_fifo is
@@ -78424,8 +78372,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_gen_spkt_fifo is
     m_axis_aresetn : in STD_LOGIC;
     dest_out : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_gen_spkt_fifo : entity is "mipi_csi2_rx_ctrl_v1_0_8_gen_spkt_fifo";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_gen_spkt_fifo;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_gen_spkt_fifo is
@@ -79604,8 +79550,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_pkt_fifo is
     lp_wc0 : in STD_LOGIC;
     \exp_crc_r_reg[15]\ : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_pkt_fifo : entity is "mipi_csi2_rx_ctrl_v1_0_8_pkt_fifo";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_pkt_fifo;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_pkt_fifo is
@@ -80178,8 +80122,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_reg_inf is
     end_mem_wr2 : in STD_LOGIC;
     lx_info_all : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_reg_inf : entity is "mipi_csi2_rx_ctrl_v1_0_8_reg_inf";
 end bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_reg_inf;
 
 architecture STRUCTURE of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_reg_inf is
@@ -92230,8 +92172,6 @@ entity bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_top is
   attribute C_S_AXI_DATA_WIDTH of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_top : entity is 32;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_top : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_top : entity is "mipi_csi2_rx_ctrl_v1_0_8_top";
   attribute VC_H : integer;
   attribute VC_H of bd_22c6_rx_0_mipi_csi2_rx_ctrl_v1_0_8_top : entity is 4;
   attribute VC_L : integer;

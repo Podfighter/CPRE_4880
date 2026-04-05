@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Apr  2 16:42:06 2026
+-- Date        : Thu Apr  2 16:42:05 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_mipi_csi2_rx_subsyst_0_0/bd_0/ip/ip_3/bd_22c6_phy_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top bd_22c6_phy_0 -prefix
+--               bd_22c6_phy_0_ bd_22c6_phy_0_sim_netlist.vhdl
 -- Design      : bd_22c6_phy_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -81,8 +81,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series is
   attribute ISERDES_IOBDELAY of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series : entity is "NONE";
   attribute MTBF_SYNC_STAGES : integer;
   attribute MTBF_SYNC_STAGES of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series : entity is 3;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series : entity is "mipi_dphy_v4_2_0_rx_ioi_7series";
   attribute PASS_IN_WAIT_TIME : string;
   attribute PASS_IN_WAIT_TIME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series : entity is "32'b00000000000000010000000000000000";
   attribute PASS_RST_WAIT_TIME : string;
@@ -430,8 +428,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_sync is
     scndry_aclk : in STD_LOGIC;
     scndry_out : out STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_sync : entity is "mipi_dphy_v4_2_0_rx_rst_sync";
   attribute c_init_val : string;
   attribute c_init_val of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_sync : entity is "1'b1";
   attribute c_mtbf_stages : string;
@@ -742,8 +738,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sync_cell is
   );
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sync_cell : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sync_cell : entity is "mipi_dphy_v4_2_0_rx_sync_cell";
   attribute c_cdc_type : string;
   attribute c_cdc_type of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sync_cell : entity is "2'b01";
   attribute c_flop_input : string;
@@ -51108,8 +51102,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane is
     dphy_en : in STD_LOGIC;
     system_rst : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane : entity is "mipi_dphy_v4_2_0_csi_rx_clk_lane";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane is
@@ -52864,8 +52856,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm is
     dl1_stopstate : in STD_LOGIC;
     hs_settle_reg : in STD_LOGIC_VECTOR ( 8 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm : entity is "mipi_dphy_v4_2_0_csi_rx_data_lane_sm";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm is
@@ -55558,8 +55548,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_dphy_reg is
     s_axi_awvalid : in STD_LOGIC;
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 4 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_dphy_reg : entity is "mipi_dphy_v4_2_0_rx_dphy_reg";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_dphy_reg;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_dphy_reg is
@@ -61503,8 +61491,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series is
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series : entity is "yes";
   attribute MTBF_SYNC_STAGES : integer;
   attribute MTBF_SYNC_STAGES of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series : entity is 3;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series : entity is "mipi_dphy_v4_2_0_rx_rst_logic_7series";
   attribute RESET_FSM_DONE : string;
   attribute RESET_FSM_DONE of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series : entity is "2'b10";
   attribute RST_BEGIN : string;
@@ -61685,8 +61671,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align is
     rx_div4_clk : in STD_LOGIC;
     rx_dl1_hs_dp : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align : entity is "mipi_dphy_v4_2_0_rx_sot_det_align";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align is
@@ -65503,8 +65487,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic is
     dl_status_reg_bit_4_reg : in STD_LOGIC;
     \FSM_sequential_rst_blk_state_reg[2]_1\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic : entity is "mipi_dphy_v4_2_0_rx_support_rst_logic";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic is
@@ -65780,8 +65762,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane is
     sys_rst_byteclk_out : in STD_LOGIC;
     dl_status_reg_bit_4_reg : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane : entity is "mipi_dphy_v4_2_0_rx_data_lane";
 end bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane;
 
 architecture STRUCTURE of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane is
@@ -67461,8 +67441,6 @@ entity bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top is
   attribute LP_STATE_CNT of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top : entity is 2;
   attribute MTBF_SYNC_STAGES : integer;
   attribute MTBF_SYNC_STAGES of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top : entity is 3;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top : entity is "mipi_dphy_v4_2_0_rx_fab_top";
   attribute RESET_PULSE_EXTN : string;
   attribute RESET_PULSE_EXTN of bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top : entity is "4'b0001";
   attribute SETTLE_TIMEOUT_L : integer;
@@ -68559,8 +68537,6 @@ entity bd_22c6_phy_0_bd_22c6_phy_0_support is
     clk_hs_rxp : in STD_LOGIC;
     clk_hs_rxn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_bd_22c6_phy_0_support : entity is "bd_22c6_phy_0_support";
 end bd_22c6_phy_0_bd_22c6_phy_0_support;
 
 architecture STRUCTURE of bd_22c6_phy_0_bd_22c6_phy_0_support is
@@ -69368,8 +69344,6 @@ entity bd_22c6_phy_0_bd_22c6_phy_0_c1 is
     clk_hs_rxp : in STD_LOGIC;
     clk_hs_rxn : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_bd_22c6_phy_0_c1 : entity is "bd_22c6_phy_0_c1";
 end bd_22c6_phy_0_bd_22c6_phy_0_c1;
 
 architecture STRUCTURE of bd_22c6_phy_0_bd_22c6_phy_0_c1 is
@@ -69558,8 +69532,6 @@ entity bd_22c6_phy_0_bd_22c6_phy_0_core is
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_phy_0_bd_22c6_phy_0_core : entity is "yes";
   attribute MTBF_SYNC_STAGES : integer;
   attribute MTBF_SYNC_STAGES of bd_22c6_phy_0_bd_22c6_phy_0_core : entity is 3;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_phy_0_bd_22c6_phy_0_core : entity is "bd_22c6_phy_0_core";
   attribute SUPPORT_LEVEL : integer;
   attribute SUPPORT_LEVEL of bd_22c6_phy_0_bd_22c6_phy_0_core : entity is 1;
 end bd_22c6_phy_0_bd_22c6_phy_0_core;

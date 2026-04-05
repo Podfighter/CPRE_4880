@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
--- Date        : Thu Apr  2 16:41:57 2026
+-- Date        : Thu Apr  2 16:41:56 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_mipi_csi2_rx_subsyst_0_0/bd_0/ip/ip_0/bd_22c6_xbar_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top bd_22c6_xbar_0 -prefix
+--               bd_22c6_xbar_0_ bd_22c6_xbar_0_sim_netlist.vhdl
 -- Design      : bd_22c6_xbar_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -56,8 +56,6 @@ entity bd_22c6_xbar_0_axi_crossbar_v2_1_22_addr_arbiter_sasd is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 12 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 12 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_xbar_0_axi_crossbar_v2_1_22_addr_arbiter_sasd : entity is "axi_crossbar_v2_1_22_addr_arbiter_sasd";
 end bd_22c6_xbar_0_axi_crossbar_v2_1_22_addr_arbiter_sasd;
 
 architecture STRUCTURE of bd_22c6_xbar_0_axi_crossbar_v2_1_22_addr_arbiter_sasd is
@@ -931,8 +929,6 @@ entity bd_22c6_xbar_0_axi_crossbar_v2_1_22_splitter is
     aresetn_d : in STD_LOGIC;
     aclk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_xbar_0_axi_crossbar_v2_1_22_splitter : entity is "axi_crossbar_v2_1_22_splitter";
 end bd_22c6_xbar_0_axi_crossbar_v2_1_22_splitter;
 
 architecture STRUCTURE of bd_22c6_xbar_0_axi_crossbar_v2_1_22_splitter is
@@ -1095,8 +1091,6 @@ entity bd_22c6_xbar_0_axi_register_slice_v2_1_21_axic_register_slice is
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
     SR : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_xbar_0_axi_register_slice_v2_1_21_axic_register_slice : entity is "axi_register_slice_v2_1_21_axic_register_slice";
 end bd_22c6_xbar_0_axi_register_slice_v2_1_21_axic_register_slice;
 
 architecture STRUCTURE of bd_22c6_xbar_0_axi_register_slice_v2_1_21_axic_register_slice is
@@ -2260,8 +2254,6 @@ entity bd_22c6_xbar_0_axi_crossbar_v2_1_22_crossbar_sasd is
     m_axi_rdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
     m_axi_bresp : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_xbar_0_axi_crossbar_v2_1_22_crossbar_sasd : entity is "axi_crossbar_v2_1_22_crossbar_sasd";
 end bd_22c6_xbar_0_axi_crossbar_v2_1_22_crossbar_sasd;
 
 architecture STRUCTURE of bd_22c6_xbar_0_axi_crossbar_v2_1_22_crossbar_sasd is
@@ -2585,8 +2577,6 @@ entity bd_22c6_xbar_0_axi_crossbar_v2_1_22_axi_crossbar is
   attribute C_S_AXI_WRITE_ACCEPTANCE of bd_22c6_xbar_0_axi_crossbar_v2_1_22_axi_crossbar : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of bd_22c6_xbar_0_axi_crossbar_v2_1_22_axi_crossbar : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of bd_22c6_xbar_0_axi_crossbar_v2_1_22_axi_crossbar : entity is "axi_crossbar_v2_1_22_axi_crossbar";
   attribute P_ADDR_DECODE : integer;
   attribute P_ADDR_DECODE of bd_22c6_xbar_0_axi_crossbar_v2_1_22_axi_crossbar : entity is 1;
   attribute P_AXI3 : integer;

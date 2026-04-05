@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Thu Apr  2 16:43:43 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_auto_cc_1/system_auto_cc_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_auto_cc_1 -prefix
+--               system_auto_cc_1_ system_auto_cc_1_sim_netlist.vhdl
 -- Design      : system_auto_cc_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -21,8 +21,6 @@ entity system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sample_cycle_ratio is
     \out\ : in STD_LOGIC;
     \gen_sample_cycle.slow_aclk_div2_reg_0\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sample_cycle_ratio : entity is "axi_clock_converter_v2_1_20_axic_sample_cycle_ratio";
 end system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sample_cycle_ratio;
 
 architecture STRUCTURE of system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sample_cycle_ratio is
@@ -131,8 +129,6 @@ entity system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sync_clock_converter is
     \gen_sync_clock_converter.s_areset_r\ : in STD_LOGIC;
     D : in STD_LOGIC_VECTOR ( 18 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sync_clock_converter : entity is "axi_clock_converter_v2_1_20_axic_sync_clock_converter";
 end system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sync_clock_converter;
 
 architecture STRUCTURE of system_auto_cc_1_axi_clock_converter_v2_1_20_axic_sync_clock_converter is
@@ -2219,8 +2215,6 @@ entity system_auto_cc_1_axi_clock_converter_v2_1_20_axi_clock_converter is
   attribute C_W_WIDTH of system_auto_cc_1_axi_clock_converter_v2_1_20_axi_clock_converter : entity is 36;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of system_auto_cc_1_axi_clock_converter_v2_1_20_axi_clock_converter : entity is "yes";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_auto_cc_1_axi_clock_converter_v2_1_20_axi_clock_converter : entity is "axi_clock_converter_v2_1_20_axi_clock_converter";
   attribute P_ACLK_RATIO : integer;
   attribute P_ACLK_RATIO of system_auto_cc_1_axi_clock_converter_v2_1_20_axi_clock_converter : entity is 3;
   attribute P_AXI3 : integer;

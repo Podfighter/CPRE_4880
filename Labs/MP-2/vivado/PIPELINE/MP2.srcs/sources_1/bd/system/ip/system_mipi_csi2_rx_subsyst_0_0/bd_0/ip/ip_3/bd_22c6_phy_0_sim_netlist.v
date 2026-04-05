@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-// Date        : Thu Apr  2 16:42:06 2026
+// Date        : Thu Apr  2 16:42:05 2026
 // Host        : CO2041-11 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_mipi_csi2_rx_subsyst_0_0/bd_0/ip/ip_3/bd_22c6_phy_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top bd_22c6_phy_0 -prefix
+//               bd_22c6_phy_0_ bd_22c6_phy_0_sim_netlist.v
 // Design      : bd_22c6_phy_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -355,7 +355,6 @@ module bd_22c6_phy_0
         .system_rst_out(system_rst_out));
 endmodule
 
-(* ORIG_REF_NAME = "bd_22c6_phy_0_c1" *) 
 module bd_22c6_phy_0_bd_22c6_phy_0_c1
    (system_rst_out,
     init_done,
@@ -554,8 +553,7 @@ endmodule
 (* C_RCVE_DESKEW_SEQ = "false" *) (* C_SKEWCAL_FIRST_TIME = "4096" *) (* C_SKEWCAL_PERIODIC_TIME = "128" *) 
 (* C_STABLE_CLK_PERIOD = "5.000000" *) (* C_TXPLL_CLKIN_PERIOD = "8.000000" *) (* C_WAKEUP = "1000000" *) 
 (* C_XMIT_FIRST_DESKEW_SEQ = "false" *) (* C_XMIT_PERIODIC_DESKEW_SEQ = "false" *) (* DPHY_PRESET = "CSI2RX_XLNX" *) 
-(* DowngradeIPIdentifiedWarnings = "yes" *) (* MTBF_SYNC_STAGES = "3" *) (* ORIG_REF_NAME = "bd_22c6_phy_0_core" *) 
-(* SUPPORT_LEVEL = "1" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* MTBF_SYNC_STAGES = "3" *) (* SUPPORT_LEVEL = "1" *) 
 module bd_22c6_phy_0_bd_22c6_phy_0_core
    (core_clk,
     core_rst,
@@ -856,7 +854,6 @@ module bd_22c6_phy_0_bd_22c6_phy_0_core
         .system_rst_out(system_rst_out));
 endmodule
 
-(* ORIG_REF_NAME = "bd_22c6_phy_0_support" *) 
 module bd_22c6_phy_0_bd_22c6_phy_0_support
    (system_rst_out,
     init_done,
@@ -1658,7 +1655,6 @@ module bd_22c6_phy_0_bd_22c6_phy_0_support
         .system_rst_byteclk(\NLW_slave_rx.u_rx_rst_logic_7series_system_rst_byteclk_UNCONNECTED ));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_csi_rx_clk_lane" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane
    (cl_init_done_div4clk,
     cl_status_reg,
@@ -3014,7 +3010,6 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_clk_lane
         .s_level_out_d2_reg_1(lp_state_sync1_i_n_5));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_csi_rx_data_lane_sm" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm
    (dl_status_reg,
     dl_en_hs_lpn_i,
@@ -5098,7 +5093,6 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_csi_rx_data_lane_sm_7
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_data_lane" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane
    (SR,
     hs_dvalid_reg,
@@ -6166,7 +6160,6 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_data_lane_1
         .s_level_out_d2_reg_0(rxactivehs_sync_i_n_1));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_dphy_reg" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_dphy_reg
    (\s_level_out_bus_d3_reg[0] ,
     out,
@@ -10769,9 +10762,8 @@ endmodule
 (* C_RCVE_DESKEW_SEQ = "false" *) (* C_STABLE_CLK_PERIOD = "5.000000" *) (* C_UI_IN_TAPS = "64" *) 
 (* C_WAKEUP = "1000000" *) (* DPHY_PRESET = "CSI2RX_XLNX" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* INIT_TIMEOUT_L = "19998" *) (* LPX_PERIOD_MIN = "25" *) (* LP_STATE_CNT = "2" *) 
-(* MTBF_SYNC_STAGES = "3" *) (* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_fab_top" *) (* RESET_PULSE_EXTN = "4'b0001" *) 
-(* SETTLE_TIMEOUT_L = "27" *) (* SUPPORT_LEVEL = "1" *) (* UI10_VAL = "23" *) 
-(* UI_VAL = "2380" *) 
+(* MTBF_SYNC_STAGES = "3" *) (* RESET_PULSE_EXTN = "4'b0001" *) (* SETTLE_TIMEOUT_L = "27" *) 
+(* SUPPORT_LEVEL = "1" *) (* UI10_VAL = "23" *) (* UI_VAL = "2380" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_fab_top
    (rx_div4_clk,
     clk_200m,
@@ -12337,8 +12329,8 @@ endmodule
 (* C_DPHY_LANES = "2" *) (* C_IDLY_GRP_NAME = "mipi_csi2rx_idly_group" *) (* C_IDLY_TAP = "0" *) 
 (* C_SHARE_IDLYCTRL = "false" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* GEN_LD = "2'b01" *) 
 (* GEN_PASS_RST = "2'b10" *) (* IDLE = "2'b00" *) (* ISERDES_IOBDELAY = "NONE" *) 
-(* MTBF_SYNC_STAGES = "3" *) (* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_ioi_7series" *) (* PASS_IN_WAIT_TIME = "32'b00000000000000010000000000000000" *) 
-(* PASS_RST_WAIT_TIME = "6'b101000" *) (* PASS_WAIT = "2'b11" *) 
+(* MTBF_SYNC_STAGES = "3" *) (* PASS_IN_WAIT_TIME = "32'b00000000000000010000000000000000" *) (* PASS_RST_WAIT_TIME = "6'b101000" *) 
+(* PASS_WAIT = "2'b11" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series
    (core_clk,
     div4_clk_out,
@@ -12655,8 +12647,8 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_ioi_7series
 endmodule
 
 (* DPHY_PRESET = "CSI2RX_XLNX" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* MTBF_SYNC_STAGES = "3" *) 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_rst_logic_7series" *) (* RESET_FSM_DONE = "2'b10" *) (* RST_BEGIN = "2'b00" *) 
-(* STABLE_CLK_PERIOD = "5.000000" *) (* WAIT_FOR_ENABLE = "2'b01" *) 
+(* RESET_FSM_DONE = "2'b10" *) (* RST_BEGIN = "2'b00" *) (* STABLE_CLK_PERIOD = "5.000000" *) 
+(* WAIT_FOR_ENABLE = "2'b01" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series
    (core_clk,
     core_rst,
@@ -12787,7 +12779,7 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_logic_7series
         .Q(system_rst));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_rst_sync" *) (* c_init_val = "1'b1" *) (* c_mtbf_stages = "5'b00010" *) 
+(* c_init_val = "1'b1" *) (* c_mtbf_stages = "5'b00010" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_sync
    (prmry_in,
     scndry_aclk,
@@ -12991,7 +12983,6 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_rst_sync__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_sot_det_align" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align
    (E,
     dl1_rxvalidhs,
@@ -15953,7 +15944,6 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sot_det_align_8
         .O(s_level_out_d3_reg));
 endmodule
 
-(* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_support_rst_logic" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic
    (out,
     system_rst_reg_0,
@@ -16164,9 +16154,9 @@ module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_support_rst_logic
         .Q(system_rst_reg_0));
 endmodule
 
-(* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "mipi_dphy_v4_2_0_rx_sync_cell" *) (* c_cdc_type = "2'b01" *) 
-(* c_flop_input = "1'b0" *) (* c_mtbf_stages = "3" *) (* c_reset_state = "1'b1" *) 
-(* c_single_bit = "1'b1" *) (* c_vector_width = "8'b00000010" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* c_cdc_type = "2'b01" *) (* c_flop_input = "1'b0" *) 
+(* c_mtbf_stages = "3" *) (* c_reset_state = "1'b1" *) (* c_single_bit = "1'b1" *) 
+(* c_vector_width = "8'b00000010" *) 
 module bd_22c6_phy_0_mipi_dphy_v4_2_0_rx_sync_cell
    (prmry_aclk,
     prmry_rst_n,

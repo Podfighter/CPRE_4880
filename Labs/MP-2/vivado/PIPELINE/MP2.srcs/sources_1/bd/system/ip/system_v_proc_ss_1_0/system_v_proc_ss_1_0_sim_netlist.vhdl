@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
 -- Date        : Thu Apr  2 16:43:28 2026
 -- Host        : CO2041-11 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               c:/Users/sik2004/CPRE_4880/Labs/MP-2/vivado/PIPELINE/MP2.srcs/sources_1/bd/system/ip/system_v_proc_ss_1_0/system_v_proc_ss_1_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top system_v_proc_ss_1_0 -prefix
+--               system_v_proc_ss_1_0_ system_v_proc_ss_1_0_sim_netlist.vhdl
 -- Design      : system_v_proc_ss_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -54,8 +54,6 @@ entity system_v_proc_ss_1_0_bd_ed01 is
     s_axis_tuser : in STD_LOGIC_VECTOR ( 0 to 0 );
     s_axis_tvalid : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of system_v_proc_ss_1_0_bd_ed01 : entity is "bd_ed01";
   attribute hw_handoff : string;
   attribute hw_handoff of system_v_proc_ss_1_0_bd_ed01 : entity is "system_v_proc_ss_1_0.hwdef";
 end system_v_proc_ss_1_0_bd_ed01;
