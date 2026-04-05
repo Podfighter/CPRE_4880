@@ -19,7 +19,7 @@ typedef struct {
 } detect_result_t;
 
 void yuv422_get_pixel(volatile Xuint16 *fb, int width, int col, int row,
-                             uint8_t *y_out, uint8_t *u_out, uint8_t *v_out);
+                             uint8_t *y_out, uint8_t *u_out, uint8_t *y1_out, uint8_t *v_out);
 
 // convert a YUV sample to RGB (helper if you want to inspect pixels directly)
 void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
