@@ -1,0 +1,3 @@
+#Crazyflie
+#Controller: Emulator
+#0	time	roll	pitch	yaw	r_roll	r_pitch	r_yaw	rollRate	pitchRate	yawRate	roll_rate_sp	pitch_rate_sp	yaw_rate_sp

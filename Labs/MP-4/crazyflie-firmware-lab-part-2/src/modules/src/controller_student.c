@@ -12,15 +12,15 @@
 #include "param.h"
 #include "math3d.h"
 
-//delta time between calls to the update function
-#define STUDENT_UPDATE_DT    (float)(1.0f/ATTITUDE_RATE)
+// delta time between calls to the update function
+#define STUDENT_UPDATE_DT (float)(1.0f / ATTITUDE_RATE)
 
-//desired vehicle state as calculated by PID controllers
+// desired vehicle state as calculated by PID controllers
 static attitude_t attitudeDesired;
 static attitude_t rateDesired;
 static float thrustDesired;
 
-//variables used only for logging PID command outputs
+// variables used only for logging PID command outputs
 static float cmd_thrust;
 static float cmd_roll;
 static float cmd_pitch;
@@ -30,7 +30,7 @@ static float r_pitch;
 static float r_yaw;
 static float accelz;
 
-//Dummy variables for test stand
+// Dummy variables for test stand
 static float angle;
 static float rate;
 
@@ -42,35 +42,41 @@ void controllerStudentInit(void)
 bool controllerStudentTest(void)
 {
   bool pass = true;
-  //controller passes check if attitude controller passes
+  // controller passes check if attitude controller passes
   pass &= studentAttitudeControllerTest();
 
   return pass;
 }
 
-
 /**
  * Limit the input angle between -180 and 180
- * 
- * @param angle 
- * @return float 
+ *
+ * @param angle
+ * @return float
  */
-static float capAngle(float angle) {
-  //488 TODO 
-  return 0;
+static float capAngle(float angle)
+{
+  if (angle > 180)
+  {
+    angle -= 360;
+  }
+  else if (angle < -180)
+  {
+    angle += 360;
+  }
+  return angle;
 }
-
 
 /**
  * This function is called periodically to update the PID loop,
  * Reads state estimate and setpoint values and passes them
  * to the functions that perform PID calculations,
  * attitude PID and attitude rate PID
- * 
+ *
  * @param control Output, struct is modified as the ouput of the control loop
  * @param setpoint Input, setpoints for thrust, attitude, position, velocity etc. of the quad
- * @param sensors Input, Raw sensor values (typically want to use the state estimated instead) includes gyro, 
- * accelerometer, barometer, magnatometer 
+ * @param sensors Input, Raw sensor values (typically want to use the state estimated instead) includes gyro,
+ * accelerometer, barometer, magnatometer
  * @param state Input, A more robust way to measure the current state of the quad, allows for direct
  * measurements of the orientation of the quad. Includes attitude, position, velocity,
  * and acceleration
@@ -82,10 +88,12 @@ void controllerStudent(control_t *control, setpoint_t *setpoint, const sensorDat
   // Main Controller Function
 
   // check if time to update the attutide controller
-  if (RATE_DO_EXECUTE(ATTITUDE_RATE, tick)) {
+  if (RATE_DO_EXECUTE(ATTITUDE_RATE, tick))
+  {
 
-    //only support attitude and attitude rate control
-    if(setpoint->mode.x != modeDisable || setpoint->mode.y != modeDisable || setpoint->mode.z != modeDisable){
+    // only support attitude and attitude rate control
+    if (setpoint->mode.x != modeDisable || setpoint->mode.y != modeDisable || setpoint->mode.z != modeDisable)
+    {
       DEBUG_PRINT("Student controller does not support vehicle position or velocity mode. Check flight mode.");
       control->thrust = 0;
       control->roll = 0;
@@ -94,39 +102,94 @@ void controllerStudent(control_t *control, setpoint_t *setpoint, const sensorDat
       return;
     }
 
-    // 488 TODO if yaw is in rate mode, move the yaw angle setpoint accordingly
+    // if yaw is in rate mode, integrate yaw rate into the yaw angle setpoint
+    if (setpoint->mode.yaw == modeVelocity)
+    {
+      setpoint->attitude.yaw += setpoint->attitudeRate.yaw * STUDENT_UPDATE_DT;
+      setpoint->attitude.yaw = capAngle(setpoint->attitude.yaw);
+    }
 
-    
-    // 488 TODO set desired attitude, roll, pitch, and yaw angles
+    // if pitch is in velocity mode (rate mode), update pitch angle by integrating the setpoint
+    if (setpoint->mode.pitch == modeVelocity)
+    {
+      setpoint->attitude.pitch += setpoint->attitudeRate.pitch * STUDENT_UPDATE_DT;
+      setpoint->attitude.pitch = capAngle(setpoint->attitude.pitch);
+    }
 
+    if (setpoint->mode.roll == modeVelocity)
+    {
+      // if roll is in velocity mode (rate mode), update roll angle by integrating the setpoint
+      setpoint->attitude.roll += setpoint->attitudeRate.roll * STUDENT_UPDATE_DT;
+      // cap the angle betweeen -180 and 180
+      setpoint->attitude.roll = capAngle(setpoint->attitude.roll);
+    }
 
-    // 488 TODO set desired thrust
+    // cap all angles to [-180, 180] and copy into attitudeDesired
+    setpoint->attitude.roll = capAngle(setpoint->attitude.roll);
+    setpoint->attitude.pitch = capAngle(setpoint->attitude.pitch);
+    setpoint->attitude.yaw = capAngle(setpoint->attitude.yaw);
+    attitudeDesired.roll  = setpoint->attitude.roll;
+    attitudeDesired.pitch = setpoint->attitude.pitch;
+    attitudeDesired.yaw   = setpoint->attitude.yaw;
 
+    // clamp thrust to valid range and store
+    setpoint->thrust = fmaxf(0, fminf(setpoint->thrust, 60000));
+    thrustDesired = setpoint->thrust;
 
+    // -------------------------------- PID controller updates ---------------------------------
 
-    // 488 TODO Run the attitude controller update with the actual attitude and desired attitude
-    // outputs the desired attitude rates
+    // Run the attitude controller: actual attitude vs desired -> desired rates
+    studentAttitudeControllerCorrectAttitudePID(
+      state->attitude.roll,  state->attitude.pitch,  state->attitude.yaw,
+      attitudeDesired.roll, attitudeDesired.pitch, attitudeDesired.yaw,
+      &rateDesired.roll,    &rateDesired.pitch,    &rateDesired.yaw);
 
+    // If velocity mode, overwrite rateDesired with the commanded rate and reset the
+    // attitude PID to prevent error buildup when switching back to attitude mode
+    if (setpoint->mode.roll == modeVelocity)
+    {
+      rateDesired.roll = setpoint->attitudeRate.roll;
+      studentAttitudeControllerResetRollAttitudePID();
+    }
+    if (setpoint->mode.pitch == modeVelocity)
+    {
+      rateDesired.pitch = setpoint->attitudeRate.pitch;
+      studentAttitudeControllerResetPitchAttitudePID();
+    }
+    if (setpoint->mode.yaw == modeVelocity)
+    {
+      rateDesired.yaw = setpoint->attitudeRate.yaw;
+      studentAttitudeControllerResetYawAttitudePID();
+    }
 
-    // 488 TODO if velocity mode, overwrite rateDesired output
-    // from the attitude controller with the setpoint value
-    // Also reset the PID to avoid error buildup, which can lead to unstable
-    // behavior if level mode is engaged later
+    // Update the attitude rate PID with gyro rates and desired rates -> motor commands
+    int16_t rollCmd, pitchCmd, yawCmd;
+    studentAttitudeControllerCorrectRatePID(
+      sensors->gyro.x, sensors->gyro.y, sensors->gyro.z,
+      rateDesired.roll, rateDesired.pitch, rateDesired.yaw,
+      &rollCmd, &pitchCmd, &yawCmd);
 
-    
-
-    // 488 TODO update the attitude rate PID, given the current angular rate 
-    // read by the gyro and the desired rate 
-
-
+    control->roll  = rollCmd;
+    control->pitch = pitchCmd;
+    control->yaw   = yawCmd;
   }
 
-  //488 TODO set control->thrust 
+  // Set thrust from last computed desired value
+  control->thrust = thrustDesired;
 
-  //488 TODO if no thrust active, set all outputs to 0 and reset PID variables
+  // If no thrust active, set all outputs to 0 and reset PID variables
+  if (control->thrust == 0)
+  {
+    // Reset outputs
+    control->roll = 0;
+    control->pitch = 0;
+    control->yaw = 0;
 
+    // Reset PID variables
+    studentAttitudeControllerResetAllPID();
+  }
 
-  //copy values for logging
+  // copy values for logging
   cmd_thrust = control->thrust;
   cmd_roll = control->roll;
   cmd_pitch = control->pitch;
@@ -143,64 +206,62 @@ void controllerStudent(control_t *control, setpoint_t *setpoint, const sensorDat
  */
 LOG_GROUP_START(ctrlStdnt)
 
-// 488 TODO setup logging parameters, replace null with pointer to globabl variable
-
 /**
  * @brief Thrust command output
  */
-LOG_ADD(LOG_FLOAT, cmd_thrust, NULL)
+LOG_ADD(LOG_FLOAT, cmd_thrust, &cmd_thrust)
 /**
  * @brief Roll command output
  */
-LOG_ADD(LOG_FLOAT, cmd_roll, NULL)
+LOG_ADD(LOG_FLOAT, cmd_roll, &cmd_roll)
 /**
  * @brief Pitch command output
  */
-LOG_ADD(LOG_FLOAT, cmd_pitch, NULL)
+LOG_ADD(LOG_FLOAT, cmd_pitch, &cmd_pitch)
 /**
  * @brief yaw command output
  */
-LOG_ADD(LOG_FLOAT, cmd_yaw, NULL)
+LOG_ADD(LOG_FLOAT, cmd_yaw, &cmd_yaw)
 /**
  * @brief Gyro roll measurement in degrees
  */
-LOG_ADD(LOG_FLOAT, r_roll, NULL)
+LOG_ADD(LOG_FLOAT, r_roll, &r_roll)
 /**
  * @brief Gyro pitch measurement in degrees
  */
-LOG_ADD(LOG_FLOAT, r_pitch, NULL)
+LOG_ADD(LOG_FLOAT, r_pitch, &r_pitch)
 /**
  * @brief Gyro yaw rate measurement in degrees
  */
-LOG_ADD(LOG_FLOAT, r_yaw, NULL)
+LOG_ADD(LOG_FLOAT, r_yaw, &r_yaw)
 /**
  * @brief Acceleration in the z axis in G-force
  */
-LOG_ADD(LOG_FLOAT, accelz, NULL)
+LOG_ADD(LOG_FLOAT, accelz, &accelz)
 /**
  * @brief Desired roll setpoint
  */
-LOG_ADD(LOG_FLOAT, roll, NULL)
+LOG_ADD(LOG_FLOAT, roll, &attitudeDesired.roll)
 /**
  * @brief Desired pitch setpoint
  */
-LOG_ADD(LOG_FLOAT, pitch, NULL)
+LOG_ADD(LOG_FLOAT, pitch, &attitudeDesired.pitch)
 /**
  * @brief Desired yaw setpoint
  */
-LOG_ADD(LOG_FLOAT, yaw, NULL)
+LOG_ADD(LOG_FLOAT, yaw, &attitudeDesired.yaw)
 /**
  * @brief Desired roll rate setpoint
  */
-LOG_ADD(LOG_FLOAT, rollRate, NULL)
+LOG_ADD(LOG_FLOAT, rollRate, &rateDesired.roll)
 /**
  * @brief Desired pitch rate setpoint
  */
-LOG_ADD(LOG_FLOAT, pitchRate, NULL)
+LOG_ADD(LOG_FLOAT, pitchRate, &rateDesired.pitch)
 /**
  * @brief Desired yaw rate setpoint
  */
-LOG_ADD(LOG_FLOAT, yawRate, NULL)
+LOG_ADD(LOG_FLOAT, yawRate, &rateDesired.yaw)
 
 LOG_GROUP_STOP(ctrlStdnt)
 
@@ -221,15 +282,11 @@ LOG_ADD(LOG_FLOAT, rate, &rate)
 
 LOG_GROUP_STOP(Test_Stand)
 
-
-
 /**
  * Controller parameters
  */
 PARAM_GROUP_START(ctrlStdnt)
 
-//488 TODO optionally add any parameters to modify the controller code while running
-
-PARAM_ADD(PARAM_FLOAT, placeHolder, NULL)
+PARAM_ADD(PARAM_FLOAT, thrustDesired, &thrustDesired)
 
 PARAM_GROUP_STOP(ctrlStdnt)

@@ -6,24 +6,24 @@
 
 //488 TODO hard code default PID constants found from Lab_Part_1
 
-#define PID_ROLL_RATE_KP  0.0
+#define PID_ROLL_RATE_KP  200.0
 #define PID_ROLL_RATE_KI  0.0
-#define PID_ROLL_RATE_KD  0.0
+#define PID_ROLL_RATE_KD  10.0
 #define PID_ROLL_RATE_INTEGRATION_LIMIT    33.3
 
-#define PID_PITCH_RATE_KP  0.0
-#define PID_PITCH_RATE_KI  0.0
-#define PID_PITCH_RATE_KD  0.0
+#define PID_PITCH_RATE_KP  100.0
+#define PID_PITCH_RATE_KI  80.0
+#define PID_PITCH_RATE_KD  10.0
 #define PID_PITCH_RATE_INTEGRATION_LIMIT   33.3
 
-#define PID_YAW_RATE_KP  0.0
+#define PID_YAW_RATE_KP  100.0
 #define PID_YAW_RATE_KI  0.0
 #define PID_YAW_RATE_KD  0.0
 #define PID_YAW_RATE_INTEGRATION_LIMIT     166.7
 
-#define PID_ROLL_KP  0.0
+#define PID_ROLL_KP  30.0
 #define PID_ROLL_KI  0.0
-#define PID_ROLL_KD  0.0
+#define PID_ROLL_KD  3.0
 #define PID_ROLL_INTEGRATION_LIMIT    20.0
 
 #define PID_PITCH_KP  0.0
@@ -31,9 +31,9 @@
 #define PID_PITCH_KD  0.0
 #define PID_PITCH_INTEGRATION_LIMIT   20.0
 
-#define PID_YAW_KP  0.0
+#define PID_YAW_KP  80.0
 #define PID_YAW_KI  0.0
-#define PID_YAW_KD  0.0
+#define PID_YAW_KD  10.0
 #define PID_YAW_INTEGRATION_LIMIT     360.0
 
 
@@ -44,13 +44,23 @@
 
 typedef struct
 {
-  // 488 TODO write PidObject struct
-  // needs all values that will be used for PID calculations
-  // error, kp, ki, kd, setpoint ...
+  float desired;          // setpoint
+  float kp;               // proportional gain
+  float ki;               // integral gain
+  float kd;               // derivative gain
+  float error;            // current error
+  float prevError;        // previous error
+  float integral;         // accumulated integral
+  float deriv;            // derivative term
+  float dt;               // delta time
+  float integratorLimit;  // integral windup limit
+  float outLimit;         // output limit
+  float outP;             // proportional term output (for logging)
+  float outI;             // integral term output (for logging)
+  float outD;             // derivative term output (for logging)
 
-
-  lpf2pData dFilter;  //< filter for D term
-  bool enableDFilter; //< filter for D term enable flag
+  lpf2pData dFilter;      // filter for D term
+  bool enableDFilter;     // filter for D term enable flag
 } PidObject;
 
 
