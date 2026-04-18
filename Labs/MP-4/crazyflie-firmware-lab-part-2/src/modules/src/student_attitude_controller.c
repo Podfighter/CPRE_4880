@@ -156,7 +156,7 @@ void studentAttitudeControllerCorrectAttitudePID(
   if (yawError < -180.0f)
     yawError += 360.0f;
   studentPidSetError(&pid_att_yaw, yawError);
-  *yawRateDesired = studentPidUpdate(&pid_att_yaw, eulerYawActual, false);
+  *yawRateDesired = -studentPidUpdate(&pid_att_yaw, eulerYawActual, false);
 }
 
 /**
