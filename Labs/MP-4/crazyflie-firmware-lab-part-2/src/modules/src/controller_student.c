@@ -165,7 +165,7 @@ void controllerStudent(control_t *control, setpoint_t *setpoint, const sensorDat
     // Update the attitude rate PID with gyro rates and desired rates -> motor commands
     int16_t rollCmd, pitchCmd, yawCmd;
     studentAttitudeControllerCorrectRatePID(
-      sensors->gyro.x, sensors->gyro.y, sensors->gyro.z,
+      sensors->gyro.x, -sensors->gyro.y, -sensors->gyro.z,
       rateDesired.roll, rateDesired.pitch, rateDesired.yaw,
       &rollCmd, &pitchCmd, &yawCmd);
 
