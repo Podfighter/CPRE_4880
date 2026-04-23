@@ -1,0 +1,55 @@
+timestamp=[2026-02-26 16:15:25], mode=WORKBENCH_START, duration=0:00:02.485, duration_ms=2485, data={}
+timestamp=[2026-02-26 16:15:26], mode=WORKBENCH_UI_INIT, duration=0:00:00.175, duration_ms=175, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-02-26 16:15:27], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.120, duration_ms=1120, data={}
+timestamp=[2026-02-26 16:16:10], mode=WORKBENCH_START, duration=0:00:02.440, duration_ms=2440, data={}
+timestamp=[2026-02-26 16:16:10], mode=WORKBENCH_UI_INIT, duration=0:00:00.220, duration_ms=220, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2026-02-26 16:16:12], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.122, duration_ms=1122, data={}
+timestamp=[2026-02-26 16:18:59], mode=APP_CREATION, duration=0:00:12.099, duration_ms=12099, data={name=Camera_app_mp2, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=system_wrapper, application_type=application}
+timestamp=[2026-02-26 16:23:16], mode=PLATFORM_GENERATION, duration=0:00:35.659, duration_ms=35659, data={name=system_wrapper}
+timestamp=[2026-02-26 16:23:17], mode=BUILD, duration=0:00:01.416, duration_ms=1416, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 16:23:19], mode=BUILD, duration=0:00:01.698, duration_ms=1698, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 16:25:35], mode=APP_CREATION, duration=0:00:10.300, duration_ms=10300, data={name=Camera_app_mp2_2, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=system_wrapper_1, application_type=application}
+timestamp=[2026-02-26 16:27:36], mode=WORKBENCH_START, duration=0:00:03.004, duration_ms=3004, data={}
+timestamp=[2026-02-26 16:27:36], mode=WORKBENCH_UI_INIT, duration=0:00:00.316, duration_ms=316, data={editors_count=2, platform_editors_count=0, projects_count=4, platform_projects_count=0, active_platform_editor=false, projects=Camera_app_mp2_2,Camera_app_mp2_2_system,RemoteSystemsTempFiles,system_wrapper_1}
+timestamp=[2026-02-26 16:27:37], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.233, duration_ms=1233, data={}
+timestamp=[2026-02-26 16:29:12], mode=APP_CREATION, duration=0:00:11.861, duration_ms=11861, data={name=Camera_app_mp2, project_type=sdk, os=standalone, processor=ps7_cortexa9, runtime=cpp, platform=system_wrapper, application_type=application}
+timestamp=[2026-02-26 16:30:11], mode=PLATFORM_GENERATION, duration=0:00:34.242, duration_ms=34242, data={name=system_wrapper}
+timestamp=[2026-02-26 16:30:15], mode=BUILD, duration=0:00:03.676, duration_ms=3676, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 16:30:18], mode=BUILD, duration=0:00:03.266, duration_ms=3266, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:29:57], mode=BUILD, duration=0:00:01.176, duration_ms=1176, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:30:00], mode=BUILD, duration=0:00:03.065, duration_ms=3065, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:36:13], mode=BUILD, duration=0:00:01.163, duration_ms=1163, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:36:16], mode=BUILD, duration=0:00:02.995, duration_ms=2995, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:42:56], mode=BUILD, duration=0:00:01.112, duration_ms=1112, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:42:59], mode=BUILD, duration=0:00:02.969, duration_ms=2969, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:49:56], mode=BUILD, duration=0:00:01.119, duration_ms=1119, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:49:59], mode=BUILD, duration=0:00:02.987, duration_ms=2987, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:55:38], mode=BUILD, duration=0:00:01.115, duration_ms=1115, data={name=Camera_app_mp2, configuration=Debug, clean_build=false}
+timestamp=[2026-02-26 17:55:41], mode=BUILD, duration=0:00:03.185, duration_ms=3185, data={name=Camera_app_mp2_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:34:55], mode=WORKBENCH_START, duration=0:00:02.777, duration_ms=2777, data={}
+timestamp=[2026-03-03 18:34:55], mode=WORKBENCH_UI_INIT, duration=0:00:00.350, duration_ms=350, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2026-03-03 18:34:56], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.194, duration_ms=1194, data={}
+timestamp=[2026-03-03 18:35:44], mode=PLATFORM_CREATION, duration=0:00:07.758, duration_ms=7758, data={platform_source=dsa, os=standalone, processor=ps7_cortexa9, platform=null}
+timestamp=[2026-03-03 18:39:53], mode=APP_CREATION, duration=0:00:03.354, duration_ms=3354, data={name=guhhh, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=pain, application_type=application}
+timestamp=[2026-03-03 18:40:35], mode=PLATFORM_GENERATION, duration=0:00:32.863, duration_ms=32863, data={name=pain}
+timestamp=[2026-03-03 18:40:37], mode=BUILD, duration=0:00:01.296, duration_ms=1296, data={name=guhhh_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:44:05], mode=BUILD, duration=0:00:01.685, duration_ms=1685, data={name=guhhh, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:44:06], mode=BUILD, duration=0:00:01.112, duration_ms=1112, data={name=guhhh_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:44:52], mode=PLATFORM_GENERATION, duration=0:00:02.013, duration_ms=2013, data={name=pain}
+timestamp=[2026-03-03 18:44:53], mode=BUILD, duration=0:00:00.095, duration_ms=95, data={name=guhhh, configuration=Debug, clean_build=true}
+timestamp=[2026-03-03 18:44:53], mode=BUILD, duration=0:00:00.153, duration_ms=153, data={name=guhhh_system, configuration=Debug, clean_build=true}
+timestamp=[2026-03-03 18:45:29], mode=PLATFORM_GENERATION, duration=0:00:30.834, duration_ms=30834, data={name=pain}
+timestamp=[2026-03-03 18:45:31], mode=BUILD, duration=0:00:01.486, duration_ms=1486, data={name=guhhh, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:45:32], mode=BUILD, duration=0:00:01.176, duration_ms=1176, data={name=guhhh_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:46:31], mode=APP_CREATION, duration=0:00:02.879, duration_ms=2879, data={name=fuckface, project_type=sdk, os=standalone, processor=cortex-a9, runtime=C/C++, platform=pain, application_type=application}
+timestamp=[2026-03-03 18:50:59], mode=PLATFORM_GENERATION, duration=0:00:02.031, duration_ms=2031, data={name=pain}
+timestamp=[2026-03-03 18:51:34], mode=PLATFORM_GENERATION, duration=0:00:30.894, duration_ms=30894, data={name=pain}
+timestamp=[2026-03-03 18:51:37], mode=BUILD, duration=0:00:01.609, duration_ms=1609, data={name=fuckface, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:26], mode=BUILD, duration=0:00:00.730, duration_ms=730, data={name=fuckface, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:27], mode=BUILD, duration=0:00:01.090, duration_ms=1090, data={name=fuckface_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:46], mode=BUILD, duration=0:00:00.716, duration_ms=716, data={name=fuckface, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:47], mode=BUILD, duration=0:00:01.089, duration_ms=1089, data={name=fuckface_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:51], mode=BUILD, duration=0:00:01.092, duration_ms=1092, data={name=fuckface, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:53:54], mode=BUILD, duration=0:00:03.058, duration_ms=3058, data={name=fuckface_system, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:56:16], mode=BUILD, duration=0:00:01.103, duration_ms=1103, data={name=fuckface, configuration=Debug, clean_build=false}
+timestamp=[2026-03-03 18:56:19], mode=BUILD, duration=0:00:02.943, duration_ms=2943, data={name=fuckface_system, configuration=Debug, clean_build=false}

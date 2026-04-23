@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../MP2.srcs/sources_1/imports/hdl/SyncAsync.vhd" \
+"../../../../MP2.srcs/sources_1/imports/hdl/SyncAsyncReset.vhd" \
+"../../../../MP2.srcs/sources_1/imports/hdl/DVIClocking.vhd" \
+
+# Do not sort compile order
+nosort

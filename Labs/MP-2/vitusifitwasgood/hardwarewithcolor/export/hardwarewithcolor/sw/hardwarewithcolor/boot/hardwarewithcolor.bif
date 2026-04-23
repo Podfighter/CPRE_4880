@@ -1,0 +1,7 @@
+/*hardwarewithcolor*/
+the_ROM_image:
+{
+  [bootloader]<hardwarewithcolor/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}

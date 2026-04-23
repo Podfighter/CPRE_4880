@@ -1,0 +1,26 @@
+#ifndef OBJECT_DETECT_H
+#define OBJECT_DETECT_H
+
+#include <stdint.h>
+
+#include "xilsd.h"
+#include "ff.h"
+
+// result from object_detect(), x/y are only valid if found != 0
+typedef struct {
+    int x;      // centroid column
+    int y;      // centroid row
+    int found;  // 1 if object was detected, 0 otherwise
+} detect_result_t;
+
+// convert a YUV sample to RGB (helper if you want to inspect pixels directly)
+void yuv_to_rgb(uint8_t y, uint8_t u, uint8_t v,
+                uint8_t *r_out, uint8_t *g_out, uint8_t *b_out);
+
+// Find a red object in a YUYV frame buffer and return its location.
+// fb     - pointer to start of frame buffer (cast from mmap or VDMA pointer)
+// width  - frame width in pixels (1920)
+// height - frame height in pixels (1080)
+detect_result_t object_detect(volatile Xuint16_t *fb, int width, int height);
+
+#endif /* OBJECT_DETECT_H */
