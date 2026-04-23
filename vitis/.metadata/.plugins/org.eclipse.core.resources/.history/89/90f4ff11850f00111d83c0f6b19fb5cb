@@ -1,0 +1,53 @@
+#include <unistd.h>  // for usleep'=
+#include <xil_io.h>
+#include <xparameters.h>
+
+int main(){
+
+	Xil_Out8(XPAR_GPIO_0_BASEADDR || 0x4, 1);
+	Xil_Out8(XPAR_GPIO_1_BASEADDR || 0x4, 1);
+
+	int sw0 = 0; // the current state of the first switch, 0 = hardware relay, 1 = software relay
+	int ja1 = 0; //input ppm waveform from the trainer port
+
+
+	while(1){
+		sw0 = Xil_In8(XPAR_GPIO_0_BASEADDR) & 0x1;
+		ja1 = Xil_In8(XPAR_GPIO_1_BASEADDR) & 0x1;
+
+
+			printf("%d this is REG 0 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x0));
+			printf("%d this is REG 1 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x4));
+			printf("%d this is REG 2 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x8));
+			printf("%d this is REG 3 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0xC));
+			printf("%d this is REG 4 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x10));
+			printf("%d this is REG 5 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x14));
+			printf("%d this is REG 6 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x18));
+			printf("%d this is REG 7 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x1C));
+			printf("%d this is REG 8 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x20));
+			printf("%d this is REG 9 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x24));
+			printf("%d this is REG 10 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x28));
+			printf("%d this is REG 11 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x2C));
+			printf("%d this is REG 12 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x30));
+			printf("%d this is REG 13 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x34));
+			printf("%d this is REG 14 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x38));
+			printf("%d this is REG 15 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x3C));
+			printf("%d this is REG 16 \n",Xil_In32(XPAR_AXI_PPM_0_S00_AXI_BASEADDR + 0x40));
+			usleep(1000000);
+
+			Xil_Out32(XPAR_PPM_PP_0_S00_AXI_BASEADDR + 0x10, 1);
+		if(sw0 == 0){
+			Xil_Out32(XPAR_PPM_PP_0_S00_AXI_BASEADDR, 0);
+
+		}
+		else{
+			Xil_Out32(XPAR_PPM_PP_0_S00_AXI_BASEADDR, 1);
+		}
+	}
+
+
+
+
+
+}
+

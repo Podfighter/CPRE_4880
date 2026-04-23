@@ -1,0 +1,189 @@
+TRACE::2026-02-21.18:24:16::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.18:24:16::SCWBifWriter::hardware databse : mp1block_wrapper_1
+TRACE::2026-02-21.18:24:16::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.18:24:16::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.18:24:16::SCWBifWriter::proc type : 
+TRACE::2026-02-21.18:24:16::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.18:24:16::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.18:24:16::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.18:24:16::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.18:25:43::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.18:25:43::SCWBifWriter::hardware databse : mp1block_wrapper_1
+TRACE::2026-02-21.18:25:43::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.18:25:43::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.18:25:43::SCWBifWriter::proc type : 
+TRACE::2026-02-21.18:25:43::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.18:25:43::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.18:25:43::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.18:25:43::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.18:26:05::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.18:26:05::SCWBifWriter::hardware databse : mp1block_wrapper_1
+TRACE::2026-02-21.18:26:05::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.18:26:05::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.18:26:05::SCWBifWriter::proc type : 
+TRACE::2026-02-21.18:26:05::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.18:26:05::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.18:26:05::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.18:26:05::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.18:26:29::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.18:26:29::SCWBifWriter::hardware databse : mp1block_wrapper_1
+TRACE::2026-02-21.18:26:29::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.18:26:29::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.18:26:29::SCWBifWriter::proc type : 
+TRACE::2026-02-21.18:26:29::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.18:26:29::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.18:26:29::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.18:26:29::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.18:54:10::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.18:54:10::SCWBifWriter::hardware databse : mp1block_wrapper_5
+TRACE::2026-02-21.18:54:10::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.18:54:10::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.18:54:10::SCWBifWriter::proc type : 
+TRACE::2026-02-21.18:54:10::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.18:54:10::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.18:54:10::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.18:54:10::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.19:08:52::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.19:08:52::SCWBifWriter::hardware databse : mp1block_wrapper_5
+TRACE::2026-02-21.19:08:52::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.19:08:52::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.19:08:52::SCWBifWriter::proc type : 
+TRACE::2026-02-21.19:08:52::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.19:08:52::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.19:08:52::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.19:08:52::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.19:18:54::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.19:18:54::SCWBifWriter::hardware databse : mp1block_wrapper_9
+TRACE::2026-02-21.19:18:54::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.19:18:54::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.19:18:54::SCWBifWriter::proc type : 
+TRACE::2026-02-21.19:18:54::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.19:18:54::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.19:18:54::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.19:18:54::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.19:29:18::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.19:29:18::SCWBifWriter::hardware databse : mp1block_wrapper_13
+TRACE::2026-02-21.19:29:18::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.19:29:18::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.19:29:18::SCWBifWriter::proc type : 
+TRACE::2026-02-21.19:29:18::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.19:29:18::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.19:29:18::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.19:29:18::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.19:48:40::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.19:48:40::SCWBifWriter::hardware databse : mp1block_wrapper_17
+TRACE::2026-02-21.19:48:40::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.19:48:40::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.19:48:40::SCWBifWriter::proc type : 
+TRACE::2026-02-21.19:48:40::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.19:48:40::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.19:48:40::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.19:48:40::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.20:00:26::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.20:00:26::SCWBifWriter::hardware databse : mp1block_wrapper_21
+TRACE::2026-02-21.20:00:26::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.20:00:26::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.20:00:26::SCWBifWriter::proc type : 
+TRACE::2026-02-21.20:00:26::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.20:00:26::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.20:00:26::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.20:00:26::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.22:50:11::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.22:50:11::SCWBifWriter::hardware databse : mp1block_wrapper_33
+TRACE::2026-02-21.22:50:11::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.22:50:11::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.22:50:11::SCWBifWriter::proc type : 
+TRACE::2026-02-21.22:50:11::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.22:50:11::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.22:50:11::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.22:50:11::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.22:50:45::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.22:50:45::SCWBifWriter::hardware databse : mp1block_wrapper_33
+TRACE::2026-02-21.22:50:45::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.22:50:45::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.22:50:45::SCWBifWriter::proc type : 
+TRACE::2026-02-21.22:50:45::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.22:50:45::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.22:50:45::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.22:50:45::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-21.23:19:24::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-21.23:19:24::SCWBifWriter::hardware databse : mp1block_wrapper_42
+TRACE::2026-02-21.23:19:24::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-21.23:19:24::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-21.23:19:24::SCWBifWriter::proc type : 
+TRACE::2026-02-21.23:19:24::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-21.23:19:24::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-21.23:19:24::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-21.23:19:24::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.01:50:23::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.01:50:23::SCWBifWriter::hardware databse : mp1block_wrapper_50
+TRACE::2026-02-22.01:50:23::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.01:50:23::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.01:50:23::SCWBifWriter::proc type : 
+TRACE::2026-02-22.01:50:23::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.01:50:23::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.01:50:23::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.01:50:23::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.01:52:53::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.01:52:53::SCWBifWriter::hardware databse : mp1block_wrapper_50
+TRACE::2026-02-22.01:52:53::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.01:52:53::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.01:52:53::SCWBifWriter::proc type : 
+TRACE::2026-02-22.01:52:53::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.01:52:53::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.01:52:53::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.01:52:53::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.02:28:43::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.02:28:43::SCWBifWriter::hardware databse : mp1block_wrapper_57
+TRACE::2026-02-22.02:28:43::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.02:28:43::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.02:28:43::SCWBifWriter::proc type : 
+TRACE::2026-02-22.02:28:43::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.02:28:43::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.02:28:43::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.02:28:43::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.02:39:48::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.02:39:48::SCWBifWriter::hardware databse : mp1block_wrapper_61
+TRACE::2026-02-22.02:39:48::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.02:39:48::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.02:39:48::SCWBifWriter::proc type : 
+TRACE::2026-02-22.02:39:48::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.02:39:48::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.02:39:48::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.02:39:48::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.02:45:55::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.02:45:55::SCWBifWriter::hardware databse : mp1block_wrapper_65
+TRACE::2026-02-22.02:45:55::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.02:45:55::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.02:45:55::SCWBifWriter::proc type : 
+TRACE::2026-02-22.02:45:55::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.02:45:55::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.02:45:55::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.02:45:55::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.02:49:36::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.02:49:36::SCWBifWriter::hardware databse : mp1block_wrapper_65
+TRACE::2026-02-22.02:49:36::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.02:49:36::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.02:49:36::SCWBifWriter::proc type : 
+TRACE::2026-02-22.02:49:36::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.02:49:36::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.02:49:36::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.02:49:36::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.03:10:26::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.03:10:26::SCWBifWriter::hardware databse : mp1block_wrapper_69
+TRACE::2026-02-22.03:10:26::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.03:10:26::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.03:10:26::SCWBifWriter::proc type : 
+TRACE::2026-02-22.03:10:26::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.03:10:26::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.03:10:26::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.03:10:26::SCWBifWriter::Writing the Zynq Baremetal bif 
+TRACE::2026-02-22.03:42:03::SCWBifWriter::Found the complete platform C:/Users/ianrun75/Downloads/MP1new/vitis/mp1block_wrapper/export/mp1block_wrapper/mp1block_wrapper.xpfm
+TRACE::2026-02-22.03:42:03::SCWBifWriter::hardware databse : mp1block_wrapper_77
+TRACE::2026-02-22.03:42:03::SCWBifWriter::bitstream found in the design
+TRACE::2026-02-22.03:42:03::SCWBifWriter::Found a baremetal domain, proc: ps7_cortexa9_0
+TRACE::2026-02-22.03:42:03::SCWBifWriter::proc type : 
+TRACE::2026-02-22.03:42:03::SCWBifWriter::proc[0] : ps7_cortexa9_0
+TRACE::2026-02-22.03:42:03::SCWBifWriter::Device type is : zynq
+TRACE::2026-02-22.03:42:03::SCWBifWriter::Writing BIF to file : C:/Users/ianrun75/Downloads/MP1new/vitis/rc_control_system/Debug/system.bif
+TRACE::2026-02-22.03:42:03::SCWBifWriter::Writing the Zynq Baremetal bif 
