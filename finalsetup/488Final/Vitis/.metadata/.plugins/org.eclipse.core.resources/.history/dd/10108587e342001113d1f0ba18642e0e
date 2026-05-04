@@ -1,0 +1,29 @@
+#include "./init.h"
+
+
+void main(){
+
+	//need to do intializations.
+
+	//init I2C
+
+	//init Codec
+
+	//init I2S RX & TX
+
+
+
+	//Go run passthrough...
+	while(1){
+
+
+
+	}
+
+
+
+
+
+	return;
+
+}

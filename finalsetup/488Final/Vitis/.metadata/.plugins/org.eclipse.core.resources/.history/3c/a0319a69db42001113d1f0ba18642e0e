@@ -1,0 +1,21 @@
+void audiowrite(u16 reg, u8 data) {
+    u8 buf[3];
+    buf[0] = (u8)(reg >> 8);
+    buf[1] = (u8)(reg & 0xFF);
+    buf[2] = data;
+    XIicPs_MasterSendPolled(&Iic, buf, 3, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+}
+
+// --- Helper: 16-bit Register Read ---
+u8 audioread(u16 reg) {
+    u8 addr_buf[2];
+    u8 data_buf[1] = {0};
+    addr_buf[0] = (u8)(reg >> 8);
+    addr_buf[1] = (u8)(reg & 0xFF);
+    XIicPs_MasterSendPolled(&Iic, addr_buf, 2, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    XIicPs_MasterRecvPolled(&Iic, data_buf, 1, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    return data_buf[0];
+}

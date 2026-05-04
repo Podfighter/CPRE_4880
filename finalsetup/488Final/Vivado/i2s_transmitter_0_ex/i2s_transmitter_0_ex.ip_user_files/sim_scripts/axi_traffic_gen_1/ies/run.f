@@ -1,0 +1,44 @@
+-makelib ies_lib/xilinx_vip -sv \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_axi4streampc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_axi4pc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/xil_common_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_pkg.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi4stream_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/axi_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/clk_vip_if.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/xilinx_vip/hdl/rst_vip_if.sv" \
+-endlib
+-makelib ies_lib/xpm -sv \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv" \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
+-endlib
+-makelib ies_lib/xpm \
+  "C:/Xilinx/Vivado/2020.1/data/ip/xpm/xpm_VCOMP.vhd" \
+-endlib
+-makelib ies_lib/dist_mem_gen_v8_0_13 \
+  "../../../ipstatic/simulation/dist_mem_gen_v8_0.v" \
+-endlib
+-makelib ies_lib/blk_mem_gen_v8_4_4 \
+  "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
+-endlib
+-makelib ies_lib/lib_bmg_v1_0_13 \
+  "../../../ipstatic/hdl/lib_bmg_v1_0_rfs.vhd" \
+-endlib
+-makelib ies_lib/lib_cdc_v1_0_2 \
+  "../../../ipstatic/hdl/lib_cdc_v1_0_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_traffic_gen_v3_0_7 \
+  "../../../ipstatic/hdl/axi_traffic_gen_v3_0_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_traffic_gen_v3_0_7 \
+  "../../../ipstatic/hdl/axi_traffic_gen_v3_0_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../../i2s_transmitter_0_ex.srcs/sources_1/ip/axi_traffic_gen_1/sim/axi_traffic_gen_1.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  glbl.v
+-endlib
+

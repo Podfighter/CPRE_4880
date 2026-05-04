@@ -1,0 +1,514 @@
+#include "xiicps.h"
+#include "./init.h"
+
+
+//some enums so life doesn't suck
+//pulled this from the DMA demo example, didn't why I'd write these enums myself...
+enum ADAU1761REGNAMES
+{
+	R0_CLOCK_CONTROL								= 0x00,
+	R1_PLL_CONTROL 									= 0x02,
+	R2_DIGITAL_MIC_JACK_DETECTION_CONTROL 			= 0x08,
+	R3_RECORD_POWER_MANAGEMENT						= 0x09,
+	R4_RECORD_MIXER_LEFT_CONTROL_0 					= 0x0A,
+	R5_RECORD_MIXER_LEFT_CONTROL_1 					= 0x0B,
+	R6_RECORD_MIXER_RIGHT_CONTROL_0 				= 0x0C,
+	R7_RECORD_MIXER_RIGHT_CONTROL_1 				= 0x0D,
+	R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0E,
+	R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0F,
+	R10_RECORD_MICROPHONE_BIAS_CONTROL 				= 0x10,
+	R11_ALC_CONTROL_0								= 0x11,
+	R12_ALC_CONTROL_1								= 0x12,
+	R13_ALC_CONTROL_2								= 0x13,
+	R14_ALC_CONTROL_3								= 0x14,
+	R15_SERIAL_PORT_CONTROL_0 						= 0x15,
+	R16_SERIAL_PORT_CONTROL_1 						= 0x16,
+	R17_CONVERTER_CONTROL_0 						= 0x17,
+	R18_CONVERTER_CONTROL_1 						= 0x18,
+	R19_ADC_CONTROL									= 0x19,
+	R20_LEFT_INPUT_DIGITAL_VOLUME 					= 0x1A,
+	R21_RIGHT_INPUT_DIGITAL_VOLUME 					= 0x1B,
+	R22_PLAYBACK_MIXER_LEFT_CONTROL_0 				= 0x1C,
+	R23_PLAYBACK_MIXER_LEFT_CONTROL_1 				= 0x1D,
+	R24_PLAYBACK_MIXER_RIGHT_CONTROL_0 				= 0x1E,
+	R25_PLAYBACK_MIXER_RIGHT_CONTROL_1 				= 0x1F,
+	R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL 	= 0x20,
+	R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL = 0x21,
+	R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL 		= 0x22,
+	R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL 		= 0x23,
+	R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL 	= 0x24,
+	R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL 	= 0x25,
+	R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL 	= 0x26,
+	R33_PLAYBACK_MONO_OUTPUT_CONTROL 				= 0x27,
+	R34_PLAYBACK_POP_CLICK_SUPPRESSION 				= 0x28,
+	R35_PLAYBACK_POWER_MANAGEMENT 					= 0x29,
+	R36_DAC_CONTROL_0 								= 0x2A,
+	R37_DAC_CONTROL_1 								= 0x2B,
+	R38_DAC_CONTROL_2 								= 0x2C,
+	R39_SERIAL_PORT_PAD_CONTROL 					= 0x2D,
+	R40_CONTROL_PORT_PAD_CONTROL_0 					= 0x2F,
+	R41_CONTROL_PORT_PAD_CONTROL_1 					= 0x30,
+	R42_JACK_DETECT_PIN_CONTROL 					= 0x31,
+	R67_DEJITTER_CONTROL 							= 0x36,
+	R58_SERIAL_INPUT_ROUTE_CONTROL					= 0xF2,
+	R59_SERIAL_OUTPUT_ROUTE_CONTROL					= 0xF3,
+	R60_SERIAL_DATA_GPIO_CONGIURATION				= 0xF4,
+	R61_DSP_ENABLE									= 0xF5,
+	R62_DSP_RUN										= 0xF6,
+	R63_DSP_SLEW_MODES								= 0xF7,
+	R64_SERIAL_PORT_SAMPLING_RATE 					= 0xF8,
+	R65_CLOCK_ENABLE_0 								= 0xF9,
+	R66_CLOCK_ENABLE_1 								= 0xFA
+};
+
+
+
+
+
+
+
+
+
+
+XStatus audioWrite(u8 reg, u8 data) {
+    u8 buf[3];
+    buf[0] = 0x40;
+    buf[1] = reg;
+    buf[2] = data;
+    XIicPs_MasterSendPolled(&Iic, buf, 3, 0x3B);
+    //0x3B is the device address.
+
+    while(XIicPs_BusIsBusy(&Iic)){};
+
+    //if it doesnt hang it's probably fine... probably.
+	return XST_SUCCESS;
+}
+
+
+// --- Helper: 16-bit Register Read ---
+u8 audioRead(u16 reg) {
+    u8 addr_buf[2];
+    u8 data_buf[1] = {0};
+    addr_buf[0] = (u8)(reg >> 8);
+    addr_buf[1] = (u8)(reg & 0xFF);
+    XIicPs_MasterSendPolled(&Iic, addr_buf, 2, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    XIicPs_MasterRecvPolled(&Iic, data_buf, 1, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    return data_buf[0];
+}
+
+void setPll(){
+	//this can be rewritten to have an actual input field, but we know exactly what we're going to be using already. i'm LAZY.
+
+	//needs to be burst-written, otherwise the ADAU1761 will throw a tantrum
+	u8 sendBuf[8] = {0x40,0x02,0x00,0x00,0x00,0x00,0x20,0x01};
+	XIicPs_MasterSendPolled(&Iic,sendBuf,8,0x3B);
+
+	//wait for completion
+	while (XIicPs_BusIsBusy(&Iic));
+
+	//horrid way to wait until the lock is ready!
+	u8 pll_addr[] = {0x40, 0x02};
+	    u8 pll_read[6] = {0};
+	    u8 pll_lock = 0;
+	    while (pll_lock == 0) {
+	        XIicPs_MasterSendPolled(&Iic, pll_addr, 2, 0x3B);
+	        while (XIicPs_BusIsBusy(&Iic));
+	        XIicPs_MasterRecvPolled(&Iic, pll_read, 6, 0x3B);
+	        while (XIicPs_BusIsBusy(&Iic));
+	        pll_lock = pll_read[5] & 0x02;
+	    }
+
+    audioWrite(R0_CLOCK_CONTROL,0x0F);
+
+
+}
+
+XStatus primeCodec(){
+	//wow this blows
+//	union ubitField uConfigurationVariable;
+//		int Status;
+//
+//		// Configure the I2S controller for generating a valid sampling rate
+//		uConfigurationVariable.l = Xil_In32(I2S_CLOCK_CONTROL_REG);
+//		uConfigurationVariable.bit.u32bit0 = 1;
+//		uConfigurationVariable.bit.u32bit1 = 0;
+//		uConfigurationVariable.bit.u32bit2 = 1;
+//		Xil_Out32(I2S_CLOCK_CONTROL_REG, uConfigurationVariable.l);
+//
+//		uConfigurationVariable.l = 0x00000000;
+//
+//		//STOP_TRANSACTION
+//		uConfigurationVariable.bit.u32bit1 = 1;
+//		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uConfigurationVariable.l);
+//
+//		//STOP_TRANSACTION
+//		uConfigurationVariable.bit.u32bit1 = 0;
+//		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uConfigurationVariable.l);
+
+
+		//slave: I2S
+		XStatus Status = audioWrite(R15_SERIAL_PORT_CONTROL_0, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R15_SERIAL_PORT_CONTROL_0 (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//64 bit audio frame(L+R)
+		Status = audioWrite(R16_SERIAL_PORT_CONTROL_1, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R16_SERIAL_PORT_CONTROL_1 (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//ADC, DAC sampling rate to 48KHz
+		Status = audioWrite(R17_CONVERTER_CONTROL_0, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R17_CONVERTER_CONTROL_0 (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//ADC, DAC sampling rate to 48KHz
+		Status = audioWrite(R64_SERIAL_PORT_SAMPLING_RATE, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R64_SERIAL_PORT_SAMPLING_RATE (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//ADC are both connected, normal mic polarity
+		Status = audioWrite(R19_ADC_CONTROL, 0x13);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R19_ADC_CONTROL (0x13)");
+			}
+			return XST_FAILURE;
+		}
+		//DAC are both connected
+		Status = audioWrite(R36_DAC_CONTROL_0, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R36_DAC_CONTROL_0 (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Enabling both channels
+		Status = audioWrite(R35_PLAYBACK_POWER_MANAGEMENT, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R35_PLAYBACK_POWER_MANAGEMENT (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Serial input [L0,R0] to DAC
+		Status = audioWrite(R58_SERIAL_INPUT_ROUTE_CONTROL, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R58_SERIAL_INPUT_ROUTE_CONTROL (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//Enable all digital circuits except Codec slew
+		Status = audioWrite(R65_CLOCK_ENABLE_0, 0x7F);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R65_CLOCK_ENABLE_0 (0x7F)");
+			}
+			return XST_FAILURE;
+		}
+		//Turns on CLK0 and CLK1
+		Status = audioWrite(R66_CLOCK_ENABLE_1, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R66_CLOCK_ENABLE_1 (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Mixer5 0dB
+		Status = audioWrite(R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Mixer7 enabled
+		Status = audioWrite(R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//Mixer6 0dB
+		Status = audioWrite(R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL, 0x09);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL (0x09)");
+			}
+			return XST_FAILURE;
+		}
+		//Left output: 0db Line out
+		Status = audioWrite(R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL, 0xE6);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL (0xE6)");
+			}
+			return XST_FAILURE;
+		}
+		//Right output: 0db Line out
+		Status = audioWrite(R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL, 0xE6);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL (0xE6)");
+			}
+			return XST_FAILURE;
+		}
+		//Mono output: -57 dB unmute HP out
+		Status = audioWrite(R33_PLAYBACK_MONO_OUTPUT_CONTROL, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R33_PLAYBACK_MONO_OUTPUT_CONTROL (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Mic bias 90%
+		Status = audioWrite(R10_RECORD_MICROPHONE_BIAS_CONTROL, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R10_RECORD_MICROPHONE_BIAS_CONTROL (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//enable pop and click suppression
+		Status = audioWrite(R34_PLAYBACK_POP_CLICK_SUPPRESSION, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R34_PLAYBACK_POP_CLICK_SUPPRESSION (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//enable Left headphone and set 0dB
+		Status = audioWrite(R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL, 0xE7);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL (0xE7)");
+			}
+			return XST_FAILURE;
+		}
+		//enable Right headphone and set 0dB
+		Status = audioWrite(R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL, 0xE7);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL (0xE7)");
+			}
+			return XST_FAILURE;
+		}
+		//enable Mixer1, mute left single ended
+		Status = audioWrite(R4_RECORD_MIXER_LEFT_CONTROL_0, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R4_RECORD_MIXER_LEFT_CONTROL_0 (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//enable MixerAux1, mute left differential input
+		Status = audioWrite(R5_RECORD_MIXER_LEFT_CONTROL_1, 0x0D);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R5_RECORD_MIXER_LEFT_CONTROL_1 (0x0D)");
+			}
+			return XST_FAILURE;
+		}
+		//enable Mixer2, mute right single ende
+		Status = audioWrite(R6_RECORD_MIXER_RIGHT_CONTROL_0, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R6_RECORD_MIXER_RIGHT_CONTROL_0 (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//enable MixerAux2, mute right differential input
+		Status = audioWrite(R7_RECORD_MIXER_RIGHT_CONTROL_1, 0x05);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R7_RECORD_MIXER_RIGHT_CONTROL_1 (0x05)");
+			}
+			return XST_FAILURE;
+		}
+		//disable Left differential input
+		Status = audioWrite(R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//disable right differential input
+		Status = audioWrite(R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL, 0x03);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL (0x03)");
+			}
+			return XST_FAILURE;
+		}
+		//Enable Mixer3 with the the left DAC channel, mute MixerAux3
+		Status = audioWrite(R22_PLAYBACK_MIXER_LEFT_CONTROL_0, 0x21);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R22_PLAYBACK_MIXER_LEFT_CONTROL_0 (0x21)");
+			}
+			return XST_FAILURE;
+		}
+		//Mute Right and Left input mixers
+		Status = audioWrite(R23_PLAYBACK_MIXER_LEFT_CONTROL_1, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R23_PLAYBACK_MIXER_LEFT_CONTROL_1 (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//Enable Mixer4 with the the right DAC channel, mute MixerAux4
+		Status = audioWrite(R24_PLAYBACK_MIXER_RIGHT_CONTROL_0, 0x41);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R24_PLAYBACK_MIXER_RIGHT_CONTROL_0 (0x41)");
+			}
+			return XST_FAILURE;
+		}
+		//Mute Right and Left input mixers
+		Status = audioWrite(R25_PLAYBACK_MIXER_RIGHT_CONTROL_1, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R25_PLAYBACK_MIXER_RIGHT_CONTROL_1 (0x00)");
+			}
+			return XST_FAILURE;
+		}
+		//Serial output to L0 R0
+		Status = audioWrite(R59_SERIAL_OUTPUT_ROUTE_CONTROL, 0x01);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R59_SERIAL_OUTPUT_ROUTE_CONTROL (0x01)");
+			}
+			return XST_FAILURE;
+		}
+		//Enable LRCLK and BLCK
+		Status = audioWrite(R60_SERIAL_DATA_GPIO_CONGIURATION, 0x00);
+		if (Status == XST_FAILURE)
+		{
+			if (1)
+			{
+				xil_printf("\r\nError: could not write R60_SERIAL_DATA_GPIO_CONGIURATION (0x00)");
+			}
+			return XST_FAILURE;
+		}
+
+
+		return XST_SUCCESS;
+
+
+}
+
+
+
+void initI2C(){
+
+
+
+}
+
+void initI2S(){
+
+
+
+}
+
+void initCodec(){
+
+	//get PLL running.
+	setPll();
+
+	primeCodec();
+
+	//set LINE IN as the input
+	audioWrite(R5_RECORD_MIXER_LEFT_CONTROL_1, 0x05);
+	audioWrite(R7_RECORD_MIXER_RIGHT_CONTROL_1, 0x05);
+
+	//set LIN OUT as the output
+
+	audioWrite(R23_PLAYBACK_MIXER_LEFT_CONTROL_1, 0x00);
+	audioWrite(R25_PLAYBACK_MIXER_RIGHT_CONTROL_1, 0x00);
+	audioWrite(R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL, 0x03);
+	audioWrite(R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL, 0x09);
+	audioWrite(R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL, 0xE6);
+	audioWrite(R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL, 0xE6);
+
+	//yep... that's it.
+
+}

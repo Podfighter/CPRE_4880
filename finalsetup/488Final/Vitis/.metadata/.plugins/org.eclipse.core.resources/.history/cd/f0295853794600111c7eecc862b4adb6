@@ -1,0 +1,152 @@
+#include "./init.h"
+#include "./playback.h"
+#include "xil_io.h"
+#include "stdio.h"
+#include "string.h"
+
+
+
+
+
+
+
+
+
+int main(){
+
+
+
+	memset((UINTPTR)0x10100000,0,256000);
+	//need to do intializations.
+
+	//init I2C
+	initI2C();
+
+	//init Codec
+	initCodec();
+
+	//init I2S RX & TX
+
+
+	//init interrupts (for DMA)
+
+
+	//init DMA
+	initDma();
+
+
+	Xil_DCacheDisable();
+	//cache was being annoying so we're executing it!
+
+
+
+
+	//Go run passthrough...
+	initI2S();
+
+
+
+	//here's where we actually record.
+	//formula for num of iterations:
+	//48000 (sample rate) * 2 (2 channels, L/R) * time (in seconds) * 4 (size) / 4096 (size/sample) - 1
+	//put this value into the for loop :))))) it's your time in number of samples of 4096.
+	//probably just round up to a whole number.
+
+
+	//need to handle playback now...
+
+	//start recording!
+	int time = 0;
+	//saved playback time in # of samples.
+	while(1){
+		//stay in here forever, we can build the state machine here.
+		//use interrupts to start/stop playing and start looping
+		//this really shouldn't be my job...
+
+		record_nb(2800*4);
+		usleep(300);
+		play(2800);
+
+		while(1);
+
+
+//		if(1){
+//
+//			time = record();
+//
+//			//record caps at 2 minutes of 4096 byte samples by default, can be stopped earlier via user input
+//
+//
+//
+//				play(time);
+//
+//
+//
+//
+//
+//
+//
+//
+//		}
+
+
+
+	}
+
+
+while(1);
+		usleep(1);
+
+
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+//		usleep(1);
+//		gim = XAxiDma_SimpleTransfer(&Dmaplay,(UINTPTR)buf1,0x8,XAXIDMA_DMA_TO_DEVICE);
+//		if(gim != 0){exit(1);}
+		usleep(1);
+
+
+	while(1){
+
+
+
+
+	}
+
+
+
+
+
+	return 0;
+
+}

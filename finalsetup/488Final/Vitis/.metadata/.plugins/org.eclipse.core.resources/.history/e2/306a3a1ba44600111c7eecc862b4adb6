@@ -1,0 +1,148 @@
+#include "./init.h"
+#include "./playback.h"
+#include "xil_io.h"
+#include "stdio.h"
+#include "string.h"
+
+
+
+/////////////////////////
+//BITMAP FOR BUTTONS
+// 0 0 0 0
+// L P X R
+////////////////////////
+
+//L - select left
+//P - pedal
+//X - reset
+//R - select right
+
+//TRACK CAN ONLY BE CHANGED WHEN IN THE STATES LOOP OR DUMMY
+
+//DO NOT CHANGE THE PMOD ASSIGNMENTS!
+
+//i should get paid for this bullshit... fuck!
+
+
+////////////////////////////////////////////////
+//OVERVIEW OF HOW THIS ALL WORKS KINDA I GUESS//
+//basically main() is just a state machine that covers what we need the pedal to do for us
+//it isnt complicated, rather, it's as simple as possible while still being usable
+//there's 4 states you need to be concerned about:
+//DUMMY, REC, RECLOOP, LOOP
+//
+//DUMMY - Initial state on power on/reset button pressed, doesn't do anything
+//
+//REC - Record to selected buffer (1 by default), will go for 2 minutes at MAX, can be ended early
+//by pressing the pedal button. In general, you can cycle through REC/RECLOOP/LOOP by pressing the pedal button.
+//
+//RECLOOP - Start recording over the saved track in the current buffer; this won't exceed the recorded time.
+//
+//LOOP - loop the current track with no recording.
+//
+////////////////////////////////////////////////
+
+int main(){
+
+	pedal = DUMMY;
+	//initialization!
+
+	memset((UINTPTR)0x10100000,0,256000);
+	//for my ears.
+
+	//init I2C
+	initI2C();
+
+	//init Codec
+	initCodec();
+
+	//init I2S RX & TX
+
+
+	//init interrupts (for DMA)
+
+
+	//init DMA
+	initDma();
+
+
+	Xil_DCacheDisable();
+	//cache was being annoying so we're executing it!
+
+
+
+
+	//Go run passthrough...
+	initI2S();
+
+
+
+	//here's where we actually record.
+	//formula for num of iterations:
+	//48000 (sample rate) * 2 (2 channels, L/R) * time (in seconds) * 4 (size) / 4096 (size/sample) - 1
+	//put this value into the for loop :))))) it's your time in number of samples of 4096.
+	//probably just round up to a whole number.
+
+
+	//need to handle playback now...
+
+	//start recording!
+	int time = 0;
+	//saved playback time in # of samples.
+	while(1){
+		//stay in here forever, we can build the state machine here.
+		//use interrupts to start/stop playing and start looping
+		//this really shouldn't be my job...
+		switch(pedal){
+		case(DUMMY):
+				//do nothing. this is our initial state, after all.
+				//track can be selected here.
+		break;
+
+		case(REC):
+				//start the first record, this one can be a little weird.
+			time = record();
+				//2min by default
+			play(time);
+			while(1);
+
+		break;
+
+		case(RECLOOP):
+				//record while starting playback onto the selected track
+				//should be easy...?
+
+		break;
+
+		case(LOOP):
+
+		break;
+
+		default:
+			//how did you get here? lmao >:)
+		break;
+
+
+
+
+
+
+
+
+
+
+
+		}
+
+
+
+	}
+
+
+
+
+
+
+	return 0;
+
+}

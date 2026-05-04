@@ -1,0 +1,6 @@
+static XIicPs Iic;
+
+
+XStatus audioWrite(u8 reg, u8 data);
+void setPll();
+u8 audioRead(u16 reg);

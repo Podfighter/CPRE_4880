@@ -1,0 +1,21 @@
+#include "xil_types.h"
+#include "xiicps.h"
+#include "xaxidma.h"
+
+
+#define buf1 0x10100000U
+
+XIicPs Iic;
+XAxiDma Dmarec,Dmaplay;
+XScuGic inty;
+
+
+
+XStatus audioWrite(u8 reg, u8 data);
+u8 audioRead(u16 reg);
+void initI2C();
+void initI2S();
+void initCodec();
+void initDma();
+void intInit();
+

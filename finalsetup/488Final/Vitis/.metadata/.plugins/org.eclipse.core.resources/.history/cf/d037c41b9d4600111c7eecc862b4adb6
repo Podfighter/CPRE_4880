@@ -1,0 +1,36 @@
+#include "xil_types.h"
+#include "xiicps.h"
+#include "xaxidma.h"
+
+
+#define buf1 0x10100000U
+
+enum states{
+	DUMMY,
+	REC,
+	RECLOOP,
+	LOOP,
+
+};
+
+XIicPs Iic;
+XAxiDma Dmarec,Dmaplay;
+int count;
+//current record sample count
+int pedal;
+//pedal state variable
+int step;
+//how long are we goin?
+
+//XScuGic inty;
+
+
+
+XStatus audioWrite(u8 reg, u8 data);
+u8 audioRead(u16 reg);
+void initI2C();
+void initI2S();
+void initCodec();
+void initDma();
+void intInit();
+

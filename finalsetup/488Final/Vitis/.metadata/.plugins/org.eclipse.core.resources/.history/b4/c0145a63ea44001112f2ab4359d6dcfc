@@ -1,0 +1,338 @@
+#include "xiicps.h"
+#include "./init.h"
+#include "xparameters.h"
+#include "xil_io.h"
+#include "xaxidma.h"
+
+//some enums so life doesn't suck
+//pulled this from the DMA demo example, didn't why I'd write these enums myself...
+enum ADAU1761REGNAMES
+{
+	R0_CLOCK_CONTROL								= 0x00,
+	R1_PLL_CONTROL 									= 0x02,
+	R2_DIGITAL_MIC_JACK_DETECTION_CONTROL 			= 0x08,
+	R3_RECORD_POWER_MANAGEMENT						= 0x09,
+	R4_RECORD_MIXER_LEFT_CONTROL_0 					= 0x0A,
+	R5_RECORD_MIXER_LEFT_CONTROL_1 					= 0x0B,
+	R6_RECORD_MIXER_RIGHT_CONTROL_0 				= 0x0C,
+	R7_RECORD_MIXER_RIGHT_CONTROL_1 				= 0x0D,
+	R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0E,
+	R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL 		= 0x0F,
+	R10_RECORD_MICROPHONE_BIAS_CONTROL 				= 0x10,
+	R11_ALC_CONTROL_0								= 0x11,
+	R12_ALC_CONTROL_1								= 0x12,
+	R13_ALC_CONTROL_2								= 0x13,
+	R14_ALC_CONTROL_3								= 0x14,
+	R15_SERIAL_PORT_CONTROL_0 						= 0x15,
+	R16_SERIAL_PORT_CONTROL_1 						= 0x16,
+	R17_CONVERTER_CONTROL_0 						= 0x17,
+	R18_CONVERTER_CONTROL_1 						= 0x18,
+	R19_ADC_CONTROL									= 0x19,
+	R20_LEFT_INPUT_DIGITAL_VOLUME 					= 0x1A,
+	R21_RIGHT_INPUT_DIGITAL_VOLUME 					= 0x1B,
+	R22_PLAYBACK_MIXER_LEFT_CONTROL_0 				= 0x1C,
+	R23_PLAYBACK_MIXER_LEFT_CONTROL_1 				= 0x1D,
+	R24_PLAYBACK_MIXER_RIGHT_CONTROL_0 				= 0x1E,
+	R25_PLAYBACK_MIXER_RIGHT_CONTROL_1 				= 0x1F,
+	R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL 	= 0x20,
+	R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL = 0x21,
+	R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL 		= 0x22,
+	R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL 		= 0x23,
+	R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL 	= 0x24,
+	R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL 	= 0x25,
+	R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL 	= 0x26,
+	R33_PLAYBACK_MONO_OUTPUT_CONTROL 				= 0x27,
+	R34_PLAYBACK_POP_CLICK_SUPPRESSION 				= 0x28,
+	R35_PLAYBACK_POWER_MANAGEMENT 					= 0x29,
+	R36_DAC_CONTROL_0 								= 0x2A,
+	R37_DAC_CONTROL_1 								= 0x2B,
+	R38_DAC_CONTROL_2 								= 0x2C,
+	R39_SERIAL_PORT_PAD_CONTROL 					= 0x2D,
+	R40_CONTROL_PORT_PAD_CONTROL_0 					= 0x2F,
+	R41_CONTROL_PORT_PAD_CONTROL_1 					= 0x30,
+	R42_JACK_DETECT_PIN_CONTROL 					= 0x31,
+	R67_DEJITTER_CONTROL 							= 0x36,
+	R58_SERIAL_INPUT_ROUTE_CONTROL					= 0xF2,
+	R59_SERIAL_OUTPUT_ROUTE_CONTROL					= 0xF3,
+	R60_SERIAL_DATA_GPIO_CONGIURATION				= 0xF4,
+	R61_DSP_ENABLE									= 0xF5,
+	R62_DSP_RUN										= 0xF6,
+	R63_DSP_SLEW_MODES								= 0xF7,
+	R64_SERIAL_PORT_SAMPLING_RATE 					= 0xF8,
+	R65_CLOCK_ENABLE_0 								= 0xF9,
+	R66_CLOCK_ENABLE_1 								= 0xFA
+};
+
+
+
+
+
+
+
+
+
+
+XStatus audioWrite(u8 reg, u8 data) {
+    u8 buf[3];
+    buf[0] = 0x40;
+    buf[1] = reg;
+    buf[2] = data;
+    XIicPs_MasterSendPolled(&Iic, buf, 3, 0x3B);
+    //0x3B is the device address.
+
+    while(XIicPs_BusIsBusy(&Iic)){};
+
+    //if it doesnt hang it's probably fine... probably.
+	return XST_SUCCESS;
+}
+
+
+// --- Helper: 16-bit Register Read ---
+u8 audioRead(u16 reg) {
+    u8 addr_buf[2];
+    u8 data_buf[1] = {0};
+    addr_buf[0] = (u8)(reg >> 8);
+    addr_buf[1] = (u8)(reg & 0xFF);
+    XIicPs_MasterSendPolled(&Iic, addr_buf, 2, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    XIicPs_MasterRecvPolled(&Iic, data_buf, 1, 0x3B);
+    while (XIicPs_BusIsBusy(&Iic));
+    return data_buf[0];
+}
+
+void setPll(){
+	//this can be rewritten to have an actual input field, but we know exactly what we're going to be using already. i'm LAZY.
+
+	//needs to be burst-written, otherwise the ADAU1761 will throw a tantrum
+	u8 sendBuf[8] = {0x40,0x02,0x00,0x00,0x00,0x00,0x20,0x01};
+	XIicPs_MasterSendPolled(&Iic,sendBuf,8,0x3B);
+
+	//wait for completion
+	while (XIicPs_BusIsBusy(&Iic));
+
+	//horrid way to wait until the lock is ready!
+	u8 pll_addr[] = {0x40, 0x02};
+	    u8 pll_read[6] = {0};
+	    u8 pll_lock = 0;
+	    while (pll_lock == 0) {
+	        XIicPs_MasterSendPolled(&Iic, pll_addr, 2, 0x3B);
+	        while (XIicPs_BusIsBusy(&Iic));
+	        XIicPs_MasterRecvPolled(&Iic, pll_read, 6, 0x3B);
+	        while (XIicPs_BusIsBusy(&Iic));
+	        pll_lock = pll_read[5] & 0x02;
+	    }
+
+    audioWrite(R0_CLOCK_CONTROL,0x0F);
+
+
+}
+
+XStatus primeCodec(){
+	//wow this blows
+//	union ubitField uConfigurationVariable;
+//		int Status;
+//
+//		// Configure the I2S controller for generating a valid sampling rate
+//		uConfigurationVariable.l = Xil_In32(I2S_CLOCK_CONTROL_REG);
+//		uConfigurationVariable.bit.u32bit0 = 1;
+//		uConfigurationVariable.bit.u32bit1 = 0;
+//		uConfigurationVariable.bit.u32bit2 = 1;
+//		Xil_Out32(I2S_CLOCK_CONTROL_REG, uConfigurationVariable.l);
+//
+//		uConfigurationVariable.l = 0x00000000;
+//
+//		//STOP_TRANSACTION
+//		uConfigurationVariable.bit.u32bit1 = 1;
+//		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uConfigurationVariable.l);
+//
+//		//STOP_TRANSACTION
+//		uConfigurationVariable.bit.u32bit1 = 0;
+//		Xil_Out32(I2S_TRANSFER_CONTROL_REG, uConfigurationVariable.l);
+
+
+		//slave: I2S
+		XStatus Status = audioWrite(R15_SERIAL_PORT_CONTROL_0, 0x01);
+
+		//64 bit audio frame(L+R)
+		Status = audioWrite(R16_SERIAL_PORT_CONTROL_1, 0x00);
+
+		//ADC, DAC sampling rate to 48KHz
+		Status = audioWrite(R17_CONVERTER_CONTROL_0, 0x00);
+
+		//ADC, DAC sampling rate to 48KHz
+		Status = audioWrite(R64_SERIAL_PORT_SAMPLING_RATE, 0x00);
+
+		//ADC are both connected, normal mic polarity
+		Status = audioWrite(R19_ADC_CONTROL, 0x13);
+
+		//DAC are both connected
+		Status = audioWrite(R36_DAC_CONTROL_0, 0x03);
+
+		//Enabling both channels
+		Status = audioWrite(R35_PLAYBACK_POWER_MANAGEMENT, 0x03);
+
+		//Serial input [L0,R0] to DAC
+		Status = audioWrite(R58_SERIAL_INPUT_ROUTE_CONTROL, 0x01);
+
+		//Enable all digital circuits except Codec slew
+		Status = audioWrite(R65_CLOCK_ENABLE_0, 0x7F);
+
+		//Turns on CLK0 and CLK1
+		Status = audioWrite(R66_CLOCK_ENABLE_1, 0x03);
+
+		//Mixer5 0dB
+		Status = audioWrite(R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL, 0x03);
+
+		//Mixer7 enabled
+		Status = audioWrite(R28_PLAYBACK_LR_MIXER_MONO_OUTPUT_CONTROL, 0x01);
+
+		//Mixer6 0dB
+		Status = audioWrite(R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL, 0x09);
+
+		//Left output: 0db Line out
+		Status = audioWrite(R31_PLAYBACK_LINE_OUTPUT_LEFT_VOLUME_CONTROL, 0xE6);
+
+		//Right output: 0db Line out
+		Status = audioWrite(R32_PLAYBACK_LINE_OUTPUT_RIGHT_VOLUME_CONTROL, 0xE6);
+
+		//Mono output: -57 dB unmute HP out
+		Status = audioWrite(R33_PLAYBACK_MONO_OUTPUT_CONTROL, 0x03);
+
+		//Mic bias 90%
+		Status = audioWrite(R10_RECORD_MICROPHONE_BIAS_CONTROL, 0x01);
+
+		//enable pop and click suppression
+		Status = audioWrite(R34_PLAYBACK_POP_CLICK_SUPPRESSION, 0x00);
+
+		//enable Left headphone and set 0dB
+		Status = audioWrite(R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL, 0xE7);
+
+		//enable Right headphone and set 0dB
+		Status = audioWrite(R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL, 0xE7);
+
+		//enable Mixer1, mute left single ended
+		Status = audioWrite(R4_RECORD_MIXER_LEFT_CONTROL_0, 0x01);
+
+		//enable MixerAux1, mute left differential input
+		Status = audioWrite(R5_RECORD_MIXER_LEFT_CONTROL_1, 0x0D);
+
+		//enable Mixer2, mute right single ende
+		Status = audioWrite(R6_RECORD_MIXER_RIGHT_CONTROL_0, 0x01);
+
+		//enable MixerAux2, mute right differential input
+		Status = audioWrite(R7_RECORD_MIXER_RIGHT_CONTROL_1, 0x05);
+
+		//disable Left differential input
+		Status = audioWrite(R8_LEFT_DIFFERENTIAL_INPUT_VOLUME_CONTROL, 0x03);
+
+		//disable right differential input
+		Status = audioWrite(R9_RIGHT_DIFFERENTIAL_INPUT_VOLUME_CONTROL, 0x03);
+
+		//Enable Mixer3 with the the left DAC channel, mute MixerAux3
+		Status = audioWrite(R22_PLAYBACK_MIXER_LEFT_CONTROL_0, 0x21);
+
+		//Mute Right and Left input mixers
+		Status = audioWrite(R23_PLAYBACK_MIXER_LEFT_CONTROL_1, 0x00);
+
+		//Enable Mixer4 with the the right DAC channel, mute MixerAux4
+		Status = audioWrite(R24_PLAYBACK_MIXER_RIGHT_CONTROL_0, 0x41);
+
+		//Mute Right and Left input mixers
+		Status = audioWrite(R25_PLAYBACK_MIXER_RIGHT_CONTROL_1, 0x00);
+
+		//Serial output to L0 R0
+		Status = audioWrite(R59_SERIAL_OUTPUT_ROUTE_CONTROL, 0x01);
+
+		//Enable LRCLK and BLCK
+		Status = audioWrite(R60_SERIAL_DATA_GPIO_CONGIURATION, 0x00);
+
+
+
+		return XST_SUCCESS;
+
+
+}
+
+
+
+void initI2C(){
+
+	XIicPs_Config *cfg;
+	cfg = XIicPs_LookupConfig(XPAR_XIICPS_0_DEVICE_ID);
+
+	XIicPs_CfgInitialize(&Iic, cfg, cfg->BaseAddress);
+
+	XIicPs_SetSClk(&Iic, 100000);
+	usleep(1000);
+
+
+}
+
+void initI2S(){
+	//this will be FUN!!!!
+
+//0x08 on RX and TX; set to 0x01;
+
+
+	Xil_Out32(XPAR_I2S_RECEIVER_0_BASEADDR + 0x30,0x01);
+	Xil_Out32(XPAR_I2S_TRANSMITTER_0_BASEADDR + 0x30,0x01);
+
+	Xil_Out32(XPAR_I2S_RECEIVER_0_BASEADDR + 0x0C,0x01);
+	Xil_Out32(XPAR_I2S_TRANSMITTER_0_BASEADDR + 0x0C,0x01);
+
+
+	Xil_Out32(XPAR_I2S_RECEIVER_0_BASEADDR + 0x08,0x01);
+	Xil_Out32(XPAR_I2S_TRANSMITTER_0_BASEADDR + 0x08,0x01);
+
+//0x0C on RX & TX, set to 0x1;
+
+//0x30 to set mux
+
+
+
+
+
+
+}
+
+void initCodec(){
+
+	//get PLL running.
+	setPll();
+
+	primeCodec();
+
+	//set LINE IN as the input
+	audioWrite(R5_RECORD_MIXER_LEFT_CONTROL_1, 0x05);
+	audioWrite(R7_RECORD_MIXER_RIGHT_CONTROL_1, 0x05);
+
+	//set LIN OUT as the output
+
+	audioWrite(R23_PLAYBACK_MIXER_LEFT_CONTROL_1, 0x00);
+	audioWrite(R25_PLAYBACK_MIXER_RIGHT_CONTROL_1, 0x00);
+	audioWrite(R26_PLAYBACK_LR_MIXER_LEFT_LINE_OUTPUT_CONTROL, 0x03);
+	audioWrite(R27_PLAYBACK_LR_MIXER_RIGHT_LINE_OUTPUT_CONTROL, 0x09);
+	audioWrite(R29_PLAYBACK_HEADPHONE_LEFT_VOLUME_CONTROL, 0xE6);
+	audioWrite(R30_PLAYBACK_HEADPHONE_RIGHT_VOLUME_CONTROL, 0xE6);
+
+	//yep... that's it.
+
+}
+
+void initDma(){
+	XAxiDma_Config *cfg = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	XAxiDma_CfgInitialize(&Dmarec,cfg);
+
+	XAxiDma_Config *cfg2 = XAxiDma_LookupConfig(XPAR_AXIDMA_1_DEVICE_ID);
+	XAxiDma_CfgInitialize(&Dmaplay,cfg2);
+
+	XAxiDma_IntrDisable(&Dmarec, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&Dmarec, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+	XAxiDma_IntrDisable(&Dmaplay, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&Dmaplay, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+
+
+
+
+}

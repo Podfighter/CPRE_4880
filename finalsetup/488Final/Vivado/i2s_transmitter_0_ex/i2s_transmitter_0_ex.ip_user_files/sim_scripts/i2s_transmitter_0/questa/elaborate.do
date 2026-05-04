@@ -1,0 +1,1 @@
+vopt +acc -l elaborate.log -L xilinx_vip -L xpm -L i2s_transmitter_v1_0_4 -L xil_defaultlib -L i2s_receiver_v1_0_4 -L i2s_transmitter_v1_0_4 -L unisims_ver -L unimacro_ver -L secureip -work xil_defaultlib xil_defaultlib.i2s_transmitter_0 xil_defaultlib.glbl -o i2s_transmitter_0_opt

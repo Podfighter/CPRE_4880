@@ -1,0 +1,15 @@
+okay hi ian here
+basically this won't work properly unless you manually copy the "488final"
+folder to downloads and run it from there
+vitis should...? cooperate.
+if it doesn't make new project, you know the drill. sort xsa's by date.
+ALSO. when you update the bitstream, vitis gets... quirky.
+you'll need to go to the application project menu, right click it, and in that 
+menu, where it says (launch application as debug) you'll need to hover over it
+and adjust the debug settings
+that launches ANOTHER annoying window, in said annoying window, you need to
+go in and enter the "targets" tab and select the new XSA, the new bitstream,
+and the init file (click browse, it's the .tcl file that's old as hell)
+
+then click the box that says do post init
+if you dont do this, I2C communication wont work and you'll be very sad

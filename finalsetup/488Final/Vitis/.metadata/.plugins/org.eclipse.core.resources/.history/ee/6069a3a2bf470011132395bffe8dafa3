@@ -1,0 +1,137 @@
+#include "xil_types.h"
+#include "xiicps.h"
+#include "xaxidma.h"
+#include "xparameters.h"
+#include "./init.h"
+#include "./playback.h"
+
+
+
+void sampleCopy(volatile u32* source,volatile u32* dest){
+
+	for(int y = 0;y < 1023;y++){
+		*(dest + y) = *(source + y);
+	//dummy simple.
+	}
+
+}
+
+int record(){
+
+	//2812 * 4 is the max (2 minutes!)
+	int samples = 0;
+for(int i = 0; i < 2812 * 4 - 1; i++){
+
+
+
+		XAxiDma_SimpleTransfer(&Dmarec,R + 1024 * i ,4096,XAXIDMA_DEVICE_TO_DMA);
+		while(!(Xil_In32(0x40400034) & 0x00000010));
+		sampleCopy(R + 1024 * i,CT + 1024*i);
+		//copy over a sample in between each DMA write!
+		//wait until idle bit goes high (meaning that it's done);
+		XAxiDma_Reset(&Dmarec);
+		XAxiDma_ResetIsDone(&Dmarec);
+		samples++;
+		//they just... have a function for this?!
+
+		//so full disclosure, i know this looks janky AF, but it's actually kinda what they already do
+		//in scatter gather mode when you read the tail pointer, soooooooooo
+		//it's actually... sort of intended... yeah, i know.
+
+		if(!(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004)){
+			//if button pressed, get the hell out!
+
+			//we need this, regrettably. I don't know why.
+			//will look into it if it's an issue... but it shouldn't matter.
+
+			usleep(5);
+
+			return samples;
+		}
+
+
+	}
+		//record 4 two minutes... ....yeah
+
+
+return samples;
+}
+
+void recordTimed(int samples){
+
+	//2812 * 4 is the max (2 minutes!)
+
+for(int i = 0; i <= samples; i++){
+
+
+
+		XAxiDma_SimpleTransfer(&Dmarec,R + 1024 * i ,4096,XAXIDMA_DEVICE_TO_DMA);
+		while(!(Xil_In32(0x40400034) & 0x00000010));
+		sampleCopy(R + 1024 * i,CT + 1024*i);
+		//copy over a sample in between each DMA write!
+		//wait until idle bit goes high (meaning that it's done);
+		XAxiDma_Reset(&Dmarec);
+		XAxiDma_ResetIsDone(&Dmarec);
+
+		//they just... have a function for this?!
+
+		//so full disclosure, i know this looks janky AF, but it's actually kinda what they already do
+		//in scatter gather mode when you read the tail pointer, soooooooooo
+		//it's actually... sort of intended... yeah, i know.
+
+
+
+
+	}
+		//record 4 two minutes... ....yeah
+
+usleep(5);
+
+}
+
+void play(int samples){
+
+	//base is 0x40410000...
+
+
+	XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay,CT,0x1000 * samples,XAXIDMA_DMA_TO_DEVICE);
+	if(gim != 0){exit(1);}
+	while(!(Xil_In32(0x40410004) & 0x00000002));
+	usleep(5);
+
+
+
+
+}
+
+void testerino(int samples){
+
+	for(int i = 0; i <= samples; i++){
+
+
+
+			XAxiDma_SimpleTransfer(&Dmarec,R + 1024 * i ,4096,XAXIDMA_DEVICE_TO_DMA);
+			while(!(Xil_In32(0x40400034) & 0x00000010));
+			sampleCopy(R + 1024 * i,CT + 1024*i);
+			//copy over a sample in between each DMA write!
+			//wait until idle bit goes high (meaning that it's done);
+			XAxiDma_Reset(&Dmarec);
+			XAxiDma_ResetIsDone(&Dmarec);
+
+
+			XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay,CT,0x1000 * samples,XAXIDMA_DMA_TO_DEVICE);
+			if(gim != 0){exit(1);}
+			while(!(Xil_In32(0x40410004) & 0x00000002));
+			usleep(5);
+			//they just... have a function for this?!
+
+			//so full disclosure, i know this looks janky AF, but it's actually kinda what they already do
+			//in scatter gather mode when you read the tail pointer, soooooooooo
+			//it's actually... sort of intended... yeah, i know.
+
+
+
+
+		}
+
+}
