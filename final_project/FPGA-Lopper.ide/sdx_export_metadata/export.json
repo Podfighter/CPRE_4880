@@ -1,0 +1,28 @@
+{
+  "version": "2020.1",
+  "applications": [],
+  "platforms": [
+    {
+      "name": "FPGA-Looper"
+    }
+  ],
+  "systems": [
+    {
+      "name": "FPGA-Looper-1_system",
+      "platform": "C:/Users/jdbritt/Downloads/FPGA-Looper/FPGA-Looper/export/FPGA-Looper/FPGA-Looper.xpfm",
+      "sysConfig": "FPGA-Looper",
+      "applications": [
+        {
+          "name": "FPGA-Looper-1",
+          "platform": "C:/Users/jdbritt/Downloads/FPGA-Looper/FPGA-Looper/export/FPGA-Looper/FPGA-Looper.xpfm",
+          "platformPath": "C:\\Users\\jdbritt\\Downloads\\FPGA-Looper\\FPGA-Looper\\export\\FPGA-Looper",
+          "sysConfig": "FPGA-Looper",
+          "domain": "domain_ps7_cortexa9_0",
+          "system": "FPGA-Looper-1_system"
+        }
+      ],
+      "platformPath": "C:\\Users\\jdbritt\\Downloads\\FPGA-Looper\\FPGA-Looper\\export\\FPGA-Looper"
+    }
+  ],
+  "others": []
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="FPGA-Looper-1" location="C:/Users/jdbritt/Downloads/FPGA-Looper/FPGA-Looper-1" platform="C:/Users/jdbritt/Downloads/FPGA-Looper/FPGA-Looper/export/FPGA-Looper/FPGA-Looper.xpfm" platformUID="xilinx:zed::0.0(custom)" systemProject="FPGA-Looper-1_system" sysConfig="FPGA-Looper" runtime="cpp" cpu="domain_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="4037fc24ba27c5db67af7c8bec6f8af9">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1838870261">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.499823871" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

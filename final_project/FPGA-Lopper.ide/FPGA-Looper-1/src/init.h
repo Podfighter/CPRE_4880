@@ -1,0 +1,60 @@
+#include "xil_types.h"
+#include "xiicps.h"
+#include "xaxidma.h"
+
+
+#define bufR 0x00200000U
+#define track1 0x02F00000U
+#define track2 0x05C00000U
+#define track3 0x08900000U
+#define track4 0x0B600000U
+
+volatile u32* R;
+volatile u32* T1;
+volatile u32* T2;
+volatile u32* T3;
+volatile u32* T4;
+volatile u32* CT;
+
+volatile u8 Volume1;
+volatile u8 Volume2;
+volatile u8 Volume3;
+volatile u8 Volume4;
+volatile u8 VolumeC;
+
+
+//5 tracks we need to get this to work right... maybe possible with less if we do some crap... but uh, hm. no.
+//im not getting paid for this, you're getting the ian deluxe; simple and effective but not efficient or clever.
+
+//general idea:
+//record into record buffer perpetually to the set endpoint
+//add record buffer into track buffer in 4096 KB samples as they're recorded.
+//start playing as soon as one record is complete.
+//in theory we get the OG unlooped stuff first but it may not apply first... but the playback should win. Should.
+//the addition is ALL in C so it should be OK.
+//worst-case scenario we can sync it with interrupts or flags or by polling at the end if rec/play get too quick
+
+
+
+XIicPs Iic;
+XAxiDma Dmarec,Dmaplay,Dmadual;
+u32* trackSel;
+int count;
+//current record sample count
+int pedal;
+//pedal state variable
+int step;
+//how long are we goin?
+
+//XScuGic inty;
+
+
+
+XStatus audioWrite(u8 reg, u8 data);
+u8 audioRead(u16 reg);
+void initI2C();
+void initI2S();
+void initCodec();
+void initDma();
+void intInit();
+
