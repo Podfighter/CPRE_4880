@@ -2,53 +2,52 @@
 #include "xiicps.h"
 #include "xaxidma.h"
 
+#define NUM_TRACKS 4
 
-#define bufR 0x00200000U
+// chunk size in bytes — this is the one number to change to tune latency
+// 4096 = ~10.7ms/chunk (~21ms round-trip)
+// 1024 = ~2.7ms/chunk  (~5.3ms round-trip)  <-- current
+//  512 = ~1.3ms/chunk  (~2.7ms round-trip)   (probably overkill)
+// leave the AXI FIFOs alone in hardware, bigger is fine — just drain them more often
+#define CHUNK_BYTES 1024
+#define CHUNK_SAMPLES (CHUNK_BYTES / 4)                      // u32 values per chunk
+#define CHUNK_BUDGET_US (CHUNK_BYTES * 1000000UL / 384000UL) // max us before we're too slow
+#define MAX_CHUNKS (46080000 / CHUNK_BYTES)                  // 2 min at 48kHz stereo
+
+// track buffers in DDR
+// DO NOT CHANGE THESE
 #define track1 0x02F00000U
 #define track2 0x05C00000U
 #define track3 0x08900000U
 #define track4 0x0B600000U
 
-volatile u32* R;
-volatile u32* T1;
-volatile u32* T2;
-volatile u32* T3;
-volatile u32* T4;
-volatile u32* CT;
+// single-chunk scratch buffers, each CHUNK_BYTES long
+#define RECV_BUF_ADDR 0x00200000U                  // incoming audio goes here
+#define MIX_BUF_ADDR (RECV_BUF_ADDR + CHUNK_BYTES) // mixed output goes here before we play it
 
-volatile u8 Volume1;
-volatile u8 Volume2;
-volatile u8 Volume3;
-volatile u8 Volume4;
-volatile u8 VolumeC;
+volatile u32 *recv_ptr;
+volatile u32 *mix_ptr;
+volatile u32 *tracks[NUM_TRACKS]; // tracks[0..3] point to track1..track4
 
+volatile u8 VolumeC;    // right-shift applied to samples during mix (0 = full, each step = -6dB)
 
-//5 tracks we need to get this to work right... maybe possible with less if we do some crap... but uh, hm. no.
-//im not getting paid for this, you're getting the ian deluxe; simple and effective but not efficient or clever.
+// per-track stuff
+int track_state[NUM_TRACKS];  // current TrackState for each track
+int track_len[NUM_TRACKS];    // how many chunks got recorded on each track
+int track_pos[NUM_TRACKS];    // write position during RECORDING (not used after)
+int rec_offset[NUM_TRACKS];   // global_pos value when this track started recording
+int pedal_toggle[NUM_TRACKS]; // debounce state for each pedal
 
-//general idea:
-//record into record buffer perpetually to the set endpoint
-//add record buffer into track buffer in 4096 KB samples as they're recorded.
-//start playing as soon as one record is complete.
-//in theory we get the OG unlooped stuff first but it may not apply first... but the playback should win. Should.
-//the addition is ALL in C so it should be OK.
-//worst-case scenario we can sync it with interrupts or flags or by polling at the end if rec/play get too quick
+// global loop timeline — set by the first track recorded, inherited by all others
+int global_len; // loop length in chunks (0 = not set yet)
+int global_pos; // current position in the global loop (0..global_len-1)
 
-
+// 0 = synchronized (Mode 0): first track sets loop length, all tracks inherit it
+// 1 = independent  (Mode 1): each track loops at its own recorded length
+int loop_mode;
 
 XIicPs Iic;
-XAxiDma Dmarec,Dmaplay,Dmadual;
-u32* trackSel;
-int count;
-//current record sample count
-int pedal;
-//pedal state variable
-int step;
-//how long are we goin?
-
-//XScuGic inty;
-
-
+XAxiDma Dmarec, Dmaplay, Dmadual;
 
 XStatus audioWrite(u8 reg, u8 data);
 u8 audioRead(u16 reg);
@@ -56,5 +55,3 @@ void initI2C();
 void initI2S();
 void initCodec();
 void initDma();
-void intInit();
-

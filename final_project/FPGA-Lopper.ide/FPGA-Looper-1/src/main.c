@@ -1,178 +1,143 @@
 #include "./init.h"
 #include "./playback.h"
+#include "xparameters.h"
 #include "xil_io.h"
-#include "stdio.h"
 #include "string.h"
 
-/////////////////////////
-// BITMAP FOR BUTTONS
-//  0 0 0 0
-//  L P X R
-////////////////////////
-
-// L - select left
-// P - pedal
-// X - reset
-// R - select right
-
-// TRACK CAN ONLY BE CHANGED WHEN IN THE STATES LOOP OR DUMMY
-
-// DO NOT CHANGE THE PMOD ASSIGNMENTS!
-
-////////////////////////////////////////////////
-// OVERVIEW OF HOW THIS ALL WORKS KINDA I GUESS//
-// basically main() is just a state machine that covers what we need the pedal to do for us
-// it isnt complicated, rather, it's as simple as possible while still being usable
-// there's 4 states you need to be concerned about:
-// DUMMY, REC, RECLOOP, LOOP
-//
-// DUMMY - Initial state on power on/reset button pressed, doesn't do anything
-//
-// REC - Record to selected buffer (1 by default), will go for 2 minutes at MAX, can be ended early
-// by pressing the pedal button. In general, you can cycle through REC/RECLOOP/LOOP by pressing the pedal button.
-//
-// RECLOOP - Start recording over the saved track in the current buffer; this won't exceed the recorded time.
-//
-// LOOP - loop the current track with no recording.
-//
-////////////////////////////////////////////////
+// GPIO bit layout — adjust to match your PMOD wiring
+// bit 0: track 0 pedal
+// bit 1: track 1 pedal
+// bit 2: track 2 pedal
+// bit 3: track 3 pedal
+// bit 4: reset
+// bit 5: mode toggle (Mode 0 <-> Mode 1)
+// bit 6: volume up   (placeholder for later)
+// bit 7: volume down (placeholder for later)
+#define PEDAL_MASK(i) (1u << (i))
+#define RESET_MASK 0x00000010u
+#define MODE_MASK 0x00000020u
+#define VOL_UP_MASK 0x00000040u
+#define VOL_DOWN_MASK 0x00000080u
 
 int main()
 {
+	// zero everything out to start with
+	for (int i = 0; i < NUM_TRACKS; i++)
+	{
+		track_state[i] = IDLE;
+		track_len[i] = 0;
+		track_pos[i] = 0;
+		rec_offset[i] = 0;
+		pedal_toggle[i] = 0;
+	}
+	global_len = 0;
+	global_pos = 0;
+	loop_mode = 0; // start in synchronized mode
 
-	pedal = DUMMY;
-	// initialization!
+	int mode_toggle = 0;
 
-	memset((UINTPTR)0x00200000, 0, 256000);
-	// for my ears.
+	// set up all the pointers to our buffers and track memory
+	recv_ptr = (volatile u32 *)(UINTPTR)RECV_BUF_ADDR;
+	mix_ptr = (volatile u32 *)(UINTPTR)MIX_BUF_ADDR;
+	tracks[0] = (volatile u32 *)(UINTPTR)track1;
+	tracks[1] = (volatile u32 *)(UINTPTR)track2;
+	tracks[2] = (volatile u32 *)(UINTPTR)track3;
+	tracks[3] = (volatile u32 *)(UINTPTR)track4;
 
-	// init I2C
+	VolumeC = 0; // 0 = full volume
+
+	// clear the working buffers
+	memset((void *)(UINTPTR)RECV_BUF_ADDR, 0, CHUNK_BYTES);
+	memset((void *)(UINTPTR)MIX_BUF_ADDR, 0, CHUNK_BYTES);
+
+	// init everything
 	initI2C();
-
-	// init Codec
 	initCodec();
-
-	// init I2S RX & TX
-	R = (UINTPTR)bufR;
-	T1 = (UINTPTR)track1;
-	T2 = (UINTPTR)track2;
-	T3 = (UINTPTR)track3;
-	T4 = (UINTPTR)track4;
-
-	Volume1 = 0; // 0 means full volume, volume is reduced by a factor if 32 with each increase
-	Volume2 = 0;
-	Volume3 = 0;
-	Volume4 = 0;
-
-	VolumeC = Volume1;
-
-	CT = (UINTPTR)track1;
-
-	int buttontoggle = 0;
-	// need this done before interrupts so the user can't do dumb stuff
-
-	// init interrupts (for DMA)
-
-	// init DMA
 	initDma();
-
-	Xil_DCacheDisable();
-	// cache was being annoying so we're executing it!
-
-	// Go run passthrough...
+	Xil_DCacheDisable(); // cache was being annoying so we're disabling it
 	initI2S();
 
-	// here's where we actually record.
-	// formula for num of iterations:
-	// 48000 (sample rate) * 2 (2 channels, L/R) * time (in seconds) * 4 (size) / 4096 (size/sample) - 1
-	// put this value into the for loop :))))) it's your time in number of samples of 4096.
-	// probably just round up to a whole number.
-
-	// need to handle playback now...
-
-	// start recording!
-	int time = 0;
-	// saved playback time in # of samples.
 	while (1)
 	{
-		// stay in here forever, we can build the state machine here.
-		// use interrupts to start/stop playing and start looping
-		// this really shouldn't be my job...
+		// do one chunk of audio: receive, write to tracks, mix, play, advance positions
+		processChunk();
 
-		// check volume control, input
+		// check all 4 pedals after each chunk
+		// we detect press (goes high) then act on release (goes low again)
+		// this might be inverted, depends on the wiring of the footswitch
+		// hardware debounce in the FPGA fabric
+		u32 gpio = Xil_In32(XPAR_AXI_GPIO_0_BASEADDR);
 
-		switch (pedal)
+		for (int i = 0; i < NUM_TRACKS; i++)
 		{
-		case (DUMMY):
-			passthrough();
-			break;
-
-		case (REC):
-			// start the first record, this one can be a little weird.
-			time = record();
-			// user will terminate recording using the pedal button, thus putting us into the next state.
-
-			// 2min by default
-			pedal = RECLOOP;
-			while ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
-				;
-
-			break;
-
-		case (RECLOOP):
-
-			overdub(time);
-			//			play(time);
-			//			recordTimed(time);
-
-			// record while starting playback onto the selected track
-			// should be easy...?
-
-			break;
-
-		case (LOOP):
-			if (play(time))
+			if (gpio & PEDAL_MASK(i))
 			{
-				pedal = RECLOOP;
+				pedal_toggle[i] = 1; // pedal pressed
 			}
-			break;
 
-		default:
-			// how did you get here? lmao >:)
-			break;
+			if (!(gpio & PEDAL_MASK(i)) && pedal_toggle[i])
+			{
+				// released after being pressed, so now do the thing
+				pedal_toggle[i] = 0;
+
+				// each track advances through it's own state machine
+				// behavior described in the Track State Behavior section in the docs
+				// IDLE -> RECORDING -> OVERDUB <-> MONITOR
+				switch (track_state[i])
+				{
+				case IDLE:
+					track_state[i] = RECORDING;
+					track_pos[i] = 0;
+					track_len[i] = 0;
+					rec_offset[i] = global_pos; // remember where in the loop we started
+					break;
+
+				case RECORDING:
+					if (loop_mode == 0)
+					{
+						// Mode 0: first track sets global length, rest snap to it
+						if (global_len == 0)
+						{
+							global_len = track_len[i];
+							global_pos = 0;
+						}
+						else
+						{
+							track_len[i] = global_len;
+						}
+					}
+					// Mode 1: just use whatever length was recorded, no snapping
+					track_state[i] = OVERDUB;
+					track_pos[i] = 0; // reset for Mode 1 looping
+					break;
+
+				case OVERDUB:
+					// stop adding to it (overdubbing), just play it back(monitor)
+					track_state[i] = MONITOR;
+					break;
+
+				case MONITOR:
+					// back to overdubbing
+					track_state[i] = OVERDUB;
+					break;
+				}
+			}
 		}
 
-		/////////////////////////////////////////////////////////
-		// TODO: make this using interrupts so it doesnt suck ass//
-		///////////////////////////////////////////////////////////
-
-		if ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
+		// mode toggle — switches between synchronized (0) and independent (1)
+		// resets everything so the mode change takes clean effect
+		if (gpio & MODE_MASK)
+			mode_toggle = 1;
+		if (!(gpio & MODE_MASK) && mode_toggle)
 		{
-			buttontoggle = 1;
+			mode_toggle = 0;
+			loop_mode = !loop_mode;
+			resetAllTracks();
 		}
 
-		if (!(Xil_In32(0x41200000) & 0x00000004) && pedal == DUMMY && buttontoggle == 1)
-		{
-			buttontoggle = 0;
-			pedal = REC;
-		}
-
-		if (!(Xil_In32(0x41200000) & 0x00000004) && pedal == RECLOOP && buttontoggle == 1)
-		{
-			buttontoggle = 0;
-			pedal = LOOP;
-		}
-
-		if (!(Xil_In32(0x41200000) & 0x00000004) && pedal == LOOP && buttontoggle == 1)
-		{
-			buttontoggle = 0;
-			pedal = RECLOOP;
-		}
-
-		if (!(Xil_In32(0x41200000) & 0x00000002)) // the reset button on PC1_P
-		{
-			pedal = DUMMY;
-		}
+		// global reset
+		if (!(gpio & RESET_MASK))
+			resetAllTracks();
 	}
 
 	return 0;

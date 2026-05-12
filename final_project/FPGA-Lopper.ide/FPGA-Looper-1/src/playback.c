@@ -1,227 +1,224 @@
 #include "xil_types.h"
-#include "xiicps.h"
+#include "xil_io.h"
 #include "xaxidma.h"
 #include "xparameters.h"
 #include "./init.h"
 #include "./playback.h"
 
-void sampleCopy(volatile u32 *source, volatile u32 *dest)
+#ifdef VERBOSE
+#include "xtime_l.h"
+#include "xil_printf.h"
+
+// print a report every ~10 seconds worth of chunks regardless of chunk size
+#define VERBOSE_INTERVAL (3840000 / CHUNK_BYTES)
+
+static XTime t_start, t_end;
+static u32 chunk_count = 0;
+static u32 chunk_us_max = 0;
+static u64 chunk_us_total = 0;
+#endif
+
+// copies one chunk from source to dest with volume adjustment
+// VolumeC = 0 means no change, just a straight copy basically
+static void sampleCopy(volatile u32 *source, volatile u32 *dest)
 {
+	for (int y = 0; y < CHUNK_SAMPLES; y++)
+		dest[y] = source[y] >> VolumeC;
+}
 
-	for (int y = 0; y < 1024; y++)
+// adds source into dest (for overdubbing)
+// the I2S word has channel/framing bits in 31:28 and 3:0, audio is in 27:4
+// so we only add the audio part and keep dest's framing bits
+static void sampleCopyAdd(volatile u32 *source, volatile u32 *dest)
+{
+	for (int y = 0; y < CHUNK_SAMPLES; y++)
 	{
-		*(source + y) = *(source + y) >> VolumeC;
-
-		*(dest + y) = *(source + y);
-		// dummy simple.
+		u32 s = source[y] >> VolumeC;
+		dest[y] = (0xF000000F & dest[y]) |
+				  (0x0FFFFFF0 & ((0x0FFFFFF0 & dest[y]) + (0x0FFFFFF0 & s)));
 	}
 }
 
-void sampleCopyAdd(volatile u32 *source, volatile u32 *dest)
+// straight copy, no volume, no masking — used to seed the mix buffer from the first track
+// need to preserve the I2S framing bits so we can't just zero and add
+static void sampleCopyRaw(volatile u32 *source, volatile u32 *dest)
 {
-	// need this so we can actually overdub
-	// it's like one more op/sample, perfectly doable.
-	// could dampen this... but going to not worry about that.
-
-	for (int y = 0; y < 1024; y++)
-	{
-		*(source + y) = *(source + y) >> VolumeC;
-
-		*(dest + y) = ((0xF000000F & (*(dest + y)))) | (0x0FFFFFF0 & ((0x0FFFFFF0 & (*(dest + y))) + (0x0FFFFFF0 & (*(source + y)))));
-	}
+	for (int y = 0; y < CHUNK_SAMPLES; y++)
+		dest[y] = source[y];
 }
 
-int record()
+// same deal as sampleCopyAdd but without the volume shift
+// used when mixing additional tracks into an already-seeded mix buffer
+static void sampleAdd(volatile u32 *source, volatile u32 *dest)
 {
-
-	int DMA_Status = 0;
-	// 2812 * 4 is the max (2 minutes!)
-	int samples = 0;
-	int toggle = 0;
-	for (int i = 0; i < 2812 * 4 - 1; i++)
-	{
-
-		XAxiDma_SimpleTransfer(&Dmadual, R + 1024 * i, 4096, XAXIDMA_DEVICE_TO_DMA);
-		while (!(Xil_In32(XPAR_AXI_DMA_2_BASEADDR | 0x34) & 0x00000010))
-		{
-			DMA_Status = !(Xil_In32(XPAR_AXI_DMA_2_BASEADDR | 0x34) & 0x00000010);
-		};
-		sampleCopy(R + 1024 * i, CT + 1024 * i);
-		// copy over a sample in between each DMA write!
-		// wait until idle bit goes high (meaning that it's done);
-		XAxiDma_Reset(&Dmadual);
-		XAxiDma_ResetIsDone(&Dmadual);
-		samples++;
-		// they just... have a function for this?!
-
-		// so full disclosure, i know this looks janky AF, but it's actually kinda what they already do
-		// in scatter gather mode when you read the tail pointer, soooooooooo
-		// it's actually... sort of intended... yeah, i know.
-		usleep(8);
-
-		XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay, CT + 1024 * i, 0x1000, XAXIDMA_DMA_TO_DEVICE);
-		if (gim != 0)
-		{
-			XAxiDma_Reset(&Dmadual);
-			XAxiDma_ResetIsDone(&Dmadual);
-			gim = 0;
-		}
-
-		while (!(Xil_In32(XPAR_AXI_DMA_1_BASEADDR | 0x4) & 0x00000002))
-			;
-
-		if ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
-		{
-			toggle = 1;
-		}
-
-		if (!(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004) && toggle == 1)
-		{
-			while ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
-				;
-			// if button pressed, get the hell out!
-
-			// we need this, regrettably. I don't know why.
-			// will look into it if it's an issue... but it shouldn't matter.
-
-			usleep(5);
-
-			return samples;
-		}
-	}
-	// record 4 two minutes... ....yeah
-
-	return samples;
+	for (int y = 0; y < CHUNK_SAMPLES; y++)
+		dest[y] = (0xF000000F & dest[y]) |
+				  (0x0FFFFFF0 & ((0x0FFFFFF0 & dest[y]) + (0x0FFFFFF0 & source[y])));
 }
 
-void recordTimed(int samples)
+// Mode 0: returns the phase-aligned position in the global timeline
+// rec_offset is where global_pos was when this track started recording,
+// so subtracting it maps the track's buffer back into sync with the global loop
+static int syncedPos(int t)
 {
-
-	// 2812 * 4 is the max (2 minutes!)
-
-	for (int i = 0; i <= samples; i++)
-	{
-
-		XAxiDma_SimpleTransfer(&Dmarec, R + 1024 * i, 4096, XAXIDMA_DEVICE_TO_DMA);
-		while (!(Xil_In32(XPAR_AXI_DMA_0_BASEADDR | 0x34) & 0x00000010))
-			;
-		sampleCopy(R + 1024 * i, CT + 1024 * i);
-		// copy over a sample in between each DMA write!
-		// wait until idle bit goes high (meaning that it's done);
-		XAxiDma_Reset(&Dmarec);
-		XAxiDma_ResetIsDone(&Dmarec);
-
-		// they just... have a function for this?!
-
-		// so full disclosure, i know this looks janky AF, but it's actually kinda what they already do
-		// in scatter gather mode when you read the tail pointer, soooooooooo
-		// it's actually... sort of intended... yeah, i know.
-	}
-	// record 4 two minutes... ....yeah
-
-	usleep(5);
+	if (global_len == 0)
+		return track_pos[t];
+	return (global_pos - rec_offset[t] + global_len) % global_len;
 }
 
-int play(int samples)
+// returns the read/write position for a looping track depending on mode:
+// Mode 0 — all tracks follow the shared global timeline (phase-locked)
+// Mode 1 — each track loops independently at its own position
+static int trackReadPos(int t)
 {
-
-	// base is 0x40410000...
-
-	XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay, CT, 0x1000 * samples, XAXIDMA_DMA_TO_DEVICE);
-	if (gim != 0)
-	{
-		exit(1);
-	}
-	while (!(Xil_In32(0x40410004) & 0x00000002))
-	{
-		int toggle = 0;
-
-		if ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
-		{
-			toggle = 1;
-		}
-
-		if ((!(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004) || !(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000002)) && toggle == 1)
-		{
-			usleep(5);
-			return 1;
-		}
-	}
-	usleep(5);
-	return 0;
+	if (loop_mode == 0)
+		return syncedPos(t);
+	return track_pos[t];
 }
 
-void passthrough()
+void processChunk()
 {
-	// Takes record sample
-	XAxiDma_SimpleTransfer(&Dmadual, R + 1024, 4096, XAXIDMA_DEVICE_TO_DMA);
+#ifdef VERBOSE
+	XTime_GetTime(&t_start);
+#endif
+
+	// step 1: grab one chunk of audio from I2S RX
+	XAxiDma_SimpleTransfer(&Dmadual, (UINTPTR)recv_ptr, CHUNK_BYTES, XAXIDMA_DEVICE_TO_DMA);
 	while (!(Xil_In32(XPAR_AXI_DMA_2_BASEADDR | 0x34) & 0x00000010))
-		;
+		; // wait for S2MM to say its done
 	XAxiDma_Reset(&Dmadual);
 	XAxiDma_ResetIsDone(&Dmadual);
+	usleep(8); // still need this, still don't fully know why, not touching it
 
-	usleep(8);
+	// step 2: write incoming audio into whichever tracks are recording/overdubbing
+	// RECORDING always writes linearly via track_pos
+	// OVERDUB position depends on mode: global timeline (Mode 0) or own counter (Mode 1)
+	for (int t = 0; t < NUM_TRACKS; t++)
+	{
+		if (track_state[t] == RECORDING)
+			sampleCopy(recv_ptr, tracks[t] + CHUNK_SAMPLES * track_pos[t]);
+		else if (track_state[t] == OVERDUB)
+			sampleCopyAdd(recv_ptr, tracks[t] + CHUNK_SAMPLES * trackReadPos(t));
+	}
 
-	// while (!(Xil_In32(0x40410004) & 0x00000002));
-	//  Plays back sample
-	XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay, R + 1024, 0x1000, XAXIDMA_DMA_TO_DEVICE);
+	// step 3: mix all the active tracks into mix_ptr
+	// first active track gets copied (to keep the framing bits), rest get added on top
+	int any_active = 0;
+	for (int t = 0; t < NUM_TRACKS; t++)
+	{
+		if (track_state[t] == IDLE)
+			continue;
+		int pos = (track_state[t] == RECORDING) ? track_pos[t] : trackReadPos(t);
+		if (!any_active)
+		{
+			sampleCopyRaw(tracks[t] + CHUNK_SAMPLES * pos, mix_ptr);
+			any_active = 1;
+		}
+		else
+		{
+			sampleAdd(tracks[t] + CHUNK_SAMPLES * pos, mix_ptr);
+		}
+	}
+
+	// always make sure the live input is audible:
+	// - all IDLE: pure passthrough, nothing else in the mix
+	// - MONITOR only: loop plays but nothing routes input to output, so add it directly
+	// - RECORDING or OVERDUB: input already feeds through the track buffer into the mix
+	int input_via_track = 0;
+	for (int t = 0; t < NUM_TRACKS; t++)
+		if (track_state[t] == RECORDING || track_state[t] == OVERDUB)
+			input_via_track = 1;
+
+	if (!any_active)
+		sampleCopyRaw(recv_ptr, mix_ptr); // all idle: recv seeds the mix (preserves framing bits)
+	else if (!input_via_track)
+		sampleAdd(recv_ptr, mix_ptr); // monitor-only: add live input on top of the loops
+
+	// step 4: play the mix
+	XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay, (UINTPTR)mix_ptr, CHUNK_BYTES, XAXIDMA_DMA_TO_DEVICE);
 	if (gim != 0)
 	{
+		// this shouldn't happen but reset it and move on if it does
 		XAxiDma_Reset(&Dmaplay);
 		XAxiDma_ResetIsDone(&Dmaplay);
-		gim = 0;
 	}
-	while (!(Xil_In32(0x40410004) & 0x00000002))
+	while (!(Xil_In32(XPAR_AXI_DMA_1_BASEADDR | 0x4) & 0x00000002))
+		; // wait for MM2S to go idle
+
+	// step 5: advance positions
+
+	if (loop_mode == 0)
 	{
-		if (Xil_In32(XPAR_AXI_DMA_1_BASEADDR | 0x04) & 0x00000001)
+		// Mode 0: one shared timeline, all looping tracks follow it
+		if (global_len > 0)
+			global_pos = (global_pos + 1) % global_len;
+	}
+
+	for (int t = 0; t < NUM_TRACKS; t++)
+	{
+		if (track_state[t] == RECORDING)
 		{
-			return; // returning
+			track_pos[t]++;
+			track_len[t] = track_pos[t];
+
+			if (loop_mode == 0 && global_len > 0 && track_pos[t] >= global_len)
+			{
+				// Mode 0: another track already set the global length,
+				// auto-complete so this track ends up exactly in sync
+				track_len[t] = global_len;
+				track_state[t] = OVERDUB;
+			}
+			else if (track_pos[t] >= MAX_CHUNKS)
+			{
+				// hit the 2 minute hard limit (both modes)
+				if (loop_mode == 0 && global_len == 0)
+				{
+					global_len = track_len[t];
+					global_pos = 0;
+				}
+				track_state[t] = OVERDUB;
+			}
 		}
-	};
+		else if (loop_mode == 1 && (track_state[t] == OVERDUB || track_state[t] == MONITOR))
+		{
+			// Mode 1: each track loops independently at its own length
+			if (track_len[t] > 0)
+				track_pos[t] = (track_pos[t] + 1) % track_len[t];
+		}
+		// Mode 0 OVERDUB/MONITOR: no per-track advancement, they read from global_pos via trackReadPos
+	}
+
+#ifdef VERBOSE
+	XTime_GetTime(&t_end);
+
+	// convert ticks to microseconds. COUNTS_PER_SECOND is the global timer freq (~333MHz on Zynq)
+	u32 elapsed_us = (u32)((u64)(t_end - t_start) * 1000000ULL / COUNTS_PER_SECOND);
+
+	chunk_count++;
+	chunk_us_total += elapsed_us;
+	if (elapsed_us > chunk_us_max)
+		chunk_us_max = elapsed_us;
+
+	if (chunk_count % VERBOSE_INTERVAL == 0)
+	{
+		u32 avg_us = (u32)(chunk_us_total / chunk_count);
+		xil_printf("[latency] chunk %u | this: %uus | avg: %uus | max: %uus | budget: %uus%s\r\n",
+				   chunk_count, elapsed_us, avg_us, chunk_us_max, (u32)CHUNK_BUDGET_US,
+				   avg_us > CHUNK_BUDGET_US ? " !! OVERRUN" : "");
+	}
+#endif
 }
 
-void overdub(int samples)
+void resetAllTracks()
 {
-
-	int toggle = 0;
-
-	for (int i = 0; i <= samples; i++)
+	// nuke everything, back to square one
+	for (int t = 0; t < NUM_TRACKS; t++)
 	{
-
-		XAxiDma_SimpleTransfer(&Dmadual, R + 1024 * i, 4096, XAXIDMA_DEVICE_TO_DMA);
-		while (!(Xil_In32(XPAR_AXI_DMA_2_BASEADDR | 0x34) & 0x00000010))
-			;
-		sampleCopyAdd(R + 1024 * i, CT + 1024 * i);
-		// copy over a sample in between each DMA write!
-		// wait until idle bit goes high (meaning that it's done);
-		XAxiDma_Reset(&Dmadual);
-		XAxiDma_ResetIsDone(&Dmadual);
-
-		// yes, we need this. I know it sucks.
-		usleep(8);
-
-		XStatus gim = XAxiDma_SimpleTransfer(&Dmaplay, CT + 1024 * i, 0x1000, XAXIDMA_DMA_TO_DEVICE);
-		if (gim != 0)
-		{
-			exit(1);
-		}
-		while (!(Xil_In32(XPAR_AXI_DMA_1_BASEADDR | 0x4) & 0x00000002))
-			; // Check if DMA has finished transfer (if IDLE)
-
-		if ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004))
-		{
-			toggle = 1;
-		}
-
-		if ((!(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004) || !(Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000002)) && toggle == 1)
-		{
-			// while ((Xil_In32(XPAR_AXI_GPIO_0_BASEADDR) & 0x00000004));
-			//  if button pressed, get the hell out!
-
-			usleep(5);
-
-			return samples;
-		}
-		// this sucks ass but it works. God, why?
+		track_state[t] = IDLE;
+		track_len[t] = 0;
+		track_pos[t] = 0;
+		rec_offset[t] = 0;
 	}
+	global_len = 0;
+	global_pos = 0;
 }
