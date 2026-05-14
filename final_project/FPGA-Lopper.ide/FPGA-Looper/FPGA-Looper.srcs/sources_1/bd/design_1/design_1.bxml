@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="design_1" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1778189451"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1778189451"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1778189451"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1778189451"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1778728227"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1778728227"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1778728227"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1778728227"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_1_i2s_receiver_0_0\design_1_i2s_receiver_0_0.xci" Type="IP">
         <Instance HierarchyPath="i2s_receiver_0"/>
@@ -223,16 +223,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth\design_1.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-      </File>
-      <File Name="sim\design_1.vhd" Type="VHDL">
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\design_1_debounce_0_0\design_1_debounce_0_0.xci" Type="IP">
         <Instance HierarchyPath="debounce_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -275,6 +265,32 @@
       </File>
       <File Name="ip\design_1_debounce_4_0\design_1_debounce_4_0.xci" Type="IP">
         <Instance HierarchyPath="debounce_5"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_gpio_1_0\design_1_axi_gpio_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\design_1.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\design_1.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_1_axi_gpio_2_0\design_1_axi_gpio_2_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

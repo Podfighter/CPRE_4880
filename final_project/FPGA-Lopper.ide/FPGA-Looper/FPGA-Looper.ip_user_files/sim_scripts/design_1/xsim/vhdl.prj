@@ -7,6 +7,14 @@ vhdl xil_defaultlib  \
 "../../../bd/design_1/ip/design_1_axi_gpio_0_0/sim/design_1_axi_gpio_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_c_addsub_0_0/sim/design_1_c_addsub_0_0.vhd" \
 "../../../bd/design_1/ip/design_1_axi_dma_2_0/sim/design_1_axi_dma_2_0.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_0_0/sim/design_1_debounce_0_0.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_0_1/sim/design_1_debounce_0_1.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_0_2/sim/design_1_debounce_0_2.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_0_3/sim/design_1_debounce_0_3.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_0_4/sim/design_1_debounce_0_4.vhd" \
+"../../../bd/design_1/ip/design_1_debounce_4_0/sim/design_1_debounce_4_0.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_1_0/sim/design_1_axi_gpio_1_0.vhd" \
 "../../../bd/design_1/sim/design_1.vhd" \
+"../../../bd/design_1/ip/design_1_axi_gpio_2_0/sim/design_1_axi_gpio_2_0.vhd" \
 
 nosort

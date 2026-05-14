@@ -1,8 +1,8 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
---Date        : Thu May  7 16:30:39 2026
---Host        : CO2041-14 running 64-bit major release  (build 9200)
+--Date        : Wed May 13 22:10:26 2026
+--Host        : CO2041-07 running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
 --Purpose     : IP block netlist
@@ -62,7 +62,9 @@ entity design_1_wrapper is
     SDIN_AD : in STD_LOGIC;
     SDIN_AD2 : in STD_LOGIC;
     SDOUT_DA : out STD_LOGIC;
-    SDOUT_DA2 : out STD_LOGIC
+    SDOUT_DA2 : out STD_LOGIC;
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
 end design_1_wrapper;
 
@@ -122,7 +124,9 @@ architecture STRUCTURE of design_1_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    btns_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
+    leds_8bits_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component design_1;
   component IOBUF is
@@ -209,6 +213,8 @@ design_1_i: component design_1
       SDIN_AD => SDIN_AD,
       SDIN_AD2 => SDIN_AD2,
       SDOUT_DA => SDOUT_DA,
-      SDOUT_DA2 => SDOUT_DA2
+      SDOUT_DA2 => SDOUT_DA2,
+      btns_5bits_tri_i(4 downto 0) => btns_5bits_tri_i(4 downto 0),
+      leds_8bits_tri_o(7 downto 0) => leds_8bits_tri_o(7 downto 0)
     );
 end STRUCTURE;
