@@ -29,6 +29,7 @@ int main()
 		track_len[i] = 0;
 		track_pos[i] = 0;
 		rec_offset[i] = 0;
+		rec_len[i] = 0;
 		pedal_toggle[i] = 0;
 	}
 	global_len = 0;
@@ -92,6 +93,7 @@ int main()
 					break;
 
 				case RECORDING:
+					rec_len[i] = track_len[i]; // save actual recorded count before any snap
 					if (loop_mode == 0)
 					{
 						// Mode 0: first track sets global length, rest snap to it

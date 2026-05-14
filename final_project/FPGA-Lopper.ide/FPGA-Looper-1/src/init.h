@@ -36,6 +36,7 @@ int track_state[NUM_TRACKS];  // current TrackState for each track
 int track_len[NUM_TRACKS];    // how many chunks got recorded on each track
 int track_pos[NUM_TRACKS];    // write position during RECORDING (not used after)
 int rec_offset[NUM_TRACKS];   // global_pos value when this track started recording
+int rec_len[NUM_TRACKS];      // actual recorded chunk count before any Mode 0 snap to global_len
 int pedal_toggle[NUM_TRACKS]; // debounce state for each pedal
 
 // global loop timeline — set by the first track recorded, inherited by all others

@@ -98,7 +98,12 @@ void processChunk()
 		if (track_state[t] == RECORDING)
 			sampleCopy(recv_ptr, tracks[t] + CHUNK_SAMPLES * track_pos[t]);
 		else if (track_state[t] == OVERDUB)
-			sampleCopyAdd(recv_ptr, tracks[t] + CHUNK_SAMPLES * trackReadPos(t));
+		{
+			int pos = trackReadPos(t);
+			// only overdub within the originally-recorded region; tail stays silent
+			if (rec_len[t] == 0 || pos < rec_len[t])
+				sampleCopyAdd(recv_ptr, tracks[t] + CHUNK_SAMPLES * pos);
+		}
 	}
 
 	// step 3: mix all the active tracks into mix_ptr
@@ -109,6 +114,9 @@ void processChunk()
 		if (track_state[t] == IDLE)
 			continue;
 		int pos = (track_state[t] == RECORDING) ? track_pos[t] : trackReadPos(t);
+		// skip the unrecorded tail — treat it as silence in the mix
+		if (track_state[t] != RECORDING && rec_len[t] > 0 && pos >= rec_len[t])
+			continue;
 		if (!any_active)
 		{
 			sampleCopyRaw(tracks[t] + CHUNK_SAMPLES * pos, mix_ptr);
@@ -218,6 +226,7 @@ void resetAllTracks()
 		track_len[t] = 0;
 		track_pos[t] = 0;
 		rec_offset[t] = 0;
+		rec_len[t] = 0;
 	}
 	global_len = 0;
 	global_pos = 0;
