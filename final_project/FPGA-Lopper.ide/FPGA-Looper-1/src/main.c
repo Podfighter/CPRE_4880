@@ -1,5 +1,6 @@
 #include "./init.h"
 #include "./playback.h"
+#include "./pedal_uart.h"
 #include "xparameters.h"
 #include "xil_io.h"
 #include "string.h"
@@ -34,8 +35,6 @@ int main()
 	global_pos = 0;
 	loop_mode = 0; // start in synchronized mode
 
-	int mode_toggle = 0;
-
 	// set up all the pointers to our buffers and track memory
 	recv_ptr = (volatile u32 *)(UINTPTR)RECV_BUF_ADDR;
 	mix_ptr = (volatile u32 *)(UINTPTR)MIX_BUF_ADDR;
@@ -56,17 +55,17 @@ int main()
 	initDma();
 	Xil_DCacheDisable(); // cache was being annoying so we're disabling it
 	initI2S();
+	initPedalUart();
 
 	while (1)
 	{
 		// do one chunk of audio: receive, write to tracks, mix, play, advance positions
 		processChunk();
 
-		// check all 4 pedals after each chunk
-		// we detect press (goes high) then act on release (goes low again)
-		// this might be inverted, depends on the wiring of the footswitch
-		// hardware debounce in the FPGA fabric
-		u32 gpio = Xil_In32(XPAR_AXI_GPIO_0_BASEADDR);
+		// drain ESP32 UART and snapshot pending presses; cleared after this loop body
+		drainPedalUart();
+		u32 gpio = gpio_mirror;
+		gpio_mirror = 0;
 
 		for (int i = 0; i < NUM_TRACKS; i++)
 		{
@@ -124,20 +123,11 @@ int main()
 			}
 		}
 
-		// mode toggle — switches between synchronized (0) and independent (1)
-		// resets everything so the mode change takes clean effect
-		if (gpio & MODE_MASK)
-			mode_toggle = 1;
-		if (!(gpio & MODE_MASK) && mode_toggle)
-		{
-			mode_toggle = 0;
-			loop_mode = !loop_mode;
+		// global reset — SW5 fires RESET_MASK (active-high from ESP32)
+		if (gpio & RESET_MASK)
 			resetAllTracks();
-		}
 
-		// global reset
-		if (!(gpio & RESET_MASK))
-			resetAllTracks();
+		updateLeds();
 	}
 
 	return 0;
